@@ -1,0 +1,205 @@
+---
+---
+@import 'https://fonts.googleapis.com/css?family=Farsan|Risque';
+
+h1 {
+	padding: 0;
+	margin: 0;
+	margin-top: 40px;
+	font-family: 'Risque', cursive;
+	font-weight: 100;
+	font-size: 4em;
+	text-align: center;
+	text-transform: uppercase;
+	transform: translateX(-100px);
+
+	.supertitle {
+		display: inline-block;
+		font-size: 0.75em;
+		font-family: 'Farsan', cursive;
+		text-transform: none;
+		transform: translate(100px, -50px) rotate(-10deg);
+	}
+}
+
+h2 {
+	font-family: 'Risque', cursive;
+	font-weight: 100;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-family: 'Farsan', cursive;
+	font-size: 1.5em;
+	font-weight: 600;
+}
+
+small {
+	display: block;
+	text-align: center;
+	margin: 1em 0 2em 0;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	.row {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		.column {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+
+	footer {
+		margin: 1em 0;
+		text-align: center;
+	}
+}
+
+@media all {
+
+	body {
+		margin: 20px;
+		padding: 0 40px;
+		border: 5px pink solid;
+	}
+}
+
+@media print {
+
+	html, body {
+		margin: 0;
+		padding: 0;
+		border: none;
+	}
+
+	.page {
+		page-break-after: always;
+		page-break-before: always;
+		page-break-inside: avoid;
+		width: 100vw;
+		height: 100vh;
+		box-sizing: border-box;
+		padding: 0 40px;
+		margin: 0;
+		border: 5px pink solid;
+	}
+}
+
+address {
+	text-align: center;
+	font-size: 14px;
+
+	span + span:before {
+		content: "\00B7";
+		margin: 0 0.5em;
+	}
+}
+
+.menu-section {
+
+	.menu-item-group {
+		list-style: none;
+		font-size: 12px;
+		padding: 0px 20px;
+		margin: 0px;
+
+		.menu-item {
+			display: flex;
+			justify-content: space-between;
+			padding: 0;
+			overflow-x: hidden;
+			margin-left: 0px;
+
+			& + .menu-item {
+				margin-top: 0.25em;
+			}
+
+			&:before {
+				float: left;
+				width: 0;
+				white-space: nowrap;
+				content: "..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................";
+			}
+
+			h3 {
+				padding-right: 0.5em;
+				margin: 0px;
+				background: white;
+				display: inline-block;
+				white-space: nowrap;
+			}
+
+			.desc-container {
+				flex-grow: 1;
+
+				.desc {
+					display: inline-block;
+					background: white;
+					padding: 0 0.25em;
+					font-size: 0.75em;
+					margin: 0 2em 0 -0.5em;
+				}
+			}
+
+			> .price {
+				float: right;
+				background: white;
+				padding-left: 1em;
+			}
+
+			> .prices {
+				float: right;
+				display: inline-block;
+				background: white;
+				padding-left: 1em;
+				list-style: none;
+
+				.price {
+					display: inline-block;
+
+					& + .price {
+						margin-left: 0.5em;
+					}
+
+					span + span {
+						margin-left: 0.25em;
+					}
+				}
+			}
+		}
+
+		.menu-item-block-desc {
+			font-size: 0.75em;
+			margin: 0 1em;
+
+			& + .menu-item {
+				margin-top: 0.25em;
+			}
+		}
+	}
+
+	.inline-menu-item-group {
+		display: block;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+
+		.inline-menu-item {
+			display: inline-block;
+
+			& + .inline-menu-item {
+				margin-left: 1em;
+			}
+		}
+	}
+}

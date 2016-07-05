@@ -1,0 +1,8 @@
+<section class="menu-section">
+	<h2>{{ include.title }}</h2>
+	<ul class="menu-item-group">
+{% for item in include.dataset %}
+		{% include menu/menu-item.html item=item inline_desc=include.inline_desc %}
+{% endfor %}
+	</ul>
+</section>

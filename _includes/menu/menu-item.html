@@ -1,0 +1,32 @@
+<li class="menu-item">
+	<h3>{{ include.item.name }}</h3>
+	<div class="desc-container">
+{% unless include.item.block_desc %}
+		<p class="desc">
+			{{ include.item.desc }}
+		</p>
+{% endunless %}
+	</div>
+{% if include.item.price %}
+	<span class="price">{% include price.html price=include.item.price %}</span>
+{% elsif include.item.prices %}
+	<ul class="prices">
+		{% for price in include.item.prices %}
+		<li class="price">
+			{% if price.name %}
+				{% if price.name != previous_name %}
+			{{ price.name }}
+				{% endif %}
+			{% include price.html price=price.price %}
+				{% assign previous_name = price.name %}
+			{% else %}
+			{% include price.html price=price %}
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
+{% endif %}
+</li>
+{% if include.item.block_desc %}
+<li class="menu-item-block-desc">{{ include.item.desc }}</li>
+{% endif %}

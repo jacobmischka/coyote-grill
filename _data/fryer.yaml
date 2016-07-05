@@ -1,0 +1,52 @@
+- name: French Fries
+  desc: Plain or ranch seasoned
+  price: 2.50
+
+- name: Steak Cut Fries
+  price: 3.00
+
+- name: Dank Fries
+  desc: Fries sprinkled with cajun and ranch seasoning, drizzled with ranch dressing
+  price: 3.00
+  block_desc: true
+
+- name: Battered Mushrooms
+  price: 4.00
+
+- name: Steak Cut Onion Rings
+  price: 4.00
+
+- name: Cheese Curds
+  price: 4.00
+
+- name: Mozzarella Sticks
+  price: 4.00
+
+- name: Mini Tacos
+  desc: 10 mini tacos with salsa and sour cream
+  price: 4.00
+  block_desc: true
+
+- name: Mini Corndogs
+  price: 4.00
+
+- name: Sweet Corn Nuggets
+  price: 4.00
+
+- name: Jalape&ntilde;o Bottlecaps
+  price: 4.00
+
+- name: Broccoli Cheddar Bites
+  price: 4.50
+
+- name: Chicken Strips
+  desc: 4 tender breast strips
+  price: 6.00
+
+- name: Chicken Drummies
+  desc: 5 large chicken wings
+  price: 6.00
+
+- name: Hot wings
+  desc: 6 spicy wings
+  price: 6.00

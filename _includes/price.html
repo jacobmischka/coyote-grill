@@ -1,0 +1,2 @@
+{% assign pieces = include.price | round: 2 | split: "." %}
+{{ pieces[0] }}.{{ pieces[1] | append: "00" | truncate: 2, "" }}

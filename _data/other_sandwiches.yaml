@@ -1,0 +1,33 @@
+- name: Pork Chop Sandwich
+  desc: 5oz. butterfly chop
+  price: 5.50
+
+- name: Fish Sandwich
+  desc: 2 fillets of battered cod
+  price: 5.00
+
+- name: Steak Sandwich
+  desc: 6oz # FIXME
+  price: 10.00
+
+- name: Ham Sandwich
+  desc: Sliced thin and stacked high
+  price: 4.75
+
+- name: Ham and Cheese Sandwich
+  price: 5.25
+
+- name: Grilled Cheese
+  desc: Served on texas toast with 4 kinds of cheese
+  price: 5.50
+
+- name: Grilled Cheese with Ham
+  price: 7.00
+
+- name: Veggie Burger
+  # desc: # TODO
+  price: 8.00
+
+- name: Monte Cristo
+  # desc: # TODO
+  price: 7.50

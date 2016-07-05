@@ -1,0 +1,11 @@
+- name: Combo Basket
+  desc: Broccoli cheddar bites, jalape&ntilde; bottlecaps, sweet corn nuggets, mini corndogs, cheese curds, onion rings, and fries
+  price: 5.00
+
+- name: Fish Basket
+  desc: 3 pieces of battered cod, fries, and tartar sauce
+  price: 7.50
+
+- name: Chicken Strip Basket
+  desc: 4 pieces of crispy chicken strips and fries
+  price: 7.50

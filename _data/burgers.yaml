@@ -1,0 +1,54 @@
+- name: Hamburger
+  desc: For you real Americans
+  prices:
+    - 3.50
+    - 5.50
+
+- name: Cheeseburger
+  desc: Just like the ones served in paradise
+  prices:
+    - 4.00
+    - 6.00
+
+- name: Southwest Burger
+  desc: On a bakery roll with cajun spice, salsa, and cheddar cheese
+  prices:
+    - 4.50
+    - 7.00
+
+- name: Salvo Special
+  small_name: Small Lil' Debbie Special
+  desc: On a bakery roll topped with smoked ham and swiss cheese
+  prices:
+    - 4.75
+    - 7.00
+
+- name: Bacon Cheeseburger
+  desc: On a bakery roll with smoked bacon and swiss cheese
+  prices:
+    - 4.75
+    - 7.00
+
+- name: Coyote Burger
+  desc: On grilled texas toast with BBQ sauce, an onion ring, bacon, and pepperjack cheese
+  price: 7.50
+
+- name: Ultimate
+  desc: On grilled texas toast with 4 cheeses, special sauce, and fried onion
+  price: 7.50
+
+- name: Blazing Britt Burger
+  desc: On grilled texas toast with pepperjack cheese, bacon, fried onions, jalape&ntilde;o bottle caps, chipotle BBQ, and cajun seasoning
+  price: 7.50
+
+- name: Grilled Ranchero Melt
+  desc: On grilled texas toast with pepperjack and swiss cheese, peppercorn ranch, ham, and fried onions
+  price: 7.50
+
+- name: Pile Driver
+  desc: On a bakery roll with cheddar and pepperjack cheese, stacked ham, and fried onions
+  price: 7.50
+
+- name: Breakfast Burger
+  desc: On toast with American cheese, a fried egg, and your choice of ham or bacon
+  # price: # TODO

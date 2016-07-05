@@ -1,0 +1,23 @@
+- name: Chicken with No Fixins
+  desc: For those of you with enough adventure in your life!
+  price: 5.25
+
+- name: Chicken with Cheese
+  desc: Served with your choice of cheese
+  price: 5.75
+
+- name: Chicken Southwest Style
+  desc: Served on a Kaiser roll with cajun spice, salsa, and cheddar cheese
+  price: 6.50
+
+- name: Chicken Cordon Bleu
+  desc: Served with smoked ham and swiss cheese
+  price: 6.75
+
+- name: Spicy Mesquite Chicken
+  desc: With bacon, swiss cheese, and BBQ sauce
+  price: 6.75
+
+- name: Spicy Chicken Bacon Ranch
+  desc: With bacon, pepperjack cheese, and ranch dressing
+  price: 6.75

@@ -1,0 +1,14 @@
+- name: Texas Toast
+  price: 0.50
+
+- name: Cheese
+  price: 0.50
+
+- name: Extra Sauce
+  price: 0.50
+
+- name: Bacon
+  price: 1.00
+
+- name: Egg
+  price: 1.00
