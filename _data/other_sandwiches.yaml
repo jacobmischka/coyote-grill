@@ -1,6 +1,7 @@
 - name: Pork Chop Sandwich
   desc: 5oz. butterfly chop
   price: 5.50
+  block_desc: true
 
 - name: Fish Sandwich
   desc: 2 fillets of battered cod
@@ -13,6 +14,7 @@
 - name: Ham Sandwich
   desc: Sliced thin and stacked high
   price: 4.75
+  block_desc: true
 
 - name: Ham and Cheese Sandwich
   price: 5.25
@@ -20,6 +22,7 @@
 - name: Grilled Cheese
   desc: Served on texas toast with 4 kinds of cheese
   price: 5.50
+  block_desc: true
 
 - name: Grilled Cheese with Ham
   price: 7.00

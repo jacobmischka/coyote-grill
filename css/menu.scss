@@ -2,6 +2,8 @@
 ---
 @import 'https://fonts.googleapis.com/css?family=Farsan|Risque';
 
+$grey-color: #666;
+
 h1 {
 	padding: 0;
 	margin: 0;
@@ -52,10 +54,10 @@ small {
 		justify-content: center;
 
 		.column {
-			flex-grow: 1;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+			width: 100%;
 		}
 	}
 
@@ -125,6 +127,7 @@ address {
 			}
 
 			&:before {
+				color: $grey-color;
 				float: left;
 				width: 0;
 				white-space: nowrap;
@@ -143,25 +146,24 @@ address {
 				flex-grow: 1;
 
 				.desc {
+					color: $grey-color;
 					display: inline-block;
 					background: white;
 					padding: 0 0.25em;
-					font-size: 0.75em;
+					font-size: 0.9em;
 					margin: 0 2em 0 -0.5em;
 				}
 			}
 
-			> .price {
+			> .price, .prices {
 				float: right;
 				background: white;
 				padding-left: 1em;
+				padding-right: 0.2em;
 			}
 
 			> .prices {
-				float: right;
 				display: inline-block;
-				background: white;
-				padding-left: 1em;
 				list-style: none;
 
 				.price {
@@ -179,7 +181,8 @@ address {
 		}
 
 		.menu-item-block-desc {
-			font-size: 0.75em;
+			color: $grey-color;
+			font-size: 0.9em;
 			margin: 0 1em;
 
 			& + .menu-item {
