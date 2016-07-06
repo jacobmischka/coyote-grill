@@ -8,7 +8,7 @@
   price: 5.00
 
 - name: Steak Sandwich
-  desc: 6oz # FIXME
+  desc: 6oz. ribeye
   price: 10.00
 
 - name: Ham Sandwich
@@ -34,3 +34,7 @@
 - name: Monte Cristo
   # desc: # TODO
   price: 7.50
+
+- name: Breaded Chicken Sandwich
+  # desc: # TODO
+  price: 5.00

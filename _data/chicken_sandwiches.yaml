@@ -3,21 +3,29 @@
   price: 5.25
 
 - name: Chicken with Cheese
-  desc: Served with your choice of cheese
+  desc: On a roll with your choice of cheese
   price: 5.75
 
 - name: Chicken Southwest Style
-  desc: Served on a Kaiser roll with cajun spice, salsa, and cheddar cheese
+  desc: On a roll with cajun spice, salsa, and cheddar cheese
   price: 6.50
 
 - name: Chicken Cordon Bleu
-  desc: Served with smoked ham and swiss cheese
+  desc: On a roll with smoked ham and swiss cheese
   price: 6.75
 
 - name: Spicy Mesquite Chicken
-  desc: With bacon, swiss cheese, and BBQ sauce
+  desc: On a roll with bacon, swiss cheese, and BBQ sauce
   price: 6.75
 
 - name: Spicy Chicken Bacon Ranch
-  desc: With bacon, pepperjack cheese, and ranch dressing
+  desc: On a roll with bacon, pepperjack cheese, and ranch dressing
   price: 6.75
+
+- name: Blazing Britt Chicken Sandwich
+  desc: On grilled texas toast with pepperjack cheese, bacon, fried onions, jalape&ntilde;o bottle caps, chipotle BBQ, and cajun seasoning
+  price: 7.50
+
+- name: Grilled Chicken Ranchero Melt
+  desc: On grilled texas toast with pepperjack and swiss cheese, peppercorn ranch, ham, and fried onions
+  price: 7.50

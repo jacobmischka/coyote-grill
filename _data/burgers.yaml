@@ -11,44 +11,56 @@
     - 6.00
 
 - name: Southwest Burger
-  desc: On a bakery roll with cajun spice, salsa, and cheddar cheese
+  desc: On a roll with cajun spice, salsa, and cheddar cheese
   prices:
     - 4.50
     - 7.00
 
 - name: Salvo Special
   small_name: Small Lil' Debbie Special
-  desc: On a bakery roll topped with smoked ham and swiss cheese
+  desc: On a roll topped with smoked ham and swiss cheese
   prices:
     - 4.75
     - 7.00
 
 - name: Bacon Cheeseburger
-  desc: On a bakery roll with smoked bacon and swiss cheese
+  desc: On a roll with smoked bacon and swiss cheese
   prices:
     - 4.75
     - 7.00
 
 - name: Coyote Burger
-  desc: On grilled texas toast with BBQ sauce, an onion ring, bacon, and pepperjack cheese
-  price: 7.50
+  desc: On grilled toast with BBQ sauce, an onion ring, bacon, and pepperjack cheese
+  prices:
+    - 5.50
+    - 7.50
 
 - name: Ultimate
-  desc: On grilled texas toast with 4 cheeses, special sauce, and fried onion
-  price: 7.50
+  desc: On grilled toast with 4 cheeses, special sauce, and fried onion
+  prices:
+    - 5.50
+    - 7.50
 
 - name: Blazing Britt Burger
-  desc: On grilled texas toast with pepperjack cheese, bacon, fried onions, jalape&ntilde;o bottle caps, chipotle BBQ, and cajun seasoning
-  price: 7.50
+  desc: On grilled toast with pepperjack cheese, bacon, fried onions, jalape&ntilde;o bottle caps, chipotle BBQ, and cajun seasoning
+  prices:
+    - 5.50
+    - 7.50
 
 - name: Grilled Ranchero Melt
-  desc: On grilled texas toast with pepperjack and swiss cheese, peppercorn ranch, ham, and fried onions
-  price: 7.50
+  desc: On grilled toast with pepperjack and swiss cheese, peppercorn ranch, ham, and fried onions
+  prices:
+    - 5.50
+    - 7.50
 
 - name: Pile Driver
-  desc: On a bakery roll with cheddar and pepperjack cheese, stacked ham, and fried onions
-  price: 7.50
+  desc: On a roll with cheddar and pepperjack cheese, stacked ham, and fried onions
+  prices:
+    - 5.50
+    - 7.50
 
 - name: Breakfast Burger
   desc: On toast with American cheese, a fried egg, and your choice of ham or bacon
-  # price: # TODO
+  prices:
+    - 5.50
+    - 7.50

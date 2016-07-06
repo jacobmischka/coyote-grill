@@ -4,6 +4,10 @@
 
 $grey-color: #666;
 
+body {
+	font-family: sans-serif;
+}
+
 h1 {
 	padding: 0;
 	margin: 0;
@@ -40,7 +44,7 @@ h3 {
 small {
 	display: block;
 	text-align: center;
-	margin: 1em 0 2em 0;
+	margin: 0.25em 0 0.5em 0;
 }
 
 .page {
@@ -224,10 +228,11 @@ figure.salvo {
 			}
 
 			> .price, .prices {
+				flex-shrink: 0;
 				float: right;
 				background: white;
 				padding-left: 1em;
-				padding-right: 0.2em;
+				padding-right: 0.25em;
 			}
 
 			> .prices {
