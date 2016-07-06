@@ -27,7 +27,7 @@ h1 {
 h2 {
 	font-family: 'Risque', cursive;
 	font-weight: 100;
-	margin-bottom: 10px;
+	margin: 10px 0 5px 0;
 	text-transform: uppercase;
 }
 
@@ -107,7 +107,75 @@ address {
 	}
 }
 
+figure.lil-debbie {
+	fill: #F48FB1;
+}
+
+figure.salvo {
+	fill: #795548;
+}
+
+.burger-type-description {
+	text-align: center;
+	font-size: 12px;
+
+	figure {
+		margin: 0;
+
+		svg {
+			vertical-align: middle;
+			width: 36px;
+			height: 36px;
+		}
+
+		figcaption {
+			font-family: sans-serif;
+		}
+	}
+
+	p {
+		margin: 0;
+		font-size: 0.9em;
+	}
+}
+
 .menu-section {
+
+	header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		.menu-item-group-label {
+			margin: 10px 0 5px 0;
+			padding: 0;
+			float: right;
+			list-style: none;
+			font-size: 12px;
+			margin-right: 20px;
+			padding-right: 0.5em;
+
+			li {
+				margin: 0;
+				display: inline-block;
+
+				& + li {
+					margin-left: 0.5em;
+				}
+
+				figure {
+					margin: 0;
+					width: 24px;
+					height: 24px;
+
+					svg {
+						width: 24px;
+						height: 24px;
+					}
+				}
+			}
+		}
+	}
 
 	.menu-item-group {
 		list-style: none;

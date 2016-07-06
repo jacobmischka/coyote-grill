@@ -1,5 +1,10 @@
 <section class="menu-section">
-	<h2>{{ include.title }}</h2>
+	<header>
+		<h2>{{ include.title }}</h2>
+{% if include.labels %}
+		{{ include.labels }}
+{% endif %}
+	</header>
 	<ul class="menu-item-group">
 {% for item in include.dataset %}
 		{% include menu/menu-item.html item=item inline_desc=include.inline_desc %}

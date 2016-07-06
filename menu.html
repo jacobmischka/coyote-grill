@@ -7,7 +7,53 @@ layout: menu
 		{% include menu/address.html %}
 	</header>
 
-	{% include menu/menu-item-group.html title="Salvo Burgers (&frac14; lb.) & Lil' Debbie Burgers (&frac12; lb.)" dataset=site.data.burgers %}
+{% capture lil_debbie_icon %}
+	<figure class="lil-debbie">
+		{% include images/cowgirl-boot.svg %}
+	</figure>
+{% endcapture %}
+{% capture salvo_icon %}
+	<figure class="salvo">
+		{% include images/cowboy-hat.svg %}
+	</figure>
+{% endcapture %}
+
+{% capture burger_labels %}
+	<ul class="menu-item-group-label">
+		<li>{{ lil_debbie_icon}}</li>
+		<li>{{ salvo_icon }}</li>
+	</ul>
+{% endcapture %}
+
+	{% include menu/menu-item-group.html title="Salvo Burgers & Lil' Debbie Burgers" labels=burger_labels dataset=site.data.burgers %}
+	<div class="row">
+		<div class="column">
+			<aside class="burger-type-description">
+				<figure class="lil-debbie">
+					{% include images/cowgirl-boot.svg %}
+					<figcaption>
+						Lil' Debbie Burger
+					</figcaption>
+				</figure>
+				<p>
+					&frac12; pound patty on Kaiser roll or white toast.
+				</p>
+			</aside>
+		</div>
+		<div class="column">
+			<aside class="burger-type-description">
+				<figure class="salvo">
+					{% include images/cowboy-hat.svg %}
+					<figcaption>
+						Salvo Burger
+					</figcaption>
+				</figure>
+				<p>
+					&frac14; pound patty on bakery roll or texas toast.
+				</p>
+			</aside>
+		</div>
+	</div>
 	{% include menu/menu-item-group.html title="Chicken Sandwiches" dataset=site.data.chicken_sandwiches %}
 	{% include menu/inline-menu-item-group.html title="Extras" dataset=site.data.extras %}
 
