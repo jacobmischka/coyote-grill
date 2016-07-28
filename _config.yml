@@ -21,3 +21,22 @@ address: "132 W. Center St, Whitewater WI"
 
 # Build settings
 markdown: kramdown
+permalink: pretty
+exclude:
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - webpack.config.js
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
