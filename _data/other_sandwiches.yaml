@@ -1,23 +1,26 @@
-- name: Pork Chop Sandwich
-  desc: 5oz. butterfly chop
-  price: 5.50
-  block_desc: true
-
-- name: Fish Sandwich
-  desc: 2 fillets of battered cod
-  price: 5.00
-
-- name: Steak Sandwich
-  desc: 6oz. ribeye
-  price: 10.00
-
 - name: Ham Sandwich
   desc: Sliced thin and stacked high
   price: 4.75
   block_desc: true
 
 - name: Ham and Cheese Sandwich
+  desc: With swiss cheese
   price: 5.25
+  block_desc: true
+
+- name: Fish Sandwich
+  desc: 2 fillets of battered cod
+  price: 5.00
+
+- name: Breaded Chicken Sandwich
+  # desc: # TODO
+  price: 5.00
+  # block_desc: true
+
+- name: Pork Chop Sandwich
+  desc: 5oz. butterfly chop
+  price: 5.50
+  block_desc: true
 
 - name: Grilled Cheese
   desc: Served on texas toast with 4 kinds of cheese
@@ -27,14 +30,11 @@
 - name: Grilled Cheese with Ham
   price: 7.00
 
-- name: Veggie Burger
-  # desc: # TODO
-  price: 8.00
-
 - name: Monte Cristo
-  # desc: # TODO
+  desc: Sliced turkey & smoked ham and swiss cheese on texas toast dipped in egg wash and pan-fried to a crispy golden-brown
   price: 7.50
+  block_desc: true
 
-- name: Breaded Chicken Sandwich
-  # desc: # TODO
-  price: 5.00
+- name: Steak Sandwich
+  desc: 6oz. ribeye
+  price: 10.00

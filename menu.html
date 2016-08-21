@@ -1,10 +1,14 @@
 ---
 layout: menu
 ---
-<div class="page">
+<article class="page">
 	<header>
-		<h1><span class="supertitle">Lil' Debbie's</span> Coyote Grill</h1>
-		{% include menu/address.html %}
+		<figure>
+			{% include images/coyote-grill-logo.svg %}
+			<figcaption>
+				{% include menu/address.html %}
+			</figcaption>
+		</figure>
 	</header>
 
 {% capture lil_debbie_icon %}
@@ -25,7 +29,7 @@ layout: menu
 	</ul>
 {% endcapture %}
 
-	{% include menu/menu-item-group.html title="Lil' Debbie Burgers & Salvo Burgers" labels=burger_labels dataset=site.data.burgers %}
+	{% include menu/menu-item-group.html title="Lil' Debbie Burgers & Salvo Burgers*" labels=burger_labels dataset=site.data.burgers %}
 	<div class="row">
 		<div class="column">
 			<aside class="burger-type-description">
@@ -60,14 +64,16 @@ layout: menu
 	<footer>
 		<p>
 			Monthly Burger Specials<br />
-			All sandwiches come with handful of chips and pickle spear<br />
-			Lettuce, tomato, and onions available upon request
+			Lettuce, tomato, and onions available upon request<br />
+			* Undercooked meats can be hazardous to your health
 		</p>
 	</footer>
-</div>
-<div class="page">
+</article>
+<article class="page">
 	<header>
-		<h1><span class="supertitle">Lil' Debbie's</span> Coyote Grill</h1>
+		<figure>
+			{% include images/coyote-grill-logo.svg %}
+		</figure>
 	</header>
 
 	<div class="row">
@@ -84,9 +90,9 @@ layout: menu
 
 	<footer>
 		<p>
-			Daily lunch specials <span class="middot">&middot;</span> Happy Hour 4-7 daily <span class="middot">&middot;</span> Nightly drink specials<br />
-			Grill open until 10pm <span class="middot">&middot;</span> Fryer open until 1am<br />
-			Undercooked meats can be hazardous to your health
+			All sandwiches come with handful of chips and pickle spear<br />
+			Daily lunch specials <span class="middot">&middot;</span> Happy Hour 4-6 on weekdays <span class="middot">&middot;</span> Nightly drink specials<br />
+			Grill open until 10pm <span class="middot">&middot;</span> Fryer open until 1am
 		</p>
 	</footer>
-</div>
+</article>

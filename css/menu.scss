@@ -3,9 +3,26 @@
 @import 'https://fonts.googleapis.com/css?family=Farsan|Risque';
 
 $grey-color: #666;
+$logo-background-color: #fdeaf6;
 
 body {
 	font-family: sans-serif;
+}
+
+header {
+
+	figure {
+
+		#coyote-grill-logo {
+			display: block;
+			margin: 0 auto;
+			height: 150px;
+		}
+
+		figcaption {
+
+		}
+	}
 }
 
 h1 {
@@ -194,6 +211,7 @@ figure.salvo {
 		.menu-item {
 			display: flex;
 			justify-content: space-between;
+			align-items: flex-end;
 			padding: 0;
 			overflow-x: hidden;
 			margin-left: 0px;
@@ -214,6 +232,7 @@ figure.salvo {
 				padding-right: 0.5em;
 				padding-left: 0.5em;
 				margin: 0px;
+				line-height: 1;
 				background: white;
 				display: inline-block;
 				white-space: nowrap;
@@ -224,7 +243,7 @@ figure.salvo {
 
 				.desc {
 					color: $grey-color;
-					display: inline-block;
+					display: inline;
 					background: white;
 					padding: 0 0.25em;
 					font-size: 0.9em;
