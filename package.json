@@ -1,0 +1,31 @@
+{
+  "name": "coyote-grill",
+  "version": "1.0.0",
+  "description": "Website and other promotional documents for Lil' Debbie's Coyote Grill",
+  "main": "js/bundle.js",
+  "scripts": {
+    "start": "bundle exec jekyll serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.11.5",
+    "babel-preset-es2015": "^6.9.0",
+    "eslint": "^3.1.1",
+    "stylelint": "^7.0.3",
+    "stylelint-config-standard": "^11.0.0",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobmischka/coyote-grill.git"
+  },
+  "author": "Jacob Mischka <jacob@coyotegrill.bar>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacobmischka/coyote-grill/issues"
+  },
+  "homepage": "https://github.com/jacobmischka/coyote-grill#readme"
+}

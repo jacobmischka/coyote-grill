@@ -3,10 +3,12 @@
 ---
 @charset "utf-8";
 
-
+@import 'https://fonts.googleapis.com/css?family=Roboto|Open+Sans|Lato';
 
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+$heading-font-family: "Lato", sans-serif;
+
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
@@ -14,13 +16,47 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
+
+$background-color:			$grey-color-light;
+
+$primary-color:				#6e6b6c;
+$primary-color-dark:		darken($primary-color, 10%);
+$primary-color-light:		lighten($primary-color, 10%);
+
+$accent-color:				#9c0054;
+$accent-color-dark:			darken($accent-color, 10%);
+$accent-color-light:		lighten($accent-color, 10%);
+
+
+$card-background-color:		#1c1c1c;
+
+$text-color:	  				#000;
+$light-text-color:				#fff;
+
+$primary-text: 0.87;
+$secondary-text: 0.54;
+$disabled-text: 0.38;
+
+$active-icon: 0.54;
+$inactive-icon: 0.38;
+
+$primary-light-text: 1;
+$secondary-light-text: 0.7;
+$disabled-light-text: 0.5;
+
+$active-light-icon: 1;
+$inactive-light-icon: 0.5;
+
+$divider: 0.12;
+
+$heading-color:					$grey-color;
+$footer-text-color:				$grey-color;
+
+$shadow-color:					rgba(0, 0, 0, 0.5);
+
 
 // Width of the content area
 $content-width:    800px;
@@ -28,7 +64,9 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
-
+$small-desktop: 768px;
+$medium-desktop: 992px;
+$large-desktop: 1200px;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -46,8 +84,4 @@ $on-laptop:        800px;
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+@import "pages/index";

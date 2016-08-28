@@ -1,0 +1,55 @@
+body {
+	background-color: $background-color;
+	font-size: $base-font-size;
+	font-family: $base-font-family;
+	margin: 0;
+}
+
+header {
+	background-color: $accent-color;
+	color: rgba($light-text-color, $primary-light-text);
+	padding: 2em;
+
+	h1 {
+		font-family: $heading-font-family;
+		font-size: 3em;
+		margin: 0 0 1em;
+
+		@media (min-width: $small-desktop) {
+			font-size: 4em;
+		}
+	}
+
+	p.lead {
+		font-size: 1.5em;
+	}
+
+
+	a {
+		color: rgba(#f48fb1, $primary-light-text);
+		text-decoration: underline;
+
+		&:visited {
+			color: rgba(#f48fb1, $secondary-light-text);
+		}
+
+		&:hover {
+			color: rgba(lighten(#f48fb1, 5%), $primary-light-text);
+			font-weight: bold;
+		}
+	}
+}
+
+svg#coyote-grill-business-card {
+	display: block;
+	margin: $spacing-unit auto;
+	width: 80%;
+	height: auto;
+	max-height: 95vh;
+	background-color: $card-background-color;
+	box-shadow: 0 5px 15px 5px $shadow-color;
+
+	@media (min-width: $small-desktop) {
+		box-shadow: 0 10px 30px 10px $shadow-color;
+	}
+}
