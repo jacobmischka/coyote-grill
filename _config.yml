@@ -10,6 +10,22 @@ title: Coyote Grill
 email: debbie@coyotegrill.bar
 description: > # this means to ignore newlines until "baseurl:"
   Popular bar located in downtown Whitewater. Home of the best burger in Walworth county!
+author: Jacob Mischka <jacob@coyotegrill.bar> (http://www.mischka.me)
+keywords:
+  - Coyote Grill
+  - Lil' Debbie
+  - Salvo
+  - Burger
+  - Cheeseburger
+  - Whitewater
+  - Wisconsin
+  - Walworth county
+  - Warhawks
+  - College bar
+  - Bar and grill
+  - To-go
+  - Takeout
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.coyotegrill.bar" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
