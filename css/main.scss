@@ -3,11 +3,12 @@
 ---
 @charset "utf-8";
 
-@import 'https://fonts.googleapis.com/css?family=Roboto|Open+Sans|Lato';
+@import 'https://fonts.googleapis.com/css?family=Lobster|Noto+Sans|Open+Sans';
 
 // Our variables
 $base-font-family: "Open Sans", Helvetica, Arial, sans-serif;
-$heading-font-family: "Lato", sans-serif;
+$heading-font-family: "Lobster", sans-serif;
+$site-nav-font-family: "Noto Sans", sans-serif;
 
 $base-font-size:   16px;
 $base-font-weight: 400;
@@ -26,9 +27,12 @@ $primary-color:				#6e6b6c;
 $primary-color-dark:		darken($primary-color, 10%);
 $primary-color-light:		lighten($primary-color, 10%);
 
-$accent-color:				#9c0054;
+$accent-color:				#eb5795;
 $accent-color-dark:			darken($accent-color, 10%);
 $accent-color-light:		lighten($accent-color, 10%);
+
+$header-logo-width: 125px;
+$header-logo-height: 224px;
 
 
 $card-background-color:		#1c1c1c;
@@ -84,4 +88,6 @@ $large-desktop: 1200px;
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import "pages/index";
+@import
+ 	"layout",
+	"pages/index";

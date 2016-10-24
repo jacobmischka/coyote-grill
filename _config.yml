@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Coyote Grill
+title: Little Debbie's Coyote Grill
 email: debbie@coyotegrill.bar
 description: > # this means to ignore newlines until "baseurl:"
   Popular bar located in downtown Whitewater. Home of the best burger in Walworth county!
@@ -28,8 +28,6 @@ keywords:
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.coyotegrill.bar" # the base hostname & protocol for your site
-# twitter_username: jekyllrb
-# github_username:  jekyll
 phone: "262 472 0510"
 address: "132 W. Center St, Whitewater WI"
 
@@ -43,6 +41,9 @@ exclude:
   - package.json
   - rollup.config.js
   - webpack.config.js
+
+collections:
+  - sections
 
 defaults:
   - scope:
