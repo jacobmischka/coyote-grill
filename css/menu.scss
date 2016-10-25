@@ -6,14 +6,6 @@ $grey-color: #666;
 $logo-background-color: #fdeaf6;
 $menu-background-color: white;
 
-@media all {
-	#menu {
-		margin: 20px;
-		padding: 0 40px;
-		border: 5px pink solid;
-	}
-}
-
 @media print {
 
 	html,
@@ -25,15 +17,22 @@ $menu-background-color: white;
 	}
 
 	.page {
+		box-sizing: border-box;
 		page-break-after: always;
 		page-break-before: always;
 		page-break-inside: avoid;
 		width: 100vw;
 		height: 100vh;
-		box-sizing: border-box;
-		padding: 0 40px;
 		margin: 0;
-		border: 5px pink solid;
+
+		.page-content {
+			box-sizing: border-box;
+			width: 100%;
+			height: 100%;
+			padding: 0 40px;
+			margin: 0;
+			border: 5px pink solid;
+		}
 	}
 }
 
