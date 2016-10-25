@@ -4,3 +4,23 @@ body {
 	font-family: $base-font-family;
 	margin: 0;
 }
+
+main {
+
+	> article,
+	> .section {
+
+		@media (min-width: $small-desktop) {
+			margin: auto;
+			width: 750px;
+		}
+
+		@media (min-width: $medium-desktop) {
+			width: 970px;
+		}
+
+		@media (min-width: $large-desktop) {
+			width: 1170px;
+		}
+	}
+}

@@ -1,100 +1,13 @@
 ---
 ---
-@import 'https://fonts.googleapis.com/css?family=Farsan|Risque';
+@import 'https://fonts.googleapis.com/css?family=Farsan|Lobster|Open+Sans';
 
 $grey-color: #666;
 $logo-background-color: #fdeaf6;
-
-body {
-	font-family: sans-serif;
-}
-
-header {
-
-	figure {
-
-		#coyote-grill-logo {
-			display: block;
-			margin: 0 auto;
-			height: 150px;
-		}
-
-		figcaption {
-
-		}
-	}
-}
-
-h1 {
-	padding: 0;
-	margin: 0;
-	margin-top: 40px;
-	font-family: 'Risque', cursive;
-	font-weight: 100;
-	font-size: 4em;
-	text-align: center;
-	text-transform: uppercase;
-	transform: translateX(-100px);
-
-	.supertitle {
-		display: inline-block;
-		font-size: 0.75em;
-		font-family: 'Farsan', cursive;
-		text-transform: none;
-		transform: translate(100px, -50px) rotate(-10deg);
-	}
-}
-
-h2 {
-	font-family: 'Risque', cursive;
-	font-weight: 100;
-	margin: 10px 0 5px 0;
-	text-transform: uppercase;
-}
-
-h3 {
-	font-family: 'Farsan', cursive;
-	font-size: 1.5em;
-	font-weight: 600;
-}
-
-small {
-	display: block;
-	text-align: center;
-	margin: 0.25em 0 0.5em 0;
-}
-
-.page {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-
-	.row {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-
-		.column {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			width: 100%;
-		}
-	}
-
-	footer {
-		margin: 0.5em 0;
-		text-align: center;
-
-		p {
-			margin: 0;
-		}
-	}
-}
+$menu-background-color: white;
 
 @media all {
-
-	body {
+	#menu {
 		margin: 20px;
 		padding: 0 40px;
 		border: 5px pink solid;
@@ -103,7 +16,9 @@ small {
 
 @media print {
 
-	html, body {
+	html,
+	body,
+	#menu {
 		margin: 0;
 		padding: 0;
 		border: none;
@@ -122,184 +37,9 @@ small {
 	}
 }
 
-address {
-	text-align: center;
-	font-size: 14px;
 
-	span + span:before {
-		content: "\00B7";
-		margin: 0 0.5em;
-	}
+body {
+	font-family: 'Open Sans', sans-serif;
 }
 
-figure.lil-debbie {
-	fill: #F48FB1;
-}
-
-figure.salvo {
-	fill: #795548;
-}
-
-.burger-type-description {
-	text-align: center;
-	font-size: 12px;
-
-	figure {
-		margin: 0;
-
-		svg {
-			vertical-align: middle;
-			width: 36px;
-			height: 36px;
-		}
-
-		figcaption {
-			font-family: sans-serif;
-		}
-	}
-
-	p {
-		margin: 0;
-		font-size: 0.9em;
-	}
-}
-
-.menu-section {
-
-	header {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-
-		.menu-item-group-label {
-			margin: 10px 0 5px 0;
-			padding: 0;
-			float: right;
-			list-style: none;
-			font-size: 12px;
-			margin-right: 20px;
-			padding-right: 0.5em;
-
-			li {
-				margin: 0;
-				display: inline-block;
-
-				& + li {
-					margin-left: 0.5em;
-				}
-
-				figure {
-					margin: 0;
-					width: 24px;
-					height: 24px;
-
-					svg {
-						width: 24px;
-						height: 24px;
-					}
-				}
-			}
-		}
-	}
-
-	.menu-item-group {
-		list-style: none;
-		font-size: 12px;
-		padding: 0px 20px;
-		margin: 0px;
-
-		.menu-item {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-end;
-			padding: 0;
-			overflow-x: hidden;
-			margin-left: 0px;
-
-			& + .menu-item {
-				margin-top: 0.25em;
-			}
-
-			&:before {
-				color: $grey-color;
-				float: left;
-				width: 0;
-				white-space: nowrap;
-				content: "..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................";
-			}
-
-			h3 {
-				padding-right: 0.5em;
-				padding-left: 0.5em;
-				margin: 0px;
-				line-height: 1;
-				background: white;
-				display: inline-block;
-				white-space: nowrap;
-			}
-
-			.desc-container {
-				flex-grow: 1;
-
-				.desc {
-					color: $grey-color;
-					display: inline;
-					background: white;
-					padding: 0 0.25em;
-					font-size: 0.9em;
-					margin: 0 2em 0 -0.5em;
-				}
-			}
-
-			> .price, .prices {
-				flex-shrink: 0;
-				float: right;
-				background: white;
-				padding-left: 1em;
-				padding-right: 0.25em;
-			}
-
-			> .prices {
-				display: inline-block;
-				list-style: none;
-
-				.price {
-					display: inline-block;
-
-					& + .price {
-						margin-left: 0.5em;
-					}
-
-					span + span {
-						margin-left: 0.25em;
-					}
-				}
-			}
-		}
-
-		.menu-item-block-desc {
-			color: $grey-color;
-			font-size: 0.9em;
-			margin: 0 1em;
-
-			& + .menu-item {
-				margin-top: 0.25em;
-			}
-		}
-	}
-
-	.inline-menu-item-group {
-		display: block;
-		text-align: center;
-		margin: 0;
-		padding: 0;
-
-		.inline-menu-item {
-			display: inline-block;
-
-			& + .inline-menu-item {
-				margin-left: 1em;
-			}
-		}
-	}
-}
+@import "pages/menu";

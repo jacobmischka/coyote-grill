@@ -3,7 +3,7 @@
 ---
 @charset "utf-8";
 
-@import 'https://fonts.googleapis.com/css?family=Lobster|Noto+Sans|Open+Sans';
+@import 'https://fonts.googleapis.com/css?family=Lobster|Farsan|Noto+Sans|Open+Sans';
 
 // Our variables
 $base-font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -34,7 +34,7 @@ $accent-color-light:		lighten($accent-color, 10%);
 $header-logo-width: 125px;
 $header-logo-height: 224px;
 
-
+$menu-background-color:		#fafafa;
 $card-background-color:		#1c1c1c;
 
 $text-color:	  				#000;
