@@ -6,39 +6,21 @@ $grey-color: #666;
 $logo-background-color: #fdeaf6;
 $menu-background-color: white;
 
-@media print {
+$accent-color:				#eb5795;
+$accent-color-dark:			darken($accent-color, 10%);
+$accent-color-light:		lighten($accent-color, 10%);
 
-	html,
-	body,
-	#menu {
-		margin: 0;
-		padding: 0;
-		border: none;
-	}
-
-	.page {
-		box-sizing: border-box;
-		page-break-after: always;
-		page-break-before: always;
-		page-break-inside: avoid;
-		width: 100vw;
-		height: 100vh;
-		margin: 0;
-
-		.page-content {
-			box-sizing: border-box;
-			width: 100%;
-			height: 100%;
-			padding: 0 40px;
-			margin: 0;
-			border: 5px pink solid;
-		}
-	}
-}
+$logo-text-color:			#9c0054;
+$lil-debbie-color:			$accent-color;
+$salvo-color:				#795548;
 
 
-body {
-	font-family: 'Open Sans', sans-serif;
+html,
+body,
+#menu {
+	margin: 0;
+	padding: 0;
+	border: none;
 }
 
 @import "pages/menu";

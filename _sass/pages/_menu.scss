@@ -1,32 +1,55 @@
 #menu {
+	font-family: 'Open Sans', sans-serif;
 
 	&.section {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-around;
+		align-items: stretch;
 		margin: 20px auto;
-		padding: 0;
 
 		.page {
 			flex-grow: 1;
 			flex-shrink: 0;
-			width: 500px;
+			width: 450px;
 			max-width: 100%;
 			page-break-after: always;
 			page-break-before: always;
 			page-break-inside: avoid;
 			box-sizing: border-box;
 			margin: 10px;
-			font-size: 0.35em;
+			font-size: 0.75em;
 
 			.page-content {
 				box-sizing: border-box;
 				width: calc(100% - 60px);
-				height: 100%;
+				height: calc(100% - 60px);
 				padding: 0 40px;
 				margin: 30px;
-				border: 5px pink solid;
+				border: 5px $accent-color-light solid;
+			}
+		}
+	}
+
+	@media print {
+
+		.page {
+			box-sizing: border-box;
+			page-break-after: always;
+			page-break-before: always;
+			page-break-inside: avoid;
+			width: 100vw;
+			height: 100vh;
+			margin: 0;
+
+			.page-content {
+				box-sizing: border-box;
+				width: 100%;
+				height: 100%;
+				padding: 0 40px;
+				margin: 0;
+				border: 5px $accent-color-light solid;
 			}
 		}
 	}
@@ -39,7 +62,7 @@
 				width: 100%;
 				display: block;
 				margin: 0 auto;
-				height: 150px;
+				height: 9.5em;
 			}
 		}
 	}
@@ -64,14 +87,16 @@
 	}
 
 	h2 {
+		color: $logo-text-color;
 		font-family: 'Lobster', cursive;
 		font-weight: 100;
-		margin: 10px 0 5px;
+		font-size: 1.5em;
+		margin: 0 0 0.1em;
 	}
 
 	h3 {
 		font-family: 'Farsan', cursive;
-		font-size: 1.5em;
+		font-size: 1.35em;
 		font-weight: 600;
 	}
 
@@ -82,29 +107,48 @@
 	}
 
 	.page {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
 		background: $menu-background-color;
 
-		.row {
+		.page-content {
 			display: flex;
-			flex-direction: row;
+			flex-direction: column;
 			justify-content: space-between;
-			margin: 0 -1em;
 
-			.column {
+			.row {
 				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				width: 100%;
-				margin: 1em;
+				flex-direction: row;
+				justify-content: space-between;
+				margin: 0;
+
+				.column {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+					width: 100%;
+					margin: 0 1em;
+
+					&:first-child {
+						margin-left: 0;
+					}
+
+					&:last-child {
+						margin-right: 0;
+					}
+
+					.menu-section {
+
+						& + .menu-section {
+							margin-top: 0.25em;
+						}
+					}
+				}
 			}
 		}
 
 		footer {
 			margin: 0.5em 0;
 			text-align: center;
+			font-size: 0.9em;
 
 			p {
 				margin: 0;
@@ -114,7 +158,7 @@
 
 	address {
 		text-align: center;
-		font-size: 14px;
+		font-size: 0.9em;
 
 		span + span::before {
 			content: "\00B7";
@@ -123,24 +167,24 @@
 	}
 
 	figure.lil-debbie {
-		fill: #f48fb1;
+		fill: $lil-debbie-color;
 	}
 
 	figure.salvo {
-		fill: #795548;
+		fill: $salvo-color;
 	}
 
 	.burger-type-description {
 		text-align: center;
-		font-size: 12px;
+		font-size: 0.8em;
 
 		figure {
 			margin: 0;
 
 			svg {
 				vertical-align: middle;
-				width: 36px;
-				height: 36px;
+				width: 3em;
+				height: 3em;
 			}
 
 			figcaption {
@@ -162,30 +206,28 @@
 			justify-content: space-between;
 
 			.menu-item-group-label {
-				margin: 10px 0 5px;
-				padding: 0;
+				margin: 0;
+				padding: 0 0.25em 0 0;
 				float: right;
 				list-style: none;
-				font-size: 12px;
-				margin-right: 20px;
-				padding-right: 0.5em;
+				font-size: 0.8em;
 
 				li {
 					margin: 0;
 					display: inline-block;
 
 					& + li {
-						margin-left: 0.5em;
+						margin-left: 0.25em;
 					}
 
 					figure {
 						margin: 0;
-						width: 24px;
-						height: 24px;
+						width: 2em;
+						height: 2em;
 
 						svg {
-							width: 24px;
-							height: 24px;
+							width: 2em;
+							height: 2em;
 						}
 					}
 				}
@@ -194,7 +236,7 @@
 
 		.menu-item-group {
 			list-style: none;
-			font-size: 12px;
+			font-size: 0.75em;
 			padding: 0;
 			margin: 0;
 
@@ -287,6 +329,7 @@
 
 			.inline-menu-item {
 				display: inline-block;
+				font-size: 0.9em;
 
 				& + .inline-menu-item {
 					margin-left: 1em;
