@@ -1,0 +1,42 @@
+.image-menu-item-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	.image-menu-item {
+		width: 200px;
+		height: 200px;
+		background-size: cover;
+
+		* {
+			overflow: hidden;
+			opacity: 0;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+
+			* {
+				opacity: 1;
+				overflow: auto;
+			}
+		}
+
+		.name {
+			display: block;
+		}
+
+		> .price,
+		> .prices {
+
+			.price {
+				list-style: none;
+			}
+		}
+
+		.desc {
+
+		}
+	}
+}

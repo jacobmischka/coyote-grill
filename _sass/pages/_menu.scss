@@ -54,58 +54,6 @@
 		}
 	}
 
-	header {
-
-		figure {
-
-			#coyote-grill-logo {
-				width: 100%;
-				display: block;
-				margin: 0 auto;
-				height: 9.5em;
-			}
-		}
-	}
-
-	h1 {
-		padding: 0;
-		margin: 0;
-		margin-top: 40px;
-		font-family: 'Lobster', cursive;
-		font-weight: 100;
-		font-size: 4em;
-		text-align: center;
-		transform: translateX(-100px);
-
-		.supertitle {
-			display: inline-block;
-			font-size: 0.75em;
-			font-family: 'Farsan', cursive;
-			text-transform: none;
-			transform: translate(100px, -50px) rotate(-10deg);
-		}
-	}
-
-	h2 {
-		color: $logo-text-color;
-		font-family: 'Lobster', cursive;
-		font-weight: 100;
-		font-size: 1.5em;
-		margin: 0 0 0.1em;
-	}
-
-	h3 {
-		font-family: 'Farsan', cursive;
-		font-size: 1.35em;
-		font-weight: 600;
-	}
-
-	small {
-		display: block;
-		text-align: center;
-		margin: 0.25em 0 0.5em;
-	}
-
 	.page {
 		background: $menu-background-color;
 
@@ -113,6 +61,58 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+
+			header {
+
+				figure {
+
+					#coyote-grill-logo {
+						width: 100%;
+						display: block;
+						margin: 0 auto;
+						height: 9.5em;
+					}
+				}
+			}
+
+			h1 {
+				padding: 0;
+				margin: 0;
+				margin-top: 40px;
+				font-family: 'Lobster', cursive;
+				font-weight: 100;
+				font-size: 4em;
+				text-align: center;
+				transform: translateX(-100px);
+
+				.supertitle {
+					display: inline-block;
+					font-size: 0.75em;
+					font-family: 'Farsan', cursive;
+					text-transform: none;
+					transform: translate(100px, -50px) rotate(-10deg);
+				}
+			}
+
+			h2 {
+				color: $logo-text-color;
+				font-family: 'Lobster', cursive;
+				font-weight: 100;
+				font-size: 1.5em;
+				margin: 0 0 0.1em;
+			}
+
+			h3 {
+				font-family: 'Farsan', cursive;
+				font-size: 1.35em;
+				font-weight: 600;
+			}
+
+			small {
+				display: block;
+				text-align: center;
+				margin: 0.25em 0 0.5em;
+			}
 
 			.row {
 				display: flex;
@@ -143,196 +143,194 @@
 					}
 				}
 			}
-		}
 
-		footer {
-			margin: 0.5em 0;
-			text-align: center;
-			font-size: 0.9em;
+			footer {
+				margin: 0.5em 0;
+				text-align: center;
+				font-size: 0.9em;
 
-			p {
-				margin: 0;
-			}
-		}
-	}
-
-	address {
-		text-align: center;
-		font-size: 0.9em;
-
-		span + span::before {
-			content: "\00B7";
-			margin: 0 0.5em;
-		}
-	}
-
-	figure.lil-debbie {
-		fill: $lil-debbie-color;
-	}
-
-	figure.salvo {
-		fill: $salvo-color;
-	}
-
-	.burger-type-description {
-		text-align: center;
-		font-size: 0.8em;
-
-		figure {
-			margin: 0;
-
-			svg {
-				vertical-align: middle;
-				width: 3em;
-				height: 3em;
+				p {
+					margin: 0;
+				}
 			}
 
-			figcaption {
-				font-family: sans-serif;
+			address {
+				text-align: center;
+				font-size: 0.9em;
+
+				span + span::before {
+					content: "\00B7";
+					margin: 0 0.5em;
+				}
 			}
-		}
 
-		p {
-			margin: 0;
-			font-size: 0.9em;
-		}
-	}
+			figure.lil-debbie {
+				fill: $lil-debbie-color;
+			}
 
-	.menu-section {
+			figure.salvo {
+				fill: $salvo-color;
+			}
 
-		header {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-
-			.menu-item-group-label {
-				margin: 0;
-				padding: 0 0.25em 0 0;
-				float: right;
-				list-style: none;
+			.burger-type-description {
+				text-align: center;
 				font-size: 0.8em;
 
-				li {
+				figure {
 					margin: 0;
-					display: inline-block;
 
-					& + li {
-						margin-left: 0.25em;
+					svg {
+						vertical-align: middle;
+						width: 3em;
+						height: 3em;
 					}
 
-					figure {
+					figcaption {
+						font-family: sans-serif;
+					}
+				}
+
+				p {
+					margin: 0;
+					font-size: 0.9em;
+				}
+			}
+
+			.menu-section {
+
+				header {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+
+					.menu-item-group-label {
 						margin: 0;
-						width: 2em;
-						height: 2em;
+						padding: 0 0.25em 0 0;
+						float: right;
+						list-style: none;
+						font-size: 0.8em;
 
-						svg {
-							width: 2em;
-							height: 2em;
+						li {
+							margin: 0;
+							display: inline-block;
+
+							& + li {
+								margin-left: 0.25em;
+							}
+
+							figure {
+								margin: 0;
+								width: 2em;
+								height: 2em;
+
+								svg {
+									width: 2em;
+									height: 2em;
+								}
+							}
 						}
 					}
 				}
-			}
-		}
 
-		.menu-item-group {
-			list-style: none;
-			font-size: 0.75em;
-			padding: 0;
-			margin: 0;
-
-			.menu-item {
-				display: flex;
-				justify-content: space-between;
-				align-items: flex-end;
-				padding: 0;
-				overflow-x: hidden;
-				margin-left: 0;
-
-				& + .menu-item {
-					margin-top: 0.25em;
-				}
-
-				&::before {
-					color: $grey-color;
-					float: left;
-					width: 0;
-					$menu-background-color-space: nowrap;
-
-					content: "..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................";
-				}
-
-				h3 {
-					padding-right: 0.5em;
-					margin: 0;
-					line-height: 1;
-					background: $menu-background-color;
-					display: inline-block;
-					$menu-background-color-space: nowrap;
-				}
-
-				.desc-container {
-					flex-grow: 1;
-
-					.desc {
-						color: $grey-color;
-						display: inline;
-						background: $menu-background-color;
-						padding: 0 0.25em;
-						font-size: 0.9em;
-						margin: 0 2em 0 -0.5em;
-					}
-				}
-
-				> .price,
-				.prices {
-					flex-shrink: 0;
-					float: right;
-					background: $menu-background-color;
-					padding-left: 1em;
-					padding-right: 0.25em;
-				}
-
-				> .prices {
-					display: inline-block;
+				.menu-item-group {
 					list-style: none;
+					font-size: 0.75em;
+					padding: 0;
+					margin: 0;
 
-					.price {
-						display: inline-block;
+					.menu-item {
+						display: flex;
+						justify-content: space-between;
+						align-items: flex-end;
+						padding: 0;
+						overflow-x: hidden;
+						margin-left: 0;
 
-						& + .price {
-							margin-left: 0.5em;
+						& + .menu-item {
+							margin-top: 0.25em;
 						}
 
-						span + span {
-							margin-left: 0.25em;
+						&::before {
+							color: $menu-description-color;
+							float: left;
+							width: 0;
+							white-space: nowrap;
+							content: "..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................";
+						}
+
+						h3 {
+							padding-right: 0.5em;
+							margin: 0;
+							line-height: 1;
+							background: $menu-background-color;
+							display: inline-block;
+							white-space: nowrap;
+						}
+
+						.desc-container {
+							flex-grow: 1;
+
+							.desc {
+								color: $menu-description-color;
+								display: inline;
+								background: $menu-background-color;
+								padding: 0 0.25em;
+								font-size: 0.9em;
+								margin: 0 2em 0 -0.5em;
+							}
+						}
+
+						> .price,
+						> .prices {
+							flex-shrink: 0;
+							float: right;
+							background: $menu-background-color;
+							padding-left: 1em;
+							padding-right: 0.25em;
+						}
+
+						> .prices {
+							list-style: none;
+
+							.price {
+								display: inline-block;
+
+								& + .price {
+									margin-left: 0.5em;
+								}
+
+								span + span {
+									margin-left: 0.25em;
+								}
+							}
+						}
+					}
+
+					.menu-item-block-desc {
+						color: $menu-description-color;
+						font-size: 0.9em;
+						margin: 0 1em;
+
+						& + .menu-item {
+							margin-top: 0.25em;
 						}
 					}
 				}
-			}
 
-			.menu-item-block-desc {
-				color: $grey-color;
-				font-size: 0.9em;
-				margin: 0 1em;
+				.inline-menu-item-group {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					justify-content: space-between;
+					margin: 0;
+					padding: 0;
 
-				& + .menu-item {
-					margin-top: 0.25em;
-				}
-			}
-		}
-
-		.inline-menu-item-group {
-			display: block;
-			text-align: center;
-			margin: 0;
-			padding: 0;
-
-			.inline-menu-item {
-				display: inline-block;
-				font-size: 0.9em;
-
-				& + .inline-menu-item {
-					margin-left: 1em;
+					.inline-menu-item {
+						flex-grow: 0;
+						flex-shrink: 0;
+						list-style: none;
+						font-size: 0.9em;
+					}
 				}
 			}
 		}

@@ -3,4 +3,12 @@ title: Menu
 layout: section
 order: 1
 ---
+<section id="burgers" class="image-menu-item-list">
+
+{% for burger in site.data.burgers %}
+	{% include image-menu-item.html item=burger %}
+{% endfor %}
+
+</section>
+
 {% include menu/menu.html %}

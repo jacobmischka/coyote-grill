@@ -2,7 +2,6 @@
 ---
 @import 'https://fonts.googleapis.com/css?family=Farsan|Lobster|Open+Sans';
 
-$grey-color: #666;
 $logo-background-color: #fdeaf6;
 $menu-background-color: white;
 
@@ -13,6 +12,7 @@ $accent-color-light:		lighten($accent-color, 10%);
 $logo-text-color:			#9c0054;
 $lil-debbie-color:			$accent-color;
 $salvo-color:				#795548;
+$menu-description-color:	#666;
 
 
 html,
