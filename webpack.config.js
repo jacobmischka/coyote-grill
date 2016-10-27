@@ -1,12 +1,12 @@
 /* eslint-env node */
 module.exports = {
 	entry: {
-		bundle: './_js/bundle.js'
+		bundle: './_js/main.js'
 	},
 	output: {
-		path: './resources/',
-		publicPath: '/resources/',
-		filename: '../js/[name].js'
+		path: './js/',
+		publicPath: '/js/',
+		filename: '[name].js'
 	},
 	target: 'web',
 	module: {

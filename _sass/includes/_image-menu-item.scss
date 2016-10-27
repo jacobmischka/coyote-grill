@@ -1,25 +1,39 @@
+$transparent: rgba(0, 0, 0, 0);
+$content-background-transparency: 0.65;
+$content-background: rgba(0, 0, 0, $content-background-transparency);
+$content-border: rgba(255, 255, 255, $content-background-transparency);
+
 .image-menu-item-list {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: center;
 
 	.image-menu-item {
+		position: relative;
 		width: 200px;
 		height: 200px;
 		background-size: cover;
+		margin: 0.5em;
 
-		* {
-			overflow: hidden;
+		.content {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			padding: 1em 0 0;
+			overflow: auto;
+			background-color: $content-background;
+			border-top: 1px solid $content-border;
 			opacity: 0;
+			transition: opacity 0.1s;
 		}
 
 		&:hover,
 		&:focus,
 		&:active {
 
-			* {
+			.content {
 				opacity: 1;
-				overflow: auto;
 			}
 		}
 

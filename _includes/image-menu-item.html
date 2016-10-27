@@ -1,22 +1,23 @@
 {% assign default_image = "url('http://lorempixel.com/400/400/food?q=" | append: include.item.name | append: "')" %}
 <div class="image-menu-item" style="background-image: {{ include.item.image | default: default_image }};">
 
-	<span class="name">{{ include.item.name }}</span>
+	<div class="content">
+		<span class="name">{{ include.item.name }}</span>
 
 {% if include.item.price %}
-	<span class="price">{{ include.item.price }}</span>
+		<span class="price">{{ include.item.price }}</span>
 {% elsif include.item.prices %}
-  	<ul class="prices">
+  		<ul class="prices">
 	{% for price in include.item.prices %}
-		<li class="price">{% include price.html price=price %}</li>
+			<li class="price">{% include price.html price=price %}</li>
 	{% endfor %}
-	</ul>
+		</ul>
 {% endif %}
 
 {% if include.item.desc %}
-	<p class="desc">
-		{{ include.item.desc }}
-	</p>
+		<p class="desc">
+			{{ include.item.desc }}
+		</p>
 {% endif %}
-
+	</div>
 </div>
