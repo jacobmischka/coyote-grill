@@ -7,7 +7,6 @@
 		flex-wrap: wrap;
 		justify-content: space-around;
 		align-items: stretch;
-		margin: 20px auto;
 
 		.page {
 			flex-grow: 1;
@@ -61,6 +60,7 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+			color: rgba($text-color, $primary-text);
 
 			header {
 
@@ -95,7 +95,7 @@
 			}
 
 			h2 {
-				color: $logo-text-color;
+				color: rgba($logo-text-color, $primary-text);
 				font-family: 'Lobster', cursive;
 				font-weight: 100;
 				font-size: 1.5em;
@@ -251,7 +251,7 @@
 						}
 
 						&::before {
-							color: $menu-description-color;
+							color: rgba($text-color, $secondary-text);
 							float: left;
 							width: 0;
 							white-space: nowrap;
@@ -271,7 +271,7 @@
 							flex-grow: 1;
 
 							.desc {
-								color: $menu-description-color;
+								color: rgba($text-color, $secondary-text);
 								display: inline;
 								background: $menu-background-color;
 								padding: 0 0.25em;
@@ -307,7 +307,7 @@
 					}
 
 					.menu-item-block-desc {
-						color: $menu-description-color;
+						color: rgba($text-color, $secondary-text);
 						font-size: 0.9em;
 						margin: 0 1em;
 

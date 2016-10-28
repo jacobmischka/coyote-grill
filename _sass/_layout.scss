@@ -2,15 +2,8 @@ body {
 	background-color: $background-color;
 	font-size: $base-font-size;
 	font-family: $base-font-family;
+	color: rgba($text-color, $primary-text);
 	margin: 0;
-}
-
-main {
-
-	> article,
-	> .section {
-		padding: 0 1em;
-	}
 }
 
 @import "includes/index";

@@ -10,7 +10,7 @@ $base-font-family: "Open Sans", Helvetica, Arial, sans-serif;
 $heading-font-family: "Lobster", sans-serif;
 $site-nav-font-family: "Noto Sans", sans-serif;
 
-$base-font-size:   16px;
+$base-font-size:   1.25em;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
@@ -21,7 +21,7 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$background-color:			$grey-color-light;
+$background-color:			#f3f3f3;
 
 $primary-color:				#6e6b6c;
 $primary-color-dark:		darken($primary-color, 10%);
@@ -34,7 +34,6 @@ $accent-color-light:		lighten($accent-color, 10%);
 $logo-text-color:			#9c0054;
 $lil-debbie-color:			$accent-color;
 $salvo-color:				#795548;
-$menu-description-color:	#666;
 
 $header-logo-width: 125px;
 $header-logo-height: 224px;
@@ -60,9 +59,6 @@ $active-light-icon: 1;
 $inactive-light-icon: 0.5;
 
 $divider: 0.12;
-
-$heading-color:					$grey-color;
-$footer-text-color:				$grey-color;
 
 $shadow-color:					rgba(0, 0, 0, 0.5);
 

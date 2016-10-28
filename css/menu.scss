@@ -12,7 +12,12 @@ $accent-color-light:		lighten($accent-color, 10%);
 $logo-text-color:			#9c0054;
 $lil-debbie-color:			$accent-color;
 $salvo-color:				#795548;
-$menu-description-color:	#666;
+
+$text-color: 				#000;
+
+$primary-text: 0.87;
+$secondary-text: 0.54;
+$disabled-text: 0.38;
 
 
 html,

@@ -3,7 +3,7 @@ header.site-header {
 	background-color: $accent-color;
 	color: rgba($light-text-color, $primary-light-text);
 	padding: 2em calc(#{$header-logo-width} + 2.5em) 0 2em;
-	font-size: 2em;
+	font-size: 1.75em;
 	min-height: calc(#{$header-logo-height} + 1em);
 
 	.site-title {
@@ -26,7 +26,7 @@ header.site-header {
 			flex-wrap: wrap;
 			font-size: 1em;
 			padding: 0;
-			margin-left: -0.5em;
+			margin: 0 0 0 -0.5em;
 
 			li {
 				font-size: 1em;

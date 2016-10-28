@@ -3,3 +3,27 @@ title: Find us
 layout: section
 order: 3
 ---
+<figure class="full-width-photo">
+	<img src="{{ site.coyote_grill_image | default: "http://placehold.it/1280x720?text=Photo+of+Coyote+Grill" }}" alt="Coyote Grill" />
+</figure>
+<div class="row">
+	<div class="column">
+		<div class="content-block">
+			<p>
+				We're located directly in downtown whitewater, stop by
+				and pay us a visit.
+			</p>
+			<address>
+				{{ site.address }}<br />
+				{{ site.phone }}
+			</address>
+		</div>
+	</div>
+	<div class="column">
+		<div id="map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2925.8530459846056!2d-88.7342228845924!3d42.83371791304963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8805e0ea481e498b%3A0xec480aafce8c0d60!2sLil&#39;+Debbie&#39;s+Coyote+Grill!5e0!3m2!1sen!2sus!4v1477618309362"
+				frameborder="0" allowfullscreen>
+			</iframe>
+		</div>
+	</div>
+</div>
