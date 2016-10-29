@@ -1,12 +1,10 @@
 /* eslint-env node */
 module.exports = {
-	entry: {
-		bundle: './_js/main.js'
-	},
+	entry: './_js/main.js',
 	output: {
 		path: './js/',
 		publicPath: '/js/',
-		filename: '[name].js'
+		filename: 'bundle.js'
 	},
 	target: 'web',
 	module: {
@@ -15,6 +13,13 @@ module.exports = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader'
+			},
+			{
+				test: /\.yaml$/,
+				loaders: [
+					'json-loader',
+					'yaml-loader'
+				]
 			}
 		]
 	},

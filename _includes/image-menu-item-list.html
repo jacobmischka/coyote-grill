@@ -1,0 +1,5 @@
+<section id="{{ include.id }}" class="image-menu-item-list" data-menu-group="{{ include.id }}">
+{% for item in include.items %}
+	{% include image-menu-item.html item=item %}
+{% endfor %}
+</section>
