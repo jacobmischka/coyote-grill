@@ -1,5 +1,12 @@
 {% assign default_image = "http://lorempixel.com/400/400/food?q=" | append: include.item.name %}
 <div class="image-menu-item">
-	<img src="{{ include.item.image | default: default_image }}" alt="" />
-	<span class="name">{{ include.item.name }}</span>
+	<div>
+		<img src="{{ include.item.image | default: default_image }}" alt="" />
+		<span class="name">{{ include.item.name }}</span>
+	</div>
+	<div class="details">
+		<p class="desc">
+			{{ include.item.desc }}
+		</p>
+	</div>
 </div>

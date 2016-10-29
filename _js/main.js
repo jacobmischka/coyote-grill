@@ -1,3 +1,1 @@
-import './menu-item-lists.js';
-
-let i = 0;
+import './menu.js';

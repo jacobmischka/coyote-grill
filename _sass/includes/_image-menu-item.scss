@@ -9,8 +9,16 @@
 	padding: 1em;
 
 	.image-menu-item {
+		// display: flex;
 		margin: 1em;
 		width: 200px;
+		transition: width 0.5s;
+
+		// > div {
+		// 	flex-grow: 1;
+		// 	flex-shrink: 0;
+		// 	width: 50%;
+		// }
 
 		img {
 			width: 200px;
@@ -19,11 +27,10 @@
 			cursor: pointer;
 			border: 3px solid $logo-text-color;
 			border-radius: 100%;
-			transition: border-radius 1s;
+			transition: border-radius 0.5s;
 
 			&:hover {
 				box-shadow: 0 0 5px 0 $shadow-color;
-				border-radius: 2px;
 			}
 		}
 
@@ -33,6 +40,22 @@
 			font-size: 1.15em;
 			width: 100%;
 			text-align: center;
+		}
+
+		.details {
+			display: none;
+		}
+
+		&.active {
+			width: calc(400px + 2em);
+
+			img {
+				border-radius: 2px;
+			}
+
+			.details {
+				display: block;
+			}
 		}
 	}
 }

@@ -26,6 +26,7 @@ const menuGroups = {
 for(let menuItemList of Array.from(document.querySelectorAll('.image-menu-item-list'))){
 	while(menuItemList.firstChild)
 		menuItemList.removeChild(menuItemList.firstChild);
+	menuItemList.className = '';
 	const menuGroup = menuItemList.dataset.menuGroup;
 	ReactDOM.render(<ImageMenuItemList menuGroup={menuGroups[menuGroup]} />, menuItemList);
 }
