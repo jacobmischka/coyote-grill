@@ -6,9 +6,18 @@ header.site-header {
 	font-size: 1.75em;
 	min-height: calc(#{$header-logo-height} + 1em);
 
+	@media (max-width: $small-desktop) {
+		padding: 1em 1em 0;
+
+		.site-header-logo {
+			display: none;
+		}
+	}
+
 	.site-title {
 		font-family: $heading-font-family;
 		font-size: 1.5em;
+		font-weight: normal;
 		margin: 0 0 1em;
 
 		@media (min-width: $small-desktop) {

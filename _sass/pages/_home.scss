@@ -1,11 +1,5 @@
 main {
 
-	#embedded-menu {
-		width: 100%;
-		height: 700px;
-	}
-
-
 	.full-width-photo {
 		margin: 0;
 		padding: 0;
@@ -16,24 +10,34 @@ main {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-		}
-	}
 
-	#menu {
-		font-size: 0.8em;
+			&#coyote-grill-external {
+				object-position: center 25%;
+			}
+		}
 	}
 
 	.section {
 
+		> h2 {
+			text-align: center;
+			font-family: $heading-font-family;
+			color: rgba($logo-text-color, $primary-text);
+			font-weight: normal;
+			font-size: 2em;
+		}
+
 		> .row {
 			display: flex;
 			flex-direction: row;
+			flex-wrap: wrap;
 			justify-content: space-around;
 			align-items: stretch;
 
 			.column {
-				flex-shrink: 1;
-				width: 100%;
+				flex-grow: 1;
+				flex-shrink: 0;
+				width: 400px;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-around;
@@ -45,21 +49,6 @@ main {
 			}
 		}
 	}
-
-	#map {
-		box-sizing: border-box;
-		height: 500px;
-		width: 100%;
-
-		iframe {
-			width: 100%;
-			height: 100%;
-		}
-	}
-
-	address {
-		text-align: center;
-		font-style: italic;
-		line-height: 2em;
-	}
 }
+
+@import "../sections/index";

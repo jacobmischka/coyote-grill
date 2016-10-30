@@ -1,0 +1,33 @@
+#menu.inline-menu {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: stretch;
+
+	.page {
+		flex-grow: 1;
+		flex-shrink: 0;
+		width: 450px;
+		max-width: 100%;
+		page-break-after: always;
+		page-break-before: always;
+		page-break-inside: avoid;
+		box-sizing: border-box;
+		margin: 10px;
+		font-size: 0.8em;
+
+		.page-content {
+			box-sizing: border-box;
+			width: calc(100% - 60px);
+			height: calc(100% - 60px);
+			padding: 0 40px;
+			margin: 30px;
+			border: 5px $accent-color-light solid;
+
+			// .row {
+			// 	flex-wrap: wrap;
+			// }
+		}
+	}
+}

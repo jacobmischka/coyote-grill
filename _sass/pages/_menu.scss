@@ -1,36 +1,6 @@
 #menu {
 	font-family: 'Open Sans', sans-serif;
 
-	&.section {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-around;
-		align-items: stretch;
-
-		.page {
-			flex-grow: 1;
-			flex-shrink: 0;
-			width: 450px;
-			max-width: 100%;
-			page-break-after: always;
-			page-break-before: always;
-			page-break-inside: avoid;
-			box-sizing: border-box;
-			margin: 10px;
-			font-size: 0.75em;
-
-			.page-content {
-				box-sizing: border-box;
-				width: calc(100% - 60px);
-				height: calc(100% - 60px);
-				padding: 0 40px;
-				margin: 30px;
-				border: 5px $accent-color-light solid;
-			}
-		}
-	}
-
 	@media print {
 
 		.page {
@@ -206,7 +176,6 @@
 					.menu-item-group-label {
 						margin: 0;
 						padding: 0 0.25em 0 0;
-						float: right;
 						list-style: none;
 						font-size: 0.8em;
 
@@ -244,6 +213,7 @@
 						align-items: flex-end;
 						padding: 0;
 						overflow-x: hidden;
+						overflow-y: visible;
 						margin-left: 0;
 
 						& + .menu-item {
@@ -252,14 +222,13 @@
 
 						&::before {
 							color: rgba($text-color, $secondary-text);
-							float: left;
 							width: 0;
 							white-space: nowrap;
 							content: "..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................";
 						}
 
 						h3 {
-							padding-right: 0.5em;
+							padding-right: 0.35em;
 							margin: 0;
 							line-height: 1;
 							background: $menu-background-color;
@@ -276,20 +245,20 @@
 								background: $menu-background-color;
 								padding: 0 0.25em;
 								font-size: 0.9em;
-								margin: 0 2em 0 -0.5em;
+								margin: 0 2em 0 0;
 							}
 						}
 
 						> .price,
 						> .prices {
 							flex-shrink: 0;
-							float: right;
 							background: $menu-background-color;
 							padding-left: 1em;
 							padding-right: 0.25em;
 						}
 
 						> .prices {
+							box-sizing: border-box;
 							list-style: none;
 
 							.price {
