@@ -1,11 +1,9 @@
 <li class="menu-item">
 	<h3>{{ include.item.name }}</h3>
 	<div class="desc-container">
-{% unless include.item.block_desc %}
-		<p class="desc">
+		<p class="desc {% unless include.item.block_desc %} show-inline-desc {% endunless %}">
 			{{ include.item.desc }}
 		</p>
-{% endunless %}
 	</div>
 {% if include.item.price %}
 	<span class="price">{% include price.html price=include.item.price %}</span>
@@ -27,6 +25,6 @@
 	</ul>
 {% endif %}
 </li>
-{% if include.item.block_desc %}
-<li class="menu-item-block-desc">{{ include.item.desc }}</li>
-{% endif %}
+<li class="menu-item-block-desc {% if include.item.block_desc %} show-block-desc {% endif %}">
+	{{ include.item.desc }}
+</li>

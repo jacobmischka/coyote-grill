@@ -91,10 +91,11 @@
 				margin: 0;
 
 				.column {
+					width: 300px;
+					flex-grow: 1;
 					display: flex;
 					flex-direction: column;
 					justify-content: space-around;
-					width: 100%;
 					margin: 0 1em;
 
 					&:first-child {
@@ -241,11 +242,15 @@
 
 							.desc {
 								color: rgba($text-color, $secondary-text);
-								display: inline;
+								display: none;
 								background: $menu-background-color;
 								padding: 0 0.25em;
 								font-size: 0.9em;
 								margin: 0 2em 0 0;
+
+								&.show-inline-desc {
+									display: inline;
+								}
 							}
 						}
 
@@ -279,9 +284,14 @@
 						color: rgba($text-color, $secondary-text);
 						font-size: 0.9em;
 						margin: 0 1em;
+						display: none;
 
-						& + .menu-item {
-							margin-top: 0.25em;
+						&.show-block-desc {
+							display: block;
+
+							& + .menu-item {
+								margin-top: 0.25em;
+							}
 						}
 					}
 				}

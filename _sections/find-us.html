@@ -4,7 +4,13 @@ layout: section
 order: 3
 ---
 <figure class="full-width-photo">
-	<img id="coyote-grill-external" src="/assets/coyote-grill.jpg" alt="Coyote Grill" />
+	<picture>
+		<source srcset="/assets/coyote-grill-wide.jpg" media="(min-width: {{ site.media.medium_desktop }})" />
+		<img src="/assets/coyote-grill.jpg" alt="External view of Coyote Grill" />
+	</picture>
+	{% comment %}
+		TODO: Retake wide better
+	{% endcomment %}
 </figure>
 <div class="row">
 	<div class="column">

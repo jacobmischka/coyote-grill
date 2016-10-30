@@ -25,9 +25,40 @@
 			margin: 30px;
 			border: 5px $accent-color-light solid;
 
-			// .row {
-			// 	flex-wrap: wrap;
-			// }
+			@media (max-width: $small-desktop) {
+
+				.row {
+					flex-wrap: wrap;
+
+					.column {
+						margin: 0;
+					}
+				}
+			}
+
+			.menu-section {
+
+				.menu-item-group {
+
+					.menu-item {
+
+						.desc-container {
+
+							.desc.show-inline-desc {
+								display: none;
+							}
+						}
+					}
+
+					.menu-item-block-desc {
+						display: block;
+
+						& + .menu-item {
+							margin-top: 0.25em;
+						}
+					}
+				}
+			}
 		}
 	}
 }

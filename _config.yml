@@ -31,6 +31,13 @@ url: "http://www.coyotegrill.bar" # the base hostname & protocol for your site
 phone: "262 472 0510"
 address: "132 W. Center St, Whitewater WI"
 
+media:
+  small_mobile: 600px
+  small_desktop: 768px
+  medium_desktop: 992px
+  large_desktop: 1200px
+
+
 # Build settings
 markdown: kramdown
 permalink: pretty
@@ -44,6 +51,7 @@ exclude:
 
 collections:
   - sections
+  - specials
 
 defaults:
   - scope:
