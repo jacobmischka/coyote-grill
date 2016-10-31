@@ -1,60 +1,110 @@
-#menu.inline-menu {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: stretch;
+#food {
 
-	.page {
-		flex-grow: 1;
-		flex-shrink: 0;
-		width: 450px;
-		max-width: 100%;
-		page-break-after: always;
-		page-break-before: always;
-		page-break-inside: avoid;
-		box-sizing: border-box;
-		margin: 10px;
-		font-size: 0.8em;
+	#image-menu-item-lists {
+		padding: 0 2em;
 
-		.page-content {
-			box-sizing: border-box;
-			width: calc(100% - 60px);
-			height: calc(100% - 60px);
-			padding: 0 40px;
-			margin: 30px;
-			border: 5px $accent-color-light solid;
+		.tabs {
+			font-size: 1.5em;
 
-			@media (max-width: $small-desktop) {
+			ul {
+				list-style: none;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				padding: 0;
 
-				.row {
-					flex-wrap: wrap;
+				li {
+					margin: 0 1em 0.5em;
 
-					.column {
-						margin: 0;
+					a {
+						font-family: $heading-font-family;
+						color: rgba($logo-text-color, $primary-text);
+						text-decoration: none;
+
+						&:hover,
+						&:active {
+							text-decoration: underline;
+						}
+
+						&.active {
+							color: rgba($text-color, $primary-text);
+						}
 					}
 				}
 			}
+		}
 
-			.menu-section {
+		.content {
 
-				.menu-item-group {
+			> * {
+				display: none;
 
-					.menu-item {
+				&.active {
+					display: block;
+				}
+			}
+		}
+	}
 
-						.desc-container {
+	#menu.inline-menu {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: stretch;
 
-							.desc.show-inline-desc {
-								display: none;
-							}
+		.page {
+			flex-grow: 1;
+			flex-shrink: 0;
+			width: 557px;
+			max-width: 100%;
+			page-break-after: always;
+			page-break-before: always;
+			page-break-inside: avoid;
+			box-sizing: border-box;
+			margin: 10px;
+			font-size: 0.8em;
+
+			.page-content {
+				box-sizing: border-box;
+				width: calc(100% - 60px);
+				height: calc(100% - 60px);
+				padding: 0 40px;
+				margin: 30px;
+				border: 5px $accent-color-light solid;
+
+				@media (max-width: $small-desktop) {
+
+					.row {
+						flex-wrap: wrap;
+
+						.column {
+							margin: 0;
 						}
 					}
+				}
 
-					.menu-item-block-desc {
-						display: block;
+				.menu-section {
 
-						& + .menu-item {
-							margin-top: 0.25em;
+					.menu-item-group {
+
+						.menu-item {
+
+							.desc-container {
+
+								.desc.show-inline-desc {
+									display: none;
+								}
+							}
+						}
+
+						.menu-item-block-desc {
+							display: block;
+
+							& + .menu-item {
+								margin-top: 0.25em;
+							}
 						}
 					}
 				}

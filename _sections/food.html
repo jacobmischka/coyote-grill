@@ -1,0 +1,27 @@
+---
+title: Food
+layout: section
+order: 1
+---
+<section id="image-menu-item-lists">
+	<nav class="tabs">
+		<ul>
+			<li><a class="tab-link" href="#burgers">Burgers</a></li>
+			<li><a class="tab-link" href="#chicken-sandwiches">Chicken Sandwiches</a></li>
+			<li><a class="tab-link" href="#other-sandwiches">Other Sandwiches</a></li>
+			<li><a class="tab-link" href="#fryer">Fryer</a></li>
+			<li><a class="tab-link" href="#soup">Soup</a></li>
+		</ul>
+	</nav>
+	<section class="content">
+		{% include image-menu-item-list.html name="Burgers" id="burgers" items=site.data.burgers %}
+		{% include image-menu-item-list.html name="Chicken Sandwiches" id="chicken-sandwiches" items=site.data.chicken_sandwiches %}
+		{% include image-menu-item-list.html name="Other Sandwiches" id="other-sandwiches" items=site.data.other_sandwiches %}
+		{% include image-menu-item-list.html name="From the Fryer" id="fryer" items=site.data.fryer %}
+		{% include image-menu-item-list.html name="Soup" id="soup" items=site.data.soup %}
+	</section>
+</section>
+
+<section id="menu" class="inline-menu">
+	{% include menu/menu.html %}
+</section>

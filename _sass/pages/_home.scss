@@ -6,14 +6,12 @@ main {
 		width: 100%;
 		height: 500px;
 
+		picture,
+		source,
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-
-			&#coyote-grill-external {
-				object-position: center 25%;
-			}
 		}
 	}
 
