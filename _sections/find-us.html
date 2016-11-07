@@ -5,8 +5,8 @@ order: 3
 ---
 <figure class="full-width-photo">
 	<picture id="coyote-grill-external" class="day-picture">
-		<source srcset="/assets/coyote-grill-wide.jpg" media="(min-width: {{ site.media.medium_desktop }})" />
-		<img src="/assets/coyote-grill.jpg" alt="External view of Coyote Grill during the daytime" />
+		<source srcset="/images/external/front-wide.jpg" media="(min-width: {{ site.media.medium_desktop }})" />
+		<img src="/images/external/front.jpg" alt="External view of Coyote Grill during the daytime" />
 	</picture>
 	<fieldset id="coyote-grill-external-switch" class="switch-toggle switch-candy">
 		<input type="radio" id="external-day" name="coyote-grill-external-switch" value="day" checked />
@@ -16,15 +16,6 @@ order: 3
 		<label for="external-night">Night</label>
 		<a></a>
 	</fieldset>
-{% comment %}
-	<picture class="night-picture">
-		<source srcset="/assets/coyote-grill-wide-night.jpg" media="(min-width: {{ site.media.medium_desktop }})" />
-		<img src="/assets/coyote-grill-night.jpg" alt="External view of Coyote Grill at night" />
-	</picture>
-{% endcomment %}
-	{% comment %}
-		TODO: Retake wide better
-	{% endcomment %}
 </figure>
 <div class="row">
 	<div class="column">
@@ -35,7 +26,8 @@ order: 3
 			</p>
 			<address>
 				{{ site.address }}<br />
-				{{ site.phone }}
+				{{ site.phone }}<br />
+				<a href="mailto:{{ site.email }}">{{ site.email }}</a>
 			</address>
 		</div>
 	</div>

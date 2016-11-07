@@ -3,3 +3,25 @@ title: Specials
 layout: section
 order: 2
 ---
+<h2>Specials</h2>
+{% assign specials = site.specials | sort: "order" %}
+<div class="specials-list">
+
+{% for special in specials %}
+	{{ special }}
+{% endfor %}
+
+</div>
+
+<h2>Nightly specials</h2>
+<p class="lead">
+	Join us every night 9pm to 1am
+</p>
+{% assign nightly_specials = site.nightly_specials | sort: "order" %}
+<div class="nightly-specials-list">
+
+{% for special in nightly_specials %}
+	{{ special }}
+{% endfor %}
+
+</div>

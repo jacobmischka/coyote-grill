@@ -1,3 +1,5 @@
+import Velocity from 'velocity-animate';
+
 const imageMenuItemListsSection = document.querySelector('#image-menu-item-lists');
 const tabs = imageMenuItemListsSection.querySelector('.tabs');
 const content = imageMenuItemListsSection.querySelector('.content');
@@ -20,3 +22,20 @@ for(let tabLink of Array.from(tabs.querySelectorAll('.tab-link'))){
 		}
 	});
 }
+
+const showMenuButton = document.querySelector('#show-menu');
+const menu = document.querySelector('#menu');
+showMenuButton.addEventListener('click', event => {
+	event.preventDefault();
+
+	if(menu.classList.contains('collapsed')){
+		Velocity(menu, 'slideDown', {display: 'flex', complete: () => {
+			menu.classList.remove('collapsed');
+		}});
+	}
+	else {
+		Velocity(menu, 'slideUp', {display: 'none', complete: () => {
+			menu.classList.add('collapsed');
+		}});
+	}
+});

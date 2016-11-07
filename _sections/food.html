@@ -22,6 +22,18 @@ order: 1
 	</section>
 </section>
 
-<section id="menu" class="inline-menu">
-	{% include menu/menu.html %}
-</section>
+<div id="inline-menu-container">
+	<section id="menu" class="inline-menu collapsed">
+		{% include menu/menu.html %}
+	</section>
+	<div class="standalone-link-container">
+		<a id="show-menu" class="button outline accent" href="#">
+			Show full menu
+		</a>
+
+		<a class="button outline" href="/menu.pdf">
+			PDF
+			{% include images/pdf.svg %}
+		</a>
+	</div>
+</div>

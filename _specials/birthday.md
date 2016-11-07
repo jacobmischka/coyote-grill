@@ -1,6 +1,7 @@
 ---
 id: birthday
 title: Drink for free on your birthday!
+layout: special
 ---
 Get unlimited free drinks for as many minutes as your age.
 

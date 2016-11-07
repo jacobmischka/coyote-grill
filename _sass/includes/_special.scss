@@ -1,0 +1,58 @@
+.special,
+.nightly-special {
+	$border-color: $grey-color-light;
+	$header-color: #fff;
+	$background-color: #fafafa;
+	$label-color: rgba($grey-color, 0.2);
+
+	box-sizing: border-box;
+	border: 1px solid $border-color;
+	width: 300px;
+	background-color: $background-color;
+	border-radius: 3px;
+
+	header {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background-color: $header-color;
+		padding: 1em;
+		border-bottom: 1px solid $border-color;
+		text-align: center;
+
+		.title {
+			font-family: $alt-font-family;
+			font-size: 1.1em;
+		}
+
+		.label {
+			background-color: $label-color;
+			margin: 0 0.15em;
+			padding: 0.25em 0.5em;
+			border-radius: 10px;
+		}
+	}
+
+	.price {
+		margin: 0.15em;
+		font-size: 1.5em;
+		text-align: center;
+		font-weight: bold;
+		border-bottom: 1px solid rgba(#000, $divider);
+	}
+
+	.special-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 0.5em 1em;
+	}
+}
+
+.special {
+
+	header {
+		height: 20%;
+	}
+}

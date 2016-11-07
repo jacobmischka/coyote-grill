@@ -1,0 +1,41 @@
+#specials {
+
+	.specials-list,
+	.nightly-specials-list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: stretch;
+
+		.special,
+		.nightly-special {
+			flex-grow: 0;
+			flex-shrink: 0;
+		}
+
+		.special {
+			margin: 1em;
+		}
+
+		.nightly-special {
+			margin: 0.5em;
+		}
+	}
+
+	.specials-list {
+
+		@media (min-width: $large-desktop) {
+
+			&::before,
+			&::after {
+				align-self: center;
+				flex-grow: 1;
+				content: '';
+				height: 0;
+				border: 1px solid rgba(#000, $divider);
+				margin: 0 1em;
+			}
+		}
+	}
+}

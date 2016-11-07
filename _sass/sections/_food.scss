@@ -47,63 +47,71 @@
 		}
 	}
 
-	#menu.inline-menu {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-around;
-		align-items: stretch;
+	#inline-menu-container {
+		// display: none;
 
-		.page {
-			flex-grow: 1;
-			flex-shrink: 0;
-			width: 557px;
-			max-width: 100%;
-			page-break-after: always;
-			page-break-before: always;
-			page-break-inside: avoid;
-			box-sizing: border-box;
-			margin: 10px;
-			font-size: 0.8em;
+		#menu.inline-menu {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			align-items: stretch;
 
-			.page-content {
+			&.collapsed {
+				display: none;
+			}
+
+			.page {
+				flex-grow: 1;
+				flex-shrink: 0;
+				width: 557px;
+				max-width: 100%;
+				page-break-after: always;
+				page-break-before: always;
+				page-break-inside: avoid;
 				box-sizing: border-box;
-				width: calc(100% - 60px);
-				height: calc(100% - 60px);
-				padding: 0 40px;
-				margin: 30px;
-				border: 5px $accent-color-light solid;
+				margin: 10px;
+				font-size: 0.8em;
 
-				@media (max-width: $small-desktop) {
+				.page-content {
+					box-sizing: border-box;
+					width: calc(100% - 60px);
+					height: calc(100% - 60px);
+					padding: 0 40px;
+					margin: 30px;
+					border: 5px $accent-color-light solid;
 
-					.row {
-						flex-wrap: wrap;
+					@media (max-width: $small-desktop) {
 
-						.column {
-							margin: 0;
-						}
-					}
-				}
+						.row {
+							flex-wrap: wrap;
 
-				.menu-section {
-
-					.menu-item-group {
-
-						.menu-item {
-
-							.desc-container {
-
-								.desc.show-inline-desc {
-									display: none;
-								}
+							.column {
+								margin: 0;
 							}
 						}
+					}
 
-						.menu-item-block-desc {
-							display: block;
+					.menu-section {
 
-							& + .menu-item {
-								margin-top: 0.25em;
+						.menu-item-group {
+
+							.menu-item {
+
+								.desc-container {
+
+									.desc.show-inline-desc {
+										display: none;
+									}
+								}
+							}
+
+							.menu-item-block-desc {
+								display: block;
+
+								& + .menu-item {
+									margin-top: 0.25em;
+								}
 							}
 						}
 					}

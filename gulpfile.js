@@ -8,7 +8,8 @@ const nodeModules = './node_modules/';
 gulp.task('css', () => {
 	let imports = [
 		'normalize.css/normalize.css',
-		'css-toggle-switch/dist/toggle-switch.css'
+		'css-toggle-switch/dist/toggle-switch.css',
+		'flickity/css/flickity.css'
 	];
 
 	imports = imports.map(file => nodeModules + file);

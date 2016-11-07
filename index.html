@@ -1,6 +1,22 @@
 ---
 layout: default
+carousel_images:
+  - /images/external/front.jpg
+  - /images/food/dank-fries.jpg
+  - /images/bar/best-burger.jpg
+  - /images/external/patio.jpg
+  - /images/food/basket-ultimate.jpg
+  - /images/bar/rail.jpg
+  - /images/bar/beer-bottles.jpg
 ---
+{% comment %}
+<section class="carousel" data-flickity>
+{% for image in page.carousel_images %}
+	<div class="carousel-image" style="background-image: url({{ image }});"></div>
+{% endfor %}
+</section>
+{% endcomment %}
+
 {% assign sections = site.sections | sort: "order" %}
 {% for section in sections %}
 	{{ section }}

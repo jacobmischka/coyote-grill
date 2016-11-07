@@ -1,0 +1,20 @@
+<div class="nightly-special">
+	<header>
+		<span class="title">
+			{{ page.title }}
+{% if page.label %}
+			<span class="label">{{ page.label }}</span>
+{% endif %}
+		</span>
+	</header>
+	<div class="special-content">
+		<div class="price">
+{% if page.price %}
+			${% include price.html price=page.price %}
+{% else %}
+			???
+{% endif %}
+		</div>
+		{{ content }}
+	</div>
+</div>

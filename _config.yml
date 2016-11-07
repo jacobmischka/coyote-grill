@@ -7,7 +7,6 @@
 
 # Site settings
 title: Little Debbie's Coyote Grill
-email: debbie@coyotegrill.bar
 description: > # this means to ignore newlines until "baseurl:"
   Popular bar located in downtown Whitewater. Home of the best burger in Walworth county!
 author: Jacob Mischka <jacob@coyotegrill.bar> (http://www.mischka.me)
@@ -30,6 +29,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.coyotegrill.bar" # the base hostname & protocol for your site
 phone: "262 472 0510"
 address: "132 W. Center St, Whitewater WI"
+email: contact@coyotegrill.bar
 
 media:
   small_mobile: 600px
@@ -50,8 +50,9 @@ exclude:
   - webpack.config.js
 
 collections:
-  - sections
   - specials
+  - nightly_specials
+  - sections
 
 defaults:
   - scope:
@@ -64,3 +65,15 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+
+  - scope:
+      path: ""
+      type: specials
+    values:
+      layout: special
+
+  - scope:
+      path: ""
+      type: nightly_specials
+    values:
+      layout: nightly-special

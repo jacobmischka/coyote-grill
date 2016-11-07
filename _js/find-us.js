@@ -1,10 +1,10 @@
 const picture = document.querySelector('#coyote-grill-external');
 const pictureSwitch = document.querySelector('#coyote-grill-external-switch');
 
-const dayWide = '/assets/coyote-grill-wide.jpg';
-const day = '/assets/coyote-grill.jpg';
-const nightWide = '/assets/coyote-grill-wide-night.jpg';
-const night = '/assets/coyote-grill-night.jpg';
+const dayWide = '/images/external/front-wide.jpg';
+const day = '/images/external/front.jpg';
+const nightWide = '/images/external/front-wide-night.jpg';
+const night = '/images/external/front-night.jpg';
 
 let now = new Date();
 if(now.getHours() < 6 || now.getHours() > 17){

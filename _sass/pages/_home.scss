@@ -1,5 +1,16 @@
 main {
 
+	.carousel {
+		width: 100%;
+
+		.carousel-image {
+			width: 80%;
+			height: 500px;
+			background-size: cover;
+			margin-right: 1em;
+		}
+	}
+
 	.full-width-photo {
 		margin: 0;
 		padding: 0;
@@ -16,6 +27,7 @@ main {
 	}
 
 	.section {
+		margin: 0 0 2em;
 
 		> h2 {
 			text-align: center;
