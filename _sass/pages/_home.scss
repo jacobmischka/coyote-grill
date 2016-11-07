@@ -15,6 +15,10 @@ main {
 			@media (min-width: $small-desktop) {
 				width: 80%;
 			}
+
+			@media (min-width: $large-desktop) {
+				height: 600px;
+			}
 		}
 	}
 
