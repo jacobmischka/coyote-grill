@@ -9,6 +9,8 @@
   desc: Fries sprinkled with cajun and ranch seasoning, drizzled with ranch dressing
   price: 3.00
   block_desc: true
+  photos:
+    - /images/food/dank-fries.jpg
 
 - name: Breaded portobello mushrooms
   price: 4.00

@@ -1,13 +1,20 @@
+@import "../imports/flickity";
+
 main {
 
 	.carousel {
 		width: 100%;
 
 		.carousel-image {
-			width: 80%;
+			width: 100%;
 			height: 500px;
 			background-size: cover;
+			background-position: center;
 			margin-right: 1em;
+
+			@media (min-width: $small-desktop) {
+				width: 80%;
+			}
 		}
 	}
 
@@ -48,6 +55,7 @@ main {
 				flex-grow: 1;
 				flex-shrink: 0;
 				width: 400px;
+				max-width: 100%;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-around;

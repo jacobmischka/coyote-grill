@@ -6,7 +6,7 @@ order: 1
 <section id="image-menu-item-lists">
 	<nav class="tabs">
 		<ul>
-			<li><a class="tab-link" href="#burgers">Burgers</a></li>
+			<li><a class="tab-link active" href="#burgers">Burgers</a></li>
 			<li><a class="tab-link" href="#chicken-sandwiches">Chicken Sandwiches</a></li>
 			<li><a class="tab-link" href="#other-sandwiches">Other Sandwiches</a></li>
 			<li><a class="tab-link" href="#fryer">Fryer</a></li>
@@ -14,7 +14,7 @@ order: 1
 		</ul>
 	</nav>
 	<section class="content">
-		{% include image-menu-item-list.html name="Burgers" id="burgers" items=site.data.burgers %}
+		{% include image-menu-item-list.html active=true name="Burgers" id="burgers" items=site.data.burgers %}
 		{% include image-menu-item-list.html name="Chicken Sandwiches" id="chicken-sandwiches" items=site.data.chicken_sandwiches %}
 		{% include image-menu-item-list.html name="Other Sandwiches" id="other-sandwiches" items=site.data.other_sandwiches %}
 		{% include image-menu-item-list.html name="From the Fryer" id="fryer" items=site.data.fryer %}
