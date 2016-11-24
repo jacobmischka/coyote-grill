@@ -8,7 +8,7 @@
 		font-size: 2em;
 	}
 
-	.image-menu-item-list {
+	.menu-item-list {
 		$label-background-color: white;
 
 		display: flex;
@@ -18,7 +18,7 @@
 		align-items: flex-start;
 		padding: 1em;
 
-		.image-menu-item {
+		.menu-list-item {
 			margin: 1em;
 			width: 200px;
 			transition: width 0.5s;
@@ -38,14 +38,18 @@
 
 			.name {
 				display: block;
-				font-family: $alt-font-family;
+				font-family: $heading-font-family;
+				color: rgba($accent-color, $primary-text);
 				font-size: 1.15em;
 				width: 100%;
 				text-align: center;
 			}
 
 			.details {
-				display: none;
+
+				.desc {
+					text-align: center;
+				}
 			}
 
 			&.active {

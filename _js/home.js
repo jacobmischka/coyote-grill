@@ -1,3 +1,7 @@
-import 'flickity';
-// Carousel initialized using data property because it doesn't work
-// with webpack for some reason right now.
+import Flickity from 'flickity';
+
+let flickity = new Flickity('.carousel', {
+	cellSelector: '.carousel-image',
+	wrapAround: true,
+	autoPlay: true
+});

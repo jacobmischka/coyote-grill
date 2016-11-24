@@ -23,6 +23,10 @@ body {
 		background-color: $accent-color;
 	}
 
+	&.alt-accent {
+		background-color: $logo-text-color;
+	}
+
 
 	&.outline {
 		background-color: transparent;
@@ -41,6 +45,16 @@ body {
 
 		&:hover {
 			background-color: $accent-color;
+			color: #fff;
+		}
+	}
+
+	&.alt-accent.outline {
+		border: 1px solid $logo-text-color;
+		color: $logo-text-color;
+
+		&:hover {
+			background-color: $logo-text-color;
 			color: #fff;
 		}
 	}

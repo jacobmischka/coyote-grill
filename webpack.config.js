@@ -1,4 +1,6 @@
 /* eslint-env node */
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 module.exports = {
 	entry: './_js/main.js',
 	output: {
@@ -8,7 +10,7 @@ module.exports = {
 	},
 	target: 'web',
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
@@ -23,5 +25,12 @@ module.exports = {
 			}
 		]
 	},
+	plugins: [
+		new BundleAnalyzerPlugin({
+			analyzerMode: 'disabled',
+			generateStatsFile: true,
+			statsFilename: 'stats.json'
+		})
+	],
 	devtool: 'source-map'
 };

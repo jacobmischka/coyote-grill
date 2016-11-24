@@ -1,5 +1,3 @@
-import Velocity from 'velocity-animate';
-
 const imageMenuItemListsSection = document.querySelector('#image-menu-item-lists');
 const tabs = imageMenuItemListsSection.querySelector('.tabs');
 const content = imageMenuItemListsSection.querySelector('.content');
@@ -28,14 +26,10 @@ const menu = document.querySelector('#menu');
 showMenuButton.addEventListener('click', event => {
 	event.preventDefault();
 
-	if(menu.classList.contains('collapsed')){
-		Velocity(menu, 'slideDown', {display: 'flex', complete: () => {
-			menu.classList.remove('collapsed');
-		}});
-	}
-	else {
-		Velocity(menu, 'slideUp', {display: 'none', complete: () => {
-			menu.classList.add('collapsed');
-		}});
-	}
+	menu.classList.toggle('collapsed');
+
+	if(menu.classList.contains('collapsed'))
+		showMenuButton.textContent = 'Show full menu';
+	else
+		showMenuButton.textContent = 'Hide full menu';
 });

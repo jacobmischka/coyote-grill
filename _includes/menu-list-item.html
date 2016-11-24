@@ -1,0 +1,13 @@
+<div class="menu-list-item">
+	<div>
+{% if include.item.photo or include.item.photos %}
+		<img src="{{ include.item.photo | default: include.item.photos[0] }}" alt="" />
+{% endif %}
+		<span class="name">{{ include.item.name }}</span>
+	</div>
+	<div class="details">
+		<p class="desc">
+			{{ include.item.desc }}
+		</p>
+	</div>
+</div>

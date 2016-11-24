@@ -1,0 +1,22 @@
+<div id="{{ include.id }}" class="menu-item-group {% if include.active %} active {% endif %}" data-menu-group="{{ include.id }}">
+	<h2>{{ include.name }}</h2>
+	<section class="menu-item-list">
+
+{% for item in include.items %}
+	{% if item.photo or item.photos %}
+		{% include menu-list-item.html item=item %}
+	{% endif %}
+{% endfor %}
+
+	</section>
+
+	<section class="menu-item-list">
+
+{% for item in include.items %}
+	{% unless item.photo or item.photos %}
+		{% include menu-list-item.html item=item %}
+	{% endunless %}
+{% endfor %}
+
+	</section>
+</div>
