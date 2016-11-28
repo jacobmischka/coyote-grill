@@ -175,12 +175,15 @@
 					justify-content: space-between;
 
 					.menu-item-group-label {
+						display: flex;
+						justify-content: space-between;
 						margin: 0;
 						padding: 0 0.25em 0 0;
 						list-style: none;
 						font-size: 0.8em;
 
 						li {
+							flex-shrink: 1;
 							margin: 0;
 							display: inline-block;
 

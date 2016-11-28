@@ -62,13 +62,14 @@ main {
 
 				.column {
 					justify-content: center;
-					padding: 2em;
+					padding: 0 2em;
 					text-align: center;
 					max-height: 100%;
 					overflow: auto;
 				}
 
 				.hero-text {
+					text-align: left;
 					display: none;
 
 					@media (min-width: $small-desktop) {

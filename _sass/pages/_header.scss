@@ -2,16 +2,21 @@ header.site-header {
 	box-sizing: border-box;
 	background-color: $accent-color-light;
 	color: rgba($light-text-color, $primary-light-text);
-	padding: 2em calc(#{$header-logo-width} + 2.5em) 0 2em;
-	font-size: 1.75em;
-	min-height: calc(#{$header-logo-height} + 1em);
+	padding: 1em 1em 0;
+	font-size: 1.25em;
 
-	@media (max-width: $small-desktop) {
-		padding: 1em 1em 0;
-		font-size: 1.25em;
+	.site-header-logo {
+		display: none;
+	}
+
+
+	@media (min-width: $small-desktop) {
+		padding: 2em calc(#{$header-logo-width} + 2.5em) 0 2em;
+		font-size: 1.75em;
+		min-height: calc(#{$header-logo-height} + 1em);
 
 		.site-header-logo {
-			display: none;
+			display: block;
 		}
 	}
 
@@ -40,7 +45,11 @@ header.site-header {
 
 			li {
 				font-size: 1em;
-				margin: 0.5em 1em;
+				margin: 0.5em;
+
+				@media (min-width: $small-desktop) {
+					margin: 0.5 1em;
+				}
 
 				a {
 					color: rgba($light-text-color, $primary-light-text);
