@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 
 gem 'jekyll'
-gem 'octopress-autoprefixer'
+gem 'jekyll-assets'
+gem 'jekyll-autoprefixer', :git => 'https://github.com/jacobmischka/jekyll-autoprefixer.git'
