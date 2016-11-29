@@ -1,3 +1,5 @@
+import ScrollReveal from 'scrollreveal';
+
 const imageMenuItemListsSection = document.querySelector('#image-menu-item-lists');
 const tabs = imageMenuItemListsSection.querySelector('.tabs');
 const content = imageMenuItemListsSection.querySelector('.content');
@@ -33,3 +35,14 @@ showMenuButton.addEventListener('click', event => {
 	else
 		showMenuButton.textContent = 'Hide full menu';
 });
+
+ScrollReveal().reveal('.food-special-details', {
+	duration: 500,
+	opacity: 0,
+	distance: '500px',
+	easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+	viewFactor: 1.3,
+	afterReveal(special){
+		special.classList.add('revealed');
+	}
+}, 50);

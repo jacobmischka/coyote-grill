@@ -1,5 +1,83 @@
 #food {
 
+	#food-specials {
+		display: flex;
+		justify-content: space-around;
+		margin: 4em 0;
+
+		.food-special {
+			width: 400px;
+			flex-shrink: 1;
+			text-align: center;
+
+			.food-special-details {
+				margin: 0 0 1em;
+				padding: 1em;
+				border: 1px solid rgba(0, 0, 0, $divider);
+				background: #fff;
+				transition: box-shadow 1s 0.5s;
+				pointer-events: none;
+
+				&.revealed {
+					box-shadow: 0 10px 20px 0 rgba(0, 0, 0, $divider);
+					pointer-events: auto;
+				}
+
+				.name {
+					display: block;
+					font-size: 1.6em;
+					font-family: $heading-font-family;
+					color: rgba($accent-color, $primary-text);
+				}
+
+				.price {
+					display: block;
+					font-size: 1.5em;
+					margin: 0.5em 0;
+					font-weight: bold;
+				}
+
+				.desc {
+
+				}
+			}
+
+			.food-special-details.revealed + .type {
+
+				&::before {
+					left: 0;
+					right: 0;
+				}
+			}
+
+			.type {
+				position: relative;
+				overflow: hidden;
+				display: block;
+				font-family: $alt-font-family;
+				font-weight: bold;
+				text-transform: capitalize;
+				font-size: 1.75em;
+				color: rgba($logo-text-color, $primary-text);
+				margin: 1em 0 0;
+				padding: 0.5em 0;
+
+				&::before {
+					content: "";
+					position: absolute;
+					z-index: -1;
+					left: 50%;
+					right: 50%;
+					top: 0;
+					background: rgba($logo-text-color, $active-icon);
+					height: 2px;
+					transition: 0.5s 0.5s ease-out;
+					transition-property: left, right;
+				}
+			}
+		}
+	}
+
 	#image-menu-item-lists {
 		padding: 0 2em;
 
@@ -17,20 +95,25 @@
 				li {
 					margin: 0 1em 0.5em;
 					padding: 0.5em;
-					border-bottom: 1px solid rgba($logo-text-color, $divider);
+					border-bottom: 1px solid rgba($primary-color, $divider);
 
 					a {
 						font-family: $heading-font-family;
-						color: rgba($logo-text-color, $primary-text);
+						color: rgba($primary-color, $secondary-text);
 						text-decoration: none;
 
 						&:hover,
 						&:active {
-							text-decoration: underline;
+							color: rgba($primary-color, $primary-text);
 						}
 
 						&.active {
 							color: rgba($text-color, $primary-text);
+
+							&:hover,
+							&:active {
+								color: rgba($text-color, $secondary-text);
+							}
 						}
 					}
 				}

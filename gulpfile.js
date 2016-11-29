@@ -5,7 +5,7 @@ const rename = require('gulp-rename');
 
 const nodeModules = './node_modules/';
 
-gulp.task('css', () => {
+gulp.task('import:css', () => {
 	let imports = [
 		'normalize.css/normalize.css',
 		'css-toggle-switch/dist/toggle-switch.css',

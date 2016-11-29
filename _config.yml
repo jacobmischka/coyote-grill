@@ -77,3 +77,6 @@ defaults:
       type: nightly_specials
     values:
       layout: nightly-special
+
+gems:
+  - octopress-autoprefixer

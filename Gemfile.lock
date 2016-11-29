@@ -1,7 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    autoprefixer-rails (6.5.3)
+      execjs
     colorator (1.1.0)
+    execjs (2.7.0)
     ffi (1.9.14)
     forwardable-extended (2.6.0)
     jekyll (3.2.1)
@@ -24,6 +27,9 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
     mercenary (0.3.6)
+    octopress-autoprefixer (2.0.0)
+      autoprefixer-rails
+      jekyll (~> 3.0)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
     rb-fsevent (0.9.8)
@@ -38,6 +44,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  octopress-autoprefixer
 
 BUNDLED WITH
    1.11.2

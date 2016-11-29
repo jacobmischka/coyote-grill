@@ -3,8 +3,19 @@ title: Food
 layout: section
 order: 1
 ---
-<h2>Food Specials</h2>
-{% include menu-item-list.html active=true name="Food Specials" id="food-specials" items=site.data.food_specials %}
+<section id="food-specials">
+{% for food_special in site.data.food_specials %}
+	<div class="food-special">
+		<div class="food-special-details">
+			<span class="name">{{ food_special.name }}</span>
+			<span class="price">${% include price.html price=food_special.price %}</span>
+			<p class="desc">{{ food_special.desc }}</p>
+		</div>
+		<span class="type">{{ food_special.type }}</span>
+	</div>
+{% endfor %}
+</section>
+
 <section id="image-menu-item-lists">
 	<nav class="tabs">
 		<ul>
