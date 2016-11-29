@@ -8,6 +8,7 @@
 		.food-special {
 			width: 400px;
 			flex-shrink: 1;
+			margin: 2em;
 			text-align: center;
 
 			.food-special-details {
@@ -91,6 +92,7 @@
 				flex-wrap: wrap;
 				justify-content: space-around;
 				padding: 0;
+				text-align: center;
 
 				li {
 					margin: 0 1em 0.5em;
