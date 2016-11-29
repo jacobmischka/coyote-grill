@@ -82,3 +82,6 @@ defaults:
 
 gems:
   - jekyll-autoprefixer
+
+autoprefixer:
+  only_production: true
