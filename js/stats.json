@@ -3,7 +3,7 @@
   "warnings": [],
   "version": "2.1.0-beta.27",
   "hash": "17fe80d9c1c0672854c0",
-  "time": 1575,
+  "time": 1723,
   "publicPath": "/js/",
   "assetsByChunkName": {
     "main": [
@@ -380,9 +380,9 @@
         0
       ],
       "assets": [],
-      "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/prev-next-button.js",
-      "issuerId": 19,
-      "issuerName": "./~/flickity/js/prev-next-button.js",
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/page-dots.js",
+      "issuerId": 17,
+      "issuerName": "./~/flickity/js/page-dots.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
