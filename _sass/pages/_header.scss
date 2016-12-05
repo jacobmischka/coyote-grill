@@ -1,22 +1,26 @@
 header.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
 	box-sizing: border-box;
-	background-color: $accent-color-light;
+	width: 100%;
+	min-height: 75px;
+	z-index: 10;
 	color: rgba($light-text-color, $primary-light-text);
-	padding: 1em 1em 0;
+	padding: 0 1em;
 	font-size: 1.25em;
+	transition-duration: 0.3s;
+	transition-property: padding, font-size;
 
-	.site-header-logo {
-		display: none;
+	&.collapsed {
+		background-color: $accent-color-light;
 	}
 
+	&.expanded {
 
-	@media (min-width: $small-desktop) {
-		padding: 2em calc(#{$header-logo-width} + 2.5em) 0 2em;
-		font-size: 1.75em;
-		min-height: calc(#{$header-logo-height} + 1em);
-
-		.site-header-logo {
-			display: block;
+		@media (min-width: $small-desktop) {
+			padding: 0 2em;
+			font-size: 1.75em;
 		}
 	}
 
@@ -24,7 +28,7 @@ header.site-header {
 		font-family: $heading-font-family;
 		font-size: 1.5em;
 		font-weight: normal;
-		margin: 0 0 1em;
+		margin: 0;
 
 		@media (min-width: $small-desktop) {
 			font-size: 2em;
@@ -65,19 +69,6 @@ header.site-header {
 					}
 				}
 			}
-		}
-	}
-
-	.site-header-logo {
-		position: absolute;
-		top: 0.5em;
-		right: 2em;
-		width: $header-logo-width;
-		height: $header-logo-height;
-
-		svg {
-			width: 100%;
-			height: 100%;
 		}
 	}
 }

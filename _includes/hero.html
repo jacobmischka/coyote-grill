@@ -1,0 +1,23 @@
+<section class="carousel">
+	<div class="carousel-overlay">
+		{% include header.html %}
+		<div class="row">
+			<div class="column hero-text">
+				<p>
+					If you're looking for a great meal, a place to hang out
+					and watch the game, or somewhere to go out with your friends
+					Lil' Debbie's Coyote Grill is just what you're looking for!
+				</p>
+			</div>
+			<div class="column hero-button">
+				<a href="#find-us" class="button outline accent">Pay us a visit →</a>
+			</div>
+		</div>
+	</div>
+	<div class="site-logo">
+		{% include images/logo-no-words.svg %}
+	</div>
+{% for image in site.carousel_images %}
+	<div class="carousel-image" style="background-image: url({{ image }});"></div>
+{% endfor %}
+</section>

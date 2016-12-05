@@ -37,6 +37,16 @@ media:
   medium_desktop: 992px
   large_desktop: 1200px
 
+carousel_images:
+  - /images/external/front.jpg
+  - /images/bar/coyotes.jpg
+  - /images/food/dank-fries.jpg
+  - /images/bar/best-burger.jpg
+  - /images/external/patio.jpg
+  - /images/food/basket-ultimate.jpg
+  - /images/bar/rail.jpg
+  - /images/bar/beer-bottles.jpg
+
 
 # Build settings
 markdown: kramdown

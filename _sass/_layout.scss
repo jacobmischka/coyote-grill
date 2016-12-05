@@ -79,4 +79,25 @@ body {
 	fill: currentColor;
 }
 
+%row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: stretch;
+
+	.column {
+		box-sizing: border-box;
+		flex-grow: 1;
+		flex-shrink: 0;
+		width: 400px;
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+}
+
+
 @import "includes/index";
