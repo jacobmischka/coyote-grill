@@ -1,0 +1,34 @@
+footer.site-footer {
+
+	.site-footer-photo {
+		position: relative;
+		margin: 0;
+		width: 100%;
+		height: 100vh;
+
+		picture#coyote-grill-external {
+			transition: opacity 0.3s;
+
+			source,
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		#coyote-grill-external-switch {
+			position: absolute;
+			bottom: 1em;
+			right: 1em;
+			width: 8em;
+			opacity: 0;
+		}
+
+		&:hover {
+
+			#coyote-grill-external-switch {
+				opacity: $primary-text;
+			}
+		}
+	}
+}

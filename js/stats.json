@@ -2,8 +2,8 @@
   "errors": [],
   "warnings": [],
   "version": "2.1.0-beta.27",
-  "hash": "5e1ecc377987d8037d3f",
-  "time": 230,
+  "hash": "16d1f77ff17266e43162",
+  "time": 1793,
   "publicPath": "/js/",
   "assetsByChunkName": {
     "main": [
@@ -14,7 +14,7 @@
   "assets": [
     {
       "name": "bundle.js",
-      "size": 188241,
+      "size": 80090,
       "chunks": [
         0
       ],
@@ -25,7 +25,7 @@
     },
     {
       "name": "bundle.js.map",
-      "size": 231364,
+      "size": 495568,
       "chunks": [
         0
       ],
@@ -53,7 +53,7 @@
       "initial": true,
       "entry": true,
       "extraAsync": false,
-      "size": 176246,
+      "size": 176268,
       "names": [
         "main"
       ],
@@ -61,11 +61,11 @@
         "bundle.js",
         "bundle.js.map"
       ],
-      "hash": "3cddb132960143c6e847",
+      "hash": "3bf91a53dc63e21198bc",
       "parents": [],
       "origins": [
         {
-          "moduleId": 33,
+          "moduleId": 34,
           "module": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
           "moduleName": "./_js/main.js",
@@ -81,20 +81,20 @@
       "id": 0,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/fizzy-ui-utils/utils.js",
       "name": "./~/fizzy-ui-utils/utils.js",
-      "index": 10,
-      "index2": 7,
+      "index": 11,
+      "index2": 8,
       "size": 5873,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
         0
       ],
       "assets": [],
-      "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/flickity.js",
-      "issuerId": 1,
-      "issuerName": "./~/flickity/js/flickity.js",
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/prev-next-button.js",
+      "issuerId": 28,
+      "issuerName": "./~/flickity/js/prev-next-button.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -109,7 +109,7 @@
           "loc": "7:4-16:6"
         },
         {
-          "moduleId": 19,
+          "moduleId": 20,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/add-remove-cell.js",
           "module": "./~/flickity/js/add-remove-cell.js",
           "moduleName": "./~/flickity/js/add-remove-cell.js",
@@ -118,7 +118,7 @@
           "loc": "7:4-12:6"
         },
         {
-          "moduleId": 20,
+          "moduleId": 21,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/animate.js",
           "module": "./~/flickity/js/animate.js",
           "moduleName": "./~/flickity/js/animate.js",
@@ -127,7 +127,7 @@
           "loc": "7:4-11:6"
         },
         {
-          "moduleId": 22,
+          "moduleId": 23,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/drag.js",
           "module": "./~/flickity/js/drag.js",
           "moduleName": "./~/flickity/js/drag.js",
@@ -136,7 +136,7 @@
           "loc": "7:4-13:6"
         },
         {
-          "moduleId": 24,
+          "moduleId": 25,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/lazyload.js",
           "module": "./~/flickity/js/lazyload.js",
           "moduleName": "./~/flickity/js/lazyload.js",
@@ -145,7 +145,7 @@
           "loc": "7:4-12:6"
         },
         {
-          "moduleId": 25,
+          "moduleId": 26,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/page-dots.js",
           "module": "./~/flickity/js/page-dots.js",
           "moduleName": "./~/flickity/js/page-dots.js",
@@ -154,7 +154,7 @@
           "loc": "7:4-13:6"
         },
         {
-          "moduleId": 26,
+          "moduleId": 27,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/player.js",
           "module": "./~/flickity/js/player.js",
           "moduleName": "./~/flickity/js/player.js",
@@ -163,7 +163,7 @@
           "loc": "7:4-13:6"
         },
         {
-          "moduleId": 27,
+          "moduleId": 28,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/prev-next-button.js",
           "module": "./~/flickity/js/prev-next-button.js",
           "moduleName": "./~/flickity/js/prev-next-button.js",
@@ -180,11 +180,11 @@
       "id": 1,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/flickity.js",
       "name": "./~/flickity/js/flickity.js",
-      "index": 7,
-      "index2": 11,
+      "index": 8,
+      "index2": 12,
       "size": 22546,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -192,14 +192,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
-      "issuerId": 23,
+      "issuerId": 24,
       "issuerName": "./~/flickity/js/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 19,
+          "moduleId": 20,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/add-remove-cell.js",
           "module": "./~/flickity/js/add-remove-cell.js",
           "moduleName": "./~/flickity/js/add-remove-cell.js",
@@ -208,7 +208,7 @@
           "loc": "7:4-12:6"
         },
         {
-          "moduleId": 22,
+          "moduleId": 23,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/drag.js",
           "module": "./~/flickity/js/drag.js",
           "moduleName": "./~/flickity/js/drag.js",
@@ -217,7 +217,7 @@
           "loc": "7:4-13:6"
         },
         {
-          "moduleId": 23,
+          "moduleId": 24,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
           "module": "./~/flickity/js/index.js",
           "moduleName": "./~/flickity/js/index.js",
@@ -226,7 +226,7 @@
           "loc": "17:4-25:16"
         },
         {
-          "moduleId": 24,
+          "moduleId": 25,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/lazyload.js",
           "module": "./~/flickity/js/lazyload.js",
           "moduleName": "./~/flickity/js/lazyload.js",
@@ -235,7 +235,7 @@
           "loc": "7:4-12:6"
         },
         {
-          "moduleId": 25,
+          "moduleId": 26,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/page-dots.js",
           "module": "./~/flickity/js/page-dots.js",
           "moduleName": "./~/flickity/js/page-dots.js",
@@ -244,7 +244,7 @@
           "loc": "7:4-13:6"
         },
         {
-          "moduleId": 26,
+          "moduleId": 27,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/player.js",
           "module": "./~/flickity/js/player.js",
           "moduleName": "./~/flickity/js/player.js",
@@ -253,7 +253,7 @@
           "loc": "7:4-13:6"
         },
         {
-          "moduleId": 27,
+          "moduleId": 28,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/prev-next-button.js",
           "module": "./~/flickity/js/prev-next-button.js",
           "moduleName": "./~/flickity/js/prev-next-button.js",
@@ -270,11 +270,11 @@
       "id": 2,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/ev-emitter/ev-emitter.js",
       "name": "./~/ev-emitter/ev-emitter.js",
-      "index": 8,
-      "index2": 4,
+      "index": 9,
+      "index2": 5,
       "size": 2596,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -307,7 +307,7 @@
           "loc": "14:4-18:6"
         },
         {
-          "moduleId": 26,
+          "moduleId": 27,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/player.js",
           "module": "./~/flickity/js/player.js",
           "moduleName": "./~/flickity/js/player.js",
@@ -324,11 +324,11 @@
       "id": 3,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/color-convert/conversions.js",
       "name": "./~/color-convert/conversions.js",
-      "index": 31,
-      "index2": 26,
+      "index": 32,
+      "index2": 27,
       "size": 16573,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -336,14 +336,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/color-convert/index.js",
-      "issuerId": 14,
+      "issuerId": 15,
       "issuerName": "./~/color-convert/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 14,
+          "moduleId": 15,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/color-convert/index.js",
           "module": "./~/color-convert/index.js",
           "moduleName": "./~/color-convert/index.js",
@@ -352,7 +352,7 @@
           "loc": "1:18-42"
         },
         {
-          "moduleId": 15,
+          "moduleId": 16,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/color-convert/route.js",
           "module": "./~/color-convert/route.js",
           "moduleName": "./~/color-convert/route.js",
@@ -369,11 +369,11 @@
       "id": 4,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/color-name/index.js",
       "name": "./~/color-name/index.js",
-      "index": 27,
-      "index2": 22,
+      "index": 28,
+      "index2": 23,
       "size": 4599,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -381,7 +381,7 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/color-string/index.js",
-      "issuerId": 16,
+      "issuerId": 17,
       "issuerName": "./~/color-string/index.js",
       "failed": false,
       "errors": 0,
@@ -397,7 +397,7 @@
           "loc": "2:18-39"
         },
         {
-          "moduleId": 16,
+          "moduleId": 17,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/color-string/index.js",
           "module": "./~/color-string/index.js",
           "moduleName": "./~/color-string/index.js",
@@ -414,11 +414,11 @@
       "id": 5,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/get-size/get-size.js",
       "name": "./~/get-size/get-size.js",
-      "index": 9,
-      "index2": 5,
+      "index": 10,
+      "index2": 6,
       "size": 5296,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -442,7 +442,7 @@
           "loc": "7:4-16:6"
         },
         {
-          "moduleId": 21,
+          "moduleId": 22,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/cell.js",
           "module": "./~/flickity/js/cell.js",
           "moduleName": "./~/flickity/js/cell.js",
@@ -459,11 +459,11 @@
       "id": 6,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/tap-listener/tap-listener.js",
       "name": "./~/tap-listener/tap-listener.js",
-      "index": 19,
-      "index2": 15,
+      "index": 20,
+      "index2": 16,
       "size": 2636,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -471,14 +471,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/prev-next-button.js",
-      "issuerId": 27,
+      "issuerId": 28,
       "issuerName": "./~/flickity/js/prev-next-button.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 25,
+          "moduleId": 26,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/page-dots.js",
           "module": "./~/flickity/js/page-dots.js",
           "moduleName": "./~/flickity/js/page-dots.js",
@@ -487,7 +487,7 @@
           "loc": "7:4-13:6"
         },
         {
-          "moduleId": 27,
+          "moduleId": 28,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/prev-next-button.js",
           "module": "./~/flickity/js/prev-next-button.js",
           "moduleName": "./~/flickity/js/prev-next-button.js",
@@ -504,20 +504,20 @@
       "id": 7,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/unipointer/unipointer.js",
       "name": "./~/unipointer/unipointer.js",
-      "index": 17,
-      "index2": 12,
+      "index": 18,
+      "index2": 13,
       "size": 7201,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
         0
       ],
       "assets": [],
-      "issuer": "/home/mischka/projects/coyote-grill/node_modules/unidragger/unidragger.js",
-      "issuerId": 32,
-      "issuerName": "./~/unidragger/unidragger.js",
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/tap-listener/tap-listener.js",
+      "issuerId": 6,
+      "issuerName": "./~/tap-listener/tap-listener.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -532,7 +532,7 @@
           "loc": "15:4-19:6"
         },
         {
-          "moduleId": 32,
+          "moduleId": 33,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/unidragger/unidragger.js",
           "module": "./~/unidragger/unidragger.js",
           "moduleName": "./~/unidragger/unidragger.js",
@@ -551,9 +551,9 @@
       "name": "./_js/find-us.js",
       "index": 2,
       "index2": 1,
-      "size": 1852,
+      "size": 0,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -561,14 +561,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
-      "issuerId": 33,
+      "issuerId": 34,
       "issuerName": "./_js/main.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 33,
+          "moduleId": 34,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
           "module": "./_js/main.js",
           "moduleName": "./_js/main.js",
@@ -579,7 +579,7 @@
       ],
       "usedExports": false,
       "providedExports": null,
-      "source": "var picture = document.querySelector('#coyote-grill-external');\nvar pictureSwitch = document.querySelector('#coyote-grill-external-switch');\n\nvar dayWide = '/images/external/front-wide.jpg';\nvar day = '/images/external/front.jpg';\nvar nightWide = '/images/external/front-wide-night.jpg';\nvar night = '/images/external/front-night.jpg';\n\nvar now = new Date();\nif (now.getHours() < 6 || now.getHours() > 17) {\n\tpicture.classList.remove('day-picture');\n\tpicture.classList.add('night-picture');\n\tpicture.querySelector('source').setAttribute('srcset', nightWide);\n\tpicture.querySelector('img').setAttribute('src', night);\n\n\tpictureSwitch.querySelector('#external-night').checked = true;\n}\n\nvar _iteratorNormalCompletion = true;\nvar _didIteratorError = false;\nvar _iteratorError = undefined;\n\ntry {\n\tfor (var _iterator = Array.from(pictureSwitch.querySelectorAll('input[name=\"coyote-grill-external-switch\"]'))[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n\t\tvar option = _step.value;\n\n\t\toption.addEventListener('change', function (event) {\n\t\t\tif (event.target.checked) {\n\t\t\t\tpicture.style.opacity = 0;\n\n\t\t\t\tswitch (event.target.value) {\n\t\t\t\t\tcase 'night':\n\t\t\t\t\t\tpicture.querySelector('source').setAttribute('srcset', nightWide);\n\t\t\t\t\t\tpicture.querySelector('img').setAttribute('src', night);\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tcase 'day':\n\t\t\t\t\tdefault:\n\t\t\t\t\t\tpicture.querySelector('source').setAttribute('srcset', dayWide);\n\t\t\t\t\t\tpicture.querySelector('img').setAttribute('src', day);\n\t\t\t\t\t\tbreak;\n\t\t\t\t}\n\n\t\t\t\tpicture.style.opacity = null;\n\t\t\t}\n\t\t});\n\t}\n} catch (err) {\n\t_didIteratorError = true;\n\t_iteratorError = err;\n} finally {\n\ttry {\n\t\tif (!_iteratorNormalCompletion && _iterator.return) {\n\t\t\t_iterator.return();\n\t\t}\n\t} finally {\n\t\tif (_didIteratorError) {\n\t\t\tthrow _iteratorError;\n\t\t}\n\t}\n}"
+      "source": ""
     },
     {
       "id": 9,
@@ -589,7 +589,7 @@
       "index2": 3,
       "size": 2065,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -597,14 +597,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
-      "issuerId": 33,
+      "issuerId": 34,
       "issuerName": "./_js/main.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 33,
+          "moduleId": 34,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
           "module": "./_js/main.js",
           "moduleName": "./_js/main.js",
@@ -619,13 +619,13 @@
     },
     {
       "id": 10,
-      "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/hero.js",
-      "name": "./_js/hero.js",
+      "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/footer.js",
+      "name": "./_js/footer.js",
       "index": 5,
-      "index2": 31,
-      "size": 255,
+      "index2": 4,
+      "size": 1852,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -633,20 +633,56 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
-      "issuerId": 33,
+      "issuerId": 34,
       "issuerName": "./_js/main.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 33,
+          "moduleId": 34,
+          "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
+          "module": "./_js/main.js",
+          "moduleName": "./_js/main.js",
+          "type": "harmony import",
+          "userRequest": "./footer.js",
+          "loc": "4:0-21"
+        }
+      ],
+      "usedExports": false,
+      "providedExports": null,
+      "source": "var picture = document.querySelector('#coyote-grill-external');\nvar pictureSwitch = document.querySelector('#coyote-grill-external-switch');\n\nvar dayWide = '/images/external/front-wide.jpg';\nvar day = '/images/external/front.jpg';\nvar nightWide = '/images/external/front-wide-night.jpg';\nvar night = '/images/external/front-night.jpg';\n\nvar now = new Date();\nif (now.getHours() < 6 || now.getHours() > 17) {\n\tpicture.classList.remove('day-picture');\n\tpicture.classList.add('night-picture');\n\tpicture.querySelector('source').setAttribute('srcset', nightWide);\n\tpicture.querySelector('img').setAttribute('src', night);\n\n\tpictureSwitch.querySelector('#external-night').checked = true;\n}\n\nvar _iteratorNormalCompletion = true;\nvar _didIteratorError = false;\nvar _iteratorError = undefined;\n\ntry {\n\tfor (var _iterator = Array.from(pictureSwitch.querySelectorAll('input[name=\"coyote-grill-external-switch\"]'))[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n\t\tvar option = _step.value;\n\n\t\toption.addEventListener('change', function (event) {\n\t\t\tif (event.target.checked) {\n\t\t\t\tpicture.style.opacity = 0;\n\n\t\t\t\tswitch (event.target.value) {\n\t\t\t\t\tcase 'night':\n\t\t\t\t\t\tpicture.querySelector('source').setAttribute('srcset', nightWide);\n\t\t\t\t\t\tpicture.querySelector('img').setAttribute('src', night);\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tcase 'day':\n\t\t\t\t\tdefault:\n\t\t\t\t\t\tpicture.querySelector('source').setAttribute('srcset', dayWide);\n\t\t\t\t\t\tpicture.querySelector('img').setAttribute('src', day);\n\t\t\t\t\t\tbreak;\n\t\t\t\t}\n\n\t\t\t\tpicture.style.opacity = null;\n\t\t\t}\n\t\t});\n\t}\n} catch (err) {\n\t_didIteratorError = true;\n\t_iteratorError = err;\n} finally {\n\ttry {\n\t\tif (!_iteratorNormalCompletion && _iterator.return) {\n\t\t\t_iterator.return();\n\t\t}\n\t} finally {\n\t\tif (_didIteratorError) {\n\t\t\tthrow _iteratorError;\n\t\t}\n\t}\n}"
+    },
+    {
+      "id": 11,
+      "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/hero.js",
+      "name": "./_js/hero.js",
+      "index": 6,
+      "index2": 32,
+      "size": 255,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
+      "issuerId": 34,
+      "issuerName": "./_js/main.js",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 34,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
           "module": "./_js/main.js",
           "moduleName": "./_js/main.js",
           "type": "harmony import",
           "userRequest": "./hero.js",
-          "loc": "4:0-19"
+          "loc": "5:0-19"
         }
       ],
       "usedExports": false,
@@ -654,14 +690,14 @@
       "source": "import Flickity from 'flickity';\nimport fadeInHeader from './fade-in-header.js';\n\nvar flickity = new Flickity('.carousel', {\n\tcellSelector: '.carousel-image',\n\twrapAround: true,\n\tautoPlay: true\n});\n\nfadeInHeader('.carousel-overlay', 'header.site-header');"
     },
     {
-      "id": 11,
+      "id": 12,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/home.js",
       "name": "./_js/home.js",
-      "index": 33,
-      "index2": 32,
+      "index": 34,
+      "index2": 33,
       "size": 0,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -669,20 +705,20 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
-      "issuerId": 33,
+      "issuerId": 34,
       "issuerName": "./_js/main.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 33,
+          "moduleId": 34,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
           "module": "./_js/main.js",
           "moduleName": "./_js/main.js",
           "type": "harmony import",
           "userRequest": "./home.js",
-          "loc": "5:0-19"
+          "loc": "6:0-19"
         }
       ],
       "usedExports": false,
@@ -690,14 +726,14 @@
       "source": ""
     },
     {
-      "id": 12,
+      "id": 13,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/menu.js",
       "name": "./_js/menu.js",
       "index": 1,
       "index2": 0,
       "size": 0,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -705,14 +741,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
-      "issuerId": 33,
+      "issuerId": 34,
       "issuerName": "./_js/main.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 33,
+          "moduleId": 34,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
           "module": "./_js/main.js",
           "moduleName": "./_js/main.js",
@@ -726,11 +762,11 @@
       "source": ""
     },
     {
-      "id": 13,
+      "id": 14,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/fade-in-header.js",
       "name": "./_js/fade-in-header.js",
-      "index": 24,
-      "index2": 30,
+      "index": 25,
+      "index2": 31,
       "size": 2815,
       "cacheable": true,
       "built": true,
@@ -741,14 +777,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/hero.js",
-      "issuerId": 10,
+      "issuerId": 11,
       "issuerName": "./_js/hero.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 10,
+          "moduleId": 11,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/hero.js",
           "module": "./_js/hero.js",
           "moduleName": "./_js/hero.js",
@@ -763,17 +799,17 @@
       "providedExports": [
         "default"
       ],
-      "source": "import Color from 'color';\n\nexport default function (heroPattern, headerPattern) {\n\tvar hero = document.querySelector(heroPattern);\n\tvar header = document.querySelector(headerPattern);\n\tvar collapseMargin = 40;\n\tvar expandMargin = 200;\n\n\tvar initialHeroBackgroundColor = hero.style.backgroundColor;\n\thero.style.backgroundColor = null;\n\tvar heroBackgroundColor = new Color(window.getComputedStyle(hero).getPropertyValue('background-color'));\n\tif (initialHeroBackgroundColor) hero.style.backgroundColor = initialHeroBackgroundColor;\n\n\tvar isCollapsed = header.classList.contains('collapsed');\n\tif (!isCollapsed) header.classList.add('collapsed');\n\tvar headerBackgroundColor = new Color(window.getComputedStyle(header).getPropertyValue('background-color'));\n\tif (!isCollapsed) header.classList.remove('collapsed');\n\n\tif (header.classList.contains('expanded') && hero.getBoundingClientRect().bottom < header.getBoundingClientRect().bottom + collapseMargin) {\n\t\theader.classList.add('notransition');\n\t\theader.classList.remove('expanded');\n\t\theader.classList.add('collapsed');\n\t\twindow.requestAnimationFrame(function () {\n\t\t\twindow.requestAnimationFrame(function () {\n\t\t\t\theader.classList.remove('notransition');\n\t\t\t});\n\t\t});\n\t}\n\n\t['resize', 'scroll'].map(function (event) {\n\t\twindow.addEventListener(event, function () {\n\t\t\twindow.requestAnimationFrame(step);\n\t\t});\n\t});\n\n\tfunction step() {\n\t\tvar heroRect = hero.getBoundingClientRect();\n\t\tvar headerHeight = header.clientHeight;\n\t\tvar headerRect = header.getBoundingClientRect();\n\n\t\tif (header.classList.contains('expanded')) {\n\t\t\tif (heroRect.bottom < headerRect.bottom + collapseMargin) {\n\n\t\t\t\theader.classList.remove('expanded');\n\t\t\t}\n\t\t} else {\n\t\t\tif (heroRect.bottom > headerRect.bottom + expandMargin) {\n\n\t\t\t\theader.classList.add('expanded');\n\t\t\t}\n\t\t}\n\n\t\tif (header.classList.contains('collapsed')) {\n\t\t\tif (heroRect.bottom > headerHeight) {\n\t\t\t\theader.classList.remove('collapsed');\n\t\t\t}\n\t\t} else {\n\t\t\tif (heroRect.bottom < headerHeight) {\n\t\t\t\theader.classList.add('collapsed');\n\t\t\t}\n\t\t}\n\n\t\tvar scrolledValue = (heroRect.height - (heroRect.bottom - headerHeight)) / heroRect.height;\n\t\tscrolledValue > 0 ? scrolledValue : 0;\n\t\tscrolledValue < 1 ? scrolledValue : 1;\n\n\t\tvar newHeroColor = Color().red(heroBackgroundColor.red() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.red() - heroBackgroundColor.red())).green(heroBackgroundColor.green() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.green() - heroBackgroundColor.green())).blue(heroBackgroundColor.blue() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.blue() - heroBackgroundColor.blue())).alpha(heroBackgroundColor.alpha() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.alpha() - heroBackgroundColor.alpha())).rgb().string(0);\n\n\t\thero.style.backgroundColor = newHeroColor;\n\t}\n}"
+      "source": "import Color from 'color';\n\nexport default function (heroPattern, headerPattern) {\n\tvar hero = document.querySelector(heroPattern);\n\tvar header = document.querySelector(headerPattern);\n\tvar collapseMargin = 60;\n\tvar expandMargin = 200;\n\n\tvar initialHeroBackgroundColor = hero.style.backgroundColor;\n\thero.style.backgroundColor = null;\n\tvar heroBackgroundColor = new Color(window.getComputedStyle(hero).getPropertyValue('background-color'));\n\tif (initialHeroBackgroundColor) hero.style.backgroundColor = initialHeroBackgroundColor;\n\n\tvar isCollapsed = header.classList.contains('collapsed');\n\tif (!isCollapsed) header.classList.add('collapsed');\n\tvar headerBackgroundColor = new Color(window.getComputedStyle(header).getPropertyValue('background-color'));\n\tif (!isCollapsed) header.classList.remove('collapsed');\n\n\tif (header.classList.contains('expanded') && hero.getBoundingClientRect().bottom < header.getBoundingClientRect().bottom + collapseMargin) {\n\t\theader.classList.add('notransition');\n\t\theader.classList.remove('expanded');\n\t\theader.classList.add('collapsed');\n\t\twindow.requestAnimationFrame(function () {\n\t\t\twindow.requestAnimationFrame(function () {\n\t\t\t\theader.classList.remove('notransition');\n\t\t\t});\n\t\t});\n\t}\n\n\t['resize', 'scroll'].map(function (event) {\n\t\twindow.addEventListener(event, function () {\n\t\t\twindow.requestAnimationFrame(step);\n\t\t});\n\t});\n\n\tfunction step() {\n\t\tvar heroRect = hero.getBoundingClientRect();\n\t\tvar headerHeight = header.clientHeight;\n\t\tvar headerRect = header.getBoundingClientRect();\n\n\t\tif (header.classList.contains('expanded')) {\n\t\t\tif (heroRect.bottom < headerRect.bottom + collapseMargin) {\n\n\t\t\t\theader.classList.remove('expanded');\n\t\t\t}\n\t\t} else {\n\t\t\tif (heroRect.bottom > headerRect.bottom + expandMargin) {\n\n\t\t\t\theader.classList.add('expanded');\n\t\t\t}\n\t\t}\n\n\t\tif (header.classList.contains('collapsed')) {\n\t\t\tif (heroRect.bottom > headerHeight) {\n\t\t\t\theader.classList.remove('collapsed');\n\t\t\t}\n\t\t} else {\n\t\t\tif (heroRect.bottom < headerHeight) {\n\t\t\t\theader.classList.add('collapsed');\n\t\t\t}\n\t\t}\n\n\t\tvar scrolledValue = (heroRect.height - (heroRect.bottom - headerHeight)) / heroRect.height;\n\t\tscrolledValue > 0 ? scrolledValue : 0;\n\t\tscrolledValue < 1 ? scrolledValue : 1;\n\n\t\tvar newHeroColor = Color().red(heroBackgroundColor.red() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.red() - heroBackgroundColor.red())).green(heroBackgroundColor.green() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.green() - heroBackgroundColor.green())).blue(heroBackgroundColor.blue() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.blue() - heroBackgroundColor.blue())).alpha(heroBackgroundColor.alpha() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.alpha() - heroBackgroundColor.alpha())).rgb().string(0);\n\n\t\thero.style.backgroundColor = newHeroColor;\n\t}\n}"
     },
     {
-      "id": 14,
+      "id": 15,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/color-convert/index.js",
       "name": "./~/color-convert/index.js",
-      "index": 30,
-      "index2": 28,
+      "index": 31,
+      "index2": 29,
       "size": 1725,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -781,14 +817,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/color/index.js",
-      "issuerId": 17,
+      "issuerId": 18,
       "issuerName": "./~/color/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 17,
+          "moduleId": 18,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/color/index.js",
           "module": "./~/color/index.js",
           "moduleName": "./~/color/index.js",
@@ -802,14 +838,14 @@
       "source": "var conversions = require('./conversions');\nvar route = require('./route');\n\nvar convert = {};\n\nvar models = Object.keys(conversions);\n\nfunction wrapRaw(fn) {\n\tvar wrappedFn = function (args) {\n\t\tif (args === undefined || args === null) {\n\t\t\treturn args;\n\t\t}\n\n\t\tif (arguments.length > 1) {\n\t\t\targs = Array.prototype.slice.call(arguments);\n\t\t}\n\n\t\treturn fn(args);\n\t};\n\n\t// preserve .conversion property if there is one\n\tif ('conversion' in fn) {\n\t\twrappedFn.conversion = fn.conversion;\n\t}\n\n\treturn wrappedFn;\n}\n\nfunction wrapRounded(fn) {\n\tvar wrappedFn = function (args) {\n\t\tif (args === undefined || args === null) {\n\t\t\treturn args;\n\t\t}\n\n\t\tif (arguments.length > 1) {\n\t\t\targs = Array.prototype.slice.call(arguments);\n\t\t}\n\n\t\tvar result = fn(args);\n\n\t\t// we're assuming the result is an array here.\n\t\t// see notice in conversions.js; don't use box types\n\t\t// in conversion functions.\n\t\tif (typeof result === 'object') {\n\t\t\tfor (var len = result.length, i = 0; i < len; i++) {\n\t\t\t\tresult[i] = Math.round(result[i]);\n\t\t\t}\n\t\t}\n\n\t\treturn result;\n\t};\n\n\t// preserve .conversion property if there is one\n\tif ('conversion' in fn) {\n\t\twrappedFn.conversion = fn.conversion;\n\t}\n\n\treturn wrappedFn;\n}\n\nmodels.forEach(function (fromModel) {\n\tconvert[fromModel] = {};\n\n\tObject.defineProperty(convert[fromModel], 'channels', {value: conversions[fromModel].channels});\n\tObject.defineProperty(convert[fromModel], 'labels', {value: conversions[fromModel].labels});\n\n\tvar routes = route(fromModel);\n\tvar routeModels = Object.keys(routes);\n\n\trouteModels.forEach(function (toModel) {\n\t\tvar fn = routes[toModel];\n\n\t\tconvert[fromModel][toModel] = wrapRounded(fn);\n\t\tconvert[fromModel][toModel].raw = wrapRaw(fn);\n\t});\n});\n\nmodule.exports = convert;\n"
     },
     {
-      "id": 15,
+      "id": 16,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/color-convert/route.js",
       "name": "./~/color-convert/route.js",
-      "index": 32,
-      "index2": 27,
+      "index": 33,
+      "index2": 28,
       "size": 2226,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -817,14 +853,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/color-convert/index.js",
-      "issuerId": 14,
+      "issuerId": 15,
       "issuerName": "./~/color-convert/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 14,
+          "moduleId": 15,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/color-convert/index.js",
           "module": "./~/color-convert/index.js",
           "moduleName": "./~/color-convert/index.js",
@@ -838,14 +874,14 @@
       "source": "var conversions = require('./conversions');\n\n/*\n\tthis function routes a model to all other models.\n\n\tall functions that are routed have a property `.conversion` attached\n\tto the returned synthetic function. This property is an array\n\tof strings, each with the steps in between the 'from' and 'to'\n\tcolor models (inclusive).\n\n\tconversions that are not possible simply are not included.\n*/\n\n// https://jsperf.com/object-keys-vs-for-in-with-closure/3\nvar models = Object.keys(conversions);\n\nfunction buildGraph() {\n\tvar graph = {};\n\n\tfor (var len = models.length, i = 0; i < len; i++) {\n\t\tgraph[models[i]] = {\n\t\t\t// http://jsperf.com/1-vs-infinity\n\t\t\t// micro-opt, but this is simple.\n\t\t\tdistance: -1,\n\t\t\tparent: null\n\t\t};\n\t}\n\n\treturn graph;\n}\n\n// https://en.wikipedia.org/wiki/Breadth-first_search\nfunction deriveBFS(fromModel) {\n\tvar graph = buildGraph();\n\tvar queue = [fromModel]; // unshift -> queue -> pop\n\n\tgraph[fromModel].distance = 0;\n\n\twhile (queue.length) {\n\t\tvar current = queue.pop();\n\t\tvar adjacents = Object.keys(conversions[current]);\n\n\t\tfor (var len = adjacents.length, i = 0; i < len; i++) {\n\t\t\tvar adjacent = adjacents[i];\n\t\t\tvar node = graph[adjacent];\n\n\t\t\tif (node.distance === -1) {\n\t\t\t\tnode.distance = graph[current].distance + 1;\n\t\t\t\tnode.parent = current;\n\t\t\t\tqueue.unshift(adjacent);\n\t\t\t}\n\t\t}\n\t}\n\n\treturn graph;\n}\n\nfunction link(from, to) {\n\treturn function (args) {\n\t\treturn to(from(args));\n\t};\n}\n\nfunction wrapConversion(toModel, graph) {\n\tvar path = [graph[toModel].parent, toModel];\n\tvar fn = conversions[graph[toModel].parent][toModel];\n\n\tvar cur = graph[toModel].parent;\n\twhile (graph[cur].parent) {\n\t\tpath.unshift(graph[cur].parent);\n\t\tfn = link(conversions[graph[cur].parent][cur], fn);\n\t\tcur = graph[cur].parent;\n\t}\n\n\tfn.conversion = path;\n\treturn fn;\n}\n\nmodule.exports = function (fromModel) {\n\tvar graph = deriveBFS(fromModel);\n\tvar conversion = {};\n\n\tvar models = Object.keys(graph);\n\tfor (var len = models.length, i = 0; i < len; i++) {\n\t\tvar toModel = models[i];\n\t\tvar node = graph[toModel];\n\n\t\tif (node.parent === null) {\n\t\t\t// no possible conversion, or this node is the source model.\n\t\t\tcontinue;\n\t\t}\n\n\t\tconversion[toModel] = wrapConversion(toModel, graph);\n\t}\n\n\treturn conversion;\n};\n\n"
     },
     {
-      "id": 16,
+      "id": 17,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/color-string/index.js",
       "name": "./~/color-string/index.js",
-      "index": 26,
-      "index2": 25,
+      "index": 27,
+      "index2": 26,
       "size": 4853,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -853,14 +889,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/color/index.js",
-      "issuerId": 17,
+      "issuerId": 18,
       "issuerName": "./~/color/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 17,
+          "moduleId": 18,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/color/index.js",
           "module": "./~/color/index.js",
           "moduleName": "./~/color/index.js",
@@ -874,14 +910,14 @@
       "source": "/* MIT license */\nvar colorNames = require('color-name');\nvar swizzle = require('simple-swizzle');\n\nvar reverseNames = {};\n\n// create a list of reverse color names\nfor (var name in colorNames) {\n\tif (colorNames.hasOwnProperty(name)) {\n\t\treverseNames[colorNames[name]] = name;\n\t}\n}\n\nvar cs = module.exports = {\n\tto: {}\n};\n\ncs.get = function (string) {\n\tvar prefix = string.substring(0, 3).toLowerCase();\n\tvar val;\n\tvar model;\n\tswitch (prefix) {\n\t\tcase 'hsl':\n\t\t\tval = cs.get.hsl(string);\n\t\t\tmodel = 'hsl';\n\t\t\tbreak;\n\t\tcase 'hwb':\n\t\t\tval = cs.get.hwb(string);\n\t\t\tmodel = 'hwb';\n\t\t\tbreak;\n\t\tdefault:\n\t\t\tval = cs.get.rgb(string);\n\t\t\tmodel = 'rgb';\n\t\t\tbreak;\n\t}\n\n\tif (!val) {\n\t\treturn null;\n\t}\n\n\treturn {model: model, value: val};\n};\n\ncs.get.rgb = function (string) {\n\tif (!string) {\n\t\treturn null;\n\t}\n\n\tvar abbr = /^#([a-fA-F0-9]{3})$/;\n\tvar hex = /^#([a-fA-F0-9]{6})$/;\n\tvar rgba = /^rgba?\\(\\s*([+-]?\\d+)\\s*,\\s*([+-]?\\d+)\\s*,\\s*([+-]?\\d+)\\s*(?:,\\s*([+-]?[\\d\\.]+)\\s*)?\\)$/;\n\tvar per = /^rgba?\\(\\s*([+-]?[\\d\\.]+)\\%\\s*,\\s*([+-]?[\\d\\.]+)\\%\\s*,\\s*([+-]?[\\d\\.]+)\\%\\s*(?:,\\s*([+-]?[\\d\\.]+)\\s*)?\\)$/;\n\tvar keyword = /(\\D+)/;\n\n\tvar rgb = [0, 0, 0, 1];\n\tvar match;\n\tvar i;\n\n\tif (match = string.match(abbr)) {\n\t\tmatch = match[1];\n\n\t\tfor (i = 0; i < 3; i++) {\n\t\t\trgb[i] = parseInt(match[i] + match[i], 16);\n\t\t}\n\t} else if (match = string.match(hex)) {\n\t\tmatch = match[1];\n\n\t\tfor (i = 0; i < 3; i++) {\n\t\t\t// https://jsperf.com/slice-vs-substr-vs-substring-methods-long-string/19\n\t\t\tvar i2 = i * 2;\n\t\t\trgb[i] = parseInt(match.slice(i2, i2 + 2), 16);\n\t\t}\n\t} else if (match = string.match(rgba)) {\n\t\tfor (i = 0; i < 3; i++) {\n\t\t\trgb[i] = parseInt(match[i + 1], 0);\n\t\t}\n\n\t\tif (match[4]) {\n\t\t\trgb[3] = parseFloat(match[4]);\n\t\t}\n\t} else if (match = string.match(per)) {\n\t\tfor (i = 0; i < 3; i++) {\n\t\t\trgb[i] = Math.round(parseFloat(match[i + 1]) * 2.55);\n\t\t}\n\n\t\tif (match[4]) {\n\t\t\trgb[3] = parseFloat(match[4]);\n\t\t}\n\t} else if (match = string.match(keyword)) {\n\t\tif (match[1] === 'transparent') {\n\t\t\treturn [0, 0, 0, 0];\n\t\t}\n\n\t\trgb = colorNames[match[1]];\n\n\t\tif (!rgb) {\n\t\t\treturn null;\n\t\t}\n\n\t\trgb[3] = 1;\n\n\t\treturn rgb;\n\t}\n\n\tfor (i = 0; i < rgb.length; i++) {\n\t\trgb[i] = clamp(rgb[i], 0, 255);\n\t}\n\trgb[3] = clamp(rgb[3], 0, 1);\n\n\treturn rgb;\n};\n\ncs.get.hsl = function (string) {\n\tif (!string) {\n\t\treturn null;\n\t}\n\n\tvar hsl = /^hsla?\\(\\s*([+-]?\\d*[\\.]?\\d+)(?:deg)?\\s*,\\s*([+-]?[\\d\\.]+)%\\s*,\\s*([+-]?[\\d\\.]+)%\\s*(?:,\\s*([+-]?[\\d\\.]+)\\s*)?\\)$/;\n\tvar match = string.match(hsl);\n\n\tif (match) {\n\t\tvar alpha = parseFloat(match[4]);\n\t\tvar h = ((parseFloat(match[1]) % 360) + 360) % 360;\n\t\tvar s = clamp(parseFloat(match[2]), 0, 100);\n\t\tvar l = clamp(parseFloat(match[3]), 0, 100);\n\t\tvar a = clamp(isNaN(alpha) ? 1 : alpha, 0, 1);\n\n\t\treturn [h, s, l, a];\n\t}\n\n\treturn null;\n};\n\ncs.get.hwb = function (string) {\n\tif (!string) {\n\t\treturn null;\n\t}\n\n\tvar hwb = /^hwb\\(\\s*([+-]?\\d*[\\.]?\\d+)(?:deg)?\\s*,\\s*([+-]?[\\d\\.]+)%\\s*,\\s*([+-]?[\\d\\.]+)%\\s*(?:,\\s*([+-]?[\\d\\.]+)\\s*)?\\)$/;\n\tvar match = string.match(hwb);\n\n\tif (match) {\n\t\tvar alpha = parseFloat(match[4]);\n\t\tvar h = ((parseFloat(match[1]) % 360) + 360) % 360;\n\t\tvar w = clamp(parseFloat(match[2]), 0, 100);\n\t\tvar b = clamp(parseFloat(match[3]), 0, 100);\n\t\tvar a = clamp(isNaN(alpha) ? 1 : alpha, 0, 1);\n\t\treturn [h, w, b, a];\n\t}\n\n\treturn null;\n};\n\ncs.to.hex = function (rgb) {\n\treturn '#' + hexDouble(rgb[0]) + hexDouble(rgb[1]) + hexDouble(rgb[2]);\n};\n\ncs.to.rgb = function () {\n\tvar rgba = swizzle(arguments);\n\n\treturn rgba.length < 4 || rgba[3] === 1\n\t\t? 'rgb(' + rgba[0] + ', ' + rgba[1] + ', ' + rgba[2] + ')'\n\t\t: 'rgba(' + rgba[0] + ', ' + rgba[1] + ', ' + rgba[2] + ', ' + rgba[3] + ')';\n};\n\ncs.to.rgb.percent = function () {\n\tvar rgba = swizzle(arguments);\n\n\tvar r = Math.round(rgba[0] / 255 * 100);\n\tvar g = Math.round(rgba[1] / 255 * 100);\n\tvar b = Math.round(rgba[2] / 255 * 100);\n\n\treturn rgba.length < 4 || rgba[3] === 1\n\t\t? 'rgb(' + r + '%, ' + g + '%, ' + b + '%)'\n\t\t: 'rgba(' + r + '%, ' + g + '%, ' + b + '%, ' + rgba[3] + ')';\n};\n\ncs.to.hsl = function () {\n\tvar hsla = swizzle(arguments);\n\treturn hsla.length < 4 || hsla[3] === 1\n\t\t? 'hsl(' + hsla[0] + ', ' + hsla[1] + '%, ' + hsla[2] + '%)'\n\t\t: 'hsla(' + hsla[0] + ', ' + hsla[1] + '%, ' + hsla[2] + '%, ' + hsla[3] + ')';\n};\n\n// hwb is a bit different than rgb(a) & hsl(a) since there is no alpha specific syntax\n// (hwb have alpha optional & 1 is default value)\ncs.to.hwb = function () {\n\tvar hwba = swizzle(arguments);\n\n\tvar a = '';\n\tif (hwba.length >= 4 && hwba[3] !== 1) {\n\t\ta = ', ' + hwba[3];\n\t}\n\n\treturn 'hwb(' + hwba[0] + ', ' + hwba[1] + '%, ' + hwba[2] + '%' + a + ')';\n};\n\ncs.to.keyword = function (rgb) {\n\treturn reverseNames[rgb.slice(0, 3)];\n};\n\n// helpers\nfunction clamp(num, min, max) {\n\treturn Math.min(Math.max(min, num), max);\n}\n\nfunction hexDouble(num) {\n\tvar str = num.toString(16).toUpperCase();\n\treturn (str.length < 2) ? '0' + str : str;\n}\n"
     },
     {
-      "id": 17,
+      "id": 18,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/color/index.js",
       "name": "./~/color/index.js",
-      "index": 25,
-      "index2": 29,
+      "index": 26,
+      "index2": 30,
       "size": 10907,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -889,14 +925,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/fade-in-header.js",
-      "issuerId": 13,
+      "issuerId": 14,
       "issuerName": "./_js/fade-in-header.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 13,
+          "moduleId": 14,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/fade-in-header.js",
           "module": "./_js/fade-in-header.js",
           "moduleName": "./_js/fade-in-header.js",
@@ -912,14 +948,14 @@
       "source": "'use strict';\n\nvar colorString = require('color-string');\nvar convert = require('color-convert');\n\nvar _slice = [].slice;\n\nvar skippedModels = [\n\t// to be honest, I don't really feel like keyword belongs in color convert, but eh.\n\t'keyword',\n\n\t// gray conflicts with some method names, and has its own method defined.\n\t'gray',\n\n\t// shouldn't really be in color-convert either...\n\t'hex'\n];\n\nvar hashedModelKeys = {};\nObject.keys(convert).forEach(function (model) {\n\thashedModelKeys[_slice.call(convert[model].labels).sort().join('')] = model;\n});\n\nvar limiters = {};\n\nfunction Color(obj, model) {\n\tif (!(this instanceof Color)) {\n\t\treturn new Color(obj, model);\n\t}\n\n\tif (model && model in skippedModels) {\n\t\tmodel = null;\n\t}\n\n\tif (model && !(model in convert)) {\n\t\tthrow new Error('Unknown model: ' + model);\n\t}\n\n\tvar i;\n\tvar channels;\n\n\tif (!obj) {\n\t\tthis.model = 'rgb';\n\t\tthis.color = [0, 0, 0];\n\t\tthis.valpha = 1;\n\t} else if (obj instanceof Color) {\n\t\tthis.model = obj.model;\n\t\tthis.color = obj.color.slice();\n\t\tthis.valpha = obj.valpha;\n\t} else if (typeof obj === 'string') {\n\t\tvar result = colorString.get(obj);\n\t\tif (result === null) {\n\t\t\tthrow new Error('Unable to parse color from string: ' + obj);\n\t\t}\n\n\t\tthis.model = result.model;\n\t\tchannels = convert[this.model].channels;\n\t\tthis.color = result.value.slice(0, channels);\n\t\tthis.valpha = typeof result.value[channels] === 'number' ? result.value[channels] : 1;\n\t} else if (obj.length) {\n\t\tthis.model = model || 'rgb';\n\t\tchannels = convert[this.model].channels;\n\t\tvar newArr = _slice.call(obj, 0, channels);\n\t\tthis.color = zeroArray(newArr, channels);\n\t\tthis.valpha = typeof obj[channels] === 'number' ? obj[channels] : 1;\n\t} else if (typeof obj === 'number') {\n\t\t// this is always RGB - can be converted later on.\n\t\tobj &= 0xFFFFFF;\n\t\tthis.model = 'rgb';\n\t\tthis.color = [\n\t\t\t(obj >> 16) & 0xFF,\n\t\t\t(obj >> 8) & 0xFF,\n\t\t\tobj & 0xFF\n\t\t];\n\t\tthis.valpha = 1;\n\t} else {\n\t\tthis.valpha = 1;\n\n\t\tvar keys = Object.keys(obj);\n\t\tif ('alpha' in obj) {\n\t\t\tkeys.splice(keys.indexOf('alpha'), 1);\n\t\t\tthis.valpha = typeof obj.alpha === 'number' ? obj.alpha : 0;\n\t\t}\n\n\t\tvar hashedKeys = keys.sort().join('');\n\t\tif (!(hashedKeys in hashedModelKeys)) {\n\t\t\tthrow new Error('Unable to parse color from object: ' + JSON.stringify(obj));\n\t\t}\n\n\t\tthis.model = hashedModelKeys[hashedKeys];\n\n\t\tvar labels = convert[this.model].labels;\n\t\tvar color = [];\n\t\tfor (i = 0; i < labels.length; i++) {\n\t\t\tcolor.push(obj[labels[i]]);\n\t\t}\n\n\t\tthis.color = zeroArray(color);\n\t}\n\n\t// perform limitations (clamping, etc.)\n\tif (limiters[this.model]) {\n\t\tchannels = convert[this.model].channels;\n\t\tfor (i = 0; i < channels; i++) {\n\t\t\tvar limit = limiters[this.model][i];\n\t\t\tif (limit) {\n\t\t\t\tthis.color[i] = limit(this.color[i]);\n\t\t\t}\n\t\t}\n\t}\n\n\tthis.valpha = Math.max(0, Math.min(1, this.valpha));\n\n\tif (Object.freeze) {\n\t\tObject.freeze(this);\n\t}\n}\n\nColor.prototype = {\n\ttoString: function () {\n\t\treturn this.string();\n\t},\n\n\ttoJSON: function () {\n\t\treturn this[this.model]();\n\t},\n\n\tstring: function (places) {\n\t\tvar self = this.model in colorString.to ? this : this.rgb();\n\t\tself = self.round(typeof places === 'number' ? places : 1);\n\t\tvar args = self.valpha === 1 ? self.color : self.color.concat(this.valpha);\n\t\treturn colorString.to[self.model](args);\n\t},\n\n\tpercentString: function (places) {\n\t\tvar self = this.rgb().round(typeof places === 'number' ? places : 1);\n\t\tvar args = self.valpha === 1 ? self.color : self.color.concat(this.valpha);\n\t\treturn colorString.to.rgb.percent(args);\n\t},\n\n\tarray: function () {\n\t\treturn this.valpha === 1 ? this.color.slice() : this.color.concat(this.valpha);\n\t},\n\n\tobject: function () {\n\t\tvar result = {};\n\t\tvar channels = convert[this.model].channels;\n\t\tvar labels = convert[this.model].labels;\n\n\t\tfor (var i = 0; i < channels; i++) {\n\t\t\tresult[labels[i]] = this.color[i];\n\t\t}\n\n\t\tif (this.valpha !== 1) {\n\t\t\tresult.alpha = this.valpha;\n\t\t}\n\n\t\treturn result;\n\t},\n\n\tunitArray: function () {\n\t\tvar rgb = this.rgb().color;\n\t\trgb[0] /= 255;\n\t\trgb[1] /= 255;\n\t\trgb[2] /= 255;\n\n\t\tif (this.valpha !== 1) {\n\t\t\trgb.push(this.valpha);\n\t\t}\n\n\t\treturn rgb;\n\t},\n\n\tunitObject: function () {\n\t\tvar rgb = this.rgb().object();\n\t\trgb.r /= 255;\n\t\trgb.g /= 255;\n\t\trgb.b /= 255;\n\n\t\tif (this.valpha !== 1) {\n\t\t\trgb.alpha = this.valpha;\n\t\t}\n\n\t\treturn rgb;\n\t},\n\n\tround: function (places) {\n\t\tplaces = Math.max(places || 0, 0);\n\t\treturn new Color(this.color.map(roundToPlace(places)).concat(this.valpha), this.model);\n\t},\n\n\talpha: function (val) {\n\t\tif (arguments.length) {\n\t\t\treturn new Color(this.color.concat(Math.max(0, Math.min(1, val))), this.model);\n\t\t}\n\n\t\treturn this.valpha;\n\t},\n\n\t// rgb\n\tred: getset('rgb', 0, maxfn(255)),\n\tgreen: getset('rgb', 1, maxfn(255)),\n\tblue: getset('rgb', 2, maxfn(255)),\n\n\thue: getset(['hsl', 'hsv', 'hsl', 'hwb', 'hcg'], 0, function (val) { return ((val % 360) + 360) % 360; }), // eslint-disable-line brace-style\n\n\tsaturationl: getset('hsl', 1, maxfn(100)),\n\tlightness: getset('hsl', 2, maxfn(100)),\n\n\tsaturationv: getset('hsv', 1, maxfn(100)),\n\tvalue: getset('hsv', 2, maxfn(100)),\n\n\tchroma: getset('hcg', 1, maxfn(100)),\n\tgray: getset('hcg', 2, maxfn(100)),\n\n\twhite: getset('hwb', 1, maxfn(100)),\n\twblack: getset('hwb', 2, maxfn(100)),\n\n\tcyan: getset('cmyk', 0, maxfn(100)),\n\tmagenta: getset('cmyk', 1, maxfn(100)),\n\tyellow: getset('cmyk', 2, maxfn(100)),\n\tblack: getset('cmyk', 3, maxfn(100)),\n\n\tx: getset('xyz', 0, maxfn(100)),\n\ty: getset('xyz', 1, maxfn(100)),\n\tz: getset('xyz', 2, maxfn(100)),\n\n\tl: getset('lab', 0, maxfn(100)),\n\ta: getset('lab', 1),\n\tb: getset('lab', 2),\n\n\tkeyword: function (val) {\n\t\tif (arguments.length) {\n\t\t\treturn new Color(val);\n\t\t}\n\n\t\treturn convert[this.model].keyword(this.color);\n\t},\n\n\thex: function (val) {\n\t\tif (arguments.length) {\n\t\t\treturn new Color(val);\n\t\t}\n\n\t\treturn colorString.to.hex(this.rgb().round().color);\n\t},\n\n\trgbNumber: function () {\n\t\tvar rgb = this.rgb().color;\n\t\treturn ((rgb[0] & 0xFF) << 16) | ((rgb[1] & 0xFF) << 8) | (rgb[2] & 0xFF);\n\t},\n\n\tluminosity: function () {\n\t\t// http://www.w3.org/TR/WCAG20/#relativeluminancedef\n\t\tvar rgb = this.rgb().color;\n\n\t\tvar lum = [];\n\t\tfor (var i = 0; i < rgb.length; i++) {\n\t\t\tvar chan = rgb[i] / 255;\n\t\t\tlum[i] = (chan <= 0.03928) ? chan / 12.92 : Math.pow(((chan + 0.055) / 1.055), 2.4);\n\t\t}\n\n\t\treturn 0.2126 * lum[0] + 0.7152 * lum[1] + 0.0722 * lum[2];\n\t},\n\n\tcontrast: function (color2) {\n\t\t// http://www.w3.org/TR/WCAG20/#contrast-ratiodef\n\t\tvar lum1 = this.luminosity();\n\t\tvar lum2 = color2.luminosity();\n\n\t\tif (lum1 > lum2) {\n\t\t\treturn (lum1 + 0.05) / (lum2 + 0.05);\n\t\t}\n\n\t\treturn (lum2 + 0.05) / (lum1 + 0.05);\n\t},\n\n\tlevel: function (color2) {\n\t\tvar contrastRatio = this.contrast(color2);\n\t\tif (contrastRatio >= 7.1) {\n\t\t\treturn 'AAA';\n\t\t}\n\n\t\treturn (contrastRatio >= 4.5) ? 'AA' : '';\n\t},\n\n\tdark: function () {\n\t\t// YIQ equation from http://24ways.org/2010/calculating-color-contrast\n\t\tvar rgb = this.rgb().color;\n\t\tvar yiq = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;\n\t\treturn yiq < 128;\n\t},\n\n\tlight: function () {\n\t\treturn !this.dark();\n\t},\n\n\tnegate: function () {\n\t\tvar rgb = this.rgb();\n\t\tfor (var i = 0; i < 3; i++) {\n\t\t\trgb.color[i] = 255 - rgb.color[i];\n\t\t}\n\t\treturn rgb;\n\t},\n\n\tlighten: function (ratio) {\n\t\tvar hsl = this.hsl();\n\t\thsl.color[2] += hsl.color[2] * ratio;\n\t\treturn hsl;\n\t},\n\n\tdarken: function (ratio) {\n\t\tvar hsl = this.hsl();\n\t\thsl.color[2] -= hsl.color[2] * ratio;\n\t\treturn hsl;\n\t},\n\n\tsaturate: function (ratio) {\n\t\tvar hsl = this.hsl();\n\t\thsl.color[1] += hsl.color[1] * ratio;\n\t\treturn hsl;\n\t},\n\n\tdesaturate: function (ratio) {\n\t\tvar hsl = this.hsl();\n\t\thsl.color[1] -= hsl.color[1] * ratio;\n\t\treturn hsl;\n\t},\n\n\twhiten: function (ratio) {\n\t\tvar hwb = this.hwb();\n\t\thwb.color[1] += hwb.color[1] * ratio;\n\t\treturn hwb;\n\t},\n\n\tblacken: function (ratio) {\n\t\tvar hwb = this.hwb();\n\t\thwb.color[2] += hwb.color[2] * ratio;\n\t\treturn hwb;\n\t},\n\n\tgrayscale: function () {\n\t\t// http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale\n\t\tvar rgb = this.rgb().color;\n\t\tvar val = rgb[0] * 0.3 + rgb[1] * 0.59 + rgb[2] * 0.11;\n\t\treturn Color.rgb(val, val, val);\n\t},\n\n\tfade: function (ratio) {\n\t\treturn this.alpha(this.valpha - (this.valpha * ratio));\n\t},\n\n\topaquer: function (ratio) {\n\t\treturn this.alpha(this.valpha + (this.valpha * ratio));\n\t},\n\n\trotate: function (degrees) {\n\t\tvar hsl = this.hsl();\n\t\tvar hue = hsl.color[0];\n\t\thue = (hue + degrees) % 360;\n\t\thue = hue < 0 ? 360 + hue : hue;\n\t\thsl.color[0] = hue;\n\t\treturn hsl;\n\t},\n\n\tmix: function (mixinColor, weight) {\n\t\t// ported from sass implementation in C\n\t\t// https://github.com/sass/libsass/blob/0e6b4a2850092356aa3ece07c6b249f0221caced/functions.cpp#L209\n\t\tvar color1 = this.rgb();\n\t\tvar color2 = mixinColor.rgb();\n\t\tvar p = weight === undefined ? 0.5 : weight;\n\n\t\tvar w = 2 * p - 1;\n\t\tvar a = color1.alpha() - color2.alpha();\n\n\t\tvar w1 = (((w * a === -1) ? w : (w + a) / (1 + w * a)) + 1) / 2.0;\n\t\tvar w2 = 1 - w1;\n\n\t\treturn Color.rgb(\n\t\t\t\tw1 * color1.red() + w2 * color2.red(),\n\t\t\t\tw1 * color1.green() + w2 * color2.green(),\n\t\t\t\tw1 * color1.blue() + w2 * color2.blue(),\n\t\t\t\tcolor1.alpha() * p + color2.alpha() * (1 - p));\n\t}\n};\n\n// model conversion methods and static constructors\nObject.keys(convert).forEach(function (model) {\n\tif (skippedModels.indexOf(model) !== -1) {\n\t\treturn;\n\t}\n\n\tvar channels = convert[model].channels;\n\n\t// conversion methods\n\tColor.prototype[model] = function () {\n\t\tif (this.model === model) {\n\t\t\treturn new Color(this);\n\t\t}\n\n\t\tif (arguments.length) {\n\t\t\treturn new Color(arguments, model);\n\t\t}\n\n\t\tvar newAlpha = typeof arguments[channels] === 'number' ? channels : this.valpha;\n\t\treturn new Color(assertArray(convert[this.model][model].raw(this.color)).concat(newAlpha), model);\n\t};\n\n\t// 'static' construction methods\n\tColor[model] = function (color) {\n\t\tif (typeof color === 'number') {\n\t\t\tcolor = zeroArray(_slice.call(arguments), channels);\n\t\t}\n\t\treturn new Color(color, model);\n\t};\n});\n\nfunction roundTo(num, places) {\n\treturn Number(num.toFixed(places));\n}\n\nfunction roundToPlace(places) {\n\treturn function (num) {\n\t\treturn roundTo(num, places);\n\t};\n}\n\nfunction getset(model, channel, modifier) {\n\tmodel = Array.isArray(model) ? model : [model];\n\n\tmodel.forEach(function (m) {\n\t\t(limiters[m] || (limiters[m] = []))[channel] = modifier;\n\t});\n\n\tmodel = model[0];\n\n\treturn function (val) {\n\t\tvar result;\n\n\t\tif (arguments.length) {\n\t\t\tif (modifier) {\n\t\t\t\tval = modifier(val);\n\t\t\t}\n\n\t\t\tresult = this[model]();\n\t\t\tresult.color[channel] = val;\n\t\t\treturn result;\n\t\t}\n\n\t\tresult = this[model]().color[channel];\n\t\tif (modifier) {\n\t\t\tresult = modifier(result);\n\t\t}\n\n\t\treturn result;\n\t};\n}\n\nfunction maxfn(max) {\n\treturn function (v) {\n\t\treturn Math.max(0, Math.min(max, v));\n\t};\n}\n\nfunction assertArray(val) {\n\treturn Array.isArray(val) ? val : [val];\n}\n\nfunction zeroArray(arr, length) {\n\tfor (var i = 0; i < length; i++) {\n\t\tif (typeof arr[i] !== 'number') {\n\t\t\tarr[i] = 0;\n\t\t}\n\t}\n\n\treturn arr;\n}\n\nmodule.exports = Color;\n"
     },
     {
-      "id": 18,
+      "id": 19,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/desandro-matches-selector/matches-selector.js",
       "name": "./~/desandro-matches-selector/matches-selector.js",
-      "index": 11,
-      "index2": 6,
+      "index": 12,
+      "index2": 7,
       "size": 1296,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -948,14 +984,14 @@
       "source": "/**\n * matchesSelector v2.0.1\n * matchesSelector( element, '.selector' )\n * MIT license\n */\n\n/*jshint browser: true, strict: true, undef: true, unused: true */\n\n( function( window, factory ) {\n  /*global define: false, module: false */\n  'use strict';\n  // universal module definition\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( factory );\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory();\n  } else {\n    // browser global\n    window.matchesSelector = factory();\n  }\n\n}( window, function factory() {\n  'use strict';\n\n  var matchesMethod = ( function() {\n    var ElemProto = Element.prototype;\n    // check for the standard method name first\n    if ( ElemProto.matches ) {\n      return 'matches';\n    }\n    // check un-prefixed\n    if ( ElemProto.matchesSelector ) {\n      return 'matchesSelector';\n    }\n    // check vendor prefixes\n    var prefixes = [ 'webkit', 'moz', 'ms', 'o' ];\n\n    for ( var i=0; i < prefixes.length; i++ ) {\n      var prefix = prefixes[i];\n      var method = prefix + 'MatchesSelector';\n      if ( ElemProto[ method ] ) {\n        return method;\n      }\n    }\n  })();\n\n  return function matchesSelector( elem, selector ) {\n    return elem[ matchesMethod ]( selector );\n  };\n\n}));\n"
     },
     {
-      "id": 19,
+      "id": 20,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/add-remove-cell.js",
       "name": "./~/flickity/js/add-remove-cell.js",
-      "index": 22,
-      "index2": 19,
+      "index": 23,
+      "index2": 20,
       "size": 4905,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -963,14 +999,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
-      "issuerId": 23,
+      "issuerId": 24,
       "issuerName": "./~/flickity/js/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 23,
+          "moduleId": 24,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
           "module": "./~/flickity/js/index.js",
           "moduleName": "./~/flickity/js/index.js",
@@ -984,14 +1020,14 @@
       "source": "// add, remove cell\n( function( window, factory ) {\n  // universal module definition\n  /* jshint strict: false */\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( [\n      './flickity',\n      'fizzy-ui-utils/utils'\n    ], function( Flickity, utils ) {\n      return factory( window, Flickity, utils );\n    });\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory(\n      window,\n      require('./flickity'),\n      require('fizzy-ui-utils')\n    );\n  } else {\n    // browser global\n    factory(\n      window,\n      window.Flickity,\n      window.fizzyUIUtils\n    );\n  }\n\n}( window, function factory( window, Flickity, utils ) {\n\n'use strict';\n\n// append cells to a document fragment\nfunction getCellsFragment( cells ) {\n  var fragment = document.createDocumentFragment();\n  cells.forEach( function( cell ) {\n    fragment.appendChild( cell.element );\n  });\n  return fragment;\n}\n\n// -------------------------- add/remove cell prototype -------------------------- //\n\nvar proto = Flickity.prototype;\n\n/**\n * Insert, prepend, or append cells\n * @param {Element, Array, NodeList} elems\n * @param {Integer} index\n */\nproto.insert = function( elems, index ) {\n  var cells = this._makeCells( elems );\n  if ( !cells || !cells.length ) {\n    return;\n  }\n  var len = this.cells.length;\n  // default to append\n  index = index === undefined ? len : index;\n  // add cells with document fragment\n  var fragment = getCellsFragment( cells );\n  // append to slider\n  var isAppend = index == len;\n  if ( isAppend ) {\n    this.slider.appendChild( fragment );\n  } else {\n    var insertCellElement = this.cells[ index ].element;\n    this.slider.insertBefore( fragment, insertCellElement );\n  }\n  // add to this.cells\n  if ( index === 0 ) {\n    // prepend, add to start\n    this.cells = cells.concat( this.cells );\n  } else if ( isAppend ) {\n    // append, add to end\n    this.cells = this.cells.concat( cells );\n  } else {\n    // insert in this.cells\n    var endCells = this.cells.splice( index, len - index );\n    this.cells = this.cells.concat( cells ).concat( endCells );\n  }\n\n  this._sizeCells( cells );\n\n  var selectedIndexDelta = index > this.selectedIndex ? 0 : cells.length;\n  this._cellAddedRemoved( index, selectedIndexDelta );\n};\n\nproto.append = function( elems ) {\n  this.insert( elems, this.cells.length );\n};\n\nproto.prepend = function( elems ) {\n  this.insert( elems, 0 );\n};\n\n/**\n * Remove cells\n * @param {Element, Array, NodeList} elems\n */\nproto.remove = function( elems ) {\n  var cells = this.getCells( elems );\n  var selectedIndexDelta = 0;\n  var len = cells.length;\n  var i, cell;\n  // calculate selectedIndexDelta, easier if done in seperate loop\n  for ( i=0; i < len; i++ ) {\n    cell = cells[i];\n    var wasBefore = this.cells.indexOf( cell ) < this.selectedIndex;\n    selectedIndexDelta -= wasBefore ? 1 : 0;\n  }\n\n  for ( i=0; i < len; i++ ) {\n    cell = cells[i];\n    cell.remove();\n    // remove item from collection\n    utils.removeFrom( this.cells, cell );\n  }\n\n  if ( cells.length ) {\n    // update stuff\n    this._cellAddedRemoved( 0, selectedIndexDelta );\n  }\n};\n\n// updates when cells are added or removed\nproto._cellAddedRemoved = function( changedCellIndex, selectedIndexDelta ) {\n  // TODO this math isn't perfect with grouped slides\n  selectedIndexDelta = selectedIndexDelta || 0;\n  this.selectedIndex += selectedIndexDelta;\n  this.selectedIndex = Math.max( 0, Math.min( this.slides.length - 1, this.selectedIndex ) );\n\n  this.cellChange( changedCellIndex, true );\n  // backwards compatibility\n  this.emitEvent( 'cellAddedRemoved', [ changedCellIndex, selectedIndexDelta ] );\n};\n\n/**\n * logic to be run after a cell's size changes\n * @param {Element} elem - cell's element\n */\nproto.cellSizeChange = function( elem ) {\n  var cell = this.getCell( elem );\n  if ( !cell ) {\n    return;\n  }\n  cell.getSize();\n\n  var index = this.cells.indexOf( cell );\n  this.cellChange( index );\n};\n\n/**\n * logic any time a cell is changed: added, removed, or size changed\n * @param {Integer} changedCellIndex - index of the changed cell, optional\n */\nproto.cellChange = function( changedCellIndex, isPositioningSlider ) {\n  var prevSlideableWidth = this.slideableWidth;\n  this._positionCells( changedCellIndex );\n  this._getWrapShiftCells();\n  this.setGallerySize();\n  this.emitEvent( 'cellChange', [ changedCellIndex ] );\n  // position slider\n  if ( this.options.freeScroll ) {\n    // shift x by change in slideableWidth\n    // TODO fix position shifts when prepending w/ freeScroll\n    var deltaX = prevSlideableWidth - this.slideableWidth;\n    this.x += deltaX * this.cellAlign;\n    this.positionSlider();\n  } else {\n    // do not position slider after lazy load\n    if ( isPositioningSlider ) {\n      this.positionSliderAtSelected();\n    }\n    this.select( this.selectedIndex );\n  }\n};\n\n// -----  ----- //\n\nreturn Flickity;\n\n}));\n"
     },
     {
-      "id": 20,
+      "id": 21,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/animate.js",
       "name": "./~/flickity/js/animate.js",
-      "index": 14,
-      "index2": 10,
+      "index": 15,
+      "index2": 11,
       "size": 5865,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1020,14 +1056,14 @@
       "source": "// animate\n( function( window, factory ) {\n  // universal module definition\n  /* jshint strict: false */\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( [\n      'fizzy-ui-utils/utils'\n    ], function( utils ) {\n      return factory( window, utils );\n    });\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory(\n      window,\n      require('fizzy-ui-utils')\n    );\n  } else {\n    // browser global\n    window.Flickity = window.Flickity || {};\n    window.Flickity.animatePrototype = factory(\n      window,\n      window.fizzyUIUtils\n    );\n  }\n\n}( window, function factory( window, utils ) {\n\n'use strict';\n\n// -------------------------- requestAnimationFrame -------------------------- //\n\n// get rAF, prefixed, if present\nvar requestAnimationFrame = window.requestAnimationFrame ||\n  window.webkitRequestAnimationFrame;\n\n// fallback to setTimeout\nvar lastTime = 0;\nif ( !requestAnimationFrame )  {\n  requestAnimationFrame = function( callback ) {\n    var currTime = new Date().getTime();\n    var timeToCall = Math.max( 0, 16 - ( currTime - lastTime ) );\n    var id = setTimeout( callback, timeToCall );\n    lastTime = currTime + timeToCall;\n    return id;\n  };\n}\n\n// -------------------------- animate -------------------------- //\n\nvar proto = {};\n\nproto.startAnimation = function() {\n  if ( this.isAnimating ) {\n    return;\n  }\n\n  this.isAnimating = true;\n  this.restingFrames = 0;\n  this.animate();\n};\n\nproto.animate = function() {\n  this.applyDragForce();\n  this.applySelectedAttraction();\n\n  var previousX = this.x;\n\n  this.integratePhysics();\n  this.positionSlider();\n  this.settle( previousX );\n  // animate next frame\n  if ( this.isAnimating ) {\n    var _this = this;\n    requestAnimationFrame( function animateFrame() {\n      _this.animate();\n    });\n  }\n};\n\n\nvar transformProperty = ( function () {\n  var style = document.documentElement.style;\n  if ( typeof style.transform == 'string' ) {\n    return 'transform';\n  }\n  return 'WebkitTransform';\n})();\n\nproto.positionSlider = function() {\n  var x = this.x;\n  // wrap position around\n  if ( this.options.wrapAround && this.cells.length > 1 ) {\n    x = utils.modulo( x, this.slideableWidth );\n    x = x - this.slideableWidth;\n    this.shiftWrapCells( x );\n  }\n\n  x = x + this.cursorPosition;\n  // reverse if right-to-left and using transform\n  x = this.options.rightToLeft && transformProperty ? -x : x;\n  var value = this.getPositionValue( x );\n  // use 3D tranforms for hardware acceleration on iOS\n  // but use 2D when settled, for better font-rendering\n  this.slider.style[ transformProperty ] = this.isAnimating ?\n    'translate3d(' + value + ',0,0)' : 'translateX(' + value + ')';\n\n  // scroll event\n  var firstSlide = this.slides[0];\n  if ( firstSlide ) {\n    var positionX = -this.x - firstSlide.target;\n    var progress = positionX / this.slidesWidth;\n    this.dispatchEvent( 'scroll', null, [ progress, positionX ] );\n  }\n};\n\nproto.positionSliderAtSelected = function() {\n  if ( !this.cells.length ) {\n    return;\n  }\n  this.x = -this.selectedSlide.target;\n  this.positionSlider();\n};\n\nproto.getPositionValue = function( position ) {\n  if ( this.options.percentPosition ) {\n    // percent position, round to 2 digits, like 12.34%\n    return ( Math.round( ( position / this.size.innerWidth ) * 10000 ) * 0.01 )+ '%';\n  } else {\n    // pixel positioning\n    return Math.round( position ) + 'px';\n  }\n};\n\nproto.settle = function( previousX ) {\n  // keep track of frames where x hasn't moved\n  if ( !this.isPointerDown && Math.round( this.x * 100 ) == Math.round( previousX * 100 ) ) {\n    this.restingFrames++;\n  }\n  // stop animating if resting for 3 or more frames\n  if ( this.restingFrames > 2 ) {\n    this.isAnimating = false;\n    delete this.isFreeScrolling;\n    // render position with translateX when settled\n    this.positionSlider();\n    this.dispatchEvent('settle');\n  }\n};\n\nproto.shiftWrapCells = function( x ) {\n  // shift before cells\n  var beforeGap = this.cursorPosition + x;\n  this._shiftCells( this.beforeShiftCells, beforeGap, -1 );\n  // shift after cells\n  var afterGap = this.size.innerWidth - ( x + this.slideableWidth + this.cursorPosition );\n  this._shiftCells( this.afterShiftCells, afterGap, 1 );\n};\n\nproto._shiftCells = function( cells, gap, shift ) {\n  for ( var i=0; i < cells.length; i++ ) {\n    var cell = cells[i];\n    var cellShift = gap > 0 ? shift : 0;\n    cell.wrapShift( cellShift );\n    gap -= cell.size.outerWidth;\n  }\n};\n\nproto._unshiftCells = function( cells ) {\n  if ( !cells || !cells.length ) {\n    return;\n  }\n  for ( var i=0; i < cells.length; i++ ) {\n    cells[i].wrapShift( 0 );\n  }\n};\n\n// -------------------------- physics -------------------------- //\n\nproto.integratePhysics = function() {\n  this.x += this.velocity;\n  this.velocity *= this.getFrictionFactor();\n};\n\nproto.applyForce = function( force ) {\n  this.velocity += force;\n};\n\nproto.getFrictionFactor = function() {\n  return 1 - this.options[ this.isFreeScrolling ? 'freeScrollFriction' : 'friction' ];\n};\n\nproto.getRestingPosition = function() {\n  // my thanks to Steven Wittens, who simplified this math greatly\n  return this.x + this.velocity / ( 1 - this.getFrictionFactor() );\n};\n\nproto.applyDragForce = function() {\n  if ( !this.isPointerDown ) {\n    return;\n  }\n  // change the position to drag position by applying force\n  var dragVelocity = this.dragX - this.x;\n  var dragForce = dragVelocity - this.velocity;\n  this.applyForce( dragForce );\n};\n\nproto.applySelectedAttraction = function() {\n  // do not attract if pointer down or no cells\n  if ( this.isPointerDown || this.isFreeScrolling || !this.cells.length ) {\n    return;\n  }\n  var distance = this.selectedSlide.target * -1 - this.x;\n  var force = distance * this.options.selectedAttraction;\n  this.applyForce( force );\n};\n\nreturn proto;\n\n}));\n"
     },
     {
-      "id": 21,
+      "id": 22,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/cell.js",
       "name": "./~/flickity/js/cell.js",
-      "index": 12,
-      "index2": 8,
+      "index": 13,
+      "index2": 9,
       "size": 2045,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1056,14 +1092,14 @@
       "source": "// Flickity.Cell\n( function( window, factory ) {\n  // universal module definition\n  /* jshint strict: false */\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( [\n      'get-size/get-size'\n    ], function( getSize ) {\n      return factory( window, getSize );\n    });\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory(\n      window,\n      require('get-size')\n    );\n  } else {\n    // browser global\n    window.Flickity = window.Flickity || {};\n    window.Flickity.Cell = factory(\n      window,\n      window.getSize\n    );\n  }\n\n}( window, function factory( window, getSize ) {\n\n'use strict';\n\nfunction Cell( elem, parent ) {\n  this.element = elem;\n  this.parent = parent;\n\n  this.create();\n}\n\nvar proto = Cell.prototype;\n\nproto.create = function() {\n  this.element.style.position = 'absolute';\n  this.x = 0;\n  this.shift = 0;\n};\n\nproto.destroy = function() {\n  // reset style\n  this.element.style.position = '';\n  var side = this.parent.originSide;\n  this.element.style[ side ] = '';\n};\n\nproto.getSize = function() {\n  this.size = getSize( this.element );\n};\n\nproto.setPosition = function( x ) {\n  this.x = x;\n  this.updateTarget();\n  this.renderPosition( x );\n};\n\n// setDefaultTarget v1 method, backwards compatibility, remove in v3\nproto.updateTarget = proto.setDefaultTarget = function() {\n  var marginProperty = this.parent.originSide == 'left' ? 'marginLeft' : 'marginRight';\n  this.target = this.x + this.size[ marginProperty ] +\n    this.size.width * this.parent.cellAlign;\n};\n\nproto.renderPosition = function( x ) {\n  // render position of cell with in slider\n  var side = this.parent.originSide;\n  this.element.style[ side ] = this.parent.getPositionValue( x );\n};\n\n/**\n * @param {Integer} factor - 0, 1, or -1\n**/\nproto.wrapShift = function( shift ) {\n  this.shift = shift;\n  this.renderPosition( this.x + this.parent.slideableWidth * shift );\n};\n\nproto.remove = function() {\n  this.element.parentNode.removeChild( this.element );\n};\n\nreturn Cell;\n\n}));\n"
     },
     {
-      "id": 22,
+      "id": 23,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/drag.js",
       "name": "./~/flickity/js/drag.js",
-      "index": 15,
-      "index2": 14,
+      "index": 16,
+      "index2": 15,
       "size": 11389,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1071,14 +1107,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
-      "issuerId": 23,
+      "issuerId": 24,
       "issuerName": "./~/flickity/js/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 23,
+          "moduleId": 24,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
           "module": "./~/flickity/js/index.js",
           "moduleName": "./~/flickity/js/index.js",
@@ -1092,14 +1128,14 @@
       "source": "// drag\n( function( window, factory ) {\n  // universal module definition\n  /* jshint strict: false */\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( [\n      './flickity',\n      'unidragger/unidragger',\n      'fizzy-ui-utils/utils'\n    ], function( Flickity, Unidragger, utils ) {\n      return factory( window, Flickity, Unidragger, utils );\n    });\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory(\n      window,\n      require('./flickity'),\n      require('unidragger'),\n      require('fizzy-ui-utils')\n    );\n  } else {\n    // browser global\n    window.Flickity = factory(\n      window,\n      window.Flickity,\n      window.Unidragger,\n      window.fizzyUIUtils\n    );\n  }\n\n}( window, function factory( window, Flickity, Unidragger, utils ) {\n\n'use strict';\n\n// ----- defaults ----- //\n\nutils.extend( Flickity.defaults, {\n  draggable: true,\n  dragThreshold: 3,\n});\n\n// ----- create ----- //\n\nFlickity.createMethods.push('_createDrag');\n\n// -------------------------- drag prototype -------------------------- //\n\nvar proto = Flickity.prototype;\nutils.extend( proto, Unidragger.prototype );\n\n// --------------------------  -------------------------- //\n\nvar isTouch = 'createTouch' in document;\nvar isTouchmoveScrollCanceled = false;\n\nproto._createDrag = function() {\n  this.on( 'activate', this.bindDrag );\n  this.on( 'uiChange', this._uiChangeDrag );\n  this.on( 'childUIPointerDown', this._childUIPointerDownDrag );\n  this.on( 'deactivate', this.unbindDrag );\n  // HACK - add seemingly innocuous handler to fix iOS 10 scroll behavior\n  // #457, RubaXa/Sortable#973\n  if ( isTouch && !isTouchmoveScrollCanceled ) {\n    window.addEventListener( 'touchmove', function() {});\n    isTouchmoveScrollCanceled = true;\n  }\n};\n\nproto.bindDrag = function() {\n  if ( !this.options.draggable || this.isDragBound ) {\n    return;\n  }\n  this.element.classList.add('is-draggable');\n  this.handles = [ this.viewport ];\n  this.bindHandles();\n  this.isDragBound = true;\n};\n\nproto.unbindDrag = function() {\n  if ( !this.isDragBound ) {\n    return;\n  }\n  this.element.classList.remove('is-draggable');\n  this.unbindHandles();\n  delete this.isDragBound;\n};\n\nproto._uiChangeDrag = function() {\n  delete this.isFreeScrolling;\n};\n\nproto._childUIPointerDownDrag = function( event ) {\n  event.preventDefault();\n  this.pointerDownFocus( event );\n};\n\n// -------------------------- pointer events -------------------------- //\n\n// nodes that have text fields\nvar cursorNodes = {\n  TEXTAREA: true,\n  INPUT: true,\n  OPTION: true,\n};\n\n// input types that do not have text fields\nvar clickTypes = {\n  radio: true,\n  checkbox: true,\n  button: true,\n  submit: true,\n  image: true,\n  file: true,\n};\n\nproto.pointerDown = function( event, pointer ) {\n  // dismiss inputs with text fields. #403, #404\n  var isCursorInput = cursorNodes[ event.target.nodeName ] &&\n    !clickTypes[ event.target.type ];\n  if ( isCursorInput ) {\n    // reset pointerDown logic\n    this.isPointerDown = false;\n    delete this.pointerIdentifier;\n    return;\n  }\n\n  this._dragPointerDown( event, pointer );\n\n  // kludge to blur focused inputs in dragger\n  var focused = document.activeElement;\n  if ( focused && focused.blur && focused != this.element &&\n    // do not blur body for IE9 & 10, #117\n    focused != document.body ) {\n    focused.blur();\n  }\n  this.pointerDownFocus( event );\n  // stop if it was moving\n  this.dragX = this.x;\n  this.viewport.classList.add('is-pointer-down');\n  // bind move and end events\n  this._bindPostStartEvents( event );\n  // track scrolling\n  this.pointerDownScroll = getScrollPosition();\n  window.addEventListener( 'scroll', this );\n\n  this.dispatchEvent( 'pointerDown', event, [ pointer ] );\n};\n\nvar touchStartEvents = {\n  touchstart: true,\n  MSPointerDown: true\n};\n\nvar focusNodes = {\n  INPUT: true,\n  SELECT: true\n};\n\nproto.pointerDownFocus = function( event ) {\n  // focus element, if not touch, and its not an input or select\n  if ( !this.options.accessibility || touchStartEvents[ event.type ] ||\n      focusNodes[ event.target.nodeName ] ) {\n    return;\n  }\n  var prevScrollY = window.pageYOffset;\n  this.element.focus();\n  // hack to fix scroll jump after focus, #76\n  if ( window.pageYOffset != prevScrollY ) {\n    window.scrollTo( window.pageXOffset, prevScrollY );\n  }\n};\n\nproto.canPreventDefaultOnPointerDown = function( event ) {\n  // prevent default, unless touchstart or <select>\n  var isTouchstart = event.type == 'touchstart';\n  var targetNodeName = event.target.nodeName;\n  return !isTouchstart && targetNodeName != 'SELECT';\n};\n\n// ----- move ----- //\n\nproto.hasDragStarted = function( moveVector ) {\n  return Math.abs( moveVector.x ) > this.options.dragThreshold;\n};\n\n// ----- up ----- //\n\nproto.pointerUp = function( event, pointer ) {\n  delete this.isTouchScrolling;\n  this.viewport.classList.remove('is-pointer-down');\n  this.dispatchEvent( 'pointerUp', event, [ pointer ] );\n  this._dragPointerUp( event, pointer );\n};\n\nproto.pointerDone = function() {\n  window.removeEventListener( 'scroll', this );\n  delete this.pointerDownScroll;\n};\n\n// -------------------------- dragging -------------------------- //\n\nproto.dragStart = function( event, pointer ) {\n  this.dragStartPosition = this.x;\n  this.startAnimation();\n  window.removeEventListener( 'scroll', this );\n  this.dispatchEvent( 'dragStart', event, [ pointer ] );\n};\n\nproto.pointerMove = function( event, pointer ) {\n  var moveVector = this._dragPointerMove( event, pointer );\n  this.dispatchEvent( 'pointerMove', event, [ pointer, moveVector ] );\n  this._dragMove( event, pointer, moveVector );\n};\n\nproto.dragMove = function( event, pointer, moveVector ) {\n  event.preventDefault();\n\n  this.previousDragX = this.dragX;\n  // reverse if right-to-left\n  var direction = this.options.rightToLeft ? -1 : 1;\n  var dragX = this.dragStartPosition + moveVector.x * direction;\n\n  if ( !this.options.wrapAround && this.slides.length ) {\n    // slow drag\n    var originBound = Math.max( -this.slides[0].target, this.dragStartPosition );\n    dragX = dragX > originBound ? ( dragX + originBound ) * 0.5 : dragX;\n    var endBound = Math.min( -this.getLastSlide().target, this.dragStartPosition );\n    dragX = dragX < endBound ? ( dragX + endBound ) * 0.5 : dragX;\n  }\n\n  this.dragX = dragX;\n\n  this.dragMoveTime = new Date();\n  this.dispatchEvent( 'dragMove', event, [ pointer, moveVector ] );\n};\n\nproto.dragEnd = function( event, pointer ) {\n  if ( this.options.freeScroll ) {\n    this.isFreeScrolling = true;\n  }\n  // set selectedIndex based on where flick will end up\n  var index = this.dragEndRestingSelect();\n\n  if ( this.options.freeScroll && !this.options.wrapAround ) {\n    // if free-scroll & not wrap around\n    // do not free-scroll if going outside of bounding slides\n    // so bounding slides can attract slider, and keep it in bounds\n    var restingX = this.getRestingPosition();\n    this.isFreeScrolling = -restingX > this.slides[0].target &&\n      -restingX < this.getLastSlide().target;\n  } else if ( !this.options.freeScroll && index == this.selectedIndex ) {\n    // boost selection if selected index has not changed\n    index += this.dragEndBoostSelect();\n  }\n  delete this.previousDragX;\n  // apply selection\n  // TODO refactor this, selecting here feels weird\n  // HACK, set flag so dragging stays in correct direction\n  this.isDragSelect = this.options.wrapAround;\n  this.select( index );\n  delete this.isDragSelect;\n  this.dispatchEvent( 'dragEnd', event, [ pointer ] );\n};\n\nproto.dragEndRestingSelect = function() {\n  var restingX = this.getRestingPosition();\n  // how far away from selected slide\n  var distance = Math.abs( this.getSlideDistance( -restingX, this.selectedIndex ) );\n  // get closet resting going up and going down\n  var positiveResting = this._getClosestResting( restingX, distance, 1 );\n  var negativeResting = this._getClosestResting( restingX, distance, -1 );\n  // use closer resting for wrap-around\n  var index = positiveResting.distance < negativeResting.distance ?\n    positiveResting.index : negativeResting.index;\n  return index;\n};\n\n/**\n * given resting X and distance to selected cell\n * get the distance and index of the closest cell\n * @param {Number} restingX - estimated post-flick resting position\n * @param {Number} distance - distance to selected cell\n * @param {Integer} increment - +1 or -1, going up or down\n * @returns {Object} - { distance: {Number}, index: {Integer} }\n */\nproto._getClosestResting = function( restingX, distance, increment ) {\n  var index = this.selectedIndex;\n  var minDistance = Infinity;\n  var condition = this.options.contain && !this.options.wrapAround ?\n    // if contain, keep going if distance is equal to minDistance\n    function( d, md ) { return d <= md; } : function( d, md ) { return d < md; };\n  while ( condition( distance, minDistance ) ) {\n    // measure distance to next cell\n    index += increment;\n    minDistance = distance;\n    distance = this.getSlideDistance( -restingX, index );\n    if ( distance === null ) {\n      break;\n    }\n    distance = Math.abs( distance );\n  }\n  return {\n    distance: minDistance,\n    // selected was previous index\n    index: index - increment\n  };\n};\n\n/**\n * measure distance between x and a slide target\n * @param {Number} x\n * @param {Integer} index - slide index\n */\nproto.getSlideDistance = function( x, index ) {\n  var len = this.slides.length;\n  // wrap around if at least 2 slides\n  var isWrapAround = this.options.wrapAround && len > 1;\n  var slideIndex = isWrapAround ? utils.modulo( index, len ) : index;\n  var slide = this.slides[ slideIndex ];\n  if ( !slide ) {\n    return null;\n  }\n  // add distance for wrap-around slides\n  var wrap = isWrapAround ? this.slideableWidth * Math.floor( index / len ) : 0;\n  return x - ( slide.target + wrap );\n};\n\nproto.dragEndBoostSelect = function() {\n  // do not boost if no previousDragX or dragMoveTime\n  if ( this.previousDragX === undefined || !this.dragMoveTime ||\n    // or if drag was held for 100 ms\n    new Date() - this.dragMoveTime > 100 ) {\n    return 0;\n  }\n\n  var distance = this.getSlideDistance( -this.dragX, this.selectedIndex );\n  var delta = this.previousDragX - this.dragX;\n  if ( distance > 0 && delta > 0 ) {\n    // boost to next if moving towards the right, and positive velocity\n    return 1;\n  } else if ( distance < 0 && delta < 0 ) {\n    // boost to previous if moving towards the left, and negative velocity\n    return -1;\n  }\n  return 0;\n};\n\n// ----- staticClick ----- //\n\nproto.staticClick = function( event, pointer ) {\n  // get clickedCell, if cell was clicked\n  var clickedCell = this.getParentCell( event.target );\n  var cellElem = clickedCell && clickedCell.element;\n  var cellIndex = clickedCell && this.cells.indexOf( clickedCell );\n  this.dispatchEvent( 'staticClick', event, [ pointer, cellElem, cellIndex ] );\n};\n\n// ----- scroll ----- //\n\nproto.onscroll = function() {\n  var scroll = getScrollPosition();\n  var scrollMoveX = this.pointerDownScroll.x - scroll.x;\n  var scrollMoveY = this.pointerDownScroll.y - scroll.y;\n  // cancel click/tap if scroll is too much\n  if ( Math.abs( scrollMoveX ) > 3 || Math.abs( scrollMoveY ) > 3 ) {\n    this._pointerDone();\n  }\n};\n\n// ----- utils ----- //\n\nfunction getScrollPosition() {\n  return {\n    x: window.pageXOffset,\n    y: window.pageYOffset\n  };\n}\n\n// -----  ----- //\n\nreturn Flickity;\n\n}));\n"
     },
     {
-      "id": 23,
+      "id": 24,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
       "name": "./~/flickity/js/index.js",
-      "index": 6,
-      "index2": 21,
+      "index": 7,
+      "index2": 22,
       "size": 991,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1107,14 +1143,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/hero.js",
-      "issuerId": 10,
+      "issuerId": 11,
       "issuerName": "./_js/hero.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 10,
+          "moduleId": 11,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/hero.js",
           "module": "./_js/hero.js",
           "moduleName": "./_js/hero.js",
@@ -1130,14 +1166,14 @@
       "source": "/*!\n * Flickity v2.0.5\n * Touch, responsive, flickable carousels\n *\n * Licensed GPLv3 for open source use\n * or Flickity Commercial License for commercial use\n *\n * http://flickity.metafizzy.co\n * Copyright 2016 Metafizzy\n */\n\n( function( window, factory ) {\n  // universal module definition\n  /* jshint strict: false */\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( [\n      './flickity',\n      './drag',\n      './prev-next-button',\n      './page-dots',\n      './player',\n      './add-remove-cell',\n      './lazyload'\n    ], factory );\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory(\n      require('./flickity'),\n      require('./drag'),\n      require('./prev-next-button'),\n      require('./page-dots'),\n      require('./player'),\n      require('./add-remove-cell'),\n      require('./lazyload')\n    );\n  }\n\n})( window, function factory( Flickity ) {\n  /*jshint strict: false*/\n  return Flickity;\n});\n"
     },
     {
-      "id": 24,
+      "id": 25,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/lazyload.js",
       "name": "./~/flickity/js/lazyload.js",
-      "index": 23,
-      "index2": 20,
+      "index": 24,
+      "index2": 21,
       "size": 3105,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1145,14 +1181,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
-      "issuerId": 23,
+      "issuerId": 24,
       "issuerName": "./~/flickity/js/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 23,
+          "moduleId": 24,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
           "module": "./~/flickity/js/index.js",
           "moduleName": "./~/flickity/js/index.js",
@@ -1166,14 +1202,14 @@
       "source": "// lazyload\n( function( window, factory ) {\n  // universal module definition\n  /* jshint strict: false */\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( [\n      './flickity',\n      'fizzy-ui-utils/utils'\n    ], function( Flickity, utils ) {\n      return factory( window, Flickity, utils );\n    });\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory(\n      window,\n      require('./flickity'),\n      require('fizzy-ui-utils')\n    );\n  } else {\n    // browser global\n    factory(\n      window,\n      window.Flickity,\n      window.fizzyUIUtils\n    );\n  }\n\n}( window, function factory( window, Flickity, utils ) {\n'use strict';\n\nFlickity.createMethods.push('_createLazyload');\nvar proto = Flickity.prototype;\n\nproto._createLazyload = function() {\n  this.on( 'select', this.lazyLoad );\n};\n\nproto.lazyLoad = function() {\n  var lazyLoad = this.options.lazyLoad;\n  if ( !lazyLoad ) {\n    return;\n  }\n  // get adjacent cells, use lazyLoad option for adjacent count\n  var adjCount = typeof lazyLoad == 'number' ? lazyLoad : 0;\n  var cellElems = this.getAdjacentCellElements( adjCount );\n  // get lazy images in those cells\n  var lazyImages = [];\n  cellElems.forEach( function( cellElem ) {\n    var lazyCellImages = getCellLazyImages( cellElem );\n    lazyImages = lazyImages.concat( lazyCellImages );\n  });\n  // load lazy images\n  lazyImages.forEach( function( img ) {\n    new LazyLoader( img, this );\n  }, this );\n};\n\nfunction getCellLazyImages( cellElem ) {\n  // check if cell element is lazy image\n  if ( cellElem.nodeName == 'IMG' &&\n    cellElem.getAttribute('data-flickity-lazyload') ) {\n    return [ cellElem ];\n  }\n  // select lazy images in cell\n  var imgs = cellElem.querySelectorAll('img[data-flickity-lazyload]');\n  return utils.makeArray( imgs );\n}\n\n// -------------------------- LazyLoader -------------------------- //\n\n/**\n * class to handle loading images\n */\nfunction LazyLoader( img, flickity ) {\n  this.img = img;\n  this.flickity = flickity;\n  this.load();\n}\n\nLazyLoader.prototype.handleEvent = utils.handleEvent;\n\nLazyLoader.prototype.load = function() {\n  this.img.addEventListener( 'load', this );\n  this.img.addEventListener( 'error', this );\n  // load image\n  this.img.src = this.img.getAttribute('data-flickity-lazyload');\n  // remove attr\n  this.img.removeAttribute('data-flickity-lazyload');\n};\n\nLazyLoader.prototype.onload = function( event ) {\n  this.complete( event, 'flickity-lazyloaded' );\n};\n\nLazyLoader.prototype.onerror = function( event ) {\n  this.complete( event, 'flickity-lazyerror' );\n};\n\nLazyLoader.prototype.complete = function( event, className ) {\n  // unbind events\n  this.img.removeEventListener( 'load', this );\n  this.img.removeEventListener( 'error', this );\n\n  var cell = this.flickity.getParentCell( this.img );\n  var cellElem = cell && cell.element;\n  this.flickity.cellSizeChange( cellElem );\n\n  this.img.classList.add( className );\n  this.flickity.dispatchEvent( 'lazyLoad', event, cellElem );\n};\n\n// -----  ----- //\n\nFlickity.LazyLoader = LazyLoader;\n\nreturn Flickity;\n\n}));\n"
     },
     {
-      "id": 25,
+      "id": 26,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/page-dots.js",
       "name": "./~/flickity/js/page-dots.js",
-      "index": 20,
-      "index2": 17,
+      "index": 21,
+      "index2": 18,
       "size": 4307,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1181,14 +1217,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
-      "issuerId": 23,
+      "issuerId": 24,
       "issuerName": "./~/flickity/js/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 23,
+          "moduleId": 24,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
           "module": "./~/flickity/js/index.js",
           "moduleName": "./~/flickity/js/index.js",
@@ -1202,14 +1238,14 @@
       "source": "// page dots\n( function( window, factory ) {\n  // universal module definition\n  /* jshint strict: false */\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( [\n      './flickity',\n      'tap-listener/tap-listener',\n      'fizzy-ui-utils/utils'\n    ], function( Flickity, TapListener, utils ) {\n      return factory( window, Flickity, TapListener, utils );\n    });\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory(\n      window,\n      require('./flickity'),\n      require('tap-listener'),\n      require('fizzy-ui-utils')\n    );\n  } else {\n    // browser global\n    factory(\n      window,\n      window.Flickity,\n      window.TapListener,\n      window.fizzyUIUtils\n    );\n  }\n\n}( window, function factory( window, Flickity, TapListener, utils ) {\n\n// -------------------------- PageDots -------------------------- //\n\n'use strict';\n\nfunction PageDots( parent ) {\n  this.parent = parent;\n  this._create();\n}\n\nPageDots.prototype = new TapListener();\n\nPageDots.prototype._create = function() {\n  // create holder element\n  this.holder = document.createElement('ol');\n  this.holder.className = 'flickity-page-dots';\n  // create dots, array of elements\n  this.dots = [];\n  // events\n  this.on( 'tap', this.onTap );\n  this.on( 'pointerDown', this.parent.childUIPointerDown.bind( this.parent ) );\n};\n\nPageDots.prototype.activate = function() {\n  this.setDots();\n  this.bindTap( this.holder );\n  // add to DOM\n  this.parent.element.appendChild( this.holder );\n};\n\nPageDots.prototype.deactivate = function() {\n  // remove from DOM\n  this.parent.element.removeChild( this.holder );\n  TapListener.prototype.destroy.call( this );\n};\n\nPageDots.prototype.setDots = function() {\n  // get difference between number of slides and number of dots\n  var delta = this.parent.slides.length - this.dots.length;\n  if ( delta > 0 ) {\n    this.addDots( delta );\n  } else if ( delta < 0 ) {\n    this.removeDots( -delta );\n  }\n};\n\nPageDots.prototype.addDots = function( count ) {\n  var fragment = document.createDocumentFragment();\n  var newDots = [];\n  while ( count ) {\n    var dot = document.createElement('li');\n    dot.className = 'dot';\n    fragment.appendChild( dot );\n    newDots.push( dot );\n    count--;\n  }\n  this.holder.appendChild( fragment );\n  this.dots = this.dots.concat( newDots );\n};\n\nPageDots.prototype.removeDots = function( count ) {\n  // remove from this.dots collection\n  var removeDots = this.dots.splice( this.dots.length - count, count );\n  // remove from DOM\n  removeDots.forEach( function( dot ) {\n    this.holder.removeChild( dot );\n  }, this );\n};\n\nPageDots.prototype.updateSelected = function() {\n  // remove selected class on previous\n  if ( this.selectedDot ) {\n    this.selectedDot.className = 'dot';\n  }\n  // don't proceed if no dots\n  if ( !this.dots.length ) {\n    return;\n  }\n  this.selectedDot = this.dots[ this.parent.selectedIndex ];\n  this.selectedDot.className = 'dot is-selected';\n};\n\nPageDots.prototype.onTap = function( event ) {\n  var target = event.target;\n  // only care about dot clicks\n  if ( target.nodeName != 'LI' ) {\n    return;\n  }\n\n  this.parent.uiChange();\n  var index = this.dots.indexOf( target );\n  this.parent.select( index );\n};\n\nPageDots.prototype.destroy = function() {\n  this.deactivate();\n};\n\nFlickity.PageDots = PageDots;\n\n// -------------------------- Flickity -------------------------- //\n\nutils.extend( Flickity.defaults, {\n  pageDots: true\n});\n\nFlickity.createMethods.push('_createPageDots');\n\nvar proto = Flickity.prototype;\n\nproto._createPageDots = function() {\n  if ( !this.options.pageDots ) {\n    return;\n  }\n  this.pageDots = new PageDots( this );\n  // events\n  this.on( 'activate', this.activatePageDots );\n  this.on( 'select', this.updateSelectedPageDots );\n  this.on( 'cellChange', this.updatePageDots );\n  this.on( 'resize', this.updatePageDots );\n  this.on( 'deactivate', this.deactivatePageDots );\n};\n\nproto.activatePageDots = function() {\n  this.pageDots.activate();\n};\n\nproto.updateSelectedPageDots = function() {\n  this.pageDots.updateSelected();\n};\n\nproto.updatePageDots = function() {\n  this.pageDots.setDots();\n};\n\nproto.deactivatePageDots = function() {\n  this.pageDots.deactivate();\n};\n\n// -----  ----- //\n\nFlickity.PageDots = PageDots;\n\nreturn Flickity;\n\n}));\n"
     },
     {
-      "id": 26,
+      "id": 27,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/player.js",
       "name": "./~/flickity/js/player.js",
-      "index": 21,
-      "index2": 18,
+      "index": 22,
+      "index2": 19,
       "size": 5137,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1217,14 +1253,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
-      "issuerId": 23,
+      "issuerId": 24,
       "issuerName": "./~/flickity/js/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 23,
+          "moduleId": 24,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
           "module": "./~/flickity/js/index.js",
           "moduleName": "./~/flickity/js/index.js",
@@ -1238,14 +1274,14 @@
       "source": "// player & autoPlay\n( function( window, factory ) {\n  // universal module definition\n  /* jshint strict: false */\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( [\n      'ev-emitter/ev-emitter',\n      'fizzy-ui-utils/utils',\n      './flickity'\n    ], function( EvEmitter, utils, Flickity ) {\n      return factory( EvEmitter, utils, Flickity );\n    });\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory(\n      require('ev-emitter'),\n      require('fizzy-ui-utils'),\n      require('./flickity')\n    );\n  } else {\n    // browser global\n    factory(\n      window.EvEmitter,\n      window.fizzyUIUtils,\n      window.Flickity\n    );\n  }\n\n}( window, function factory( EvEmitter, utils, Flickity ) {\n\n'use strict';\n\n// -------------------------- Page Visibility -------------------------- //\n// https://developer.mozilla.org/en-US/docs/Web/Guide/User_experience/Using_the_Page_Visibility_API\n\nvar hiddenProperty, visibilityEvent;\nif ( 'hidden' in document ) {\n  hiddenProperty = 'hidden';\n  visibilityEvent = 'visibilitychange';\n} else if ( 'webkitHidden' in document ) {\n  hiddenProperty = 'webkitHidden';\n  visibilityEvent = 'webkitvisibilitychange';\n}\n\n// -------------------------- Player -------------------------- //\n\nfunction Player( parent ) {\n  this.parent = parent;\n  this.state = 'stopped';\n  // visibility change event handler\n  if ( visibilityEvent ) {\n    this.onVisibilityChange = function() {\n      this.visibilityChange();\n    }.bind( this );\n    this.onVisibilityPlay = function() {\n      this.visibilityPlay();\n    }.bind( this );\n  }\n}\n\nPlayer.prototype = Object.create( EvEmitter.prototype );\n\n// start play\nPlayer.prototype.play = function() {\n  if ( this.state == 'playing' ) {\n    return;\n  }\n  // do not play if page is hidden, start playing when page is visible\n  var isPageHidden = document[ hiddenProperty ];\n  if ( visibilityEvent && isPageHidden ) {\n    document.addEventListener( visibilityEvent, this.onVisibilityPlay );\n    return;\n  }\n\n  this.state = 'playing';\n  // listen to visibility change\n  if ( visibilityEvent ) {\n    document.addEventListener( visibilityEvent, this.onVisibilityChange );\n  }\n  // start ticking\n  this.tick();\n};\n\nPlayer.prototype.tick = function() {\n  // do not tick if not playing\n  if ( this.state != 'playing' ) {\n    return;\n  }\n\n  var time = this.parent.options.autoPlay;\n  // default to 3 seconds\n  time = typeof time == 'number' ? time : 3000;\n  var _this = this;\n  // HACK: reset ticks if stopped and started within interval\n  this.clear();\n  this.timeout = setTimeout( function() {\n    _this.parent.next( true );\n    _this.tick();\n  }, time );\n};\n\nPlayer.prototype.stop = function() {\n  this.state = 'stopped';\n  this.clear();\n  // remove visibility change event\n  if ( visibilityEvent ) {\n    document.removeEventListener( visibilityEvent, this.onVisibilityChange );\n  }\n};\n\nPlayer.prototype.clear = function() {\n  clearTimeout( this.timeout );\n};\n\nPlayer.prototype.pause = function() {\n  if ( this.state == 'playing' ) {\n    this.state = 'paused';\n    this.clear();\n  }\n};\n\nPlayer.prototype.unpause = function() {\n  // re-start play if paused\n  if ( this.state == 'paused' ) {\n    this.play();\n  }\n};\n\n// pause if page visibility is hidden, unpause if visible\nPlayer.prototype.visibilityChange = function() {\n  var isPageHidden = document[ hiddenProperty ];\n  this[ isPageHidden ? 'pause' : 'unpause' ]();\n};\n\nPlayer.prototype.visibilityPlay = function() {\n  this.play();\n  document.removeEventListener( visibilityEvent, this.onVisibilityPlay );\n};\n\n// -------------------------- Flickity -------------------------- //\n\nutils.extend( Flickity.defaults, {\n  pauseAutoPlayOnHover: true\n});\n\nFlickity.createMethods.push('_createPlayer');\nvar proto = Flickity.prototype;\n\nproto._createPlayer = function() {\n  this.player = new Player( this );\n\n  this.on( 'activate', this.activatePlayer );\n  this.on( 'uiChange', this.stopPlayer );\n  this.on( 'pointerDown', this.stopPlayer );\n  this.on( 'deactivate', this.deactivatePlayer );\n};\n\nproto.activatePlayer = function() {\n  if ( !this.options.autoPlay ) {\n    return;\n  }\n  this.player.play();\n  this.element.addEventListener( 'mouseenter', this );\n};\n\n// Player API, don't hate the ... thanks I know where the door is\n\nproto.playPlayer = function() {\n  this.player.play();\n};\n\nproto.stopPlayer = function() {\n  this.player.stop();\n};\n\nproto.pausePlayer = function() {\n  this.player.pause();\n};\n\nproto.unpausePlayer = function() {\n  this.player.unpause();\n};\n\nproto.deactivatePlayer = function() {\n  this.player.stop();\n  this.element.removeEventListener( 'mouseenter', this );\n};\n\n// ----- mouseenter/leave ----- //\n\n// pause auto-play on hover\nproto.onmouseenter = function() {\n  if ( !this.options.pauseAutoPlayOnHover ) {\n    return;\n  }\n  this.player.pause();\n  this.element.addEventListener( 'mouseleave', this );\n};\n\n// resume auto-play on hover off\nproto.onmouseleave = function() {\n  this.player.unpause();\n  this.element.removeEventListener( 'mouseleave', this );\n};\n\n// -----  ----- //\n\nFlickity.Player = Player;\n\nreturn Flickity;\n\n}));\n"
     },
     {
-      "id": 27,
+      "id": 28,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/prev-next-button.js",
       "name": "./~/flickity/js/prev-next-button.js",
-      "index": 18,
-      "index2": 16,
+      "index": 19,
+      "index2": 17,
       "size": 5998,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1253,14 +1289,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
-      "issuerId": 23,
+      "issuerId": 24,
       "issuerName": "./~/flickity/js/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 23,
+          "moduleId": 24,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/index.js",
           "module": "./~/flickity/js/index.js",
           "moduleName": "./~/flickity/js/index.js",
@@ -1274,14 +1310,14 @@
       "source": "// prev/next buttons\n( function( window, factory ) {\n  // universal module definition\n  /* jshint strict: false */\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( [\n      './flickity',\n      'tap-listener/tap-listener',\n      'fizzy-ui-utils/utils'\n    ], function( Flickity, TapListener, utils ) {\n      return factory( window, Flickity, TapListener, utils );\n    });\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory(\n      window,\n      require('./flickity'),\n      require('tap-listener'),\n      require('fizzy-ui-utils')\n    );\n  } else {\n    // browser global\n    factory(\n      window,\n      window.Flickity,\n      window.TapListener,\n      window.fizzyUIUtils\n    );\n  }\n\n}( window, function factory( window, Flickity, TapListener, utils ) {\n'use strict';\n\nvar svgURI = 'http://www.w3.org/2000/svg';\n\n// -------------------------- PrevNextButton -------------------------- //\n\nfunction PrevNextButton( direction, parent ) {\n  this.direction = direction;\n  this.parent = parent;\n  this._create();\n}\n\nPrevNextButton.prototype = new TapListener();\n\nPrevNextButton.prototype._create = function() {\n  // properties\n  this.isEnabled = true;\n  this.isPrevious = this.direction == -1;\n  var leftDirection = this.parent.options.rightToLeft ? 1 : -1;\n  this.isLeft = this.direction == leftDirection;\n\n  var element = this.element = document.createElement('button');\n  element.className = 'flickity-prev-next-button';\n  element.className += this.isPrevious ? ' previous' : ' next';\n  // prevent button from submitting form http://stackoverflow.com/a/10836076/182183\n  element.setAttribute( 'type', 'button' );\n  // init as disabled\n  this.disable();\n\n  element.setAttribute( 'aria-label', this.isPrevious ? 'previous' : 'next' );\n\n  // create arrow\n  var svg = this.createSVG();\n  element.appendChild( svg );\n  // events\n  this.on( 'tap', this.onTap );\n  this.parent.on( 'select', this.update.bind( this ) );\n  this.on( 'pointerDown', this.parent.childUIPointerDown.bind( this.parent ) );\n};\n\nPrevNextButton.prototype.activate = function() {\n  this.bindTap( this.element );\n  // click events from keyboard\n  this.element.addEventListener( 'click', this );\n  // add to DOM\n  this.parent.element.appendChild( this.element );\n};\n\nPrevNextButton.prototype.deactivate = function() {\n  // remove from DOM\n  this.parent.element.removeChild( this.element );\n  // do regular TapListener destroy\n  TapListener.prototype.destroy.call( this );\n  // click events from keyboard\n  this.element.removeEventListener( 'click', this );\n};\n\nPrevNextButton.prototype.createSVG = function() {\n  var svg = document.createElementNS( svgURI, 'svg');\n  svg.setAttribute( 'viewBox', '0 0 100 100' );\n  var path = document.createElementNS( svgURI, 'path');\n  var pathMovements = getArrowMovements( this.parent.options.arrowShape );\n  path.setAttribute( 'd', pathMovements );\n  path.setAttribute( 'class', 'arrow' );\n  // rotate arrow\n  if ( !this.isLeft ) {\n    path.setAttribute( 'transform', 'translate(100, 100) rotate(180) ' );\n  }\n  svg.appendChild( path );\n  return svg;\n};\n\n// get SVG path movmement\nfunction getArrowMovements( shape ) {\n  // use shape as movement if string\n  if ( typeof shape == 'string' ) {\n    return shape;\n  }\n  // create movement string\n  return 'M ' + shape.x0 + ',50' +\n    ' L ' + shape.x1 + ',' + ( shape.y1 + 50 ) +\n    ' L ' + shape.x2 + ',' + ( shape.y2 + 50 ) +\n    ' L ' + shape.x3 + ',50 ' +\n    ' L ' + shape.x2 + ',' + ( 50 - shape.y2 ) +\n    ' L ' + shape.x1 + ',' + ( 50 - shape.y1 ) +\n    ' Z';\n}\n\nPrevNextButton.prototype.onTap = function() {\n  if ( !this.isEnabled ) {\n    return;\n  }\n  this.parent.uiChange();\n  var method = this.isPrevious ? 'previous' : 'next';\n  this.parent[ method ]();\n};\n\nPrevNextButton.prototype.handleEvent = utils.handleEvent;\n\nPrevNextButton.prototype.onclick = function() {\n  // only allow clicks from keyboard\n  var focused = document.activeElement;\n  if ( focused && focused == this.element ) {\n    this.onTap();\n  }\n};\n\n// -----  ----- //\n\nPrevNextButton.prototype.enable = function() {\n  if ( this.isEnabled ) {\n    return;\n  }\n  this.element.disabled = false;\n  this.isEnabled = true;\n};\n\nPrevNextButton.prototype.disable = function() {\n  if ( !this.isEnabled ) {\n    return;\n  }\n  this.element.disabled = true;\n  this.isEnabled = false;\n};\n\nPrevNextButton.prototype.update = function() {\n  // index of first or last slide, if previous or next\n  var slides = this.parent.slides;\n  // enable is wrapAround and at least 2 slides\n  if ( this.parent.options.wrapAround && slides.length > 1 ) {\n    this.enable();\n    return;\n  }\n  var lastIndex = slides.length ? slides.length - 1 : 0;\n  var boundIndex = this.isPrevious ? 0 : lastIndex;\n  var method = this.parent.selectedIndex == boundIndex ? 'disable' : 'enable';\n  this[ method ]();\n};\n\nPrevNextButton.prototype.destroy = function() {\n  this.deactivate();\n};\n\n// -------------------------- Flickity prototype -------------------------- //\n\nutils.extend( Flickity.defaults, {\n  prevNextButtons: true,\n  arrowShape: {\n    x0: 10,\n    x1: 60, y1: 50,\n    x2: 70, y2: 40,\n    x3: 30\n  }\n});\n\nFlickity.createMethods.push('_createPrevNextButtons');\nvar proto = Flickity.prototype;\n\nproto._createPrevNextButtons = function() {\n  if ( !this.options.prevNextButtons ) {\n    return;\n  }\n\n  this.prevButton = new PrevNextButton( -1, this );\n  this.nextButton = new PrevNextButton( 1, this );\n\n  this.on( 'activate', this.activatePrevNextButtons );\n};\n\nproto.activatePrevNextButtons = function() {\n  this.prevButton.activate();\n  this.nextButton.activate();\n  this.on( 'deactivate', this.deactivatePrevNextButtons );\n};\n\nproto.deactivatePrevNextButtons = function() {\n  this.prevButton.deactivate();\n  this.nextButton.deactivate();\n  this.off( 'deactivate', this.deactivatePrevNextButtons );\n};\n\n// --------------------------  -------------------------- //\n\nFlickity.PrevNextButton = PrevNextButton;\n\nreturn Flickity;\n\n}));\n"
     },
     {
-      "id": 28,
+      "id": 29,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/slide.js",
       "name": "./~/flickity/js/slide.js",
-      "index": 13,
-      "index2": 9,
+      "index": 14,
+      "index2": 10,
       "size": 1935,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1310,14 +1346,14 @@
       "source": "// slide\n( function( window, factory ) {\n  // universal module definition\n  /* jshint strict: false */\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( factory );\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory();\n  } else {\n    // browser global\n    window.Flickity = window.Flickity || {};\n    window.Flickity.Slide = factory();\n  }\n\n}( window, function factory() {\n'use strict';\n\nfunction Slide( parent ) {\n  this.parent = parent;\n  this.isOriginLeft = parent.originSide == 'left';\n  this.cells = [];\n  this.outerWidth = 0;\n  this.height = 0;\n}\n\nvar proto = Slide.prototype;\n\nproto.addCell = function( cell ) {\n  this.cells.push( cell );\n  this.outerWidth += cell.size.outerWidth;\n  this.height = Math.max( cell.size.outerHeight, this.height );\n  // first cell stuff\n  if ( this.cells.length == 1 ) {\n    this.x = cell.x; // x comes from first cell\n    var beginMargin = this.isOriginLeft ? 'marginLeft' : 'marginRight';\n    this.firstMargin = cell.size[ beginMargin ];\n  }\n};\n\nproto.updateTarget = function() {\n  var endMargin = this.isOriginLeft ? 'marginRight' : 'marginLeft';\n  var lastCell = this.getLastCell();\n  var lastMargin = lastCell ? lastCell.size[ endMargin ] : 0;\n  var slideWidth = this.outerWidth - ( this.firstMargin + lastMargin );\n  this.target = this.x + this.firstMargin + slideWidth * this.parent.cellAlign;\n};\n\nproto.getLastCell = function() {\n  return this.cells[ this.cells.length - 1 ];\n};\n\nproto.select = function() {\n  this.changeSelectedClass('add');\n};\n\nproto.unselect = function() {\n  this.changeSelectedClass('remove');\n};\n\nproto.changeSelectedClass = function( method ) {\n  this.cells.forEach( function( cell ) {\n    cell.element.classList[ method ]('is-selected');\n  });\n};\n\nproto.getCellElements = function() {\n  return this.cells.map( function( cell ) {\n    return cell.element;\n  });\n};\n\nreturn Slide;\n\n}));\n"
     },
     {
-      "id": 29,
+      "id": 30,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/is-arrayish/index.js",
       "name": "./~/is-arrayish/index.js",
-      "index": 29,
-      "index2": 23,
+      "index": 30,
+      "index2": 24,
       "size": 333,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1325,14 +1361,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/simple-swizzle/index.js",
-      "issuerId": 31,
+      "issuerId": 32,
       "issuerName": "./~/simple-swizzle/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 31,
+          "moduleId": 32,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/simple-swizzle/index.js",
           "module": "./~/simple-swizzle/index.js",
           "moduleName": "./~/simple-swizzle/index.js",
@@ -1346,14 +1382,14 @@
       "source": "'use strict';\n\nmodule.exports = function isArrayish(obj) {\n\tif (!obj || typeof obj === 'string') {\n\t\treturn false;\n\t}\n\n\treturn obj instanceof Array || Array.isArray(obj) ||\n\t\t(obj.length >= 0 && (obj.splice instanceof Function ||\n\t\t\t(Object.getOwnPropertyDescriptor(obj, (obj.length - 1)) && obj.constructor.name !== 'String')));\n};\n"
     },
     {
-      "id": 30,
+      "id": 31,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/scrollreveal/dist/scrollreveal.js",
       "name": "./~/scrollreveal/dist/scrollreveal.js",
       "index": 4,
       "index2": 2,
       "size": 27029,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1384,14 +1420,14 @@
       "source": "/////    /////    /////    /////\n/////    /////    /////    /////\n/////    /////    /////    /////\n/////    /////    /////    /////\n/////             /////    /////\n/////             /////    /////\n/////    /////    /////    /////\n/////    /////    /////    /////\n         /////    /////\n         /////    /////\n/////    /////    /////    /////\n/////    /////    /////    /////\n/////    /////    /////    /////\n/////    /////    /////    /////\n\n/**\n * ScrollReveal\n * ------------\n * Version : 3.3.2\n * Website : scrollrevealjs.org\n * Repo    : github.com/jlmakes/scrollreveal.js\n * Author  : Julian Lloyd (@jlmakes)\n */\n\n;(function () {\n  'use strict'\n\n  var sr\n  var _requestAnimationFrame\n\n  function ScrollReveal (config) {\n    // Support instantiation without the `new` keyword.\n    if (typeof this === 'undefined' || Object.getPrototypeOf(this) !== ScrollReveal.prototype) {\n      return new ScrollReveal(config)\n    }\n\n    sr = this // Save reference to instance.\n    sr.version = '3.3.2'\n    sr.tools = new Tools() // *required utilities\n\n    if (sr.isSupported()) {\n      sr.tools.extend(sr.defaults, config || {})\n\n      sr.defaults.container = _resolveContainer(sr.defaults)\n\n      sr.store = {\n        elements: {},\n        containers: []\n      }\n\n      sr.sequences = {}\n      sr.history = []\n      sr.uid = 0\n      sr.initialized = false\n    } else if (typeof console !== 'undefined' && console !== null) {\n      // Note: IE9 only supports console if devtools are open.\n      console.log('ScrollReveal is not supported in this browser.')\n    }\n\n    return sr\n  }\n\n  /**\n   * Configuration\n   * -------------\n   * This object signature can be passed directly to the ScrollReveal constructor,\n   * or as the second argument of the `reveal()` method.\n   */\n\n  ScrollReveal.prototype.defaults = {\n    // 'bottom', 'left', 'top', 'right'\n    origin: 'bottom',\n\n    // Can be any valid CSS distance, e.g. '5rem', '10%', '20vw', etc.\n    distance: '20px',\n\n    // Time in milliseconds.\n    duration: 500,\n    delay: 0,\n\n    // Starting angles in degrees, will transition from these values to 0 in all axes.\n    rotate: { x: 0, y: 0, z: 0 },\n\n    // Starting opacity value, before transitioning to the computed opacity.\n    opacity: 0,\n\n    // Starting scale value, will transition from this value to 1\n    scale: 0.9,\n\n    // Accepts any valid CSS easing, e.g. 'ease', 'ease-in-out', 'linear', etc.\n    easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',\n\n    // `<html>` is the default reveal container. You can pass either:\n    // DOM Node, e.g. document.querySelector('.fooContainer')\n    // Selector, e.g. '.fooContainer'\n    container: window.document.documentElement,\n\n    // true/false to control reveal animations on mobile.\n    mobile: true,\n\n    // true:  reveals occur every time elements become visible\n    // false: reveals occur once as elements become visible\n    reset: false,\n\n    // 'always' — delay for all reveal animations\n    // 'once'   — delay only the first time reveals occur\n    // 'onload' - delay only for animations triggered by first load\n    useDelay: 'always',\n\n    // Change when an element is considered in the viewport. The default value\n    // of 0.20 means 20% of an element must be visible for its reveal to occur.\n    viewFactor: 0.2,\n\n    // Pixel values that alter the container boundaries.\n    // e.g. Set `{ top: 48 }`, if you have a 48px tall fixed toolbar.\n    // --\n    // Visual Aid: https://scrollrevealjs.org/assets/viewoffset.png\n    viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },\n\n    // Callbacks that fire for each triggered element reveal, and reset.\n    beforeReveal: function (domEl) {},\n    beforeReset: function (domEl) {},\n\n    // Callbacks that fire for each completed element reveal, and reset.\n    afterReveal: function (domEl) {},\n    afterReset: function (domEl) {}\n  }\n\n  /**\n   * Check if client supports CSS Transform and CSS Transition.\n   * @return {boolean}\n   */\n  ScrollReveal.prototype.isSupported = function () {\n    var style = document.documentElement.style\n    return 'WebkitTransition' in style && 'WebkitTransform' in style ||\n      'transition' in style && 'transform' in style\n  }\n\n  /**\n   * Creates a reveal set, a group of elements that will animate when they\n   * become visible. If [interval] is provided, a new sequence is created\n   * that will ensure elements reveal in the order they appear in the DOM.\n   *\n   * @param {Node|NodeList|string} [target]   The node, node list or selector to use for animation.\n   * @param {Object}               [config]   Override the defaults for this reveal set.\n   * @param {number}               [interval] Time between sequenced element animations (milliseconds).\n   * @param {boolean}              [sync]     Used internally when updating reveals for async content.\n   *\n   * @return {Object} The current ScrollReveal instance.\n   */\n  ScrollReveal.prototype.reveal = function (target, config, interval, sync) {\n    var container\n    var elements\n    var elem\n    var elemId\n    var sequence\n    var sequenceId\n\n    // No custom configuration was passed, but a sequence interval instead.\n    // let’s shuffle things around to make sure everything works.\n    if (config !== undefined && typeof config === 'number') {\n      interval = config\n      config = {}\n    } else if (config === undefined || config === null) {\n      config = {}\n    }\n\n    container = _resolveContainer(config)\n    elements = _getRevealElements(target, container)\n\n    if (!elements.length) {\n      console.log('ScrollReveal: reveal on \"' + target + '\" failed, no elements found.')\n      return sr\n    }\n\n    // Prepare a new sequence if an interval is passed.\n    if (interval && typeof interval === 'number') {\n      sequenceId = _nextUid()\n\n      sequence = sr.sequences[sequenceId] = {\n        id: sequenceId,\n        interval: interval,\n        elemIds: [],\n        active: false\n      }\n    }\n\n    // Begin main loop to configure ScrollReveal elements.\n    for (var i = 0; i < elements.length; i++) {\n      // Check if the element has already been configured and grab it from the store.\n      elemId = elements[i].getAttribute('data-sr-id')\n      if (elemId) {\n        elem = sr.store.elements[elemId]\n      } else {\n        // Otherwise, let’s do some basic setup.\n        elem = {\n          id: _nextUid(),\n          domEl: elements[i],\n          seen: false,\n          revealing: false\n        }\n        elem.domEl.setAttribute('data-sr-id', elem.id)\n      }\n\n      // Sequence only setup\n      if (sequence) {\n        elem.sequence = {\n          id: sequence.id,\n          index: sequence.elemIds.length\n        }\n\n        sequence.elemIds.push(elem.id)\n      }\n\n      // New or existing element, it’s time to update its configuration, styles,\n      // and send the updates to our store.\n      _configure(elem, config, container)\n      _style(elem)\n      _updateStore(elem)\n\n      // We need to make sure elements are set to visibility: visible, even when\n      // on mobile and `config.mobile === false`, or if unsupported.\n      if (sr.tools.isMobile() && !elem.config.mobile || !sr.isSupported()) {\n        elem.domEl.setAttribute('style', elem.styles.inline)\n        elem.disabled = true\n      } else if (!elem.revealing) {\n        // Otherwise, proceed normally.\n        elem.domEl.setAttribute('style',\n          elem.styles.inline +\n          elem.styles.transform.initial\n        )\n      }\n    }\n\n    // Each `reveal()` is recorded so that when calling `sync()` while working\n    // with asynchronously loaded content, it can re-trace your steps but with\n    // all your new elements now in the DOM.\n\n    // Since `reveal()` is called internally by `sync()`, we don’t want to\n    // record or intiialize each reveal during syncing.\n    if (!sync && sr.isSupported()) {\n      _record(target, config, interval)\n\n      // We push initialization to the event queue using setTimeout, so that we can\n      // give ScrollReveal room to process all reveal calls before putting things into motion.\n      // --\n      // Philip Roberts - What the heck is the event loop anyway? (JSConf EU 2014)\n      // https://www.youtube.com/watch?v=8aGhZQkoFbQ\n      if (sr.initTimeout) {\n        window.clearTimeout(sr.initTimeout)\n      }\n      sr.initTimeout = window.setTimeout(_init, 0)\n    }\n\n    return sr\n  }\n\n  /**\n   * Re-runs `reveal()` for each record stored in history, effectively capturing\n   * any content loaded asynchronously that matches existing reveal set targets.\n   * @return {Object} The current ScrollReveal instance.\n   */\n  ScrollReveal.prototype.sync = function () {\n    if (sr.history.length && sr.isSupported()) {\n      for (var i = 0; i < sr.history.length; i++) {\n        var record = sr.history[i]\n        sr.reveal(record.target, record.config, record.interval, true)\n      }\n      _init()\n    } else {\n      console.log('ScrollReveal: sync failed, no reveals found.')\n    }\n    return sr\n  }\n\n  /**\n   * Private Methods\n   * ---------------\n   */\n\n  function _resolveContainer (config) {\n    if (config && config.container) {\n      if (typeof config.container === 'string') {\n        return window.document.documentElement.querySelector(config.container)\n      } else if (sr.tools.isNode(config.container)) {\n        return config.container\n      } else {\n        console.log('ScrollReveal: invalid container \"' + config.container + '\" provided.')\n        console.log('ScrollReveal: falling back to default container.')\n      }\n    }\n    return sr.defaults.container\n  }\n\n  /**\n   * check to see if a node or node list was passed in as the target,\n   * otherwise query the container using target as a selector.\n   *\n   * @param {Node|NodeList|string} [target]    client input for reveal target.\n   * @param {Node}                 [container] parent element for selector queries.\n   *\n   * @return {array} elements to be revealed.\n   */\n  function _getRevealElements (target, container) {\n    if (typeof target === 'string') {\n      return Array.prototype.slice.call(container.querySelectorAll(target))\n    } else if (sr.tools.isNode(target)) {\n      return [target]\n    } else if (sr.tools.isNodeList(target)) {\n      return Array.prototype.slice.call(target)\n    }\n    return []\n  }\n\n  /**\n   * A consistent way of creating unique IDs.\n   * @returns {number}\n   */\n  function _nextUid () {\n    return ++sr.uid\n  }\n\n  function _configure (elem, config, container) {\n    // If a container was passed as a part of the config object,\n    // let’s overwrite it with the resolved container passed in.\n    if (config.container) config.container = container\n    // If the element hasn’t already been configured, let’s use a clone of the\n    // defaults extended by the configuration passed as the second argument.\n    if (!elem.config) {\n      elem.config = sr.tools.extendClone(sr.defaults, config)\n    } else {\n      // Otherwise, let’s use a clone of the existing element configuration extended\n      // by the configuration passed as the second argument.\n      elem.config = sr.tools.extendClone(elem.config, config)\n    }\n\n    // Infer CSS Transform axis from origin string.\n    if (elem.config.origin === 'top' || elem.config.origin === 'bottom') {\n      elem.config.axis = 'Y'\n    } else {\n      elem.config.axis = 'X'\n    }\n  }\n\n  function _style (elem) {\n    var computed = window.getComputedStyle(elem.domEl)\n\n    if (!elem.styles) {\n      elem.styles = {\n        transition: {},\n        transform: {},\n        computed: {}\n      }\n\n      // Capture any existing inline styles, and add our visibility override.\n      // --\n      // See section 4.2. in the Documentation:\n      // https://github.com/jlmakes/scrollreveal.js#42-improve-user-experience\n      elem.styles.inline = elem.domEl.getAttribute('style') || ''\n      elem.styles.inline += '; visibility: visible; '\n\n      // grab the elements existing opacity.\n      elem.styles.computed.opacity = computed.opacity\n\n      // grab the elements existing transitions.\n      if (!computed.transition || computed.transition === 'all 0s ease 0s') {\n        elem.styles.computed.transition = ''\n      } else {\n        elem.styles.computed.transition = computed.transition + ', '\n      }\n    }\n\n    // Create transition styles\n    elem.styles.transition.instant = _generateTransition(elem, 0)\n    elem.styles.transition.delayed = _generateTransition(elem, elem.config.delay)\n\n    // Generate transform styles, first with the webkit prefix.\n    elem.styles.transform.initial = ' -webkit-transform:'\n    elem.styles.transform.target = ' -webkit-transform:'\n    _generateTransform(elem)\n\n    // And again without any prefix.\n    elem.styles.transform.initial += 'transform:'\n    elem.styles.transform.target += 'transform:'\n    _generateTransform(elem)\n  }\n\n  function _generateTransition (elem, delay) {\n    var config = elem.config\n\n    return '-webkit-transition: ' + elem.styles.computed.transition +\n      '-webkit-transform ' + config.duration / 1000 + 's ' +\n      config.easing + ' ' +\n      delay / 1000 + 's, opacity ' +\n      config.duration / 1000 + 's ' +\n      config.easing + ' ' +\n      delay / 1000 + 's; ' +\n\n      'transition: ' + elem.styles.computed.transition +\n      'transform ' + config.duration / 1000 + 's ' +\n      config.easing + ' ' +\n      delay / 1000 + 's, opacity ' +\n      config.duration / 1000 + 's ' +\n      config.easing + ' ' +\n      delay / 1000 + 's; '\n  }\n\n  function _generateTransform (elem) {\n    var config = elem.config\n    var cssDistance\n    var transform = elem.styles.transform\n\n    // Let’s make sure our our pixel distances are negative for top and left.\n    // e.g. origin = 'top' and distance = '25px' starts at `top: -25px` in CSS.\n    if (config.origin === 'top' || config.origin === 'left') {\n      cssDistance = /^-/.test(config.distance)\n        ? config.distance.substr(1)\n        : '-' + config.distance\n    } else {\n      cssDistance = config.distance\n    }\n\n    if (parseInt(config.distance)) {\n      transform.initial += ' translate' + config.axis + '(' + cssDistance + ')'\n      transform.target += ' translate' + config.axis + '(0)'\n    }\n    if (config.scale) {\n      transform.initial += ' scale(' + config.scale + ')'\n      transform.target += ' scale(1)'\n    }\n    if (config.rotate.x) {\n      transform.initial += ' rotateX(' + config.rotate.x + 'deg)'\n      transform.target += ' rotateX(0)'\n    }\n    if (config.rotate.y) {\n      transform.initial += ' rotateY(' + config.rotate.y + 'deg)'\n      transform.target += ' rotateY(0)'\n    }\n    if (config.rotate.z) {\n      transform.initial += ' rotateZ(' + config.rotate.z + 'deg)'\n      transform.target += ' rotateZ(0)'\n    }\n    transform.initial += '; opacity: ' + config.opacity + ';'\n    transform.target += '; opacity: ' + elem.styles.computed.opacity + ';'\n  }\n\n  function _updateStore (elem) {\n    var container = elem.config.container\n\n    // If this element’s container isn’t already in the store, let’s add it.\n    if (container && sr.store.containers.indexOf(container) === -1) {\n      sr.store.containers.push(elem.config.container)\n    }\n\n    // Update the element stored with our new element.\n    sr.store.elements[elem.id] = elem\n  }\n\n  function _record (target, config, interval) {\n    // Save the `reveal()` arguments that triggered this `_record()` call, so we\n    // can re-trace our steps when calling the `sync()` method.\n    var record = {\n      target: target,\n      config: config,\n      interval: interval\n    }\n    sr.history.push(record)\n  }\n\n  function _init () {\n    if (sr.isSupported()) {\n      // Initial animate call triggers valid reveal animations on first load.\n      // Subsequent animate calls are made inside the event handler.\n      _animate()\n\n      // Then we loop through all container nodes in the store and bind event\n      // listeners to each.\n      for (var i = 0; i < sr.store.containers.length; i++) {\n        sr.store.containers[i].addEventListener('scroll', _handler)\n        sr.store.containers[i].addEventListener('resize', _handler)\n      }\n\n      // Let’s also do a one-time binding of window event listeners.\n      if (!sr.initialized) {\n        window.addEventListener('scroll', _handler)\n        window.addEventListener('resize', _handler)\n        sr.initialized = true\n      }\n    }\n    return sr\n  }\n\n  function _handler () {\n    _requestAnimationFrame(_animate)\n  }\n\n  function _setActiveSequences () {\n    var active\n    var elem\n    var elemId\n    var sequence\n\n    // Loop through all sequences\n    sr.tools.forOwn(sr.sequences, function (sequenceId) {\n      sequence = sr.sequences[sequenceId]\n      active = false\n\n      // For each sequenced elemenet, let’s check visibility and if\n      // any are visible, set it’s sequence to active.\n      for (var i = 0; i < sequence.elemIds.length; i++) {\n        elemId = sequence.elemIds[i]\n        elem = sr.store.elements[elemId]\n        if (_isElemVisible(elem) && !active) {\n          active = true\n        }\n      }\n\n      sequence.active = active\n    })\n  }\n\n  function _animate () {\n    var delayed\n    var elem\n\n    _setActiveSequences()\n\n    // Loop through all elements in the store\n    sr.tools.forOwn(sr.store.elements, function (elemId) {\n      elem = sr.store.elements[elemId]\n      delayed = _shouldUseDelay(elem)\n\n      // Let’s see if we should revealand if so,\n      // trigger the `beforeReveal` callback and\n      // determine whether or not to use delay.\n      if (_shouldReveal(elem)) {\n        elem.config.beforeReveal(elem.domEl)\n        if (delayed) {\n          elem.domEl.setAttribute('style',\n            elem.styles.inline +\n            elem.styles.transform.target +\n            elem.styles.transition.delayed\n          )\n        } else {\n          elem.domEl.setAttribute('style',\n            elem.styles.inline +\n            elem.styles.transform.target +\n            elem.styles.transition.instant\n          )\n        }\n\n        // Let’s queue the `afterReveal` callback\n        // and mark the element as seen and revealing.\n        _queueCallback('reveal', elem, delayed)\n        elem.revealing = true\n        elem.seen = true\n\n        if (elem.sequence) {\n          _queueNextInSequence(elem, delayed)\n        }\n      } else if (_shouldReset(elem)) {\n        //Otherwise reset our element and\n        // trigger the `beforeReset` callback.\n        elem.config.beforeReset(elem.domEl)\n        elem.domEl.setAttribute('style',\n          elem.styles.inline +\n          elem.styles.transform.initial +\n          elem.styles.transition.instant\n        )\n        // And queue the `afterReset` callback.\n        _queueCallback('reset', elem)\n        elem.revealing = false\n      }\n    })\n  }\n\n  function _queueNextInSequence (elem, delayed) {\n    var elapsed = 0\n    var delay = 0\n    var sequence = sr.sequences[elem.sequence.id]\n\n    // We’re processing a sequenced element, so let's block other elements in this sequence.\n    sequence.blocked = true\n\n    // Since we’re triggering animations a part of a sequence after animations on first load,\n    // we need to check for that condition and explicitly add the delay to our timer.\n    if (delayed && elem.config.useDelay === 'onload') {\n      delay = elem.config.delay\n    }\n\n    // If a sequence timer is already running, capture the elapsed time and clear it.\n    if (elem.sequence.timer) {\n      elapsed = Math.abs(elem.sequence.timer.started - new Date())\n      window.clearTimeout(elem.sequence.timer)\n    }\n\n    // Start a new timer.\n    elem.sequence.timer = { started: new Date() }\n    elem.sequence.timer.clock = window.setTimeout(function () {\n      // Sequence interval has passed, so unblock the sequence and re-run the handler.\n      sequence.blocked = false\n      elem.sequence.timer = null\n      _handler()\n    }, Math.abs(sequence.interval) + delay - elapsed)\n  }\n\n  function _queueCallback (type, elem, delayed) {\n    var elapsed = 0\n    var duration = 0\n    var callback = 'after'\n\n    // Check which callback we’re working with.\n    switch (type) {\n      case 'reveal':\n        duration = elem.config.duration\n        if (delayed) {\n          duration += elem.config.delay\n        }\n        callback += 'Reveal'\n        break\n\n      case 'reset':\n        duration = elem.config.duration\n        callback += 'Reset'\n        break\n    }\n\n    // If a timer is already running, capture the elapsed time and clear it.\n    if (elem.timer) {\n      elapsed = Math.abs(elem.timer.started - new Date())\n      window.clearTimeout(elem.timer.clock)\n    }\n\n    // Start a new timer.\n    elem.timer = { started: new Date() }\n    elem.timer.clock = window.setTimeout(function () {\n      // The timer completed, so let’s fire the callback and null the timer.\n      elem.config[callback](elem.domEl)\n      elem.timer = null\n    }, duration - elapsed)\n  }\n\n  function _shouldReveal (elem) {\n    if (elem.sequence) {\n      var sequence = sr.sequences[elem.sequence.id]\n      return sequence.active &&\n        !sequence.blocked &&\n        !elem.revealing &&\n        !elem.disabled\n    }\n    return _isElemVisible(elem) &&\n      !elem.revealing &&\n      !elem.disabled\n  }\n\n  function _shouldUseDelay (elem) {\n    var config = elem.config.useDelay\n    return config === 'always' ||\n      (config === 'onload' && !sr.initialized) ||\n      (config === 'once' && !elem.seen)\n  }\n\n  function _shouldReset (elem) {\n    if (elem.sequence) {\n      var sequence = sr.sequences[elem.sequence.id]\n      return !sequence.active &&\n        elem.config.reset &&\n        elem.revealing &&\n        !elem.disabled\n    }\n    return !_isElemVisible(elem) &&\n      elem.config.reset &&\n      elem.revealing &&\n      !elem.disabled\n  }\n\n  function _getContainer (container) {\n    return {\n      width: container.clientWidth,\n      height: container.clientHeight\n    }\n  }\n\n  function _getScrolled (container) {\n    // Return the container scroll values, plus the its offset.\n    if (container && container !== window.document.documentElement) {\n      var offset = _getOffset(container)\n      return {\n        x: container.scrollLeft + offset.left,\n        y: container.scrollTop + offset.top\n      }\n    } else {\n      // Otherwise, default to the window object’s scroll values.\n      return {\n        x: window.pageXOffset,\n        y: window.pageYOffset\n      }\n    }\n  }\n\n  function _getOffset (domEl) {\n    var offsetTop = 0\n    var offsetLeft = 0\n\n      // Grab the element’s dimensions.\n    var offsetHeight = domEl.offsetHeight\n    var offsetWidth = domEl.offsetWidth\n\n    // Now calculate the distance between the element and its parent, then\n    // again for the parent to its parent, and again etc... until we have the\n    // total distance of the element to the document’s top and left origin.\n    do {\n      if (!isNaN(domEl.offsetTop)) {\n        offsetTop += domEl.offsetTop\n      }\n      if (!isNaN(domEl.offsetLeft)) {\n        offsetLeft += domEl.offsetLeft\n      }\n      domEl = domEl.offsetParent\n    } while (domEl)\n\n    return {\n      top: offsetTop,\n      left: offsetLeft,\n      height: offsetHeight,\n      width: offsetWidth\n    }\n  }\n\n  function _isElemVisible (elem) {\n    var offset = _getOffset(elem.domEl)\n    var container = _getContainer(elem.config.container)\n    var scrolled = _getScrolled(elem.config.container)\n    var vF = elem.config.viewFactor\n\n      // Define the element geometry.\n    var elemHeight = offset.height\n    var elemWidth = offset.width\n    var elemTop = offset.top\n    var elemLeft = offset.left\n    var elemBottom = elemTop + elemHeight\n    var elemRight = elemLeft + elemWidth\n\n    return confirmBounds() || isPositionFixed()\n\n    function confirmBounds () {\n      // Define the element’s functional boundaries using its view factor.\n      var top = elemTop + elemHeight * vF\n      var left = elemLeft + elemWidth * vF\n      var bottom = elemBottom - elemHeight * vF\n      var right = elemRight - elemWidth * vF\n\n      // Define the container functional boundaries using its view offset.\n      var viewTop = scrolled.y + elem.config.viewOffset.top\n      var viewLeft = scrolled.x + elem.config.viewOffset.left\n      var viewBottom = scrolled.y - elem.config.viewOffset.bottom + container.height\n      var viewRight = scrolled.x - elem.config.viewOffset.right + container.width\n\n      return top < viewBottom &&\n        bottom > viewTop &&\n        left > viewLeft &&\n        right < viewRight\n    }\n\n    function isPositionFixed () {\n      return (window.getComputedStyle(elem.domEl).position === 'fixed')\n    }\n  }\n\n  /**\n   * Utilities\n   * ---------\n   */\n\n  function Tools () {}\n\n  Tools.prototype.isObject = function (object) {\n    return object !== null && typeof object === 'object' && object.constructor === Object\n  }\n\n  Tools.prototype.isNode = function (object) {\n    return typeof window.Node === 'object'\n      ? object instanceof window.Node\n      : object && typeof object === 'object' &&\n        typeof object.nodeType === 'number' &&\n        typeof object.nodeName === 'string'\n  }\n\n  Tools.prototype.isNodeList = function (object) {\n    var prototypeToString = Object.prototype.toString.call(object)\n    var regex = /^\\[object (HTMLCollection|NodeList|Object)\\]$/\n\n    return typeof window.NodeList === 'object'\n      ? object instanceof window.NodeList\n      : object && typeof object === 'object' &&\n        regex.test(prototypeToString) &&\n        typeof object.length === 'number' &&\n        (object.length === 0 || this.isNode(object[0]))\n  }\n\n  Tools.prototype.forOwn = function (object, callback) {\n    if (!this.isObject(object)) {\n      throw new TypeError('Expected \"object\", but received \"' + typeof object + '\".')\n    } else {\n      for (var property in object) {\n        if (object.hasOwnProperty(property)) {\n          callback(property)\n        }\n      }\n    }\n  }\n\n  Tools.prototype.extend = function (target, source) {\n    this.forOwn(source, function (property) {\n      if (this.isObject(source[property])) {\n        if (!target[property] || !this.isObject(target[property])) {\n          target[property] = {}\n        }\n        this.extend(target[property], source[property])\n      } else {\n        target[property] = source[property]\n      }\n    }.bind(this))\n    return target\n  }\n\n  Tools.prototype.extendClone = function (target, source) {\n    return this.extend(this.extend({}, target), source)\n  }\n\n  Tools.prototype.isMobile = function () {\n    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)\n  }\n\n  /**\n   * Polyfills\n   * --------\n   */\n\n  _requestAnimationFrame = window.requestAnimationFrame ||\n    window.webkitRequestAnimationFrame ||\n    window.mozRequestAnimationFrame ||\n    function (callback) {\n      window.setTimeout(callback, 1000 / 60)\n    }\n\n  /**\n   * Module Wrapper\n   * --------------\n   */\n  if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {\n    define(function () {\n      return ScrollReveal\n    })\n  } else if (typeof module !== 'undefined' && module.exports) {\n    module.exports = ScrollReveal\n  } else {\n    window.ScrollReveal = ScrollReveal\n  }\n}())\n"
     },
     {
-      "id": 31,
+      "id": 32,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/simple-swizzle/index.js",
       "name": "./~/simple-swizzle/index.js",
-      "index": 28,
-      "index2": 24,
+      "index": 29,
+      "index2": 25,
       "size": 571,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1399,14 +1435,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/color-string/index.js",
-      "issuerId": 16,
+      "issuerId": 17,
       "issuerName": "./~/color-string/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 16,
+          "moduleId": 17,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/color-string/index.js",
           "module": "./~/color-string/index.js",
           "moduleName": "./~/color-string/index.js",
@@ -1420,14 +1456,14 @@
       "source": "'use strict';\n\nvar isArrayish = require('is-arrayish');\n\nvar concat = Array.prototype.concat;\nvar slice = Array.prototype.slice;\n\nvar swizzle = module.exports = function swizzle(args) {\n\tvar results = [];\n\n\tfor (var i = 0, len = args.length; i < len; i++) {\n\t\tvar arg = args[i];\n\n\t\tif (isArrayish(arg)) {\n\t\t\t// http://jsperf.com/javascript-array-concat-vs-push/98\n\t\t\tresults = concat.call(results, slice.call(arg));\n\t\t} else {\n\t\t\tresults.push(arg);\n\t\t}\n\t}\n\n\treturn results;\n};\n\nswizzle.wrap = function (fn) {\n\treturn function () {\n\t\treturn fn(swizzle(arguments));\n\t};\n};\n"
     },
     {
-      "id": 32,
+      "id": 33,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/unidragger/unidragger.js",
       "name": "./~/unidragger/unidragger.js",
-      "index": 16,
-      "index2": 13,
+      "index": 17,
+      "index2": 14,
       "size": 7220,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1435,14 +1471,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/drag.js",
-      "issuerId": 22,
+      "issuerId": 23,
       "issuerName": "./~/flickity/js/drag.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 22,
+          "moduleId": 23,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/drag.js",
           "module": "./~/flickity/js/drag.js",
           "moduleName": "./~/flickity/js/drag.js",
@@ -1456,14 +1492,14 @@
       "source": "/*!\n * Unidragger v2.1.0\n * Draggable base class\n * MIT license\n */\n\n/*jshint browser: true, unused: true, undef: true, strict: true */\n\n( function( window, factory ) {\n  // universal module definition\n  /*jshint strict: false */ /*globals define, module, require */\n\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( [\n      'unipointer/unipointer'\n    ], function( Unipointer ) {\n      return factory( window, Unipointer );\n    });\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory(\n      window,\n      require('unipointer')\n    );\n  } else {\n    // browser global\n    window.Unidragger = factory(\n      window,\n      window.Unipointer\n    );\n  }\n\n}( window, function factory( window, Unipointer ) {\n\n'use strict';\n\n// -----  ----- //\n\nfunction noop() {}\n\n// -------------------------- Unidragger -------------------------- //\n\nfunction Unidragger() {}\n\n// inherit Unipointer & EvEmitter\nvar proto = Unidragger.prototype = Object.create( Unipointer.prototype );\n\n// ----- bind start ----- //\n\nproto.bindHandles = function() {\n  this._bindHandles( true );\n};\n\nproto.unbindHandles = function() {\n  this._bindHandles( false );\n};\n\nvar navigator = window.navigator;\n/**\n * works as unbinder, as you can .bindHandles( false ) to unbind\n * @param {Boolean} isBind - will unbind if falsey\n */\nproto._bindHandles = function( isBind ) {\n  // munge isBind, default to true\n  isBind = isBind === undefined ? true : !!isBind;\n  // extra bind logic\n  var binderExtra;\n  if ( navigator.pointerEnabled ) {\n    binderExtra = function( handle ) {\n      // disable scrolling on the element\n      handle.style.touchAction = isBind ? 'none' : '';\n    };\n  } else if ( navigator.msPointerEnabled ) {\n    binderExtra = function( handle ) {\n      // disable scrolling on the element\n      handle.style.msTouchAction = isBind ? 'none' : '';\n    };\n  } else {\n    binderExtra = noop;\n  }\n  // bind each handle\n  var bindMethod = isBind ? 'addEventListener' : 'removeEventListener';\n  for ( var i=0; i < this.handles.length; i++ ) {\n    var handle = this.handles[i];\n    this._bindStartEvent( handle, isBind );\n    binderExtra( handle );\n    handle[ bindMethod ]( 'click', this );\n  }\n};\n\n// ----- start event ----- //\n\n/**\n * pointer start\n * @param {Event} event\n * @param {Event or Touch} pointer\n */\nproto.pointerDown = function( event, pointer ) {\n  // dismiss range sliders\n  if ( event.target.nodeName == 'INPUT' && event.target.type == 'range' ) {\n    // reset pointerDown logic\n    this.isPointerDown = false;\n    delete this.pointerIdentifier;\n    return;\n  }\n\n  this._dragPointerDown( event, pointer );\n  // kludge to blur focused inputs in dragger\n  var focused = document.activeElement;\n  if ( focused && focused.blur ) {\n    focused.blur();\n  }\n  // bind move and end events\n  this._bindPostStartEvents( event );\n  this.emitEvent( 'pointerDown', [ event, pointer ] );\n};\n\n// base pointer down logic\nproto._dragPointerDown = function( event, pointer ) {\n  // track to see when dragging starts\n  this.pointerDownPoint = Unipointer.getPointerPoint( pointer );\n\n  var canPreventDefault = this.canPreventDefaultOnPointerDown( event, pointer );\n  if ( canPreventDefault ) {\n    event.preventDefault();\n  }\n};\n\n// overwriteable method so Flickity can prevent for scrolling\nproto.canPreventDefaultOnPointerDown = function( event ) {\n  // prevent default, unless touchstart or <select>\n  return event.target.nodeName != 'SELECT';\n};\n\n// ----- move event ----- //\n\n/**\n * drag move\n * @param {Event} event\n * @param {Event or Touch} pointer\n */\nproto.pointerMove = function( event, pointer ) {\n  var moveVector = this._dragPointerMove( event, pointer );\n  this.emitEvent( 'pointerMove', [ event, pointer, moveVector ] );\n  this._dragMove( event, pointer, moveVector );\n};\n\n// base pointer move logic\nproto._dragPointerMove = function( event, pointer ) {\n  var movePoint = Unipointer.getPointerPoint( pointer );\n  var moveVector = {\n    x: movePoint.x - this.pointerDownPoint.x,\n    y: movePoint.y - this.pointerDownPoint.y\n  };\n  // start drag if pointer has moved far enough to start drag\n  if ( !this.isDragging && this.hasDragStarted( moveVector ) ) {\n    this._dragStart( event, pointer );\n  }\n  return moveVector;\n};\n\n// condition if pointer has moved far enough to start drag\nproto.hasDragStarted = function( moveVector ) {\n  return Math.abs( moveVector.x ) > 3 || Math.abs( moveVector.y ) > 3;\n};\n\n\n// ----- end event ----- //\n\n/**\n * pointer up\n * @param {Event} event\n * @param {Event or Touch} pointer\n */\nproto.pointerUp = function( event, pointer ) {\n  this.emitEvent( 'pointerUp', [ event, pointer ] );\n  this._dragPointerUp( event, pointer );\n};\n\nproto._dragPointerUp = function( event, pointer ) {\n  if ( this.isDragging ) {\n    this._dragEnd( event, pointer );\n  } else {\n    // pointer didn't move enough for drag to start\n    this._staticClick( event, pointer );\n  }\n};\n\n// -------------------------- drag -------------------------- //\n\n// dragStart\nproto._dragStart = function( event, pointer ) {\n  this.isDragging = true;\n  this.dragStartPoint = Unipointer.getPointerPoint( pointer );\n  // prevent clicks\n  this.isPreventingClicks = true;\n\n  this.dragStart( event, pointer );\n};\n\nproto.dragStart = function( event, pointer ) {\n  this.emitEvent( 'dragStart', [ event, pointer ] );\n};\n\n// dragMove\nproto._dragMove = function( event, pointer, moveVector ) {\n  // do not drag if not dragging yet\n  if ( !this.isDragging ) {\n    return;\n  }\n\n  this.dragMove( event, pointer, moveVector );\n};\n\nproto.dragMove = function( event, pointer, moveVector ) {\n  event.preventDefault();\n  this.emitEvent( 'dragMove', [ event, pointer, moveVector ] );\n};\n\n// dragEnd\nproto._dragEnd = function( event, pointer ) {\n  // set flags\n  this.isDragging = false;\n  // re-enable clicking async\n  setTimeout( function() {\n    delete this.isPreventingClicks;\n  }.bind( this ) );\n\n  this.dragEnd( event, pointer );\n};\n\nproto.dragEnd = function( event, pointer ) {\n  this.emitEvent( 'dragEnd', [ event, pointer ] );\n};\n\n// ----- onclick ----- //\n\n// handle all clicks and prevent clicks when dragging\nproto.onclick = function( event ) {\n  if ( this.isPreventingClicks ) {\n    event.preventDefault();\n  }\n};\n\n// ----- staticClick ----- //\n\n// triggered after pointer down & up with no/tiny movement\nproto._staticClick = function( event, pointer ) {\n  // ignore emulated mouse up clicks\n  if ( this.isIgnoringMouseUp && event.type == 'mouseup' ) {\n    return;\n  }\n\n  // allow click in <input>s and <textarea>s\n  var nodeName = event.target.nodeName;\n  if ( nodeName == 'INPUT' || nodeName == 'TEXTAREA' ) {\n    event.target.focus();\n  }\n  this.staticClick( event, pointer );\n\n  // set flag for emulated clicks 300ms after touchend\n  if ( event.type != 'mouseup' ) {\n    this.isIgnoringMouseUp = true;\n    // reset flag after 300ms\n    setTimeout( function() {\n      delete this.isIgnoringMouseUp;\n    }.bind( this ), 400 );\n  }\n};\n\nproto.staticClick = function( event, pointer ) {\n  this.emitEvent( 'staticClick', [ event, pointer ] );\n};\n\n// ----- utils ----- //\n\nUnidragger.getPointerPoint = Unipointer.getPointerPoint;\n\n// -----  ----- //\n\nreturn Unidragger;\n\n}));\n"
     },
     {
-      "id": 33,
+      "id": 34,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/index.js!/home/mischka/projects/coyote-grill/_js/main.js",
       "name": "./_js/main.js",
       "index": 0,
-      "index2": 33,
-      "size": 102,
+      "index2": 34,
+      "size": 124,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1479,7 +1515,7 @@
       "reasons": [],
       "usedExports": true,
       "providedExports": null,
-      "source": "import './menu.js';\nimport './find-us.js';\nimport './food.js';\nimport './hero.js';\nimport './home.js';"
+      "source": "import './menu.js';\nimport './find-us.js';\nimport './food.js';\nimport './footer.js';\nimport './hero.js';\nimport './home.js';"
     }
   ],
   "filteredModules": 0,

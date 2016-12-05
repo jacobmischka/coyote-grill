@@ -2,41 +2,6 @@
 
 #find-us {
 
-	.full-width-photo {
-		position: relative;
-
-		#coyote-grill-external {
-			transition: opacity 0.3s;
-
-			&.night-picture {
-
-				&,
-				source {
-					object-position: center top;
-				}
-
-				img {
-					object-position: center 25%;
-				}
-			}
-		}
-
-		#coyote-grill-external-switch {
-			position: absolute;
-			bottom: 1em;
-			right: 1em;
-			width: 8em;
-			opacity: 0;
-		}
-
-		&:hover {
-
-			#coyote-grill-external-switch {
-				opacity: $primary-text;
-			}
-		}
-	}
-
 	#map {
 		box-sizing: border-box;
 		height: 500px;

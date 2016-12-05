@@ -66,11 +66,18 @@
 
 		.site-logo {
 			position: absolute;
-			bottom: 0.5em;
-			right: 2em;
 			width: $header-logo-width;
 			height: $header-logo-height;
 			z-index: 10;
+			bottom: 2em;
+			right: 50%;
+			transform: translateX(32%);
+
+			@media (min-width: $small-desktop) {
+				right: 2em;
+				bottom: 1em;
+				transform: none;
+			}
 
 			svg {
 				width: 100%;

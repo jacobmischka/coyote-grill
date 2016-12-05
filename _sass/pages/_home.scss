@@ -24,6 +24,17 @@ main {
 			margin: 0;
 		}
 
+		&::before {
+			content: '';
+			display: block;
+			position: relative;
+			width: 0;
+
+			@include header-height(height);
+
+			@include header-height(margin-top, -1);
+		}
+
 		> h2 {
 			text-align: center;
 			font-family: $heading-font-family;

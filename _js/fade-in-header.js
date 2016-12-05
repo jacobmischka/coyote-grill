@@ -3,7 +3,7 @@ import Color from 'color';
 export default function(heroPattern, headerPattern){
 	const hero = document.querySelector(heroPattern);
 	const header = document.querySelector(headerPattern);
-	const collapseMargin = 40;
+	const collapseMargin = 60;
 	const expandMargin = 200;
 
 	let initialHeroBackgroundColor = hero.style.backgroundColor;

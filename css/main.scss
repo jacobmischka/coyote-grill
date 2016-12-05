@@ -70,7 +70,7 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
-$very-small-screen: 550px;
+$very-small-screen: 560px;
 $small-desktop: 768px;
 $medium-desktop: 992px;
 $large-desktop: 1200px;
@@ -86,6 +86,26 @@ $large-desktop: 1200px;
     @media screen and (max-width: $device) {
         @content;
     }
+}
+
+@mixin header-height($property, $multiplier: 1) {
+	#{$property}: $multiplier * 90px;
+
+	@media (min-width: $very-small-screen) {
+		#{$property}: $multiplier * 120px;
+	}
+
+	@media (min-width: $small-desktop) {
+		#{$property}: $multiplier * 130px;
+	}
+
+	@media (min-width: $medium-desktop) {
+		#{$property}: $multiplier * 150px;
+	}
+
+	@media (min-width: $large-desktop) {
+		#{$property} : $multiplier * 95px;
+	}
 }
 
 
