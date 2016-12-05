@@ -21,9 +21,6 @@ export default function(heroPattern, headerPattern){
 	if(!isCollapsed)
 		header.classList.remove('collapsed');
 
-	console.log(heroBackgroundColor.red(), heroBackgroundColor.blue(), heroBackgroundColor.green(), heroBackgroundColor.alpha());
-	console.log(headerBackgroundColor.red(), headerBackgroundColor.blue(), headerBackgroundColor.green(), headerBackgroundColor.alpha());
-
 	if(header.classList.contains('expanded')
 			&& (hero.getBoundingClientRect().bottom
 			< header.getBoundingClientRect().bottom + collapseMargin)){
@@ -44,7 +41,6 @@ export default function(heroPattern, headerPattern){
 	});
 
 	function step(){
-		console.log('step');
 		const heroRect = hero.getBoundingClientRect();
 		const headerHeight = header.clientHeight;
 		const headerRect = header.getBoundingClientRect();

@@ -2,8 +2,8 @@
   "errors": [],
   "warnings": [],
   "version": "2.1.0-beta.27",
-  "hash": "5f327f684f5f45d130f7",
-  "time": 2492,
+  "hash": "5e1ecc377987d8037d3f",
+  "time": 230,
   "publicPath": "/js/",
   "assetsByChunkName": {
     "main": [
@@ -14,7 +14,7 @@
   "assets": [
     {
       "name": "bundle.js",
-      "size": 80177,
+      "size": 188241,
       "chunks": [
         0
       ],
@@ -25,7 +25,7 @@
     },
     {
       "name": "bundle.js.map",
-      "size": 495910,
+      "size": 231364,
       "chunks": [
         0
       ],
@@ -53,7 +53,7 @@
       "initial": true,
       "entry": true,
       "extraAsync": false,
-      "size": 176532,
+      "size": 176246,
       "names": [
         "main"
       ],
@@ -61,7 +61,7 @@
         "bundle.js",
         "bundle.js.map"
       ],
-      "hash": "770fa6eccda7f20ffc06",
+      "hash": "3cddb132960143c6e847",
       "parents": [],
       "origins": [
         {
@@ -85,7 +85,7 @@
       "index2": 7,
       "size": 5873,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -184,7 +184,7 @@
       "index2": 11,
       "size": 22546,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -274,7 +274,7 @@
       "index2": 4,
       "size": 2596,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -328,7 +328,7 @@
       "index2": 26,
       "size": 16573,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -373,7 +373,7 @@
       "index2": 22,
       "size": 4599,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -418,7 +418,7 @@
       "index2": 5,
       "size": 5296,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -463,7 +463,7 @@
       "index2": 15,
       "size": 2636,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -508,16 +508,16 @@
       "index2": 12,
       "size": 7201,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
         0
       ],
       "assets": [],
-      "issuer": "/home/mischka/projects/coyote-grill/node_modules/tap-listener/tap-listener.js",
-      "issuerId": 6,
-      "issuerName": "./~/tap-listener/tap-listener.js",
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/unidragger/unidragger.js",
+      "issuerId": 32,
+      "issuerName": "./~/unidragger/unidragger.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -553,7 +553,7 @@
       "index2": 1,
       "size": 1852,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -589,7 +589,7 @@
       "index2": 3,
       "size": 2065,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -625,7 +625,7 @@
       "index2": 31,
       "size": 255,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -661,7 +661,7 @@
       "index2": 32,
       "size": 0,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -697,7 +697,7 @@
       "index2": 0,
       "size": 0,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -731,7 +731,7 @@
       "name": "./_js/fade-in-header.js",
       "index": 24,
       "index2": 30,
-      "size": 3101,
+      "size": 2815,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -763,7 +763,7 @@
       "providedExports": [
         "default"
       ],
-      "source": "import Color from 'color';\n\nexport default function (heroPattern, headerPattern) {\n\tvar hero = document.querySelector(heroPattern);\n\tvar header = document.querySelector(headerPattern);\n\tvar collapseMargin = 40;\n\tvar expandMargin = 200;\n\n\tvar initialHeroBackgroundColor = hero.style.backgroundColor;\n\thero.style.backgroundColor = null;\n\tvar heroBackgroundColor = new Color(window.getComputedStyle(hero).getPropertyValue('background-color'));\n\tif (initialHeroBackgroundColor) hero.style.backgroundColor = initialHeroBackgroundColor;\n\n\tvar isCollapsed = header.classList.contains('collapsed');\n\tif (!isCollapsed) header.classList.add('collapsed');\n\tvar headerBackgroundColor = new Color(window.getComputedStyle(header).getPropertyValue('background-color'));\n\tif (!isCollapsed) header.classList.remove('collapsed');\n\n\tconsole.log(heroBackgroundColor.red(), heroBackgroundColor.blue(), heroBackgroundColor.green(), heroBackgroundColor.alpha());\n\tconsole.log(headerBackgroundColor.red(), headerBackgroundColor.blue(), headerBackgroundColor.green(), headerBackgroundColor.alpha());\n\n\tif (header.classList.contains('expanded') && hero.getBoundingClientRect().bottom < header.getBoundingClientRect().bottom + collapseMargin) {\n\t\theader.classList.add('notransition');\n\t\theader.classList.remove('expanded');\n\t\theader.classList.add('collapsed');\n\t\twindow.requestAnimationFrame(function () {\n\t\t\twindow.requestAnimationFrame(function () {\n\t\t\t\theader.classList.remove('notransition');\n\t\t\t});\n\t\t});\n\t}\n\n\t['resize', 'scroll'].map(function (event) {\n\t\twindow.addEventListener(event, function () {\n\t\t\twindow.requestAnimationFrame(step);\n\t\t});\n\t});\n\n\tfunction step() {\n\t\tconsole.log('step');\n\t\tvar heroRect = hero.getBoundingClientRect();\n\t\tvar headerHeight = header.clientHeight;\n\t\tvar headerRect = header.getBoundingClientRect();\n\n\t\tif (header.classList.contains('expanded')) {\n\t\t\tif (heroRect.bottom < headerRect.bottom + collapseMargin) {\n\n\t\t\t\theader.classList.remove('expanded');\n\t\t\t}\n\t\t} else {\n\t\t\tif (heroRect.bottom > headerRect.bottom + expandMargin) {\n\n\t\t\t\theader.classList.add('expanded');\n\t\t\t}\n\t\t}\n\n\t\tif (header.classList.contains('collapsed')) {\n\t\t\tif (heroRect.bottom > headerHeight) {\n\t\t\t\theader.classList.remove('collapsed');\n\t\t\t}\n\t\t} else {\n\t\t\tif (heroRect.bottom < headerHeight) {\n\t\t\t\theader.classList.add('collapsed');\n\t\t\t}\n\t\t}\n\n\t\tvar scrolledValue = (heroRect.height - (heroRect.bottom - headerHeight)) / heroRect.height;\n\t\tscrolledValue > 0 ? scrolledValue : 0;\n\t\tscrolledValue < 1 ? scrolledValue : 1;\n\n\t\tvar newHeroColor = Color().red(heroBackgroundColor.red() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.red() - heroBackgroundColor.red())).green(heroBackgroundColor.green() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.green() - heroBackgroundColor.green())).blue(heroBackgroundColor.blue() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.blue() - heroBackgroundColor.blue())).alpha(heroBackgroundColor.alpha() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.alpha() - heroBackgroundColor.alpha())).rgb().string(0);\n\n\t\thero.style.backgroundColor = newHeroColor;\n\t}\n}"
+      "source": "import Color from 'color';\n\nexport default function (heroPattern, headerPattern) {\n\tvar hero = document.querySelector(heroPattern);\n\tvar header = document.querySelector(headerPattern);\n\tvar collapseMargin = 40;\n\tvar expandMargin = 200;\n\n\tvar initialHeroBackgroundColor = hero.style.backgroundColor;\n\thero.style.backgroundColor = null;\n\tvar heroBackgroundColor = new Color(window.getComputedStyle(hero).getPropertyValue('background-color'));\n\tif (initialHeroBackgroundColor) hero.style.backgroundColor = initialHeroBackgroundColor;\n\n\tvar isCollapsed = header.classList.contains('collapsed');\n\tif (!isCollapsed) header.classList.add('collapsed');\n\tvar headerBackgroundColor = new Color(window.getComputedStyle(header).getPropertyValue('background-color'));\n\tif (!isCollapsed) header.classList.remove('collapsed');\n\n\tif (header.classList.contains('expanded') && hero.getBoundingClientRect().bottom < header.getBoundingClientRect().bottom + collapseMargin) {\n\t\theader.classList.add('notransition');\n\t\theader.classList.remove('expanded');\n\t\theader.classList.add('collapsed');\n\t\twindow.requestAnimationFrame(function () {\n\t\t\twindow.requestAnimationFrame(function () {\n\t\t\t\theader.classList.remove('notransition');\n\t\t\t});\n\t\t});\n\t}\n\n\t['resize', 'scroll'].map(function (event) {\n\t\twindow.addEventListener(event, function () {\n\t\t\twindow.requestAnimationFrame(step);\n\t\t});\n\t});\n\n\tfunction step() {\n\t\tvar heroRect = hero.getBoundingClientRect();\n\t\tvar headerHeight = header.clientHeight;\n\t\tvar headerRect = header.getBoundingClientRect();\n\n\t\tif (header.classList.contains('expanded')) {\n\t\t\tif (heroRect.bottom < headerRect.bottom + collapseMargin) {\n\n\t\t\t\theader.classList.remove('expanded');\n\t\t\t}\n\t\t} else {\n\t\t\tif (heroRect.bottom > headerRect.bottom + expandMargin) {\n\n\t\t\t\theader.classList.add('expanded');\n\t\t\t}\n\t\t}\n\n\t\tif (header.classList.contains('collapsed')) {\n\t\t\tif (heroRect.bottom > headerHeight) {\n\t\t\t\theader.classList.remove('collapsed');\n\t\t\t}\n\t\t} else {\n\t\t\tif (heroRect.bottom < headerHeight) {\n\t\t\t\theader.classList.add('collapsed');\n\t\t\t}\n\t\t}\n\n\t\tvar scrolledValue = (heroRect.height - (heroRect.bottom - headerHeight)) / heroRect.height;\n\t\tscrolledValue > 0 ? scrolledValue : 0;\n\t\tscrolledValue < 1 ? scrolledValue : 1;\n\n\t\tvar newHeroColor = Color().red(heroBackgroundColor.red() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.red() - heroBackgroundColor.red())).green(heroBackgroundColor.green() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.green() - heroBackgroundColor.green())).blue(heroBackgroundColor.blue() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.blue() - heroBackgroundColor.blue())).alpha(heroBackgroundColor.alpha() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.alpha() - heroBackgroundColor.alpha())).rgb().string(0);\n\n\t\thero.style.backgroundColor = newHeroColor;\n\t}\n}"
     },
     {
       "id": 14,
@@ -773,7 +773,7 @@
       "index2": 28,
       "size": 1725,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -809,7 +809,7 @@
       "index2": 27,
       "size": 2226,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -845,7 +845,7 @@
       "index2": 25,
       "size": 4853,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -881,7 +881,7 @@
       "index2": 29,
       "size": 10907,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -919,7 +919,7 @@
       "index2": 6,
       "size": 1296,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -955,7 +955,7 @@
       "index2": 19,
       "size": 4905,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -991,7 +991,7 @@
       "index2": 10,
       "size": 5865,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1027,7 +1027,7 @@
       "index2": 8,
       "size": 2045,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1063,7 +1063,7 @@
       "index2": 14,
       "size": 11389,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1099,7 +1099,7 @@
       "index2": 21,
       "size": 991,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1137,7 +1137,7 @@
       "index2": 20,
       "size": 3105,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1173,7 +1173,7 @@
       "index2": 17,
       "size": 4307,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1209,7 +1209,7 @@
       "index2": 18,
       "size": 5137,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1245,7 +1245,7 @@
       "index2": 16,
       "size": 5998,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1281,7 +1281,7 @@
       "index2": 9,
       "size": 1935,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1317,7 +1317,7 @@
       "index2": 23,
       "size": 333,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1353,7 +1353,7 @@
       "index2": 2,
       "size": 27029,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1391,7 +1391,7 @@
       "index2": 24,
       "size": 571,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1427,7 +1427,7 @@
       "index2": 13,
       "size": 7220,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1463,7 +1463,7 @@
       "index2": 33,
       "size": 102,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [

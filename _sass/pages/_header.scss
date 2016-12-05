@@ -9,6 +9,7 @@ header.site-header {
 	color: rgba($light-text-color, $primary-light-text);
 	padding: 0 1em;
 	font-size: 1.25em;
+	pointer-events: all;
 	transition-duration: 0.3s;
 	transition-property: padding, font-size;
 
@@ -19,24 +20,47 @@ header.site-header {
 	&.expanded {
 
 		@media (min-width: $small-desktop) {
+			padding: 0 1em;
+			font-size: 1.5em;
+		}
+
+		@media (min-width: $medium-desktop) {
+			padding: 0 1.5em;
+			font-size: 1.65em;
+		}
+
+		@media (min-width: $large-desktop) {
 			padding: 0 2em;
-			font-size: 1.75em;
+			font-size: 1.8em;
 		}
 	}
 
 	.site-title {
 		font-family: $heading-font-family;
-		font-size: 1.5em;
+		font-size: 1.2em;
 		font-weight: normal;
 		margin: 0;
 
+		@media (min-width: $very-small-screen) {
+			font-size: 1.35em;
+		}
+
 		@media (min-width: $small-desktop) {
-			font-size: 2em;
+			font-size: 1.6em;
+		}
+
+		@media (min-width: $medium-desktop) {
+			font-size: 1.8em;
 		}
 	}
 
 	nav.site-nav {
 		font-family: $site-nav-font-family;
+		font-size: 0.8em;
+
+		@media (min-width: $very-small-screen) {
+			font-size: 1em;
+		}
 
 		ul {
 			list-style: none;
@@ -49,11 +73,7 @@ header.site-header {
 
 			li {
 				font-size: 1em;
-				margin: 0.5em;
-
-				@media (min-width: $small-desktop) {
-					margin: 0.5 1em;
-				}
+				margin: 0.2em 0.5em;
 
 				a {
 					color: rgba($light-text-color, $primary-light-text);
