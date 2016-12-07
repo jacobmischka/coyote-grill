@@ -3,7 +3,7 @@
   "warnings": [],
   "version": "2.1.0-beta.27",
   "hash": "16d1f77ff17266e43162",
-  "time": 1793,
+  "time": 1809,
   "publicPath": "/js/",
   "assetsByChunkName": {
     "main": [
@@ -92,9 +92,9 @@
         0
       ],
       "assets": [],
-      "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/prev-next-button.js",
-      "issuerId": 28,
-      "issuerName": "./~/flickity/js/prev-next-button.js",
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/page-dots.js",
+      "issuerId": 26,
+      "issuerName": "./~/flickity/js/page-dots.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -470,9 +470,9 @@
         0
       ],
       "assets": [],
-      "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/prev-next-button.js",
-      "issuerId": 28,
-      "issuerName": "./~/flickity/js/prev-next-button.js",
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/page-dots.js",
+      "issuerId": 26,
+      "issuerName": "./~/flickity/js/page-dots.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -515,9 +515,9 @@
         0
       ],
       "assets": [],
-      "issuer": "/home/mischka/projects/coyote-grill/node_modules/tap-listener/tap-listener.js",
-      "issuerId": 6,
-      "issuerName": "./~/tap-listener/tap-listener.js",
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/unidragger/unidragger.js",
+      "issuerId": 33,
+      "issuerName": "./~/unidragger/unidragger.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,

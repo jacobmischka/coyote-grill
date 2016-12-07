@@ -20,12 +20,16 @@ header.site-header {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: flex-end;
+		padding: 0 1em 0.2em;
 	}
 
-	@include header-height(height);
 
 	&.collapsed {
 		background-color: $accent-color-light;
+		border-bottom: 1px solid $accent-color;
+		box-shadow: 0 0 4px 0 $shadow-color;
+
+		@include header-height(height);
 	}
 
 	nav.site-nav {

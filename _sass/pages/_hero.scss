@@ -72,6 +72,11 @@
 			bottom: 2em;
 			right: 50%;
 			transform: translateX(32%);
+			max-height: 25%;
+
+			@media (max-height: $very-small-screen) {
+				display: none;
+			}
 
 			@media (min-width: $small-desktop) {
 				right: 2em;
