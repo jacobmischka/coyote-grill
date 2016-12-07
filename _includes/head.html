@@ -15,4 +15,7 @@
 {% if jekyll.environment == "production" %}
 	{% include google-analytics.html %}
 {% endif %}
+	<script>
+		document.querySelector('html').className = 'has-js';
+	</script>
 </head>
