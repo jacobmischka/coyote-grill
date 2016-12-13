@@ -36,6 +36,7 @@ media:
   small_desktop: 768
   medium_desktop: 992
   large_desktop: 1200
+  very_large_desktop: 1600
 
 carousel_images:
   - src: bar/coyotes.jpg
