@@ -41,8 +41,8 @@
     - 5.50
     - 7.50
   photos:
-    - /images/food/coyote.jpg
-    - /images/food/coyote-half.jpg
+    - /images/small/food/coyote.jpg
+    - /images/small/food/coyote-half.jpg
 
 - name: Ultimate
   desc: On grilled toast with 4 cheeses, special sauce, and fried onion
@@ -50,9 +50,9 @@
     - 5.50
     - 7.50
   photos:
-    - /images/food/ultimate.jpg
-    - /images/food/ultimate-half.jpg
-    - /images/food/ultimate-half-2.jpg
+    - /images/small/food/ultimate.jpg
+    - /images/small/food/ultimate-half.jpg
+    - /images/small/food/ultimate-half-2.jpg
 
 - name: Blazing Britt Burger
   desc: On grilled toast with pepperjack cheese, bacon, fried onions, jalape&ntilde;o bottle caps, chipotle BBQ, and cajun seasoning

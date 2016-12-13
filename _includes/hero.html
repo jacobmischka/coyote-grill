@@ -18,6 +18,8 @@
 		</div>
 	</div>
 {% for image in site.carousel_images %}
-	<div class="carousel-image" style="background-image: url({{ image }});"></div>
+	<img class="carousel-image" src="/images/small/{{ image.src }}" alt=""
+		srcset="/images/medium/{{ image.src }} {{ site.media.medium_desktop }}w, /images/large/{{ image.src }} {{ site.media.large_desktop }}w"
+		{% if image.position %} style="object-position: {{ image.position }};" {% endif %}/>
 {% endfor %}
 </section>

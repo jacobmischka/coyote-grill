@@ -2,8 +2,8 @@
   "errors": [],
   "warnings": [],
   "version": "2.1.0-beta.27",
-  "hash": "8a6a5e756fdedc77ba00",
-  "time": 1702,
+  "hash": "46ddb7725116d6dbf962",
+  "time": 1730,
   "publicPath": "/js/",
   "assetsByChunkName": {
     "main": [
@@ -14,7 +14,7 @@
   "assets": [
     {
       "name": "bundle.js",
-      "size": 80062,
+      "size": 80026,
       "chunks": [
         0
       ],
@@ -25,7 +25,7 @@
     },
     {
       "name": "bundle.js.map",
-      "size": 494985,
+      "size": 494913,
       "chunks": [
         0
       ],
@@ -53,7 +53,7 @@
       "initial": true,
       "entry": true,
       "extraAsync": false,
-      "size": 176087,
+      "size": 176051,
       "names": [
         "main"
       ],
@@ -61,7 +61,7 @@
         "bundle.js",
         "bundle.js.map"
       ],
-      "hash": "d01e80e404532f65b63c",
+      "hash": "c9709fd035ecd2f451b5",
       "parents": [],
       "origins": [
         {
@@ -92,9 +92,9 @@
         0
       ],
       "assets": [],
-      "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/drag.js",
-      "issuerId": 23,
-      "issuerName": "./~/flickity/js/drag.js",
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/flickity.js",
+      "issuerId": 1,
+      "issuerName": "./~/flickity/js/flickity.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -515,9 +515,9 @@
         0
       ],
       "assets": [],
-      "issuer": "/home/mischka/projects/coyote-grill/node_modules/unidragger/unidragger.js",
-      "issuerId": 33,
-      "issuerName": "./~/unidragger/unidragger.js",
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/tap-listener/tap-listener.js",
+      "issuerId": 6,
+      "issuerName": "./~/tap-listener/tap-listener.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -623,7 +623,7 @@
       "name": "./_js/footer.js",
       "index": 5,
       "index2": 4,
-      "size": 1852,
+      "size": 1816,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -651,7 +651,7 @@
       ],
       "usedExports": false,
       "providedExports": null,
-      "source": "var picture = document.querySelector('#coyote-grill-external');\nvar pictureSwitch = document.querySelector('#coyote-grill-external-switch');\n\nvar dayWide = '/images/external/front-wide.jpg';\nvar day = '/images/external/front.jpg';\nvar nightWide = '/images/external/front-wide-night.jpg';\nvar night = '/images/external/front-night.jpg';\n\nvar now = new Date();\nif (now.getHours() < 6 || now.getHours() > 17) {\n\tpicture.classList.remove('day-picture');\n\tpicture.classList.add('night-picture');\n\tpicture.querySelector('source').setAttribute('srcset', nightWide);\n\tpicture.querySelector('img').setAttribute('src', night);\n\n\tpictureSwitch.querySelector('#external-night').checked = true;\n}\n\nvar _iteratorNormalCompletion = true;\nvar _didIteratorError = false;\nvar _iteratorError = undefined;\n\ntry {\n\tfor (var _iterator = Array.from(pictureSwitch.querySelectorAll('input[name=\"coyote-grill-external-switch\"]'))[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n\t\tvar option = _step.value;\n\n\t\toption.addEventListener('change', function (event) {\n\t\t\tif (event.target.checked) {\n\t\t\t\tpicture.style.opacity = 0;\n\n\t\t\t\tswitch (event.target.value) {\n\t\t\t\t\tcase 'night':\n\t\t\t\t\t\tpicture.querySelector('source').setAttribute('srcset', nightWide);\n\t\t\t\t\t\tpicture.querySelector('img').setAttribute('src', night);\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tcase 'day':\n\t\t\t\t\tdefault:\n\t\t\t\t\t\tpicture.querySelector('source').setAttribute('srcset', dayWide);\n\t\t\t\t\t\tpicture.querySelector('img').setAttribute('src', day);\n\t\t\t\t\t\tbreak;\n\t\t\t\t}\n\n\t\t\t\tpicture.style.opacity = null;\n\t\t\t}\n\t\t});\n\t}\n} catch (err) {\n\t_didIteratorError = true;\n\t_iteratorError = err;\n} finally {\n\ttry {\n\t\tif (!_iteratorNormalCompletion && _iterator.return) {\n\t\t\t_iterator.return();\n\t\t}\n\t} finally {\n\t\tif (_didIteratorError) {\n\t\t\tthrow _iteratorError;\n\t\t}\n\t}\n}"
+      "source": "var picture = document.querySelector('#coyote-grill-external');\nvar pictureSwitch = document.querySelector('#coyote-grill-external-switch');\n\nvar dayWide = '/images/front-wide.jpg';\nvar day = '/images/front.jpg';\nvar nightWide = '/images/front-wide-night.jpg';\nvar night = '/images/front-night.jpg';\n\nvar now = new Date();\nif (now.getHours() < 6 || now.getHours() > 17) {\n\tpicture.classList.remove('day-picture');\n\tpicture.classList.add('night-picture');\n\tpicture.querySelector('source').setAttribute('srcset', nightWide);\n\tpicture.querySelector('img').setAttribute('src', night);\n\n\tpictureSwitch.querySelector('#external-night').checked = true;\n}\n\nvar _iteratorNormalCompletion = true;\nvar _didIteratorError = false;\nvar _iteratorError = undefined;\n\ntry {\n\tfor (var _iterator = Array.from(pictureSwitch.querySelectorAll('input[name=\"coyote-grill-external-switch\"]'))[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n\t\tvar option = _step.value;\n\n\t\toption.addEventListener('change', function (event) {\n\t\t\tif (event.target.checked) {\n\t\t\t\tpicture.style.opacity = 0;\n\n\t\t\t\tswitch (event.target.value) {\n\t\t\t\t\tcase 'night':\n\t\t\t\t\t\tpicture.querySelector('source').setAttribute('srcset', nightWide);\n\t\t\t\t\t\tpicture.querySelector('img').setAttribute('src', night);\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tcase 'day':\n\t\t\t\t\tdefault:\n\t\t\t\t\t\tpicture.querySelector('source').setAttribute('srcset', dayWide);\n\t\t\t\t\t\tpicture.querySelector('img').setAttribute('src', day);\n\t\t\t\t\t\tbreak;\n\t\t\t\t}\n\n\t\t\t\tpicture.style.opacity = null;\n\t\t\t}\n\t\t});\n\t}\n} catch (err) {\n\t_didIteratorError = true;\n\t_iteratorError = err;\n} finally {\n\ttry {\n\t\tif (!_iteratorNormalCompletion && _iterator.return) {\n\t\t\t_iterator.return();\n\t\t}\n\t} finally {\n\t\tif (_didIteratorError) {\n\t\t\tthrow _iteratorError;\n\t\t}\n\t}\n}"
     },
     {
       "id": 11,

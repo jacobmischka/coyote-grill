@@ -10,7 +10,7 @@
   price: 3.00
   block_desc: true
   photos:
-    - /images/food/dank-fries.jpg
+    - /images/small/food/dank-fries.jpg
 
 - name: Breaded portobello mushrooms
   price: 4.00

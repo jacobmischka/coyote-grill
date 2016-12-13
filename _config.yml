@@ -32,20 +32,20 @@ address: "132 W. Center St, Whitewater WI"
 email: contact@coyotegrill.bar
 
 media:
-  small_mobile: 600px
-  small_desktop: 768px
-  medium_desktop: 992px
-  large_desktop: 1200px
+  small_mobile: 600
+  small_desktop: 768
+  medium_desktop: 992
+  large_desktop: 1200
 
 carousel_images:
-  - /images/external/front.jpg
-  - /images/bar/coyotes.jpg
-  - /images/food/dank-fries.jpg
-  - /images/bar/best-burger.jpg
-  - /images/external/patio.jpg
-  - /images/food/basket-ultimate.jpg
-  - /images/bar/rail.jpg
-  - /images/bar/beer-bottles.jpg
+  - src: bar/coyotes.jpg
+  - src: food/dank-fries.jpg
+  - src: bar/best-burger.jpg
+    position: top
+  - src: external/patio.jpg
+  - src: food/basket-ultimate.jpg
+  - src: bar/rail.jpg
+  - src: bar/beer-bottles.jpg
 
 
 # Build settings
