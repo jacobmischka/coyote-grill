@@ -112,6 +112,6 @@ $large-desktop: 1200px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-	"dependencies/normalize",
+	"vendor/normalize",
  	"layout",
 	"pages/index";

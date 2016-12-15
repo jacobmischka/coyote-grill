@@ -19,5 +19,5 @@ gulp.task('import:css', () => {
 			path.basename = '_' + path.basename;
 			path.extname = '.scss';
 		}))
-		.pipe(gulp.dest('./_sass/dependencies'));
+		.pipe(gulp.dest('./_sass/vendor'));
 });
