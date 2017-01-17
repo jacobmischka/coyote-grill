@@ -2,7 +2,12 @@
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-	entry: './_js/main.js',
+	entry: process.env.NODE_ENV === 'production'
+		? './_js/main.js'
+		: [
+			'preact/devtools',
+			'./_js/main.js'
+		],
 	output: {
 		path: './js/',
 		publicPath: '/js/',

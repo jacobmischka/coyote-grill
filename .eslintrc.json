@@ -3,6 +3,7 @@
 		"ecmaVersion": 6,
 		"sourceType": "module",
 		"ecmaFeatures": {
+			"modules": true,
 			"jsx": true
 		}
 	},
@@ -21,5 +22,11 @@
 		"comma-style": "warn",
 		"comma-spacing": "warn",
 		"key-spacing": "warn"
+	},
+	"settings": {
+		"react": {
+			"pragma": "h",
+			"createClass": "h"
+		}
 	}
 }
