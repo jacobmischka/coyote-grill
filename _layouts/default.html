@@ -14,7 +14,7 @@
 
 {% if page.scripts %}
 	{% for script in page.scripts %}
-		{{ script }}
+		<script src="{{ script }}"></script>
 	{% endfor %}
 {% endif %}
 		<script src="/js/bundle.js"></script>

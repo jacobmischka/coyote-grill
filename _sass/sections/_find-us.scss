@@ -1,42 +1,5 @@
 @import "../vendor/toggle-switch";
 
-#ad {
-	height: 350px;
-
-	.ad-container {
-		position: absolute;
-		left: 50%;
-		width: 50%;
-		height: 350px;
-		transform: translateX(-50%);
-		background-image: url('/images/small/food/fries.jpg');
-		background-position: bottom center;
-		background-size: cover;
-		transition: 0.35s ease-in;
-		transition-property: width, height;
-
-		@media (min-width: $small-desktop) {
-			background-image: url('/images/medium/food/fries.jpg');
-		}
-
-		@media (min-width: $very-large-desktop) {
-			background-image: url('/images/large/food/fries.jpg');
-		}
-
-		&.active {
-			width: 80%;
-			height: 500px;
-		}
-
-		& > * {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
-	}
-}
-
 #find-us {
 
 	#map {

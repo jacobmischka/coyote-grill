@@ -1,17 +1,21 @@
 /* eslint-env node */
+const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-	entry: process.env.NODE_ENV === 'production'
-		? './_js/main.js'
-		: [
-			'preact/devtools',
-			'./_js/main.js'
-		],
+	entry: {
+		bundle: './_js/bundle/index.js',
+		promotions: process.env.NODE_ENV === 'production'
+			? './_js/promotions/index.js'
+			: [
+				'preact/devtools',
+				'./_js/promotions/index.js'
+			],
+	},
 	output: {
 		path: './js/',
 		publicPath: '/js/',
-		filename: 'bundle.js'
+		filename: '[name].js'
 	},
 	target: 'web',
 	module: {
@@ -35,6 +39,11 @@ module.exports = {
 			analyzerMode: 'disabled',
 			generateStatsFile: true,
 			statsFilename: 'stats.json'
+		}),
+		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: process.env.NODE_ENV
+			}
 		})
 	],
 	devtool: 'source-map'
