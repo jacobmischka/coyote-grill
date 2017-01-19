@@ -2,12 +2,27 @@
 layout: null
 ---
 <!DOCTYPE html>
-<html class="no-js">
-	{% include head.html %}
-	
+<html>
+	<head>
+		{% include head_metadata.html %}
+		<style>
+			html, body, #promotions {
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+
+			#promotions {
+				box-sizing: border-box;
+				padding: 5%;
+				background-color: rgba(0, 0, 0, 0.75);
+			}
+		</style>
+	</head>
+
 	<body>
 		<main id="promotions">
-			
+
 		</main>
 		<script src="/js/promotions.js"></script>
 	</body>

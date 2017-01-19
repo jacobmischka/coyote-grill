@@ -6,40 +6,53 @@ import firebase from 'firebase';
 export default class SignIn extends Component {
 	constructor(){
 		super();
-		
+
 		this.signOut = this.signOut.bind(this);
 		this.googleSignIn = this.googleSignIn.bind(this);
 		this.facebookSignIn = this.facebookSignIn.bind(this);
 	}
-	
+
 	render(){
-		return this.props.user
+		return (
+			<div className="sign-in">
+				<style jsx>
+				{`
+					.sign-in {
+						position: absolute;
+						text-align: center;
+						bottom: 5%;
+						left: 50%;
+						transform: translateX(-50%);
+					}
+				`}
+				</style>
+	{
+		this.props.user
 			? (
 				<button type="button" onClick={this.signOut}>
 					Sign out
 				</button>
 			)
 			: (
-				<div>
-					<button type="button" onClick={this.googleSignIn}>
-						Google
-					</button>
-					<button type="button" onClick={this.facebookSignIn}>
-						Facebook
-					</button>
-				</div>
-			);
+				<button type="button" onClick={this.facebookSignIn}>
+					Facebook
+				</button>
+			)
+
 	}
-	
+			</div>
+		);
+	}
+
 	signOut(){
 		firebase.auth().signOut();
 	}
-	
+
 	googleSignIn(){
 		const provider = new firebase.auth.GoogleAuthProvider();
 		firebase.auth().signInWithRedirect(provider);
 	}
-	
+
 	facebookSignIn(){
 		const provider = new firebase.auth.FacebookAuthProvider();
 		firebase.auth().signInWithRedirect(provider);

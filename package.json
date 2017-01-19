@@ -58,5 +58,8 @@
   "bugs": {
     "url": "https://github.com/jacobmischka/coyote-grill/issues"
   },
-  "homepage": "https://github.com/jacobmischka/coyote-grill#readme"
+  "homepage": "https://github.com/jacobmischka/coyote-grill#readme",
+  "dependencies": {
+    "styled-jsx": "^0.4.4"
+  }
 }

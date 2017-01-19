@@ -18,6 +18,11 @@ module.exports = {
 		filename: '[name].js'
 	},
 	target: 'web',
+	resolve: {
+		alias: {
+			react: 'preact'
+		}
+	},
 	module: {
 		rules: [
 			{
