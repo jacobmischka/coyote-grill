@@ -4,8 +4,12 @@ import firebase from 'firebase';
 export default class Promotion extends Component {
 	constructor(){
 		super();
+		this.state = {
+			waitingForConfirmation: false
+		};
 
 		this.redeem = this.redeem.bind(this);
+		this.cancel = this.cancel.bind(this);
 	}
 
 	render(){
@@ -71,20 +75,35 @@ export default class Promotion extends Component {
 						pointer-events: none;
 					}
 
-					.redeem-button {
-						background: rgba(255, 255, 255, 0.5);
-						background-clip: padding-box;
-						border: 2px solid rgba(255, 255, 255, 0.5);
-						outline: none;
+					.button {
 						border-radius: 5px;
-						padding: 0.25em 1em;
+						background-clip: padding-box;
+						border: 2px solid;
+						outline: none;
 						cursor: pointer;
 						font-size: 1em;
-						transition: transform 0.05s ease-out;
+					}
+
+					.redeem-button {
+						background: rgba(255, 255, 255, 0.5);
+						border-color: rgba(255, 255, 255, 0.5);
+						background-clip: padding-box;
+						padding: 0.25em 1em;
 					}
 
 					.redeem-button:hover {
 						background: rgba(255, 255, 255, 0.3);
+						background-clip: padding-box;
+					}
+
+					.redeem-button.waiting-for-confirmation {
+						background: rgba(0, 255, 0, 0.5);
+						border-color: rgba(0, 255, 0, 0.5);
+						background-clip: padding-box;
+					}
+
+					.redeem-button.waiting-for-confirmation:hover {
+						background: rgba(0, 255, 0, 0.3);
 						background-clip: padding-box;
 					}
 
@@ -96,6 +115,17 @@ export default class Promotion extends Component {
 						cursor: not-allowed;
 					}
 
+					.cancel-button {
+						background: rgba(255, 0, 0, 0.5);
+						border-color: rgba(255, 0, 0, 0.5);
+						background-clip: padding-box;
+					}
+
+					.cancel-button:hover {
+						background: rgba(255, 0, 0, 0.3);
+						background-clip: padding-box;
+					}
+
 					p {
 						margin: 0;
 						pointer-events: none;
@@ -103,19 +133,36 @@ export default class Promotion extends Component {
 				`}
 				</style>
 				<h2>{this.props.title}</h2>
-				<button className="redeem-button"
+
+		{
+			this.props.user && !redeemed && this.state.waitingForConfirmation && (
+				<span>Are you sure? This can't be undone.</span>
+			)
+		}
+
+				<button className={`button redeem-button
+						${!redeemed && this.state.waitingForConfirmation ? 'waiting-for-confirmation' : null}`}
 						disabled={!this.props.user || redeemed}
 						onClick={this.redeem}>
 			{
 				this.props.user
 					? redeemed
 						? `Reedeemed on ${redeemedAt}`
-						: this.state.confirmed
-							? 'Are you sure?'
+						: this.state.waitingForConfirmation
+							? 'Confirm'
 							: 'Redeem'
 					: 'Sign in to redeem promotion'
 			}
 				</button>
+
+		{
+			this.props.user && !redeemed && this.state.waitingForConfirmation && (
+				<button className="button cancel-button"
+						onClick={this.cancel}>
+					Cancel
+				</button>
+			)
+		}
 
 				<p>
 					{this.props.desc}
@@ -125,7 +172,7 @@ export default class Promotion extends Component {
 	}
 
 	redeem(){
-		if(this.state.confirmed){
+		if(this.state.waitingForConfirmation){
 			const userId = this.props.user.uid;
 			firebase.database()
 				.ref(`users/${userId}/redeemedPromotions/${this.props.id}`).set({
@@ -135,9 +182,15 @@ export default class Promotion extends Component {
 		}
 		else {
 			this.setState({
-				confirmed: true
+				waitingForConfirmation: true
 			});
 		}
+	}
+
+	cancel(){
+		this.setState({
+			waitingForConfirmation: false
+		});
 	}
 }
 
