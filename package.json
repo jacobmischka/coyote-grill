@@ -60,6 +60,6 @@
   },
   "homepage": "https://github.com/jacobmischka/coyote-grill#readme",
   "dependencies": {
-    "styled-jsx": "^0.4.4"
+    "styled-jsx": "^0.5.0"
   }
 }

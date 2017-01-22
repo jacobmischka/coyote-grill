@@ -20,7 +20,7 @@ export default class SignIn extends Component {
 					.sign-in {
 						position: absolute;
 						text-align: center;
-						bottom: 5%;
+						bottom: 3em;
 						left: 50%;
 						transform: translateX(-50%);
 					}

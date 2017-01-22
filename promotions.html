@@ -6,15 +6,23 @@ layout: null
 	<head>
 		{% include head_metadata.html %}
 		<style>
-			html, body, #promotions {
+			html, body {
 				height: 100%;
 				padding: 0;
 				margin: 0;
 			}
 
+			html.locked {
+				height: 100vh;
+				overflow: hidden !important;
+				touch-action: none !important;
+			}
+
 			#promotions {
+				min-height: 100vh;
+				padding: 0;
+				margin: 0;
 				box-sizing: border-box;
-				padding: 5%;
 				background-color: rgba(0, 0, 0, 0.75);
 			}
 		</style>

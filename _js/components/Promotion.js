@@ -1,22 +1,17 @@
 import { h, Component } from 'preact';
-import firebase from 'firebase';
+
+import { isPromotionRedeemed } from '../utils.js';
+import { BREAKPOINTS } from '../constants.js';
 
 export default class Promotion extends Component {
 	constructor(){
 		super();
-		this.state = {
-			waitingForConfirmation: false
-		};
 
-		this.redeem = this.redeem.bind(this);
-		this.cancel = this.cancel.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 	}
 
 	render(){
-		const redeemed = this.props.userData
-			&& this.props.userData.redeemedPromotions
-			&& this.props.userData.redeemedPromotions[this.props.id]
-			&& this.props.userData.redeemedPromotions[this.props.id].redeemed;
+		const redeemed = isPromotionRedeemed(this.props.id, this.props.userData);
 
 		const redeemedAt = redeemed
 			? new Date(this.props.userData.redeemedPromotions[this.props.id].redeemedAt)
@@ -34,7 +29,7 @@ export default class Promotion extends Component {
 				<style jsx>
 				{`
 					.promotion {
-						flex-grow: 1;
+						flex: 1 1;
 						display: flex;
 						flex-direction: column;
 						justify-content: space-between;
@@ -42,19 +37,26 @@ export default class Promotion extends Component {
 
 						background-position: center;
 						background-size: cover;
-						margin: 1em;
-						max-width: 800px;
+						margin: 1em 0;
+						padding: 1em;
 						min-height: 200px;
-						max-height: calc(40vw);
 						border-radius: 3px;
 						box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);
 						border: none;
 						color: white;
-						font-size: 2em;
+						font-size: 1.5em;
 						font-family: sans-serif;
+						text-align: center;
 
 						transition: 0.05s ease-out;
 						transition-property: transform, box-shadow;
+					}
+
+					@media (min-width: ${BREAKPOINTS.SMALL_DESKTOP}px) {
+
+						.promotion {
+							font-size: 2em;
+						}
 					}
 
 					.promotion:hover {
@@ -68,6 +70,11 @@ export default class Promotion extends Component {
 						box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);
 						opacity: 0.8;
 					}
+
+					.promotion > * {
+						margin: 0.5em 0;
+					}
+
 
 					h2 {
 						margin: 0;
@@ -96,17 +103,6 @@ export default class Promotion extends Component {
 						background-clip: padding-box;
 					}
 
-					.redeem-button.waiting-for-confirmation {
-						background: rgba(0, 255, 0, 0.5);
-						border-color: rgba(0, 255, 0, 0.5);
-						background-clip: padding-box;
-					}
-
-					.redeem-button.waiting-for-confirmation:hover {
-						background: rgba(0, 255, 0, 0.3);
-						background-clip: padding-box;
-					}
-
 					.redeem-button[disabled] {
 						transform: none;
 						background: rgba(0, 0, 0, 0.3);
@@ -115,16 +111,6 @@ export default class Promotion extends Component {
 						cursor: not-allowed;
 					}
 
-					.cancel-button {
-						background: rgba(255, 0, 0, 0.5);
-						border-color: rgba(255, 0, 0, 0.5);
-						background-clip: padding-box;
-					}
-
-					.cancel-button:hover {
-						background: rgba(255, 0, 0, 0.3);
-						background-clip: padding-box;
-					}
 
 					p {
 						margin: 0;
@@ -134,35 +120,19 @@ export default class Promotion extends Component {
 				</style>
 				<h2>{this.props.title}</h2>
 
-		{
-			this.props.user && !redeemed && this.state.waitingForConfirmation && (
-				<span>Are you sure? This can't be undone.</span>
-			)
-		}
 
-				<button className={`button redeem-button
-						${!redeemed && this.state.waitingForConfirmation ? 'waiting-for-confirmation' : null}`}
+				<button className="button redeem-button"
 						disabled={!this.props.user || redeemed}
-						onClick={this.redeem}>
+						onClick={this.handleClick}>
 			{
 				this.props.user
 					? redeemed
 						? `Reedeemed on ${redeemedAt}`
-						: this.state.waitingForConfirmation
-							? 'Confirm'
-							: 'Redeem'
+						: 'Redeem'
 					: 'Sign in to redeem promotion'
 			}
 				</button>
 
-		{
-			this.props.user && !redeemed && this.state.waitingForConfirmation && (
-				<button className="button cancel-button"
-						onClick={this.cancel}>
-					Cancel
-				</button>
-			)
-		}
 
 				<p>
 					{this.props.desc}
@@ -171,26 +141,8 @@ export default class Promotion extends Component {
 		);
 	}
 
-	redeem(){
-		if(this.state.waitingForConfirmation){
-			const userId = this.props.user.uid;
-			firebase.database()
-				.ref(`users/${userId}/redeemedPromotions/${this.props.id}`).set({
-					redeemed: true,
-					redeemedAt: new Date().toISOString()
-				});
-		}
-		else {
-			this.setState({
-				waitingForConfirmation: true
-			});
-		}
-	}
-
-	cancel(){
-		this.setState({
-			waitingForConfirmation: false
-		});
+	handleClick(){
+		this.props.activate(this.props.id);
 	}
 }
 
@@ -202,5 +154,6 @@ Promotion.propTypes = {
 	desc: String,
 	endDate: String,
 	startDate: String,
-	image: String
+	image: String,
+	activate: Function
 };
