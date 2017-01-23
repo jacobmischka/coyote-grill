@@ -88,14 +88,15 @@ export default class Promotion extends Component {
 						border: 2px solid;
 						outline: none;
 						cursor: pointer;
+						color: white;
 						font-size: 1em;
+						padding: 0.25em 1em;
 					}
 
 					.redeem-button {
 						background: rgba(255, 255, 255, 0.5);
 						border-color: rgba(255, 255, 255, 0.5);
 						background-clip: padding-box;
-						padding: 0.25em 1em;
 					}
 
 					.redeem-button:hover {

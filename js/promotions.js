@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/js/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 78);
+/******/ 	return __webpack_require__(__webpack_require__.s = 79);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -560,6 +560,1028 @@
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* MIT license */
+var cssKeywords = __webpack_require__(4);
+
+// NOTE: conversions should only return primitive values (i.e. arrays, or
+//       values that give correct `typeof` results).
+//       do not use box values types (i.e. Number(), String(), etc.)
+
+var reverseKeywords = {};
+for (var key in cssKeywords) {
+	if (cssKeywords.hasOwnProperty(key)) {
+		reverseKeywords[cssKeywords[key]] = key;
+	}
+}
+
+var convert = module.exports = {
+	rgb: {channels: 3, labels: 'rgb'},
+	hsl: {channels: 3, labels: 'hsl'},
+	hsv: {channels: 3, labels: 'hsv'},
+	hwb: {channels: 3, labels: 'hwb'},
+	cmyk: {channels: 4, labels: 'cmyk'},
+	xyz: {channels: 3, labels: 'xyz'},
+	lab: {channels: 3, labels: 'lab'},
+	lch: {channels: 3, labels: 'lch'},
+	hex: {channels: 1, labels: ['hex']},
+	keyword: {channels: 1, labels: ['keyword']},
+	ansi16: {channels: 1, labels: ['ansi16']},
+	ansi256: {channels: 1, labels: ['ansi256']},
+	hcg: {channels: 3, labels: ['h', 'c', 'g']},
+	apple: {channels: 3, labels: ['r16', 'g16', 'b16']},
+	gray: {channels: 1, labels: ['gray']}
+};
+
+// hide .channels and .labels properties
+for (var model in convert) {
+	if (convert.hasOwnProperty(model)) {
+		if (!('channels' in convert[model])) {
+			throw new Error('missing channels property: ' + model);
+		}
+
+		if (!('labels' in convert[model])) {
+			throw new Error('missing channel labels property: ' + model);
+		}
+
+		if (convert[model].labels.length !== convert[model].channels) {
+			throw new Error('channel and label counts mismatch: ' + model);
+		}
+
+		var channels = convert[model].channels;
+		var labels = convert[model].labels;
+		delete convert[model].channels;
+		delete convert[model].labels;
+		Object.defineProperty(convert[model], 'channels', {value: channels});
+		Object.defineProperty(convert[model], 'labels', {value: labels});
+	}
+}
+
+convert.rgb.hsl = function (rgb) {
+	var r = rgb[0] / 255;
+	var g = rgb[1] / 255;
+	var b = rgb[2] / 255;
+	var min = Math.min(r, g, b);
+	var max = Math.max(r, g, b);
+	var delta = max - min;
+	var h;
+	var s;
+	var l;
+
+	if (max === min) {
+		h = 0;
+	} else if (r === max) {
+		h = (g - b) / delta;
+	} else if (g === max) {
+		h = 2 + (b - r) / delta;
+	} else if (b === max) {
+		h = 4 + (r - g) / delta;
+	}
+
+	h = Math.min(h * 60, 360);
+
+	if (h < 0) {
+		h += 360;
+	}
+
+	l = (min + max) / 2;
+
+	if (max === min) {
+		s = 0;
+	} else if (l <= 0.5) {
+		s = delta / (max + min);
+	} else {
+		s = delta / (2 - max - min);
+	}
+
+	return [h, s * 100, l * 100];
+};
+
+convert.rgb.hsv = function (rgb) {
+	var r = rgb[0];
+	var g = rgb[1];
+	var b = rgb[2];
+	var min = Math.min(r, g, b);
+	var max = Math.max(r, g, b);
+	var delta = max - min;
+	var h;
+	var s;
+	var v;
+
+	if (max === 0) {
+		s = 0;
+	} else {
+		s = (delta / max * 1000) / 10;
+	}
+
+	if (max === min) {
+		h = 0;
+	} else if (r === max) {
+		h = (g - b) / delta;
+	} else if (g === max) {
+		h = 2 + (b - r) / delta;
+	} else if (b === max) {
+		h = 4 + (r - g) / delta;
+	}
+
+	h = Math.min(h * 60, 360);
+
+	if (h < 0) {
+		h += 360;
+	}
+
+	v = ((max / 255) * 1000) / 10;
+
+	return [h, s, v];
+};
+
+convert.rgb.hwb = function (rgb) {
+	var r = rgb[0];
+	var g = rgb[1];
+	var b = rgb[2];
+	var h = convert.rgb.hsl(rgb)[0];
+	var w = 1 / 255 * Math.min(r, Math.min(g, b));
+
+	b = 1 - 1 / 255 * Math.max(r, Math.max(g, b));
+
+	return [h, w * 100, b * 100];
+};
+
+convert.rgb.cmyk = function (rgb) {
+	var r = rgb[0] / 255;
+	var g = rgb[1] / 255;
+	var b = rgb[2] / 255;
+	var c;
+	var m;
+	var y;
+	var k;
+
+	k = Math.min(1 - r, 1 - g, 1 - b);
+	c = (1 - r - k) / (1 - k) || 0;
+	m = (1 - g - k) / (1 - k) || 0;
+	y = (1 - b - k) / (1 - k) || 0;
+
+	return [c * 100, m * 100, y * 100, k * 100];
+};
+
+/**
+ * See https://en.m.wikipedia.org/wiki/Euclidean_distance#Squared_Euclidean_distance
+ * */
+function comparativeDistance(x, y) {
+	return (
+		Math.pow(x[0] - y[0], 2) +
+		Math.pow(x[1] - y[1], 2) +
+		Math.pow(x[2] - y[2], 2)
+	);
+}
+
+convert.rgb.keyword = function (rgb) {
+	var reversed = reverseKeywords[rgb];
+	if (reversed) {
+		return reversed;
+	}
+
+	var currentClosestDistance = Infinity;
+	var currentClosestKeyword;
+
+	for (var keyword in cssKeywords) {
+		if (cssKeywords.hasOwnProperty(keyword)) {
+			var value = cssKeywords[keyword];
+
+			// Compute comparative distance
+			var distance = comparativeDistance(rgb, value);
+
+			// Check if its less, if so set as closest
+			if (distance < currentClosestDistance) {
+				currentClosestDistance = distance;
+				currentClosestKeyword = keyword;
+			}
+		}
+	}
+
+	return currentClosestKeyword;
+};
+
+convert.keyword.rgb = function (keyword) {
+	return cssKeywords[keyword];
+};
+
+convert.rgb.xyz = function (rgb) {
+	var r = rgb[0] / 255;
+	var g = rgb[1] / 255;
+	var b = rgb[2] / 255;
+
+	// assume sRGB
+	r = r > 0.04045 ? Math.pow(((r + 0.055) / 1.055), 2.4) : (r / 12.92);
+	g = g > 0.04045 ? Math.pow(((g + 0.055) / 1.055), 2.4) : (g / 12.92);
+	b = b > 0.04045 ? Math.pow(((b + 0.055) / 1.055), 2.4) : (b / 12.92);
+
+	var x = (r * 0.4124) + (g * 0.3576) + (b * 0.1805);
+	var y = (r * 0.2126) + (g * 0.7152) + (b * 0.0722);
+	var z = (r * 0.0193) + (g * 0.1192) + (b * 0.9505);
+
+	return [x * 100, y * 100, z * 100];
+};
+
+convert.rgb.lab = function (rgb) {
+	var xyz = convert.rgb.xyz(rgb);
+	var x = xyz[0];
+	var y = xyz[1];
+	var z = xyz[2];
+	var l;
+	var a;
+	var b;
+
+	x /= 95.047;
+	y /= 100;
+	z /= 108.883;
+
+	x = x > 0.008856 ? Math.pow(x, 1 / 3) : (7.787 * x) + (16 / 116);
+	y = y > 0.008856 ? Math.pow(y, 1 / 3) : (7.787 * y) + (16 / 116);
+	z = z > 0.008856 ? Math.pow(z, 1 / 3) : (7.787 * z) + (16 / 116);
+
+	l = (116 * y) - 16;
+	a = 500 * (x - y);
+	b = 200 * (y - z);
+
+	return [l, a, b];
+};
+
+convert.hsl.rgb = function (hsl) {
+	var h = hsl[0] / 360;
+	var s = hsl[1] / 100;
+	var l = hsl[2] / 100;
+	var t1;
+	var t2;
+	var t3;
+	var rgb;
+	var val;
+
+	if (s === 0) {
+		val = l * 255;
+		return [val, val, val];
+	}
+
+	if (l < 0.5) {
+		t2 = l * (1 + s);
+	} else {
+		t2 = l + s - l * s;
+	}
+
+	t1 = 2 * l - t2;
+
+	rgb = [0, 0, 0];
+	for (var i = 0; i < 3; i++) {
+		t3 = h + 1 / 3 * -(i - 1);
+		if (t3 < 0) {
+			t3++;
+		}
+		if (t3 > 1) {
+			t3--;
+		}
+
+		if (6 * t3 < 1) {
+			val = t1 + (t2 - t1) * 6 * t3;
+		} else if (2 * t3 < 1) {
+			val = t2;
+		} else if (3 * t3 < 2) {
+			val = t1 + (t2 - t1) * (2 / 3 - t3) * 6;
+		} else {
+			val = t1;
+		}
+
+		rgb[i] = val * 255;
+	}
+
+	return rgb;
+};
+
+convert.hsl.hsv = function (hsl) {
+	var h = hsl[0];
+	var s = hsl[1] / 100;
+	var l = hsl[2] / 100;
+	var smin = s;
+	var lmin = Math.max(l, 0.01);
+	var sv;
+	var v;
+
+	l *= 2;
+	s *= (l <= 1) ? l : 2 - l;
+	smin *= lmin <= 1 ? lmin : 2 - lmin;
+	v = (l + s) / 2;
+	sv = l === 0 ? (2 * smin) / (lmin + smin) : (2 * s) / (l + s);
+
+	return [h, sv * 100, v * 100];
+};
+
+convert.hsv.rgb = function (hsv) {
+	var h = hsv[0] / 60;
+	var s = hsv[1] / 100;
+	var v = hsv[2] / 100;
+	var hi = Math.floor(h) % 6;
+
+	var f = h - Math.floor(h);
+	var p = 255 * v * (1 - s);
+	var q = 255 * v * (1 - (s * f));
+	var t = 255 * v * (1 - (s * (1 - f)));
+	v *= 255;
+
+	switch (hi) {
+		case 0:
+			return [v, t, p];
+		case 1:
+			return [q, v, p];
+		case 2:
+			return [p, v, t];
+		case 3:
+			return [p, q, v];
+		case 4:
+			return [t, p, v];
+		case 5:
+			return [v, p, q];
+	}
+};
+
+convert.hsv.hsl = function (hsv) {
+	var h = hsv[0];
+	var s = hsv[1] / 100;
+	var v = hsv[2] / 100;
+	var vmin = Math.max(v, 0.01);
+	var lmin;
+	var sl;
+	var l;
+
+	l = (2 - s) * v;
+	lmin = (2 - s) * vmin;
+	sl = s * vmin;
+	sl /= (lmin <= 1) ? lmin : 2 - lmin;
+	sl = sl || 0;
+	l /= 2;
+
+	return [h, sl * 100, l * 100];
+};
+
+// http://dev.w3.org/csswg/css-color/#hwb-to-rgb
+convert.hwb.rgb = function (hwb) {
+	var h = hwb[0] / 360;
+	var wh = hwb[1] / 100;
+	var bl = hwb[2] / 100;
+	var ratio = wh + bl;
+	var i;
+	var v;
+	var f;
+	var n;
+
+	// wh + bl cant be > 1
+	if (ratio > 1) {
+		wh /= ratio;
+		bl /= ratio;
+	}
+
+	i = Math.floor(6 * h);
+	v = 1 - bl;
+	f = 6 * h - i;
+
+	if ((i & 0x01) !== 0) {
+		f = 1 - f;
+	}
+
+	n = wh + f * (v - wh); // linear interpolation
+
+	var r;
+	var g;
+	var b;
+	switch (i) {
+		default:
+		case 6:
+		case 0: r = v; g = n; b = wh; break;
+		case 1: r = n; g = v; b = wh; break;
+		case 2: r = wh; g = v; b = n; break;
+		case 3: r = wh; g = n; b = v; break;
+		case 4: r = n; g = wh; b = v; break;
+		case 5: r = v; g = wh; b = n; break;
+	}
+
+	return [r * 255, g * 255, b * 255];
+};
+
+convert.cmyk.rgb = function (cmyk) {
+	var c = cmyk[0] / 100;
+	var m = cmyk[1] / 100;
+	var y = cmyk[2] / 100;
+	var k = cmyk[3] / 100;
+	var r;
+	var g;
+	var b;
+
+	r = 1 - Math.min(1, c * (1 - k) + k);
+	g = 1 - Math.min(1, m * (1 - k) + k);
+	b = 1 - Math.min(1, y * (1 - k) + k);
+
+	return [r * 255, g * 255, b * 255];
+};
+
+convert.xyz.rgb = function (xyz) {
+	var x = xyz[0] / 100;
+	var y = xyz[1] / 100;
+	var z = xyz[2] / 100;
+	var r;
+	var g;
+	var b;
+
+	r = (x * 3.2406) + (y * -1.5372) + (z * -0.4986);
+	g = (x * -0.9689) + (y * 1.8758) + (z * 0.0415);
+	b = (x * 0.0557) + (y * -0.2040) + (z * 1.0570);
+
+	// assume sRGB
+	r = r > 0.0031308
+		? ((1.055 * Math.pow(r, 1.0 / 2.4)) - 0.055)
+		: r * 12.92;
+
+	g = g > 0.0031308
+		? ((1.055 * Math.pow(g, 1.0 / 2.4)) - 0.055)
+		: g * 12.92;
+
+	b = b > 0.0031308
+		? ((1.055 * Math.pow(b, 1.0 / 2.4)) - 0.055)
+		: b * 12.92;
+
+	r = Math.min(Math.max(0, r), 1);
+	g = Math.min(Math.max(0, g), 1);
+	b = Math.min(Math.max(0, b), 1);
+
+	return [r * 255, g * 255, b * 255];
+};
+
+convert.xyz.lab = function (xyz) {
+	var x = xyz[0];
+	var y = xyz[1];
+	var z = xyz[2];
+	var l;
+	var a;
+	var b;
+
+	x /= 95.047;
+	y /= 100;
+	z /= 108.883;
+
+	x = x > 0.008856 ? Math.pow(x, 1 / 3) : (7.787 * x) + (16 / 116);
+	y = y > 0.008856 ? Math.pow(y, 1 / 3) : (7.787 * y) + (16 / 116);
+	z = z > 0.008856 ? Math.pow(z, 1 / 3) : (7.787 * z) + (16 / 116);
+
+	l = (116 * y) - 16;
+	a = 500 * (x - y);
+	b = 200 * (y - z);
+
+	return [l, a, b];
+};
+
+convert.lab.xyz = function (lab) {
+	var l = lab[0];
+	var a = lab[1];
+	var b = lab[2];
+	var x;
+	var y;
+	var z;
+
+	y = (l + 16) / 116;
+	x = a / 500 + y;
+	z = y - b / 200;
+
+	var y2 = Math.pow(y, 3);
+	var x2 = Math.pow(x, 3);
+	var z2 = Math.pow(z, 3);
+	y = y2 > 0.008856 ? y2 : (y - 16 / 116) / 7.787;
+	x = x2 > 0.008856 ? x2 : (x - 16 / 116) / 7.787;
+	z = z2 > 0.008856 ? z2 : (z - 16 / 116) / 7.787;
+
+	x *= 95.047;
+	y *= 100;
+	z *= 108.883;
+
+	return [x, y, z];
+};
+
+convert.lab.lch = function (lab) {
+	var l = lab[0];
+	var a = lab[1];
+	var b = lab[2];
+	var hr;
+	var h;
+	var c;
+
+	hr = Math.atan2(b, a);
+	h = hr * 360 / 2 / Math.PI;
+
+	if (h < 0) {
+		h += 360;
+	}
+
+	c = Math.sqrt(a * a + b * b);
+
+	return [l, c, h];
+};
+
+convert.lch.lab = function (lch) {
+	var l = lch[0];
+	var c = lch[1];
+	var h = lch[2];
+	var a;
+	var b;
+	var hr;
+
+	hr = h / 360 * 2 * Math.PI;
+	a = c * Math.cos(hr);
+	b = c * Math.sin(hr);
+
+	return [l, a, b];
+};
+
+convert.rgb.ansi16 = function (args) {
+	var r = args[0];
+	var g = args[1];
+	var b = args[2];
+	var value = 1 in arguments ? arguments[1] : convert.rgb.hsv(args)[2]; // hsv -> ansi16 optimization
+
+	value = Math.round(value / 50);
+
+	if (value === 0) {
+		return 30;
+	}
+
+	var ansi = 30
+		+ ((Math.round(b / 255) << 2)
+		| (Math.round(g / 255) << 1)
+		| Math.round(r / 255));
+
+	if (value === 2) {
+		ansi += 60;
+	}
+
+	return ansi;
+};
+
+convert.hsv.ansi16 = function (args) {
+	// optimization here; we already know the value and don't need to get
+	// it converted for us.
+	return convert.rgb.ansi16(convert.hsv.rgb(args), args[2]);
+};
+
+convert.rgb.ansi256 = function (args) {
+	var r = args[0];
+	var g = args[1];
+	var b = args[2];
+
+	// we use the extended greyscale palette here, with the exception of
+	// black and white. normal palette only has 4 greyscale shades.
+	if (r === g && g === b) {
+		if (r < 8) {
+			return 16;
+		}
+
+		if (r > 248) {
+			return 231;
+		}
+
+		return Math.round(((r - 8) / 247) * 24) + 232;
+	}
+
+	var ansi = 16
+		+ (36 * Math.round(r / 255 * 5))
+		+ (6 * Math.round(g / 255 * 5))
+		+ Math.round(b / 255 * 5);
+
+	return ansi;
+};
+
+convert.ansi16.rgb = function (args) {
+	var color = args % 10;
+
+	// handle greyscale
+	if (color === 0 || color === 7) {
+		if (args > 50) {
+			color += 3.5;
+		}
+
+		color = color / 10.5 * 255;
+
+		return [color, color, color];
+	}
+
+	var mult = (~~(args > 50) + 1) * 0.5;
+	var r = ((color & 1) * mult) * 255;
+	var g = (((color >> 1) & 1) * mult) * 255;
+	var b = (((color >> 2) & 1) * mult) * 255;
+
+	return [r, g, b];
+};
+
+convert.ansi256.rgb = function (args) {
+	// handle greyscale
+	if (args >= 232) {
+		var c = (args - 232) * 10 + 8;
+		return [c, c, c];
+	}
+
+	args -= 16;
+
+	var rem;
+	var r = Math.floor(args / 36) / 5 * 255;
+	var g = Math.floor((rem = args % 36) / 6) / 5 * 255;
+	var b = (rem % 6) / 5 * 255;
+
+	return [r, g, b];
+};
+
+convert.rgb.hex = function (args) {
+	var integer = ((Math.round(args[0]) & 0xFF) << 16)
+		+ ((Math.round(args[1]) & 0xFF) << 8)
+		+ (Math.round(args[2]) & 0xFF);
+
+	var string = integer.toString(16).toUpperCase();
+	return '000000'.substring(string.length) + string;
+};
+
+convert.hex.rgb = function (args) {
+	var match = args.toString(16).match(/[a-f0-9]{6}|[a-f0-9]{3}/i);
+	if (!match) {
+		return [0, 0, 0];
+	}
+
+	var colorString = match[0];
+
+	if (match[0].length === 3) {
+		colorString = colorString.split('').map(function (char) {
+			return char + char;
+		}).join('');
+	}
+
+	var integer = parseInt(colorString, 16);
+	var r = (integer >> 16) & 0xFF;
+	var g = (integer >> 8) & 0xFF;
+	var b = integer & 0xFF;
+
+	return [r, g, b];
+};
+
+convert.rgb.hcg = function (rgb) {
+	var r = rgb[0] / 255;
+	var g = rgb[1] / 255;
+	var b = rgb[2] / 255;
+	var max = Math.max(Math.max(r, g), b);
+	var min = Math.min(Math.min(r, g), b);
+	var chroma = (max - min);
+	var grayscale;
+	var hue;
+
+	if (chroma < 1) {
+		grayscale = min / (1 - chroma);
+	} else {
+		grayscale = 0;
+	}
+
+	if (chroma <= 0) {
+		hue = 0;
+	} else
+	if (max === r) {
+		hue = ((g - b) / chroma) % 6;
+	} else
+	if (max === g) {
+		hue = 2 + (b - r) / chroma;
+	} else {
+		hue = 4 + (r - g) / chroma + 4;
+	}
+
+	hue /= 6;
+	hue %= 1;
+
+	return [hue * 360, chroma * 100, grayscale * 100];
+};
+
+convert.hsl.hcg = function (hsl) {
+	var s = hsl[1] / 100;
+	var l = hsl[2] / 100;
+	var c = 1;
+	var f = 0;
+
+	if (l < 0.5) {
+		c = 2.0 * s * l;
+	} else {
+		c = 2.0 * s * (1.0 - l);
+	}
+
+	if (c < 1.0) {
+		f = (l - 0.5 * c) / (1.0 - c);
+	}
+
+	return [hsl[0], c * 100, f * 100];
+};
+
+convert.hsv.hcg = function (hsv) {
+	var s = hsv[1] / 100;
+	var v = hsv[2] / 100;
+
+	var c = s * v;
+	var f = 0;
+
+	if (c < 1.0) {
+		f = (v - c) / (1 - c);
+	}
+
+	return [hsv[0], c * 100, f * 100];
+};
+
+convert.hcg.rgb = function (hcg) {
+	var h = hcg[0] / 360;
+	var c = hcg[1] / 100;
+	var g = hcg[2] / 100;
+
+	if (c === 0.0) {
+		return [g * 255, g * 255, g * 255];
+	}
+
+	var pure = [0, 0, 0];
+	var hi = (h % 1) * 6;
+	var v = hi % 1;
+	var w = 1 - v;
+	var mg = 0;
+
+	switch (Math.floor(hi)) {
+		case 0:
+			pure[0] = 1; pure[1] = v; pure[2] = 0; break;
+		case 1:
+			pure[0] = w; pure[1] = 1; pure[2] = 0; break;
+		case 2:
+			pure[0] = 0; pure[1] = 1; pure[2] = v; break;
+		case 3:
+			pure[0] = 0; pure[1] = w; pure[2] = 1; break;
+		case 4:
+			pure[0] = v; pure[1] = 0; pure[2] = 1; break;
+		default:
+			pure[0] = 1; pure[1] = 0; pure[2] = w;
+	}
+
+	mg = (1.0 - c) * g;
+
+	return [
+		(c * pure[0] + mg) * 255,
+		(c * pure[1] + mg) * 255,
+		(c * pure[2] + mg) * 255
+	];
+};
+
+convert.hcg.hsv = function (hcg) {
+	var c = hcg[1] / 100;
+	var g = hcg[2] / 100;
+
+	var v = c + g * (1.0 - c);
+	var f = 0;
+
+	if (v > 0.0) {
+		f = c / v;
+	}
+
+	return [hcg[0], f * 100, v * 100];
+};
+
+convert.hcg.hsl = function (hcg) {
+	var c = hcg[1] / 100;
+	var g = hcg[2] / 100;
+
+	var l = g * (1.0 - c) + 0.5 * c;
+	var s = 0;
+
+	if (l > 0.0 && l < 0.5) {
+		s = c / (2 * l);
+	} else
+	if (l >= 0.5 && l < 1.0) {
+		s = c / (2 * (1 - l));
+	}
+
+	return [hcg[0], s * 100, l * 100];
+};
+
+convert.hcg.hwb = function (hcg) {
+	var c = hcg[1] / 100;
+	var g = hcg[2] / 100;
+	var v = c + g * (1.0 - c);
+	return [hcg[0], (v - c) * 100, (1 - v) * 100];
+};
+
+convert.hwb.hcg = function (hwb) {
+	var w = hwb[1] / 100;
+	var b = hwb[2] / 100;
+	var v = 1 - b;
+	var c = v - w;
+	var g = 0;
+
+	if (c < 1) {
+		g = (v - c) / (1 - c);
+	}
+
+	return [hwb[0], c * 100, g * 100];
+};
+
+convert.apple.rgb = function (apple) {
+	return [(apple[0] / 65535) * 255, (apple[1] / 65535) * 255, (apple[2] / 65535) * 255];
+};
+
+convert.rgb.apple = function (rgb) {
+	return [(rgb[0] / 255) * 65535, (rgb[1] / 255) * 65535, (rgb[2] / 255) * 65535];
+};
+
+convert.gray.rgb = function (args) {
+	return [args[0] / 100 * 255, args[0] / 100 * 255, args[0] / 100 * 255];
+};
+
+convert.gray.hsl = convert.gray.hsv = function (args) {
+	return [0, 0, args[0]];
+};
+
+convert.gray.hwb = function (gray) {
+	return [0, 100, gray[0]];
+};
+
+convert.gray.cmyk = function (gray) {
+	return [0, 0, 0, gray[0]];
+};
+
+convert.gray.lab = function (gray) {
+	return [gray[0], 0, 0];
+};
+
+convert.gray.hex = function (gray) {
+	var val = Math.round(gray[0] / 100 * 255) & 0xFF;
+	var integer = (val << 16) + (val << 8) + val;
+
+	var string = integer.toString(16).toUpperCase();
+	return '000000'.substring(string.length) + string;
+};
+
+convert.rgb.gray = function (rgb) {
+	var val = (rgb[0] + rgb[1] + rgb[2]) / 3;
+	return [val / 255 * 100];
+};
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"aliceblue": [240, 248, 255],
+	"antiquewhite": [250, 235, 215],
+	"aqua": [0, 255, 255],
+	"aquamarine": [127, 255, 212],
+	"azure": [240, 255, 255],
+	"beige": [245, 245, 220],
+	"bisque": [255, 228, 196],
+	"black": [0, 0, 0],
+	"blanchedalmond": [255, 235, 205],
+	"blue": [0, 0, 255],
+	"blueviolet": [138, 43, 226],
+	"brown": [165, 42, 42],
+	"burlywood": [222, 184, 135],
+	"cadetblue": [95, 158, 160],
+	"chartreuse": [127, 255, 0],
+	"chocolate": [210, 105, 30],
+	"coral": [255, 127, 80],
+	"cornflowerblue": [100, 149, 237],
+	"cornsilk": [255, 248, 220],
+	"crimson": [220, 20, 60],
+	"cyan": [0, 255, 255],
+	"darkblue": [0, 0, 139],
+	"darkcyan": [0, 139, 139],
+	"darkgoldenrod": [184, 134, 11],
+	"darkgray": [169, 169, 169],
+	"darkgreen": [0, 100, 0],
+	"darkgrey": [169, 169, 169],
+	"darkkhaki": [189, 183, 107],
+	"darkmagenta": [139, 0, 139],
+	"darkolivegreen": [85, 107, 47],
+	"darkorange": [255, 140, 0],
+	"darkorchid": [153, 50, 204],
+	"darkred": [139, 0, 0],
+	"darksalmon": [233, 150, 122],
+	"darkseagreen": [143, 188, 143],
+	"darkslateblue": [72, 61, 139],
+	"darkslategray": [47, 79, 79],
+	"darkslategrey": [47, 79, 79],
+	"darkturquoise": [0, 206, 209],
+	"darkviolet": [148, 0, 211],
+	"deeppink": [255, 20, 147],
+	"deepskyblue": [0, 191, 255],
+	"dimgray": [105, 105, 105],
+	"dimgrey": [105, 105, 105],
+	"dodgerblue": [30, 144, 255],
+	"firebrick": [178, 34, 34],
+	"floralwhite": [255, 250, 240],
+	"forestgreen": [34, 139, 34],
+	"fuchsia": [255, 0, 255],
+	"gainsboro": [220, 220, 220],
+	"ghostwhite": [248, 248, 255],
+	"gold": [255, 215, 0],
+	"goldenrod": [218, 165, 32],
+	"gray": [128, 128, 128],
+	"green": [0, 128, 0],
+	"greenyellow": [173, 255, 47],
+	"grey": [128, 128, 128],
+	"honeydew": [240, 255, 240],
+	"hotpink": [255, 105, 180],
+	"indianred": [205, 92, 92],
+	"indigo": [75, 0, 130],
+	"ivory": [255, 255, 240],
+	"khaki": [240, 230, 140],
+	"lavender": [230, 230, 250],
+	"lavenderblush": [255, 240, 245],
+	"lawngreen": [124, 252, 0],
+	"lemonchiffon": [255, 250, 205],
+	"lightblue": [173, 216, 230],
+	"lightcoral": [240, 128, 128],
+	"lightcyan": [224, 255, 255],
+	"lightgoldenrodyellow": [250, 250, 210],
+	"lightgray": [211, 211, 211],
+	"lightgreen": [144, 238, 144],
+	"lightgrey": [211, 211, 211],
+	"lightpink": [255, 182, 193],
+	"lightsalmon": [255, 160, 122],
+	"lightseagreen": [32, 178, 170],
+	"lightskyblue": [135, 206, 250],
+	"lightslategray": [119, 136, 153],
+	"lightslategrey": [119, 136, 153],
+	"lightsteelblue": [176, 196, 222],
+	"lightyellow": [255, 255, 224],
+	"lime": [0, 255, 0],
+	"limegreen": [50, 205, 50],
+	"linen": [250, 240, 230],
+	"magenta": [255, 0, 255],
+	"maroon": [128, 0, 0],
+	"mediumaquamarine": [102, 205, 170],
+	"mediumblue": [0, 0, 205],
+	"mediumorchid": [186, 85, 211],
+	"mediumpurple": [147, 112, 219],
+	"mediumseagreen": [60, 179, 113],
+	"mediumslateblue": [123, 104, 238],
+	"mediumspringgreen": [0, 250, 154],
+	"mediumturquoise": [72, 209, 204],
+	"mediumvioletred": [199, 21, 133],
+	"midnightblue": [25, 25, 112],
+	"mintcream": [245, 255, 250],
+	"mistyrose": [255, 228, 225],
+	"moccasin": [255, 228, 181],
+	"navajowhite": [255, 222, 173],
+	"navy": [0, 0, 128],
+	"oldlace": [253, 245, 230],
+	"olive": [128, 128, 0],
+	"olivedrab": [107, 142, 35],
+	"orange": [255, 165, 0],
+	"orangered": [255, 69, 0],
+	"orchid": [218, 112, 214],
+	"palegoldenrod": [238, 232, 170],
+	"palegreen": [152, 251, 152],
+	"paleturquoise": [175, 238, 238],
+	"palevioletred": [219, 112, 147],
+	"papayawhip": [255, 239, 213],
+	"peachpuff": [255, 218, 185],
+	"peru": [205, 133, 63],
+	"pink": [255, 192, 203],
+	"plum": [221, 160, 221],
+	"powderblue": [176, 224, 230],
+	"purple": [128, 0, 128],
+	"rebeccapurple": [102, 51, 153],
+	"red": [255, 0, 0],
+	"rosybrown": [188, 143, 143],
+	"royalblue": [65, 105, 225],
+	"saddlebrown": [139, 69, 19],
+	"salmon": [250, 128, 114],
+	"sandybrown": [244, 164, 96],
+	"seagreen": [46, 139, 87],
+	"seashell": [255, 245, 238],
+	"sienna": [160, 82, 45],
+	"silver": [192, 192, 192],
+	"skyblue": [135, 206, 235],
+	"slateblue": [106, 90, 205],
+	"slategray": [112, 128, 144],
+	"slategrey": [112, 128, 144],
+	"snow": [255, 250, 250],
+	"springgreen": [0, 255, 127],
+	"steelblue": [70, 130, 180],
+	"tan": [210, 180, 140],
+	"teal": [0, 128, 128],
+	"thistle": [216, 191, 216],
+	"tomato": [255, 99, 71],
+	"turquoise": [64, 224, 208],
+	"violet": [238, 130, 238],
+	"wheat": [245, 222, 179],
+	"white": [255, 255, 255],
+	"whitesmoke": [245, 245, 245],
+	"yellow": [255, 255, 0],
+	"yellowgreen": [154, 205, 50]
+};
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /* WEBPACK VAR INJECTION */(function(global) {var firebase = (function(){
 /*! @license Firebase v3.6.6
     Build: 3.6.6-rc.3
@@ -594,10 +1616,10 @@ firebase.SDK_VERSION = "3.6.6";
 return firebase;}).call(global);
 module.exports = firebase;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 4 */
+/* 6 */
 /***/ (function(module, exports) {
 
 var g;
@@ -624,8 +1646,921 @@ module.exports = g;
 
 
 /***/ }),
-/* 5 */,
-/* 6 */
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(76)
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = isoDateString;
+/* harmony export (immutable) */ __webpack_exports__["b"] = isPromotionRedeemed;
+function isoDateString(date) {
+	var isoString = date.toISOString();
+	return isoString.substring(0, isoString.indexOf('T'));
+}
+
+function isPromotionRedeemed(id, userData) {
+	return userData && userData.redeemedPromotions && userData.redeemedPromotions[id] && userData.redeemedPromotions[id].redeemed;
+}
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var conversions = __webpack_require__(3);
+var route = __webpack_require__(10);
+
+var convert = {};
+
+var models = Object.keys(conversions);
+
+function wrapRaw(fn) {
+	var wrappedFn = function (args) {
+		if (args === undefined || args === null) {
+			return args;
+		}
+
+		if (arguments.length > 1) {
+			args = Array.prototype.slice.call(arguments);
+		}
+
+		return fn(args);
+	};
+
+	// preserve .conversion property if there is one
+	if ('conversion' in fn) {
+		wrappedFn.conversion = fn.conversion;
+	}
+
+	return wrappedFn;
+}
+
+function wrapRounded(fn) {
+	var wrappedFn = function (args) {
+		if (args === undefined || args === null) {
+			return args;
+		}
+
+		if (arguments.length > 1) {
+			args = Array.prototype.slice.call(arguments);
+		}
+
+		var result = fn(args);
+
+		// we're assuming the result is an array here.
+		// see notice in conversions.js; don't use box types
+		// in conversion functions.
+		if (typeof result === 'object') {
+			for (var len = result.length, i = 0; i < len; i++) {
+				result[i] = Math.round(result[i]);
+			}
+		}
+
+		return result;
+	};
+
+	// preserve .conversion property if there is one
+	if ('conversion' in fn) {
+		wrappedFn.conversion = fn.conversion;
+	}
+
+	return wrappedFn;
+}
+
+models.forEach(function (fromModel) {
+	convert[fromModel] = {};
+
+	Object.defineProperty(convert[fromModel], 'channels', {value: conversions[fromModel].channels});
+	Object.defineProperty(convert[fromModel], 'labels', {value: conversions[fromModel].labels});
+
+	var routes = route(fromModel);
+	var routeModels = Object.keys(routes);
+
+	routeModels.forEach(function (toModel) {
+		var fn = routes[toModel];
+
+		convert[fromModel][toModel] = wrapRounded(fn);
+		convert[fromModel][toModel].raw = wrapRaw(fn);
+	});
+});
+
+module.exports = convert;
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var conversions = __webpack_require__(3);
+
+/*
+	this function routes a model to all other models.
+
+	all functions that are routed have a property `.conversion` attached
+	to the returned synthetic function. This property is an array
+	of strings, each with the steps in between the 'from' and 'to'
+	color models (inclusive).
+
+	conversions that are not possible simply are not included.
+*/
+
+// https://jsperf.com/object-keys-vs-for-in-with-closure/3
+var models = Object.keys(conversions);
+
+function buildGraph() {
+	var graph = {};
+
+	for (var len = models.length, i = 0; i < len; i++) {
+		graph[models[i]] = {
+			// http://jsperf.com/1-vs-infinity
+			// micro-opt, but this is simple.
+			distance: -1,
+			parent: null
+		};
+	}
+
+	return graph;
+}
+
+// https://en.wikipedia.org/wiki/Breadth-first_search
+function deriveBFS(fromModel) {
+	var graph = buildGraph();
+	var queue = [fromModel]; // unshift -> queue -> pop
+
+	graph[fromModel].distance = 0;
+
+	while (queue.length) {
+		var current = queue.pop();
+		var adjacents = Object.keys(conversions[current]);
+
+		for (var len = adjacents.length, i = 0; i < len; i++) {
+			var adjacent = adjacents[i];
+			var node = graph[adjacent];
+
+			if (node.distance === -1) {
+				node.distance = graph[current].distance + 1;
+				node.parent = current;
+				queue.unshift(adjacent);
+			}
+		}
+	}
+
+	return graph;
+}
+
+function link(from, to) {
+	return function (args) {
+		return to(from(args));
+	};
+}
+
+function wrapConversion(toModel, graph) {
+	var path = [graph[toModel].parent, toModel];
+	var fn = conversions[graph[toModel].parent][toModel];
+
+	var cur = graph[toModel].parent;
+	while (graph[cur].parent) {
+		path.unshift(graph[cur].parent);
+		fn = link(conversions[graph[cur].parent][cur], fn);
+		cur = graph[cur].parent;
+	}
+
+	fn.conversion = path;
+	return fn;
+}
+
+module.exports = function (fromModel) {
+	var graph = deriveBFS(fromModel);
+	var conversion = {};
+
+	var models = Object.keys(graph);
+	for (var len = models.length, i = 0; i < len; i++) {
+		var toModel = models[i];
+		var node = graph[toModel];
+
+		if (node.parent === null) {
+			// no possible conversion, or this node is the source model.
+			continue;
+		}
+
+		conversion[toModel] = wrapConversion(toModel, graph);
+	}
+
+	return conversion;
+};
+
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* MIT license */
+var colorNames = __webpack_require__(4);
+var swizzle = __webpack_require__(18);
+
+var reverseNames = {};
+
+// create a list of reverse color names
+for (var name in colorNames) {
+	if (colorNames.hasOwnProperty(name)) {
+		reverseNames[colorNames[name]] = name;
+	}
+}
+
+var cs = module.exports = {
+	to: {}
+};
+
+cs.get = function (string) {
+	var prefix = string.substring(0, 3).toLowerCase();
+	var val;
+	var model;
+	switch (prefix) {
+		case 'hsl':
+			val = cs.get.hsl(string);
+			model = 'hsl';
+			break;
+		case 'hwb':
+			val = cs.get.hwb(string);
+			model = 'hwb';
+			break;
+		default:
+			val = cs.get.rgb(string);
+			model = 'rgb';
+			break;
+	}
+
+	if (!val) {
+		return null;
+	}
+
+	return {model: model, value: val};
+};
+
+cs.get.rgb = function (string) {
+	if (!string) {
+		return null;
+	}
+
+	var abbr = /^#([a-fA-F0-9]{3})$/;
+	var hex = /^#([a-fA-F0-9]{6})$/;
+	var rgba = /^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/;
+	var per = /^rgba?\(\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/;
+	var keyword = /(\D+)/;
+
+	var rgb = [0, 0, 0, 1];
+	var match;
+	var i;
+
+	if (match = string.match(abbr)) {
+		match = match[1];
+
+		for (i = 0; i < 3; i++) {
+			rgb[i] = parseInt(match[i] + match[i], 16);
+		}
+	} else if (match = string.match(hex)) {
+		match = match[1];
+
+		for (i = 0; i < 3; i++) {
+			// https://jsperf.com/slice-vs-substr-vs-substring-methods-long-string/19
+			var i2 = i * 2;
+			rgb[i] = parseInt(match.slice(i2, i2 + 2), 16);
+		}
+	} else if (match = string.match(rgba)) {
+		for (i = 0; i < 3; i++) {
+			rgb[i] = parseInt(match[i + 1], 0);
+		}
+
+		if (match[4]) {
+			rgb[3] = parseFloat(match[4]);
+		}
+	} else if (match = string.match(per)) {
+		for (i = 0; i < 3; i++) {
+			rgb[i] = Math.round(parseFloat(match[i + 1]) * 2.55);
+		}
+
+		if (match[4]) {
+			rgb[3] = parseFloat(match[4]);
+		}
+	} else if (match = string.match(keyword)) {
+		if (match[1] === 'transparent') {
+			return [0, 0, 0, 0];
+		}
+
+		rgb = colorNames[match[1]];
+
+		if (!rgb) {
+			return null;
+		}
+
+		rgb[3] = 1;
+
+		return rgb;
+	}
+
+	for (i = 0; i < rgb.length; i++) {
+		rgb[i] = clamp(rgb[i], 0, 255);
+	}
+	rgb[3] = clamp(rgb[3], 0, 1);
+
+	return rgb;
+};
+
+cs.get.hsl = function (string) {
+	if (!string) {
+		return null;
+	}
+
+	var hsl = /^hsla?\(\s*([+-]?\d*[\.]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/;
+	var match = string.match(hsl);
+
+	if (match) {
+		var alpha = parseFloat(match[4]);
+		var h = ((parseFloat(match[1]) % 360) + 360) % 360;
+		var s = clamp(parseFloat(match[2]), 0, 100);
+		var l = clamp(parseFloat(match[3]), 0, 100);
+		var a = clamp(isNaN(alpha) ? 1 : alpha, 0, 1);
+
+		return [h, s, l, a];
+	}
+
+	return null;
+};
+
+cs.get.hwb = function (string) {
+	if (!string) {
+		return null;
+	}
+
+	var hwb = /^hwb\(\s*([+-]?\d*[\.]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/;
+	var match = string.match(hwb);
+
+	if (match) {
+		var alpha = parseFloat(match[4]);
+		var h = ((parseFloat(match[1]) % 360) + 360) % 360;
+		var w = clamp(parseFloat(match[2]), 0, 100);
+		var b = clamp(parseFloat(match[3]), 0, 100);
+		var a = clamp(isNaN(alpha) ? 1 : alpha, 0, 1);
+		return [h, w, b, a];
+	}
+
+	return null;
+};
+
+cs.to.hex = function (rgb) {
+	return '#' + hexDouble(rgb[0]) + hexDouble(rgb[1]) + hexDouble(rgb[2]);
+};
+
+cs.to.rgb = function () {
+	var rgba = swizzle(arguments);
+
+	return rgba.length < 4 || rgba[3] === 1
+		? 'rgb(' + Math.round(rgba[0]) + ', ' + Math.round(rgba[1]) + ', ' + Math.round(rgba[2]) + ')'
+		: 'rgba(' + Math.round(rgba[0]) + ', ' + Math.round(rgba[1]) + ', ' + Math.round(rgba[2]) + ', ' + rgba[3] + ')';
+};
+
+cs.to.rgb.percent = function () {
+	var rgba = swizzle(arguments);
+
+	var r = Math.round(rgba[0] / 255 * 100);
+	var g = Math.round(rgba[1] / 255 * 100);
+	var b = Math.round(rgba[2] / 255 * 100);
+
+	return rgba.length < 4 || rgba[3] === 1
+		? 'rgb(' + r + '%, ' + g + '%, ' + b + '%)'
+		: 'rgba(' + r + '%, ' + g + '%, ' + b + '%, ' + rgba[3] + ')';
+};
+
+cs.to.hsl = function () {
+	var hsla = swizzle(arguments);
+	return hsla.length < 4 || hsla[3] === 1
+		? 'hsl(' + hsla[0] + ', ' + hsla[1] + '%, ' + hsla[2] + '%)'
+		: 'hsla(' + hsla[0] + ', ' + hsla[1] + '%, ' + hsla[2] + '%, ' + hsla[3] + ')';
+};
+
+// hwb is a bit different than rgb(a) & hsl(a) since there is no alpha specific syntax
+// (hwb have alpha optional & 1 is default value)
+cs.to.hwb = function () {
+	var hwba = swizzle(arguments);
+
+	var a = '';
+	if (hwba.length >= 4 && hwba[3] !== 1) {
+		a = ', ' + hwba[3];
+	}
+
+	return 'hwb(' + hwba[0] + ', ' + hwba[1] + '%, ' + hwba[2] + '%' + a + ')';
+};
+
+cs.to.keyword = function (rgb) {
+	return reverseNames[rgb.slice(0, 3)];
+};
+
+// helpers
+function clamp(num, min, max) {
+	return Math.min(Math.max(min, num), max);
+}
+
+function hexDouble(num) {
+	var str = num.toString(16).toUpperCase();
+	return (str.length < 2) ? '0' + str : str;
+}
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var colorString = __webpack_require__(11);
+var convert = __webpack_require__(9);
+
+var _slice = [].slice;
+
+var skippedModels = [
+	// to be honest, I don't really feel like keyword belongs in color convert, but eh.
+	'keyword',
+
+	// gray conflicts with some method names, and has its own method defined.
+	'gray',
+
+	// shouldn't really be in color-convert either...
+	'hex'
+];
+
+var hashedModelKeys = {};
+Object.keys(convert).forEach(function (model) {
+	hashedModelKeys[_slice.call(convert[model].labels).sort().join('')] = model;
+});
+
+var limiters = {};
+
+function Color(obj, model) {
+	if (!(this instanceof Color)) {
+		return new Color(obj, model);
+	}
+
+	if (model && model in skippedModels) {
+		model = null;
+	}
+
+	if (model && !(model in convert)) {
+		throw new Error('Unknown model: ' + model);
+	}
+
+	var i;
+	var channels;
+
+	if (!obj) {
+		this.model = 'rgb';
+		this.color = [0, 0, 0];
+		this.valpha = 1;
+	} else if (obj instanceof Color) {
+		this.model = obj.model;
+		this.color = obj.color.slice();
+		this.valpha = obj.valpha;
+	} else if (typeof obj === 'string') {
+		var result = colorString.get(obj);
+		if (result === null) {
+			throw new Error('Unable to parse color from string: ' + obj);
+		}
+
+		this.model = result.model;
+		channels = convert[this.model].channels;
+		this.color = result.value.slice(0, channels);
+		this.valpha = typeof result.value[channels] === 'number' ? result.value[channels] : 1;
+	} else if (obj.length) {
+		this.model = model || 'rgb';
+		channels = convert[this.model].channels;
+		var newArr = _slice.call(obj, 0, channels);
+		this.color = zeroArray(newArr, channels);
+		this.valpha = typeof obj[channels] === 'number' ? obj[channels] : 1;
+	} else if (typeof obj === 'number') {
+		// this is always RGB - can be converted later on.
+		obj &= 0xFFFFFF;
+		this.model = 'rgb';
+		this.color = [
+			(obj >> 16) & 0xFF,
+			(obj >> 8) & 0xFF,
+			obj & 0xFF
+		];
+		this.valpha = 1;
+	} else {
+		this.valpha = 1;
+
+		var keys = Object.keys(obj);
+		if ('alpha' in obj) {
+			keys.splice(keys.indexOf('alpha'), 1);
+			this.valpha = typeof obj.alpha === 'number' ? obj.alpha : 0;
+		}
+
+		var hashedKeys = keys.sort().join('');
+		if (!(hashedKeys in hashedModelKeys)) {
+			throw new Error('Unable to parse color from object: ' + JSON.stringify(obj));
+		}
+
+		this.model = hashedModelKeys[hashedKeys];
+
+		var labels = convert[this.model].labels;
+		var color = [];
+		for (i = 0; i < labels.length; i++) {
+			color.push(obj[labels[i]]);
+		}
+
+		this.color = zeroArray(color);
+	}
+
+	// perform limitations (clamping, etc.)
+	if (limiters[this.model]) {
+		channels = convert[this.model].channels;
+		for (i = 0; i < channels; i++) {
+			var limit = limiters[this.model][i];
+			if (limit) {
+				this.color[i] = limit(this.color[i]);
+			}
+		}
+	}
+
+	this.valpha = Math.max(0, Math.min(1, this.valpha));
+
+	if (Object.freeze) {
+		Object.freeze(this);
+	}
+}
+
+Color.prototype = {
+	toString: function () {
+		return this.string();
+	},
+
+	toJSON: function () {
+		return this[this.model]();
+	},
+
+	string: function (places) {
+		var self = this.model in colorString.to ? this : this.rgb();
+		self = self.round(typeof places === 'number' ? places : 1);
+		var args = self.valpha === 1 ? self.color : self.color.concat(this.valpha);
+		return colorString.to[self.model](args);
+	},
+
+	percentString: function (places) {
+		var self = this.rgb().round(typeof places === 'number' ? places : 1);
+		var args = self.valpha === 1 ? self.color : self.color.concat(this.valpha);
+		return colorString.to.rgb.percent(args);
+	},
+
+	array: function () {
+		return this.valpha === 1 ? this.color.slice() : this.color.concat(this.valpha);
+	},
+
+	object: function () {
+		var result = {};
+		var channels = convert[this.model].channels;
+		var labels = convert[this.model].labels;
+
+		for (var i = 0; i < channels; i++) {
+			result[labels[i]] = this.color[i];
+		}
+
+		if (this.valpha !== 1) {
+			result.alpha = this.valpha;
+		}
+
+		return result;
+	},
+
+	unitArray: function () {
+		var rgb = this.rgb().color;
+		rgb[0] /= 255;
+		rgb[1] /= 255;
+		rgb[2] /= 255;
+
+		if (this.valpha !== 1) {
+			rgb.push(this.valpha);
+		}
+
+		return rgb;
+	},
+
+	unitObject: function () {
+		var rgb = this.rgb().object();
+		rgb.r /= 255;
+		rgb.g /= 255;
+		rgb.b /= 255;
+
+		if (this.valpha !== 1) {
+			rgb.alpha = this.valpha;
+		}
+
+		return rgb;
+	},
+
+	round: function (places) {
+		places = Math.max(places || 0, 0);
+		return new Color(this.color.map(roundToPlace(places)).concat(this.valpha), this.model);
+	},
+
+	alpha: function (val) {
+		if (arguments.length) {
+			return new Color(this.color.concat(Math.max(0, Math.min(1, val))), this.model);
+		}
+
+		return this.valpha;
+	},
+
+	// rgb
+	red: getset('rgb', 0, maxfn(255)),
+	green: getset('rgb', 1, maxfn(255)),
+	blue: getset('rgb', 2, maxfn(255)),
+
+	hue: getset(['hsl', 'hsv', 'hsl', 'hwb', 'hcg'], 0, function (val) { return ((val % 360) + 360) % 360; }), // eslint-disable-line brace-style
+
+	saturationl: getset('hsl', 1, maxfn(100)),
+	lightness: getset('hsl', 2, maxfn(100)),
+
+	saturationv: getset('hsv', 1, maxfn(100)),
+	value: getset('hsv', 2, maxfn(100)),
+
+	chroma: getset('hcg', 1, maxfn(100)),
+	gray: getset('hcg', 2, maxfn(100)),
+
+	white: getset('hwb', 1, maxfn(100)),
+	wblack: getset('hwb', 2, maxfn(100)),
+
+	cyan: getset('cmyk', 0, maxfn(100)),
+	magenta: getset('cmyk', 1, maxfn(100)),
+	yellow: getset('cmyk', 2, maxfn(100)),
+	black: getset('cmyk', 3, maxfn(100)),
+
+	x: getset('xyz', 0, maxfn(100)),
+	y: getset('xyz', 1, maxfn(100)),
+	z: getset('xyz', 2, maxfn(100)),
+
+	l: getset('lab', 0, maxfn(100)),
+	a: getset('lab', 1),
+	b: getset('lab', 2),
+
+	keyword: function (val) {
+		if (arguments.length) {
+			return new Color(val);
+		}
+
+		return convert[this.model].keyword(this.color);
+	},
+
+	hex: function (val) {
+		if (arguments.length) {
+			return new Color(val);
+		}
+
+		return colorString.to.hex(this.rgb().round().color);
+	},
+
+	rgbNumber: function () {
+		var rgb = this.rgb().color;
+		return ((rgb[0] & 0xFF) << 16) | ((rgb[1] & 0xFF) << 8) | (rgb[2] & 0xFF);
+	},
+
+	luminosity: function () {
+		// http://www.w3.org/TR/WCAG20/#relativeluminancedef
+		var rgb = this.rgb().color;
+
+		var lum = [];
+		for (var i = 0; i < rgb.length; i++) {
+			var chan = rgb[i] / 255;
+			lum[i] = (chan <= 0.03928) ? chan / 12.92 : Math.pow(((chan + 0.055) / 1.055), 2.4);
+		}
+
+		return 0.2126 * lum[0] + 0.7152 * lum[1] + 0.0722 * lum[2];
+	},
+
+	contrast: function (color2) {
+		// http://www.w3.org/TR/WCAG20/#contrast-ratiodef
+		var lum1 = this.luminosity();
+		var lum2 = color2.luminosity();
+
+		if (lum1 > lum2) {
+			return (lum1 + 0.05) / (lum2 + 0.05);
+		}
+
+		return (lum2 + 0.05) / (lum1 + 0.05);
+	},
+
+	level: function (color2) {
+		var contrastRatio = this.contrast(color2);
+		if (contrastRatio >= 7.1) {
+			return 'AAA';
+		}
+
+		return (contrastRatio >= 4.5) ? 'AA' : '';
+	},
+
+	dark: function () {
+		// YIQ equation from http://24ways.org/2010/calculating-color-contrast
+		var rgb = this.rgb().color;
+		var yiq = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
+		return yiq < 128;
+	},
+
+	light: function () {
+		return !this.dark();
+	},
+
+	negate: function () {
+		var rgb = this.rgb();
+		for (var i = 0; i < 3; i++) {
+			rgb.color[i] = 255 - rgb.color[i];
+		}
+		return rgb;
+	},
+
+	lighten: function (ratio) {
+		var hsl = this.hsl();
+		hsl.color[2] += hsl.color[2] * ratio;
+		return hsl;
+	},
+
+	darken: function (ratio) {
+		var hsl = this.hsl();
+		hsl.color[2] -= hsl.color[2] * ratio;
+		return hsl;
+	},
+
+	saturate: function (ratio) {
+		var hsl = this.hsl();
+		hsl.color[1] += hsl.color[1] * ratio;
+		return hsl;
+	},
+
+	desaturate: function (ratio) {
+		var hsl = this.hsl();
+		hsl.color[1] -= hsl.color[1] * ratio;
+		return hsl;
+	},
+
+	whiten: function (ratio) {
+		var hwb = this.hwb();
+		hwb.color[1] += hwb.color[1] * ratio;
+		return hwb;
+	},
+
+	blacken: function (ratio) {
+		var hwb = this.hwb();
+		hwb.color[2] += hwb.color[2] * ratio;
+		return hwb;
+	},
+
+	grayscale: function () {
+		// http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale
+		var rgb = this.rgb().color;
+		var val = rgb[0] * 0.3 + rgb[1] * 0.59 + rgb[2] * 0.11;
+		return Color.rgb(val, val, val);
+	},
+
+	fade: function (ratio) {
+		return this.alpha(this.valpha - (this.valpha * ratio));
+	},
+
+	opaquer: function (ratio) {
+		return this.alpha(this.valpha + (this.valpha * ratio));
+	},
+
+	rotate: function (degrees) {
+		var hsl = this.hsl();
+		var hue = hsl.color[0];
+		hue = (hue + degrees) % 360;
+		hue = hue < 0 ? 360 + hue : hue;
+		hsl.color[0] = hue;
+		return hsl;
+	},
+
+	mix: function (mixinColor, weight) {
+		// ported from sass implementation in C
+		// https://github.com/sass/libsass/blob/0e6b4a2850092356aa3ece07c6b249f0221caced/functions.cpp#L209
+		var color1 = this.rgb();
+		var color2 = mixinColor.rgb();
+		var p = weight === undefined ? 0.5 : weight;
+
+		var w = 2 * p - 1;
+		var a = color1.alpha() - color2.alpha();
+
+		var w1 = (((w * a === -1) ? w : (w + a) / (1 + w * a)) + 1) / 2.0;
+		var w2 = 1 - w1;
+
+		return Color.rgb(
+				w1 * color1.red() + w2 * color2.red(),
+				w1 * color1.green() + w2 * color2.green(),
+				w1 * color1.blue() + w2 * color2.blue(),
+				color1.alpha() * p + color2.alpha() * (1 - p));
+	}
+};
+
+// model conversion methods and static constructors
+Object.keys(convert).forEach(function (model) {
+	if (skippedModels.indexOf(model) !== -1) {
+		return;
+	}
+
+	var channels = convert[model].channels;
+
+	// conversion methods
+	Color.prototype[model] = function () {
+		if (this.model === model) {
+			return new Color(this);
+		}
+
+		if (arguments.length) {
+			return new Color(arguments, model);
+		}
+
+		var newAlpha = typeof arguments[channels] === 'number' ? channels : this.valpha;
+		return new Color(assertArray(convert[this.model][model].raw(this.color)).concat(newAlpha), model);
+	};
+
+	// 'static' construction methods
+	Color[model] = function (color) {
+		if (typeof color === 'number') {
+			color = zeroArray(_slice.call(arguments), channels);
+		}
+		return new Color(color, model);
+	};
+});
+
+function roundTo(num, places) {
+	return Number(num.toFixed(places));
+}
+
+function roundToPlace(places) {
+	return function (num) {
+		return roundTo(num, places);
+	};
+}
+
+function getset(model, channel, modifier) {
+	model = Array.isArray(model) ? model : [model];
+
+	model.forEach(function (m) {
+		(limiters[m] || (limiters[m] = []))[channel] = modifier;
+	});
+
+	model = model[0];
+
+	return function (val) {
+		var result;
+
+		if (arguments.length) {
+			if (modifier) {
+				val = modifier(val);
+			}
+
+			result = this[model]();
+			result.color[channel] = val;
+			return result;
+		}
+
+		result = this[model]().color[channel];
+		if (modifier) {
+			result = modifier(result);
+		}
+
+		return result;
+	};
+}
+
+function maxfn(max) {
+	return function (v) {
+		return Math.max(0, Math.min(max, v));
+	};
+}
+
+function assertArray(val) {
+	return Array.isArray(val) ? val : [val];
+}
+
+function zeroArray(arr, length) {
+	for (var i = 0; i < length; i++) {
+		if (typeof arr[i] !== 'number') {
+			arr[i] = 0;
+		}
+	}
+
+	return arr;
+}
+
+module.exports = Color;
+
+
+/***/ }),
+/* 13 */,
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -635,25 +2570,43 @@ module.exports = g;
  *
  *   firebase = require('firebase');
  */
-var firebase = __webpack_require__(3);
-__webpack_require__(47);
-__webpack_require__(48);
+var firebase = __webpack_require__(5);
 __webpack_require__(50);
-__webpack_require__(49);
+__webpack_require__(51);
+__webpack_require__(53);
+__webpack_require__(52);
 module.exports = firebase;
 
 
 /***/ }),
-/* 7 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var implementation = __webpack_require__(62);
+var implementation = __webpack_require__(65);
 
 module.exports = Function.prototype.bind || implementation;
 
 
 /***/ }),
-/* 8 */
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function isArrayish(obj) {
+	if (!obj || typeof obj === 'string') {
+		return false;
+	}
+
+	return obj instanceof Array || Array.isArray(obj) ||
+		(obj.length >= 0 && (obj.splice instanceof Function ||
+			(Object.getOwnPropertyDescriptor(obj, (obj.length - 1)) && obj.constructor.name !== 'String')));
+};
+
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -699,23 +2652,50 @@ module.exports = function isCallable(value) {
 
 
 /***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(75)
-
-
-/***/ }),
-/* 10 */,
-/* 11 */,
-/* 12 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var keys = __webpack_require__(68);
-var foreach = __webpack_require__(61);
+var isArrayish = __webpack_require__(16);
+
+var concat = Array.prototype.concat;
+var slice = Array.prototype.slice;
+
+var swizzle = module.exports = function swizzle(args) {
+	var results = [];
+
+	for (var i = 0, len = args.length; i < len; i++) {
+		var arg = args[i];
+
+		if (isArrayish(arg)) {
+			// http://jsperf.com/javascript-array-concat-vs-push/98
+			results = concat.call(results, slice.call(arg));
+		} else {
+			results.push(arg);
+		}
+	}
+
+	return results;
+};
+
+swizzle.wrap = function (fn) {
+	return function () {
+		return fn(swizzle(arguments));
+	};
+};
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var keys = __webpack_require__(70);
+var foreach = __webpack_require__(64);
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
 
 var toStr = Object.prototype.toString;
@@ -771,7 +2751,7 @@ module.exports = defineProperties;
 
 
 /***/ }),
-/* 13 */
+/* 20 */
 /***/ (function(module, exports) {
 
 var has = Object.prototype.hasOwnProperty;
@@ -786,7 +2766,7 @@ module.exports = Object.assign || function assign(target, source) {
 
 
 /***/ }),
-/* 14 */
+/* 21 */
 /***/ (function(module, exports) {
 
 var $isNaN = Number.isNaN || function (a) { return a !== a; };
@@ -795,7 +2775,7 @@ module.exports = Number.isFinite || function (x) { return typeof x === 'number' 
 
 
 /***/ }),
-/* 15 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports = Number.isNaN || function isNaN(a) {
@@ -804,7 +2784,7 @@ module.exports = Number.isNaN || function isNaN(a) {
 
 
 /***/ }),
-/* 16 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = function mod(number, modulo) {
@@ -814,7 +2794,7 @@ module.exports = function mod(number, modulo) {
 
 
 /***/ }),
-/* 17 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports = function sign(number) {
@@ -823,7 +2803,7 @@ module.exports = function sign(number) {
 
 
 /***/ }),
-/* 18 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = function isPrimitive(value) {
@@ -832,16 +2812,16 @@ module.exports = function isPrimitive(value) {
 
 
 /***/ }),
-/* 19 */,
-/* 20 */
+/* 26 */,
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var ES = __webpack_require__(43);
-var has = __webpack_require__(63);
-var bind = __webpack_require__(7);
+var ES = __webpack_require__(46);
+var has = __webpack_require__(66);
+var bind = __webpack_require__(15);
 var isEnumerable = bind.call(Function.call, Object.prototype.propertyIsEnumerable);
 
 module.exports = function entries(O) {
@@ -857,13 +2837,13 @@ module.exports = function entries(O) {
 
 
 /***/ }),
-/* 21 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var implementation = __webpack_require__(20);
+var implementation = __webpack_require__(27);
 
 module.exports = function getPolyfill() {
 	return typeof Object.entries === 'function' ? Object.entries : implementation;
@@ -871,27 +2851,27 @@ module.exports = function getPolyfill() {
 
 
 /***/ }),
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Promotions_js__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Promotions_js__ = __webpack_require__(39);
 
 
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["render"])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__components_Promotions_js__["a" /* default */], null), document.querySelector('#promotions'));
 
 /***/ }),
-/* 29 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (global, factory) {
@@ -1380,17 +3360,22 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["render"])(__webpack_
 
 
 /***/ }),
-/* 30 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_preact__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_js__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_color__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_color___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_color__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_colors_css__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_colors_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_colors_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants_js__ = __webpack_require__(41);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 
@@ -1400,6 +3385,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
 
 
 
@@ -1432,45 +3420,70 @@ var ActivePromotion = function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var redeemed = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils_js__["b" /* isPromotionRedeemed */])(this.props.id, this.props.userData);
+			var redeemed = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__utils_js__["b" /* isPromotionRedeemed */])(this.props.id, this.props.userData);
 
 			var style = {
-				backgroundColor: redeemed ? this.state.redeemed ? 'rgba(0, 255, 0, 0.5)' : 'rgba(255, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.3)'
+				backgroundColor: redeemed ? this.state.redeemed ? __WEBPACK_IMPORTED_MODULE_3_color___default()(__WEBPACK_IMPORTED_MODULE_4_colors_css__["green"]).alpha(0.95).rgb().string() : __WEBPACK_IMPORTED_MODULE_3_color___default()(__WEBPACK_IMPORTED_MODULE_4_colors_css__["red"]).alpha(0.95).rgb().string() : 'rgba(64, 64, 64, 0.95)'
 			};
 
 			return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
 				'div',
-				{ className: 'active-promotion', style: style, 'data-jsx': 3369818863
+				{ className: 'active-promotion', style: style, 'data-jsx': 3533501187
 				},
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
-					'style',
-					{ jsx: true },
-					'\n\t\t\t\t\t.active-promotion {\n\t\t\t\t\t\tz-index: 10000;\n\t\t\t\t\t\tposition: fixed;\n\t\t\t\t\t\ttop: 0;\n\t\t\t\t\t\tright: 0;\n\t\t\t\t\t\tbottom: 0;\n\t\t\t\t\t\tleft: 0;\n\t\t\t\t\t\tbackface-visibility: hidden;\n\t\t\t\t\t\toverflow: auto;\n\n\t\t\t\t\t\tdisplay: flex;\n\t\t\t\t\t\tflex-direction: column;\n\t\t\t\t\t\tjustify-content: space-around;\n\t\t\t\t\t\talign-items: center;\n\n\t\t\t\t\t\tcolor: white;\n\t\t\t\t\t\tfont-size: 2em;\n\t\t\t\t\t\tfont-family: sans-serif;\n\t\t\t\t\t}\n\n\t\t\t\t\th2 {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t}\n\n\t\t\t\t\t.button {\n\t\t\t\t\t\tborder-radius: 5px;\n\t\t\t\t\t\tbackground-clip: padding-box;\n\t\t\t\t\t\tborder: 2px solid;\n\t\t\t\t\t\toutline: none;\n\t\t\t\t\t\tcursor: pointer;\n\t\t\t\t\t\tfont-size: 1em;\n\t\t\t\t\t}\n\n\t\t\t\t\t.redeem-button {\n\t\t\t\t\t\tbackground: rgba(255, 255, 255, 0.5);\n\t\t\t\t\t\tborder-color: rgba(255, 255, 255, 0.5);\n\t\t\t\t\t\tbackground-clip: padding-box;\n\t\t\t\t\t\tpadding: 0.25em 1em;\n\t\t\t\t\t}\n\n\t\t\t\t\t.redeem-button:hover {\n\t\t\t\t\t\tbackground: rgba(255, 255, 255, 0.3);\n\t\t\t\t\t\tbackground-clip: padding-box;\n\t\t\t\t\t}\n\n\t\t\t\t\t.redeem-button[disabled] {\n\t\t\t\t\t\ttransform: none;\n\t\t\t\t\t\tbackground: rgba(0, 0, 0, 0.3);\n\t\t\t\t\t\tbackground-clip: padding-box;\n\t\t\t\t\t\tcolor: rgba(255, 255, 255, 0.8);\n\t\t\t\t\t\tcursor: not-allowed;\n\t\t\t\t\t}\n\n\t\t\t\t'
-				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
+					styleId: 3799021935,
+					css: '.active-promotion[data-jsx="3533501187"] {z-index: 10000;position: fixed;top: 0;right: 0;bottom: 0;left: 0;backface-visibility: hidden;overflow: auto;display:-webkit-flex; display:flex;-webkit-flex-direction: column;-moz-flex-direction: column;flex-direction: column;justify-content: space-around;align-items: center;color: white;font-size: 2em;font-family: sans-serif;}h2[data-jsx="3533501187"] {text-align: center;margin: 0;}img[data-jsx="3533501187"] {width: 20%;height: auto;margin: 2em;}.info-container[data-jsx="3533501187"],.redeem-container[data-jsx="3533501187"] {display:-webkit-flex; display:flex;-webkit-flex-direction: column;-moz-flex-direction: column;flex-direction: column;justify-content: space-between;align-items: center;text-align: center;}p[data-jsx="3533501187"] {text-align: center;margin: 0.5em 2em;font-size: 0.75em;}@media (min-width: ' + __WEBPACK_IMPORTED_MODULE_6__constants_js__["a" /* BREAKPOINTS */].SMALL_DESKTOP + 'px) {p[data-jsx="3533501187"] {font-size: 1em;}}.button[data-jsx="3533501187"] {border-radius: 5px;background-clip: padding-box;border: 2px solid;outline: none;cursor: pointer;color: white;font-size: 1em;padding: 0.25em 1em;}.redeem-button[data-jsx="3533501187"] {background: rgba(255, 255, 255, 0.5);border-color: rgba(255, 255, 255, 0.5);background-clip: padding-box;padding: 0.25em 1em;margin: 1em 0;}.redeem-button[data-jsx="3533501187"]:hover {background: rgba(255, 255, 255, 0.3);background-clip: padding-box;}.redeem-button[disabled][data-jsx="3533501187"] {-webkit-transform: none;-moz-transform: none;-ms-transform: none;transform: none;background: rgba(0, 0, 0, 0.3);background-clip: padding-box;color: rgba(255, 255, 255, 0.8);cursor: not-allowed;}.close-button[data-jsx="3533501187"] {background: transparent;background-clip: padding-box;border-color: rgba(255, 255, 255, 0.5);color: rgba(255, 255, 255, 0.5);}.close-button[data-jsx="3533501187"]:hover {background: rgba(255, 255, 255, 0.2);background-clip: padding-box;}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9qcy9jb21wb25lbnRzL0FjdGl2ZVByb21vdGlvbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFzQ0ssQUFDbUIsMENBQ0gsZUFDQyxnQkFDVCxPQUNFLFNBQ0MsVUFDRixRQUNvQiw0QkFDYixlQUVELG1DQUNTLGtGQUNPLDhCQUNWLG9CQUVQLGFBQ0UsZUFDUyx3QkFDeEIsQ0FFRywyQkFDZ0IsbUJBQ1QsVUFDVixDQUVJLDRCQUNPLFdBQ0UsYUFDRCxZQUNaLENBR2tCLGlGQUNKLG1DQUNTLGtGQUNRLCtCQUNYLG9CQUNELG1CQUNuQixDQUVFLDBCQUNpQixtQkFDRCxrQkFDQSxrQkFDbEIsQ0FFa0QsbURBQy9DLDBCQUNhLGVBQ2YsQ0FDRCxDQUVRLGdDQUNXLG1CQUNVLDZCQUNYLGtCQUNKLGNBQ0UsZ0JBQ0gsYUFDRSxlQUNLLG9CQUNwQixDQUVlLHVDQUNzQixxQ0FDRSx1Q0FDViw2QkFDVCxvQkFDTixjQUNkLENBRXFCLDZDQUNnQixxQ0FDUiw2QkFDN0IsQ0FFeUIsaURBQ1QsaUZBQ2UsK0JBQ0YsNkJBQ0csZ0NBQ1osb0JBQ3BCLENBRWMsc0NBQ1Usd0JBQ0ssNkJBQ1UsdUNBQ1AsZ0NBQ2hDLENBRW9CLDRDQUNpQixxQ0FDUiw2QkFDN0IiLCJmaWxlIjoiX2pzL2NvbXBvbmVudHMvQWN0aXZlUHJvbW90aW9uLmpzIiwic291cmNlUm9vdCI6Ii9ob21lL21pc2Noa2EvcHJvamVjdHMvY295b3RlLWdyaWxsIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgaCwgQ29tcG9uZW50IH0gZnJvbSAncHJlYWN0JztcbmltcG9ydCBmaXJlYmFzZSBmcm9tICdmaXJlYmFzZSc7XG5pbXBvcnQgQ29sb3IgZnJvbSAnY29sb3InO1xuaW1wb3J0ICogYXMgY29sb3JzIGZyb20gJ2NvbG9ycy5jc3MnO1xuXG5pbXBvcnQgeyBpc1Byb21vdGlvblJlZGVlbWVkIH0gZnJvbSAnLi4vdXRpbHMuanMnO1xuaW1wb3J0IHsgQlJFQUtQT0lOVFMgfSBmcm9tICcuLi9jb25zdGFudHMuanMnO1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBBY3RpdmVQcm9tb3Rpb24gZXh0ZW5kcyBDb21wb25lbnQge1xuXHRjb25zdHJ1Y3Rvcigpe1xuXHRcdHN1cGVyKCk7XG5cdFx0dGhpcy5zdGF0ZSA9IHtcblx0XHRcdHJlZGVlbWVkOiBmYWxzZVxuXHRcdH07XG5cblx0XHR0aGlzLnJlZGVlbSA9IHRoaXMucmVkZWVtLmJpbmQodGhpcyk7XG5cdFx0dGhpcy5oYW5kbGVLZXl1cCA9IHRoaXMuaGFuZGxlS2V5dXAuYmluZCh0aGlzKTtcblx0fVxuXG5cdGNvbXBvbmVudERpZE1vdW50KCl7XG5cdFx0ZG9jdW1lbnQucXVlcnlTZWxlY3RvcignaHRtbCcpLmNsYXNzTGlzdC5hZGQoJ2xvY2tlZCcpO1xuXHRcdGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ2tleXVwJywgdGhpcy5oYW5kbGVLZXl1cCk7XG5cdH1cblxuXHRyZW5kZXIoKXtcblx0XHRjb25zdCByZWRlZW1lZCA9IGlzUHJvbW90aW9uUmVkZWVtZWQodGhpcy5wcm9wcy5pZCwgdGhpcy5wcm9wcy51c2VyRGF0YSk7XG5cblx0XHRjb25zdCBzdHlsZSA9IHtcblx0XHRcdGJhY2tncm91bmRDb2xvcjogcmVkZWVtZWRcblx0XHRcdFx0PyB0aGlzLnN0YXRlLnJlZGVlbWVkXG5cdFx0XHRcdFx0PyBDb2xvcihjb2xvcnMuZ3JlZW4pLmFscGhhKDAuOTUpLnJnYigpLnN0cmluZygpXG5cdFx0XHRcdFx0OiBDb2xvcihjb2xvcnMucmVkKS5hbHBoYSgwLjk1KS5yZ2IoKS5zdHJpbmcoKVxuXHRcdFx0XHQ6ICdyZ2JhKDY0LCA2NCwgNjQsIDAuOTUpJ1xuXHRcdH07XG5cblx0XHRyZXR1cm4gKFxuXHRcdFx0PGRpdiBjbGFzc05hbWU9XCJhY3RpdmUtcHJvbW90aW9uXCIgc3R5bGU9e3N0eWxlfT5cblx0XHRcdFx0PHN0eWxlIGpzeD5cblx0XHRcdFx0e2Bcblx0XHRcdFx0XHQuYWN0aXZlLXByb21vdGlvbiB7XG5cdFx0XHRcdFx0XHR6LWluZGV4OiAxMDAwMDtcblx0XHRcdFx0XHRcdHBvc2l0aW9uOiBmaXhlZDtcblx0XHRcdFx0XHRcdHRvcDogMDtcblx0XHRcdFx0XHRcdHJpZ2h0OiAwO1xuXHRcdFx0XHRcdFx0Ym90dG9tOiAwO1xuXHRcdFx0XHRcdFx0bGVmdDogMDtcblx0XHRcdFx0XHRcdGJhY2tmYWNlLXZpc2liaWxpdHk6IGhpZGRlbjtcblx0XHRcdFx0XHRcdG92ZXJmbG93OiBhdXRvO1xuXG5cdFx0XHRcdFx0XHRkaXNwbGF5OiBmbGV4O1xuXHRcdFx0XHRcdFx0ZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcblx0XHRcdFx0XHRcdGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xuXHRcdFx0XHRcdFx0YWxpZ24taXRlbXM6IGNlbnRlcjtcblxuXHRcdFx0XHRcdFx0Y29sb3I6IHdoaXRlO1xuXHRcdFx0XHRcdFx0Zm9udC1zaXplOiAyZW07XG5cdFx0XHRcdFx0XHRmb250LWZhbWlseTogc2Fucy1zZXJpZjtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHRoMiB7XG5cdFx0XHRcdFx0XHR0ZXh0LWFsaWduOiBjZW50ZXI7XG5cdFx0XHRcdFx0XHRtYXJnaW46IDA7XG5cdFx0XHRcdFx0fVxuXG5cdFx0XHRcdFx0aW1nIHtcblx0XHRcdFx0XHRcdHdpZHRoOiAyMCU7XG5cdFx0XHRcdFx0XHRoZWlnaHQ6IGF1dG87XG5cdFx0XHRcdFx0XHRtYXJnaW46IDJlbTtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQuaW5mby1jb250YWluZXIsXG5cdFx0XHRcdFx0LnJlZGVlbS1jb250YWluZXIge1xuXHRcdFx0XHRcdFx0ZGlzcGxheTogZmxleDtcblx0XHRcdFx0XHRcdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG5cdFx0XHRcdFx0XHRqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG5cdFx0XHRcdFx0XHRhbGlnbi1pdGVtczogY2VudGVyO1xuXHRcdFx0XHRcdFx0dGV4dC1hbGlnbjogY2VudGVyO1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdHAge1xuXHRcdFx0XHRcdFx0dGV4dC1hbGlnbjogY2VudGVyO1xuXHRcdFx0XHRcdFx0bWFyZ2luOiAwLjVlbSAyZW07XG5cdFx0XHRcdFx0XHRmb250LXNpemU6IDAuNzVlbTtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHRAbWVkaWEgKG1pbi13aWR0aDogJHtCUkVBS1BPSU5UUy5TTUFMTF9ERVNLVE9QfXB4KSB7XG5cdFx0XHRcdFx0XHRwIHtcblx0XHRcdFx0XHRcdFx0Zm9udC1zaXplOiAxZW07XG5cdFx0XHRcdFx0XHR9XG5cdFx0XHRcdFx0fVxuXG5cdFx0XHRcdFx0LmJ1dHRvbiB7XG5cdFx0XHRcdFx0XHRib3JkZXItcmFkaXVzOiA1cHg7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLWNsaXA6IHBhZGRpbmctYm94O1xuXHRcdFx0XHRcdFx0Ym9yZGVyOiAycHggc29saWQ7XG5cdFx0XHRcdFx0XHRvdXRsaW5lOiBub25lO1xuXHRcdFx0XHRcdFx0Y3Vyc29yOiBwb2ludGVyO1xuXHRcdFx0XHRcdFx0Y29sb3I6IHdoaXRlO1xuXHRcdFx0XHRcdFx0Zm9udC1zaXplOiAxZW07XG5cdFx0XHRcdFx0XHRwYWRkaW5nOiAwLjI1ZW0gMWVtO1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdC5yZWRlZW0tYnV0dG9uIHtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC41KTtcblx0XHRcdFx0XHRcdGJvcmRlci1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpO1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZC1jbGlwOiBwYWRkaW5nLWJveDtcblx0XHRcdFx0XHRcdHBhZGRpbmc6IDAuMjVlbSAxZW07XG5cdFx0XHRcdFx0XHRtYXJnaW46IDFlbSAwO1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdC5yZWRlZW0tYnV0dG9uOmhvdmVyIHtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC4zKTtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XG5cdFx0XHRcdFx0fVxuXG5cdFx0XHRcdFx0LnJlZGVlbS1idXR0b25bZGlzYWJsZWRdIHtcblx0XHRcdFx0XHRcdHRyYW5zZm9ybTogbm9uZTtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC4zKTtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XG5cdFx0XHRcdFx0XHRjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjgpO1xuXHRcdFx0XHRcdFx0Y3Vyc29yOiBub3QtYWxsb3dlZDtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQuY2xvc2UtYnV0dG9uIHtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZC1jbGlwOiBwYWRkaW5nLWJveDtcblx0XHRcdFx0XHRcdGJvcmRlci1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpO1xuXHRcdFx0XHRcdFx0Y29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC41KTtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQuY2xvc2UtYnV0dG9uOmhvdmVyIHtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC4yKTtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XG5cdFx0XHRcdFx0fVxuXG5cdFx0XHRcdGB9XG5cdFx0XHRcdDwvc3R5bGU+XG5cdFx0XHRcdDxoMj57dGhpcy5wcm9wcy50aXRsZX08L2gyPlxuXG5cdHtcblx0XHRyZWRlZW1lZFxuXHRcdFx0PyAoXG5cdFx0XHRcdDxkaXYgY2xhc3NOYW1lPVwiaW5mby1jb250YWluZXJcIj5cblx0XHRcdFx0XHQ8c3Bhbj5cblx0XHR7XG5cdFx0XHR0aGlzLnN0YXRlLnJlZGVlbWVkXG5cdFx0XHRcdD8gJ1Byb21vdGlvbiByZWRlZW1lZCBzdWNjZXNzZnVsbHknXG5cdFx0XHRcdDogJ1RoaXMgcHJvbW90aW9uIGhhcyBhbHJlYWR5IGJlZW4gcmVkZWVtZWQnXG5cdFx0fVxuXHRcdFx0XHRcdDwvc3Bhbj5cblx0XHRcdFx0XHQ8aW1nIGFsdD1cIlwiIHNyYz17YC9pbWFnZXMvaWNvbnMvJHt0aGlzLnN0YXRlLnJlZGVlbWVkXG5cdFx0XHRcdFx0XHQ/ICdjaGVja21hcmsnIDogJ3gtbWFyayd9LnN2Z2B9IHdpZHRoPVwiMzAwXCIgaGVpZ2h0PVwiMzAwXCIgLz5cblx0XHRcdFx0PC9kaXY+XG5cdFx0XHQpXG5cdFx0XHQ6IChcblx0XHRcdFx0PGRpdiBjbGFzc05hbWU9XCJyZWRlZW0tY29udGFpbmVyXCI+XG5cdFx0XHRcdFx0PHA+XG5cdFx0XHRcdFx0XHRQcm9tb3Rpb25zIG11c3QgYmUgcmVkZWVtZWQgaW4gZnJvbnQgb2YgYSBiYXJ0ZW5kZXIuXG5cdFx0XHRcdFx0XHRBcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gcmVkZWVtIHRoaXMgbm93P1xuXHRcdFx0XHRcdDwvcD5cblx0XHRcdFx0XHQ8YnV0dG9uIHR5cGU9XCJidXR0b25cIiBjbGFzc05hbWU9XCJidXR0b24gcmVkZWVtLWJ1dHRvblwiXG5cdFx0XHRcdFx0XHRcdG9uQ2xpY2s9e3RoaXMucmVkZWVtfT5cblx0XHRcdFx0XHRcdFJlZGVlbVxuXHRcdFx0XHRcdDwvYnV0dG9uPlxuXHRcdFx0XHRcdDxwPlxuXHRcdFx0XHRcdFx0VGhpcyBjYW4ndCBiZSB1bmRvbmUuXG5cdFx0XHRcdFx0PC9wPlxuXHRcdFx0XHQ8L2Rpdj5cblx0XHRcdClcblx0fVxuXG5cblx0XHRcdFx0PGJ1dHRvbiB0eXBlPVwiYnV0dG9uXCIgY2xhc3NOYW1lPVwiYnV0dG9uIGNsb3NlLWJ1dHRvblwiXG5cdFx0XHRcdFx0XHRvbkNsaWNrPXt0aGlzLnByb3BzLmNsb3NlfT5cblx0XHRcdFx0XHRDbG9zZVxuXHRcdFx0XHQ8L2J1dHRvbj5cblx0XHRcdDwvZGl2PlxuXHRcdCk7XG5cdH1cblxuXHRyZWRlZW0oKXtcblx0XHR0aGlzLnNldFN0YXRlKHtyZWRlZW1lZDogdHJ1ZX0pO1xuXG5cdFx0Y29uc3QgdXNlcklkID0gdGhpcy5wcm9wcy51c2VyLnVpZDtcblx0XHRmaXJlYmFzZS5kYXRhYmFzZSgpXG5cdFx0XHQucmVmKGB1c2Vycy8ke3VzZXJJZH0vcmVkZWVtZWRQcm9tb3Rpb25zLyR7dGhpcy5wcm9wcy5pZH1gKS5zZXQoe1xuXHRcdFx0XHRyZWRlZW1lZDogdHJ1ZSxcblx0XHRcdFx0cmVkZWVtZWRBdDogbmV3IERhdGUoKS50b0lTT1N0cmluZygpXG5cdFx0XHR9KTtcblx0fVxuXG5cdGhhbmRsZUtleXVwKGV2ZW50KXtcblx0XHRpZihldmVudC5rZXkgPT09ICdFc2NhcGUnKVxuXHRcdFx0dGhpcy5wcm9wcy5jbG9zZSgpO1xuXHR9XG5cblx0Y29tcG9uZW50V2lsbFVubW91bnQoKXtcblx0XHRkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCdodG1sJykuY2xhc3NMaXN0LnJlbW92ZSgnbG9ja2VkJyk7XG5cdFx0ZG9jdW1lbnQucmVtb3ZlRXZlbnRMaXN0ZW5lcigna2V5dXAnLCB0aGlzLmhhbmRsZUtleXVwKTtcblx0fVxufVxuXG5BY3RpdmVQcm9tb3Rpb24ucHJvcFR5cGVzID0ge1xuXHR1c2VyOiBPYmplY3QsXG5cdHVzZXJEYXRhOiBPYmplY3QsXG5cdGlkOiBTdHJpbmcsXG5cdHRpdGxlOiBTdHJpbmcsXG5cdGRlc2M6IFN0cmluZyxcblx0Y2xvc2U6IEZ1bmN0aW9uXG59O1xuIl19 */\n/*@ sourceURL=_js/components/ActivePromotion.js */'
+				}),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
 					'h2',
 					{
-						'data-jsx': 3369818863
+						'data-jsx': 3533501187
 					},
 					this.props.title
 				),
 				redeemed ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
-					'span',
-					{
-						'data-jsx': 3369818863
+					'div',
+					{ className: 'info-container', 'data-jsx': 3533501187
 					},
-					this.state.redeemed ? 'Redeemed successfully' : 'This promotion has already been redeemed'
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
+						'span',
+						{
+							'data-jsx': 3533501187
+						},
+						this.state.redeemed ? 'Promotion redeemed successfully' : 'This promotion has already been redeemed'
+					),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])('img', { alt: '', src: '/images/icons/' + (this.state.redeemed ? 'checkmark' : 'x-mark') + '.svg', width: '300', height: '300', 'data-jsx': 3533501187
+					})
 				) : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
-					'button',
-					{ type: 'button', className: 'button',
-						onClick: this.redeem, 'data-jsx': 3369818863
+					'div',
+					{ className: 'redeem-container', 'data-jsx': 3533501187
 					},
-					'Redeem'
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
+						'p',
+						{
+							'data-jsx': 3533501187
+						},
+						'Promotions must be redeemed in front of a bartender. Are you sure you want to redeem this now?'
+					),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
+						'button',
+						{ type: 'button', className: 'button redeem-button',
+							onClick: this.redeem, 'data-jsx': 3533501187
+						},
+						'Redeem'
+					),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
+						'p',
+						{
+							'data-jsx': 3533501187
+						},
+						'This can\'t be undone.'
+					)
 				),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
 					'button',
-					{ type: 'button', className: 'button',
-						onClick: this.props.close, 'data-jsx': 3369818863
+					{ type: 'button', className: 'button close-button',
+						onClick: this.props.close, 'data-jsx': 3533501187
 					},
 					'Close'
 				)
@@ -1516,16 +3529,16 @@ ActivePromotion.propTypes = {
 };
 
 /***/ }),
-/* 31 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_preact__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_js__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants_js__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants_js__ = __webpack_require__(41);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 
@@ -1569,11 +3582,10 @@ var Promotion = function (_Component) {
 				{ className: 'promotion ' + (redeemed ? 'redeemed' : ''),
 					style: style, 'data-jsx': 3533501187
 				},
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
-					'style',
-					{ jsx: true },
-					'\n\t\t\t\t\t.promotion {\n\t\t\t\t\t\tflex: 1 1;\n\t\t\t\t\t\tdisplay: flex;\n\t\t\t\t\t\tflex-direction: column;\n\t\t\t\t\t\tjustify-content: space-between;\n\t\t\t\t\t\talign-items: center;\n\n\t\t\t\t\t\tbackground-position: center;\n\t\t\t\t\t\tbackground-size: cover;\n\t\t\t\t\t\tmargin: 1em 0;\n\t\t\t\t\t\tpadding: 1em;\n\t\t\t\t\t\tmin-height: 200px;\n\t\t\t\t\t\tborder-radius: 3px;\n\t\t\t\t\t\tbox-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);\n\t\t\t\t\t\tborder: none;\n\t\t\t\t\t\tcolor: white;\n\t\t\t\t\t\tfont-size: 1.5em;\n\t\t\t\t\t\tfont-family: sans-serif;\n\t\t\t\t\t\ttext-align: center;\n\n\t\t\t\t\t\ttransition: 0.05s ease-out;\n\t\t\t\t\t\ttransition-property: transform, box-shadow;\n\t\t\t\t\t}\n\n\t\t\t\t\t@media (min-width: ' + __WEBPACK_IMPORTED_MODULE_3__constants_js__["a" /* BREAKPOINTS */].SMALL_DESKTOP + 'px) {\n\n\t\t\t\t\t\t.promotion {\n\t\t\t\t\t\t\tfont-size: 2em;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\n\t\t\t\t\t.promotion:hover {\n\t\t\t\t\t\ttransform: scale(1.01);\n\t\t\t\t\t\tbox-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.25);\n\n\t\t\t\t\t}\n\n\t\t\t\t\t.promotion.redeemed {\n\t\t\t\t\t\ttransform: none;\n\t\t\t\t\t\tbox-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);\n\t\t\t\t\t\topacity: 0.8;\n\t\t\t\t\t}\n\n\t\t\t\t\t.promotion > * {\n\t\t\t\t\t\tmargin: 0.5em 0;\n\t\t\t\t\t}\n\n\n\t\t\t\t\th2 {\n\t\t\t\t\t\tmargin: 0;\n\t\t\t\t\t\tfont-size: 1.5em;\n\t\t\t\t\t\tpointer-events: none;\n\t\t\t\t\t}\n\n\t\t\t\t\t.button {\n\t\t\t\t\t\tborder-radius: 5px;\n\t\t\t\t\t\tbackground-clip: padding-box;\n\t\t\t\t\t\tborder: 2px solid;\n\t\t\t\t\t\toutline: none;\n\t\t\t\t\t\tcursor: pointer;\n\t\t\t\t\t\tfont-size: 1em;\n\t\t\t\t\t}\n\n\t\t\t\t\t.redeem-button {\n\t\t\t\t\t\tbackground: rgba(255, 255, 255, 0.5);\n\t\t\t\t\t\tborder-color: rgba(255, 255, 255, 0.5);\n\t\t\t\t\t\tbackground-clip: padding-box;\n\t\t\t\t\t\tpadding: 0.25em 1em;\n\t\t\t\t\t}\n\n\t\t\t\t\t.redeem-button:hover {\n\t\t\t\t\t\tbackground: rgba(255, 255, 255, 0.3);\n\t\t\t\t\t\tbackground-clip: padding-box;\n\t\t\t\t\t}\n\n\t\t\t\t\t.redeem-button[disabled] {\n\t\t\t\t\t\ttransform: none;\n\t\t\t\t\t\tbackground: rgba(0, 0, 0, 0.3);\n\t\t\t\t\t\tbackground-clip: padding-box;\n\t\t\t\t\t\tcolor: rgba(255, 255, 255, 0.8);\n\t\t\t\t\t\tcursor: not-allowed;\n\t\t\t\t\t}\n\n\n\t\t\t\t\tp {\n\t\t\t\t\t\tmargin: 0;\n\t\t\t\t\t\tpointer-events: none;\n\t\t\t\t\t}\n\t\t\t\t'
-				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
+					styleId: 1736536099,
+					css: '.promotion[data-jsx="3533501187"] {-webkit-flex: 1 1;-moz-flex: 1 1;flex: 1 1;display:-webkit-flex; display:flex;-webkit-flex-direction: column;-moz-flex-direction: column;flex-direction: column;justify-content: space-between;align-items: center;background-position: center;background-size: cover;margin: 1em 0;padding: 1em;min-height: 200px;border-radius: 3px;box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);border: none;color: white;font-size: 1.5em;font-family: sans-serif;text-align: center;-webkit-transition: 0.05s ease-out;-moz-transition: 0.05s ease-out;-ms-transition: 0.05s ease-out;transition: 0.05s ease-out;-webkit-transition-property: transform, box-shadow;-moz-transition-property: transform, box-shadow;-ms-transition-property: transform, box-shadow;transition-property: transform, box-shadow;}@media (min-width: ' + __WEBPACK_IMPORTED_MODULE_3__constants_js__["a" /* BREAKPOINTS */].SMALL_DESKTOP + 'px) {.promotion[data-jsx="3533501187"] {font-size: 2em;}}.promotion[data-jsx="3533501187"]:hover {-webkit-transform: scale(1.01);-moz-transform: scale(1.01);-ms-transform: scale(1.01);transform: scale(1.01);box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.25);}.promotion.redeemed[data-jsx="3533501187"] {-webkit-transform: none;-moz-transform: none;-ms-transform: none;transform: none;box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);opacity: 0.8;}.promotion[data-jsx="3533501187"] > *[data-jsx="3533501187"] {margin: 0.5em 0;}h2[data-jsx="3533501187"] {margin: 0;font-size: 1.5em;pointer-events: none;}.button[data-jsx="3533501187"] {border-radius: 5px;background-clip: padding-box;border: 2px solid;outline: none;cursor: pointer;color: white;font-size: 1em;padding: 0.25em 1em;}.redeem-button[data-jsx="3533501187"] {background: rgba(255, 255, 255, 0.5);border-color: rgba(255, 255, 255, 0.5);background-clip: padding-box;}.redeem-button[data-jsx="3533501187"]:hover {background: rgba(255, 255, 255, 0.3);background-clip: padding-box;}.redeem-button[disabled][data-jsx="3533501187"] {-webkit-transform: none;-moz-transform: none;-ms-transform: none;transform: none;background: rgba(0, 0, 0, 0.3);background-clip: padding-box;color: rgba(255, 255, 255, 0.8);cursor: not-allowed;}p[data-jsx="3533501187"] {margin: 0;pointer-events: none;}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9qcy9jb21wb25lbnRzL1Byb21vdGlvbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUE2QkssQUFDWSxtQ0FDRCwyQ0FDSSxtQ0FDUyxrRkFDUSwrQkFDWCxvQkFFUSw0QkFDTCx1QkFDVCxjQUNELGFBQ0ssa0JBQ0MsbUJBQzJCLDhDQUNqQyxhQUNBLGFBQ0ksaUJBQ08sd0JBQ0wsbUJBRVEsNkhBQ2dCLDZMQUMzQyxDQUVrRCxtREFFdEMsbUNBQ0ksZUFDZixDQUNELENBRWlCLHlDQUNNLDZHQUN1Qiw4Q0FFOUMsQ0FFb0IsNENBQ0osaUZBQzhCLDhDQUNqQyxhQUNiLENBRWUsOERBQ0MsZ0JBQ2hCLENBR0csMkJBQ08sVUFDTyxpQkFDSSxxQkFDckIsQ0FFUSxnQ0FDVyxtQkFDVSw2QkFDWCxrQkFDSixjQUNFLGdCQUNILGFBQ0UsZUFDSyxvQkFDcEIsQ0FFZSx1Q0FDc0IscUNBQ0UsdUNBQ1YsNkJBQzdCLENBRXFCLDZDQUNnQixxQ0FDUiw2QkFDN0IsQ0FFeUIsaURBQ1QsaUZBQ2UsK0JBQ0YsNkJBQ0csZ0NBQ1osb0JBQ3BCLENBR0UsMEJBQ1EsVUFDVyxxQkFDckIiLCJmaWxlIjoiX2pzL2NvbXBvbmVudHMvUHJvbW90aW9uLmpzIiwic291cmNlUm9vdCI6Ii9ob21lL21pc2Noa2EvcHJvamVjdHMvY295b3RlLWdyaWxsIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgaCwgQ29tcG9uZW50IH0gZnJvbSAncHJlYWN0JztcblxuaW1wb3J0IHsgaXNQcm9tb3Rpb25SZWRlZW1lZCB9IGZyb20gJy4uL3V0aWxzLmpzJztcbmltcG9ydCB7IEJSRUFLUE9JTlRTIH0gZnJvbSAnLi4vY29uc3RhbnRzLmpzJztcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgUHJvbW90aW9uIGV4dGVuZHMgQ29tcG9uZW50IHtcblx0Y29uc3RydWN0b3IoKXtcblx0XHRzdXBlcigpO1xuXG5cdFx0dGhpcy5oYW5kbGVDbGljayA9IHRoaXMuaGFuZGxlQ2xpY2suYmluZCh0aGlzKTtcblx0fVxuXG5cdHJlbmRlcigpe1xuXHRcdGNvbnN0IHJlZGVlbWVkID0gaXNQcm9tb3Rpb25SZWRlZW1lZCh0aGlzLnByb3BzLmlkLCB0aGlzLnByb3BzLnVzZXJEYXRhKTtcblxuXHRcdGNvbnN0IHJlZGVlbWVkQXQgPSByZWRlZW1lZFxuXHRcdFx0PyBuZXcgRGF0ZSh0aGlzLnByb3BzLnVzZXJEYXRhLnJlZGVlbWVkUHJvbW90aW9uc1t0aGlzLnByb3BzLmlkXS5yZWRlZW1lZEF0KVxuXHRcdFx0XHQudG9Mb2NhbGVEYXRlU3RyaW5nKClcblx0XHRcdDogbnVsbDtcblxuXHRcdGNvbnN0IHN0eWxlID0ge1xuXHRcdFx0YmFja2dyb3VuZEltYWdlOiBgbGluZWFyLWdyYWRpZW50KHJnYmEoMCwgMCwgMCwgMC4zKSwgcmdiYSgwLCAwLCAwLCAwLjMpKSxcblx0XHRcdFx0XHRcdFx0XHR1cmwoJHt0aGlzLnByb3BzLmltYWdlfSlgXG5cdFx0fTtcblxuXHRcdHJldHVybiAoXG5cdFx0XHQ8ZGl2IGNsYXNzTmFtZT17YHByb21vdGlvbiAke3JlZGVlbWVkID8gJ3JlZGVlbWVkJzogJyd9YH1cblx0XHRcdFx0XHRzdHlsZT17c3R5bGV9PlxuXHRcdFx0XHQ8c3R5bGUganN4PlxuXHRcdFx0XHR7YFxuXHRcdFx0XHRcdC5wcm9tb3Rpb24ge1xuXHRcdFx0XHRcdFx0ZmxleDogMSAxO1xuXHRcdFx0XHRcdFx0ZGlzcGxheTogZmxleDtcblx0XHRcdFx0XHRcdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG5cdFx0XHRcdFx0XHRqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG5cdFx0XHRcdFx0XHRhbGlnbi1pdGVtczogY2VudGVyO1xuXG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuXHRcdFx0XHRcdFx0bWFyZ2luOiAxZW0gMDtcblx0XHRcdFx0XHRcdHBhZGRpbmc6IDFlbTtcblx0XHRcdFx0XHRcdG1pbi1oZWlnaHQ6IDIwMHB4O1xuXHRcdFx0XHRcdFx0Ym9yZGVyLXJhZGl1czogM3B4O1xuXHRcdFx0XHRcdFx0Ym94LXNoYWRvdzogMCAycHggNXB4IDJweCByZ2JhKDAsIDAsIDAsIDAuMjUpO1xuXHRcdFx0XHRcdFx0Ym9yZGVyOiBub25lO1xuXHRcdFx0XHRcdFx0Y29sb3I6IHdoaXRlO1xuXHRcdFx0XHRcdFx0Zm9udC1zaXplOiAxLjVlbTtcblx0XHRcdFx0XHRcdGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xuXHRcdFx0XHRcdFx0dGV4dC1hbGlnbjogY2VudGVyO1xuXG5cdFx0XHRcdFx0XHR0cmFuc2l0aW9uOiAwLjA1cyBlYXNlLW91dDtcblx0XHRcdFx0XHRcdHRyYW5zaXRpb24tcHJvcGVydHk6IHRyYW5zZm9ybSwgYm94LXNoYWRvdztcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHRAbWVkaWEgKG1pbi13aWR0aDogJHtCUkVBS1BPSU5UUy5TTUFMTF9ERVNLVE9QfXB4KSB7XG5cblx0XHRcdFx0XHRcdC5wcm9tb3Rpb24ge1xuXHRcdFx0XHRcdFx0XHRmb250LXNpemU6IDJlbTtcblx0XHRcdFx0XHRcdH1cblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQucHJvbW90aW9uOmhvdmVyIHtcblx0XHRcdFx0XHRcdHRyYW5zZm9ybTogc2NhbGUoMS4wMSk7XG5cdFx0XHRcdFx0XHRib3gtc2hhZG93OiAwIDJweCA1cHggM3B4IHJnYmEoMCwgMCwgMCwgMC4yNSk7XG5cblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQucHJvbW90aW9uLnJlZGVlbWVkIHtcblx0XHRcdFx0XHRcdHRyYW5zZm9ybTogbm9uZTtcblx0XHRcdFx0XHRcdGJveC1zaGFkb3c6IDAgMnB4IDVweCAycHggcmdiYSgwLCAwLCAwLCAwLjI1KTtcblx0XHRcdFx0XHRcdG9wYWNpdHk6IDAuODtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQucHJvbW90aW9uID4gKiB7XG5cdFx0XHRcdFx0XHRtYXJnaW46IDAuNWVtIDA7XG5cdFx0XHRcdFx0fVxuXG5cblx0XHRcdFx0XHRoMiB7XG5cdFx0XHRcdFx0XHRtYXJnaW46IDA7XG5cdFx0XHRcdFx0XHRmb250LXNpemU6IDEuNWVtO1xuXHRcdFx0XHRcdFx0cG9pbnRlci1ldmVudHM6IG5vbmU7XG5cdFx0XHRcdFx0fVxuXG5cdFx0XHRcdFx0LmJ1dHRvbiB7XG5cdFx0XHRcdFx0XHRib3JkZXItcmFkaXVzOiA1cHg7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLWNsaXA6IHBhZGRpbmctYm94O1xuXHRcdFx0XHRcdFx0Ym9yZGVyOiAycHggc29saWQ7XG5cdFx0XHRcdFx0XHRvdXRsaW5lOiBub25lO1xuXHRcdFx0XHRcdFx0Y3Vyc29yOiBwb2ludGVyO1xuXHRcdFx0XHRcdFx0Y29sb3I6IHdoaXRlO1xuXHRcdFx0XHRcdFx0Zm9udC1zaXplOiAxZW07XG5cdFx0XHRcdFx0XHRwYWRkaW5nOiAwLjI1ZW0gMWVtO1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdC5yZWRlZW0tYnV0dG9uIHtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC41KTtcblx0XHRcdFx0XHRcdGJvcmRlci1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpO1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZC1jbGlwOiBwYWRkaW5nLWJveDtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQucmVkZWVtLWJ1dHRvbjpob3ZlciB7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMyk7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLWNsaXA6IHBhZGRpbmctYm94O1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdC5yZWRlZW0tYnV0dG9uW2Rpc2FibGVkXSB7XG5cdFx0XHRcdFx0XHR0cmFuc2Zvcm06IG5vbmU7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuMyk7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLWNsaXA6IHBhZGRpbmctYm94O1xuXHRcdFx0XHRcdFx0Y29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC44KTtcblx0XHRcdFx0XHRcdGN1cnNvcjogbm90LWFsbG93ZWQ7XG5cdFx0XHRcdFx0fVxuXG5cblx0XHRcdFx0XHRwIHtcblx0XHRcdFx0XHRcdG1hcmdpbjogMDtcblx0XHRcdFx0XHRcdHBvaW50ZXItZXZlbnRzOiBub25lO1xuXHRcdFx0XHRcdH1cblx0XHRcdFx0YH1cblx0XHRcdFx0PC9zdHlsZT5cblx0XHRcdFx0PGgyPnt0aGlzLnByb3BzLnRpdGxlfTwvaDI+XG5cblxuXHRcdFx0XHQ8YnV0dG9uIGNsYXNzTmFtZT1cImJ1dHRvbiByZWRlZW0tYnV0dG9uXCJcblx0XHRcdFx0XHRcdGRpc2FibGVkPXshdGhpcy5wcm9wcy51c2VyIHx8IHJlZGVlbWVkfVxuXHRcdFx0XHRcdFx0b25DbGljaz17dGhpcy5oYW5kbGVDbGlja30+XG5cdFx0XHR7XG5cdFx0XHRcdHRoaXMucHJvcHMudXNlclxuXHRcdFx0XHRcdD8gcmVkZWVtZWRcblx0XHRcdFx0XHRcdD8gYFJlZWRlZW1lZCBvbiAke3JlZGVlbWVkQXR9YFxuXHRcdFx0XHRcdFx0OiAnUmVkZWVtJ1xuXHRcdFx0XHRcdDogJ1NpZ24gaW4gdG8gcmVkZWVtIHByb21vdGlvbidcblx0XHRcdH1cblx0XHRcdFx0PC9idXR0b24+XG5cblxuXHRcdFx0XHQ8cD5cblx0XHRcdFx0XHR7dGhpcy5wcm9wcy5kZXNjfVxuXHRcdFx0XHQ8L3A+XG5cdFx0XHQ8L2Rpdj5cblx0XHQpO1xuXHR9XG5cblx0aGFuZGxlQ2xpY2soKXtcblx0XHR0aGlzLnByb3BzLmFjdGl2YXRlKHRoaXMucHJvcHMuaWQpO1xuXHR9XG59XG5cblByb21vdGlvbi5wcm9wVHlwZXMgPSB7XG5cdHVzZXI6IE9iamVjdCxcblx0dXNlckRhdGE6IE9iamVjdCxcblx0aWQ6IFN0cmluZyxcblx0dGl0bGU6IFN0cmluZyxcblx0ZGVzYzogU3RyaW5nLFxuXHRlbmREYXRlOiBTdHJpbmcsXG5cdHN0YXJ0RGF0ZTogU3RyaW5nLFxuXHRpbWFnZTogU3RyaW5nLFxuXHRhY3RpdmF0ZTogRnVuY3Rpb25cbn07XG4iXX0= */\n/*@ sourceURL=_js/components/Promotion.js */'
+				}),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
 					'h2',
 					{
@@ -1624,20 +3636,20 @@ Promotion.propTypes = {
 };
 
 /***/ }),
-/* 32 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_preact__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Promotion_js__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ActivePromotion_js__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__SignIn_js__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_js__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Promotion_js__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ActivePromotion_js__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__SignIn_js__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_js__ = __webpack_require__(8);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -1720,11 +3732,10 @@ var Promotions = function (_Component) {
 				'div',
 				{ className: 'promotions', 'data-jsx': 2302483471
 				},
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
-					'style',
-					{ jsx: true },
-					'\n\t\t\t\t\t.promotions {\n\t\t\t\t\t\tposition: relative;\n\t\t\t\t\t\tbox-sizing: border-box;\n\t\t\t\t\t\tmin-height: 100%;\n\t\t\t\t\t\twidth: 100%;\n\t\t\t\t\t\tpadding: 3em 10% 6em;\n\t\t\t\t\t\tdisplay: flex;\n\t\t\t\t\t\tflex-direction: column;\n\t\t\t\t\t\tjustify-content: center;\n\t\t\t\t\t\talign-items: stretch;\n\t\t\t\t\t}\n\t\t\t\t'
-				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
+					styleId: 2302483471,
+					css: '.promotions[data-jsx="2302483471"] {position: relative;box-sizing: border-box;min-height: 100%;width: 100%;padding: 3em 10% 6em;display:-webkit-flex; display:flex;-webkit-flex-direction: column;-moz-flex-direction: column;flex-direction: column;justify-content: center;align-items: stretch;}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9qcy9jb21wb25lbnRzL1Byb21vdGlvbnMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBNERLLEFBQ2Esb0NBQ08sbUJBQ0ksdUJBQ04saUJBQ0wsWUFDUyxxQkFDUCxtQ0FDUyxrRkFDQyx3QkFDSCxxQkFDckIiLCJmaWxlIjoiX2pzL2NvbXBvbmVudHMvUHJvbW90aW9ucy5qcyIsInNvdXJjZVJvb3QiOiIvaG9tZS9taXNjaGthL3Byb2plY3RzL2NveW90ZS1ncmlsbCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGgsIENvbXBvbmVudCB9IGZyb20gJ3ByZWFjdCc7XG5pbXBvcnQgZmlyZWJhc2UgZnJvbSAnZmlyZWJhc2UnO1xuXG5pbXBvcnQgUHJvbW90aW9uIGZyb20gJy4vUHJvbW90aW9uLmpzJztcbmltcG9ydCBBY3RpdmVQcm9tb3Rpb24gZnJvbSAnLi9BY3RpdmVQcm9tb3Rpb24uanMnO1xuaW1wb3J0IFNpZ25JbiBmcm9tICcuL1NpZ25Jbi5qcyc7XG5cbmltcG9ydCB7IGlzb0RhdGVTdHJpbmcsIGlzUHJvbW90aW9uUmVkZWVtZWQgfSBmcm9tICcuLi91dGlscy5qcyc7XG5cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIFByb21vdGlvbnMgZXh0ZW5kcyBDb21wb25lbnQge1xuXHRjb25zdHJ1Y3Rvcigpe1xuXHRcdHN1cGVyKCk7XG5cdFx0dGhpcy5zdGF0ZSA9IHtcblx0XHRcdGZpcmViYXNlQ29uZmlnOiBudWxsLFxuXHRcdFx0dXNlcjogbnVsbCxcblx0XHRcdHVzZXJEYXRhOiBudWxsLFxuXHRcdFx0cHJvbW90aW9uczogW10sXG5cdFx0XHRhY3RpdmVQcm9tb3Rpb246IG51bGxcblx0XHR9O1xuXG5cdFx0dGhpcy5zdWJUb1Byb21vdGlvbnMgPSB0aGlzLnN1YlRvUHJvbW90aW9ucy5iaW5kKHRoaXMpO1xuXHRcdHRoaXMuc2V0QWN0aXZlUHJvbW90aW9uID0gdGhpcy5zZXRBY3RpdmVQcm9tb3Rpb24uYmluZCh0aGlzKTtcblx0XHR0aGlzLnVuc2V0QWN0aXZlUHJvbW90aW9uID0gdGhpcy51bnNldEFjdGl2ZVByb21vdGlvbi5iaW5kKHRoaXMpO1xuXHR9XG5cblx0Y29tcG9uZW50RGlkTW91bnQoKXtcblxuXG5cdFx0ZmV0Y2goJy9lbnYuanNvbicpLnRoZW4ocmVzcG9uc2UgPT4ge1xuXHRcdFx0aWYocmVzcG9uc2Uub2spXG5cdFx0XHRcdHJldHVybiByZXNwb25zZS5qc29uKCk7XG5cdFx0XHR0aHJvdyBuZXcgRXJyb3IocmVzcG9uc2UubWVzc2FnZSk7XG5cdFx0fSkudGhlbihjb25maWcgPT4ge1xuXHRcdFx0ZmlyZWJhc2UuaW5pdGlhbGl6ZUFwcChjb25maWcpO1xuXHRcdFx0ZmlyZWJhc2UuYXV0aCgpLm9uQXV0aFN0YXRlQ2hhbmdlZCh1c2VyID0+IHtcblx0XHRcdFx0dGhpcy5zZXRTdGF0ZSh7dXNlcn0pO1xuXHRcdFx0XHRpZih1c2VyKXtcblx0XHRcdFx0XHRjb25zdCB1c2VyUmVmID0gZmlyZWJhc2UuZGF0YWJhc2UoKS5yZWYoYHVzZXJzLyR7dXNlci51aWR9YCk7XG5cdFx0XHRcdFx0dXNlclJlZi5jaGlsZCgnbGFzdExvZ2dlZEluJykuc2V0KG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSk7XG5cblx0XHRcdFx0XHR1c2VyUmVmLm9uKCd2YWx1ZScsIHNuYXBzaG90ID0+IHtcblx0XHRcdFx0XHRcdGxldCB1c2VyRGF0YSA9IHNuYXBzaG90LnZhbCgpO1xuXHRcdFx0XHRcdFx0aWYodXNlckRhdGEpXG5cdFx0XHRcdFx0XHRcdHRoaXMuc2V0U3RhdGUoe3VzZXJEYXRhfSk7XG5cdFx0XHRcdFx0fSk7XG5cdFx0XHRcdH0gZWxzZSB7XG5cdFx0XHRcdFx0dGhpcy5zZXRTdGF0ZSh7dXNlckRhdGE6IG51bGx9KTtcblx0XHRcdFx0fVxuXHRcdFx0fSk7XG5cdFx0XHR0aGlzLnNldFN0YXRlKHtmaXJlYmFzZUNvbmZpZzogY29uZmlnfSk7XG5cdFx0XHR0aGlzLnN1YlRvUHJvbW90aW9ucygpO1xuXHRcdH0pLmNhdGNoKGVyciA9PiB7XG5cdFx0XHRjb25zb2xlLmVycm9yKGVycik7XG5cdFx0fSk7XG5cdH1cblxuXHRyZW5kZXIoKXtcblx0XHRyZXR1cm4gKFxuXHRcdFx0PGRpdiBjbGFzc05hbWU9XCJwcm9tb3Rpb25zXCI+XG5cdFx0XHRcdDxzdHlsZSBqc3g+XG5cdFx0XHRcdHtgXG5cdFx0XHRcdFx0LnByb21vdGlvbnMge1xuXHRcdFx0XHRcdFx0cG9zaXRpb246IHJlbGF0aXZlO1xuXHRcdFx0XHRcdFx0Ym94LXNpemluZzogYm9yZGVyLWJveDtcblx0XHRcdFx0XHRcdG1pbi1oZWlnaHQ6IDEwMCU7XG5cdFx0XHRcdFx0XHR3aWR0aDogMTAwJTtcblx0XHRcdFx0XHRcdHBhZGRpbmc6IDNlbSAxMCUgNmVtO1xuXHRcdFx0XHRcdFx0ZGlzcGxheTogZmxleDtcblx0XHRcdFx0XHRcdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG5cdFx0XHRcdFx0XHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcblx0XHRcdFx0XHRcdGFsaWduLWl0ZW1zOiBzdHJldGNoO1xuXHRcdFx0XHRcdH1cblx0XHRcdFx0YH1cblx0XHRcdFx0PC9zdHlsZT5cblxuXHRcdFx0XHR7dGhpcy5zdGF0ZS5maXJlYmFzZUNvbmZpZyAmJiA8U2lnbkluIHVzZXI9e3RoaXMuc3RhdGUudXNlcn0gLz59XG5cblx0XHR7IHRoaXMuc3RhdGUuYWN0aXZlUHJvbW90aW9uICYmIChcblx0XHRcdFx0PEFjdGl2ZVByb21vdGlvbiB1c2VyPXt0aGlzLnN0YXRlLnVzZXJ9IHVzZXJEYXRhPXt0aGlzLnN0YXRlLnVzZXJEYXRhfVxuXHRcdFx0XHRcdHsuLi50aGlzLnN0YXRlLnByb21vdGlvbnNbdGhpcy5zdGF0ZS5hY3RpdmVQcm9tb3Rpb25dfVxuXHRcdFx0XHRcdGNsb3NlPXt0aGlzLnVuc2V0QWN0aXZlUHJvbW90aW9ufSAvPlxuXHRcdCl9XG5cblx0XHR7XG5cdFx0XHRPYmplY3QudmFsdWVzKHRoaXMuc3RhdGUucHJvbW90aW9ucykubWFwKHByb21vdGlvbiA9PiAoXG5cdFx0XHRcdDxQcm9tb3Rpb24gdXNlcj17dGhpcy5zdGF0ZS51c2VyfSB1c2VyRGF0YT17dGhpcy5zdGF0ZS51c2VyRGF0YX1cblx0XHRcdFx0XHR7Li4ucHJvbW90aW9ufSBhY3RpdmF0ZT17dGhpcy5zZXRBY3RpdmVQcm9tb3Rpb259IC8+XG5cdFx0XHQpKVxuXHRcdH1cblx0XHRcdDwvZGl2PlxuXHRcdCk7XG5cdH1cblxuXHRzdWJUb1Byb21vdGlvbnMoKXtcblx0XHRjb25zdCBkYXRhYmFzZSA9IGZpcmViYXNlLmRhdGFiYXNlKCk7XG5cdFx0Y29uc3QgdG9kYXkgPSBuZXcgRGF0ZSgpO1xuXG5cdFx0dGhpcy5wcm9tb3Rpb25zUmVmID0gZGF0YWJhc2UucmVmKCcvcHJvbW90aW9ucycpXG5cdFx0XHQub3JkZXJCeUNoaWxkKCdzdGFydERhdGUnKS5lbmRBdChpc29EYXRlU3RyaW5nKHRvZGF5KSk7XG5cblx0XHR0aGlzLnByb21vdGlvbnNSZWYub24oJ2NoaWxkX2FkZGVkJywgc25hcHNob3QgPT4ge1xuXHRcdFx0Y29uc3QgcHJvbW90aW9uID0gc25hcHNob3QudmFsKCk7XG5cdFx0XHRwcm9tb3Rpb24uaWQgPSBzbmFwc2hvdC5rZXk7XG5cblx0XHRcdGlmKHByb21vdGlvbklzQWN0aXZlKHByb21vdGlvbikpXG5cdFx0XHRcdHRoaXMuc2V0U3RhdGUocHJldlN0YXRlID0+IHtcblx0XHRcdFx0XHRsZXQgcHJvbW90aW9ucyA9IE9iamVjdC5hc3NpZ24oe30sIHByZXZTdGF0ZS5wcm9tb3Rpb25zKTtcblx0XHRcdFx0XHRwcm9tb3Rpb25zW3Byb21vdGlvbi5pZF0gPSBwcm9tb3Rpb247XG5cblx0XHRcdFx0XHRyZXR1cm4ge1xuXHRcdFx0XHRcdFx0cHJvbW90aW9uc1xuXHRcdFx0XHRcdH07XG5cdFx0XHRcdH0pO1xuXHRcdH0pO1xuXG5cdFx0dGhpcy5wcm9tb3Rpb25zUmVmLm9uKCdjaGlsZF9jaGFuZ2VkJywgc25hcHNob3QgPT4ge1xuXHRcdFx0Y29uc3QgcHJvbW90aW9uID0gc25hcHNob3QudmFsKCk7XG5cdFx0XHRwcm9tb3Rpb24uaWQgPSBzbmFwc2hvdC5rZXk7XG5cdFx0XHR0aGlzLnNldFN0YXRlKHByZXZTdGF0ZSA9PiB7XG5cdFx0XHRcdGxldCBwcm9tb3Rpb25zID0gT2JqZWN0LmFzc2lnbih7fSwgcHJldlN0YXRlLnByb21vdGlvbnMpO1xuXG5cdFx0XHRcdGlmKHByb21vdGlvbklzQWN0aXZlKHByb21vdGlvbikpXG5cdFx0XHRcdFx0cHJvbW90aW9uc1twcm9tb3Rpb24uaWRdID0gcHJvbW90aW9uO1xuXHRcdFx0XHRlbHNlIGlmKHByb21vdGlvbnNbcHJvbW90aW9uLmlkXSlcblx0XHRcdFx0XHRkZWxldGUgcHJvbW90aW9uc1twcm9tb3Rpb24uaWRdO1xuXG5cdFx0XHRcdHJldHVybiB7XG5cdFx0XHRcdFx0cHJvbW90aW9uc1xuXHRcdFx0XHR9O1xuXHRcdFx0fSk7XG5cdFx0fSk7XG5cblx0XHR0aGlzLnByb21vdGlvbnNSZWYub24oJ2NoaWxkX3JlbW92ZWQnLCBzbmFwc2hvdCA9PiB7XG5cdFx0XHRjb25zdCBwcm9tb3Rpb25JZCA9IHNuYXBzaG90LmtleTtcblx0XHRcdHRoaXMuc2V0U3RhdGUocHJldlN0YXRlID0+IHtcblx0XHRcdFx0aWYocHJldlN0YXRlLnByb21vdGlvbnNbcHJvbW90aW9uSWRdKXtcblx0XHRcdFx0XHRsZXQgcHJvbW90aW9ucyA9IE9iamVjdC5hc3NpZ24oe30sIHByZXZTdGF0ZS5wcm9tb3Rpb25zKTtcblx0XHRcdFx0XHRkZWxldGUgcHJvbW90aW9uc1twcm9tb3Rpb25JZF07XG5cblx0XHRcdFx0XHRyZXR1cm4ge1xuXHRcdFx0XHRcdFx0cHJvbW90aW9uc1xuXHRcdFx0XHRcdH07XG5cdFx0XHRcdH1cblx0XHRcdH0pO1xuXHRcdH0pO1xuXHR9XG5cblx0c2V0QWN0aXZlUHJvbW90aW9uKGFjdGl2ZVByb21vdGlvbil7XG5cdFx0aWYoIWlzUHJvbW90aW9uUmVkZWVtZWQoYWN0aXZlUHJvbW90aW9uLCB0aGlzLnN0YXRlLnVzZXJEYXRhKSlcblx0XHRcdHRoaXMuc2V0U3RhdGUoe2FjdGl2ZVByb21vdGlvbn0pO1xuXHR9XG5cblx0dW5zZXRBY3RpdmVQcm9tb3Rpb24oKXtcblx0XHR0aGlzLnNldFN0YXRlKHthY3RpdmVQcm9tb3Rpb246IG51bGx9KTtcblx0fVxuXG5cdGNvbXBvbmVudFdpbGxVbm1vdW50KCl7XG5cdFx0aWYodGhpcy5wcm9tb3Rpb25zUmVmKVxuXHRcdFx0dGhpcy5wcm9tb3Rpb25zUmVmLm9mZignY2hpbGRfYWRkZWQnKTtcblx0fVxufVxuXG5mdW5jdGlvbiBwcm9tb3Rpb25Jc0FjdGl2ZShwcm9tb3Rpb24pe1xuXHRjb25zdCB0b2RheSA9IG5ldyBEYXRlKCk7XG5cdGNvbnN0IHByb21vdGlvblN0YXJ0ID0gbmV3IERhdGUocHJvbW90aW9uLnN0YXJ0RGF0ZSk7XG5cdGNvbnN0IHByb21vdGlvbkVuZCA9IG5ldyBEYXRlKHByb21vdGlvbi5lbmREYXRlKTtcblx0cmV0dXJuIHByb21vdGlvblN0YXJ0IDw9IHRvZGF5ICYmIHByb21vdGlvbkVuZCA+PSB0b2RheTtcbn1cbiJdfQ== */\n/*@ sourceURL=_js/components/Promotions.js */'
+				}),
 				this.state.firebaseConfig && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(__WEBPACK_IMPORTED_MODULE_5__SignIn_js__["a" /* default */], { user: this.state.user }),
 				this.state.activePromotion && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(__WEBPACK_IMPORTED_MODULE_4__ActivePromotion_js__["a" /* default */], _extends({ user: this.state.user, userData: this.state.userData
 				}, this.state.promotions[this.state.activePromotion], {
@@ -1818,15 +3829,15 @@ function promotionIsActive(promotion) {
 }
 
 /***/ }),
-/* 33 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_preact__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -1864,11 +3875,10 @@ var SignIn = function (_Component) {
 				'div',
 				{ className: 'sign-in', 'data-jsx': 1055803004
 				},
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
-					'style',
-					{ jsx: true },
-					'\n\t\t\t\t\t.sign-in {\n\t\t\t\t\t\tposition: absolute;\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t\tbottom: 3em;\n\t\t\t\t\t\tleft: 50%;\n\t\t\t\t\t\ttransform: translateX(-50%);\n\t\t\t\t\t}\n\t\t\t\t'
-				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
+					styleId: 1055803004,
+					css: '.sign-in[data-jsx="1055803004"] {position: absolute;text-align: center;bottom: 3em;left: 50%;-webkit-transform: translateX(-50%);-moz-transform: translateX(-50%);-ms-transform: translateX(-50%);transform: translateX(-50%);}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9qcy9jb21wb25lbnRzL1NpZ25Jbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFrQkssQUFDVSxpQ0FDVSxtQkFDQSxtQkFDUCxZQUNGLFVBQ2tCLGlJQUM1QiIsImZpbGUiOiJfanMvY29tcG9uZW50cy9TaWduSW4uanMiLCJzb3VyY2VSb290IjoiL2hvbWUvbWlzY2hrYS9wcm9qZWN0cy9jb3lvdGUtZ3JpbGwiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBoLCBDb21wb25lbnQgfSBmcm9tICdwcmVhY3QnO1xuaW1wb3J0IGZpcmViYXNlIGZyb20gJ2ZpcmViYXNlJztcblxuLy8gVE9ETzogU3RvcmUgYXV0aCB0eXBlIGFuZCBvbmx5IGFsbG93IHRoYXQgdHlwZSBhZnRlcndhcmRcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgU2lnbkluIGV4dGVuZHMgQ29tcG9uZW50IHtcblx0Y29uc3RydWN0b3IoKXtcblx0XHRzdXBlcigpO1xuXG5cdFx0dGhpcy5zaWduT3V0ID0gdGhpcy5zaWduT3V0LmJpbmQodGhpcyk7XG5cdFx0dGhpcy5nb29nbGVTaWduSW4gPSB0aGlzLmdvb2dsZVNpZ25Jbi5iaW5kKHRoaXMpO1xuXHRcdHRoaXMuZmFjZWJvb2tTaWduSW4gPSB0aGlzLmZhY2Vib29rU2lnbkluLmJpbmQodGhpcyk7XG5cdH1cblxuXHRyZW5kZXIoKXtcblx0XHRyZXR1cm4gKFxuXHRcdFx0PGRpdiBjbGFzc05hbWU9XCJzaWduLWluXCI+XG5cdFx0XHRcdDxzdHlsZSBqc3g+XG5cdFx0XHRcdHtgXG5cdFx0XHRcdFx0LnNpZ24taW4ge1xuXHRcdFx0XHRcdFx0cG9zaXRpb246IGFic29sdXRlO1xuXHRcdFx0XHRcdFx0dGV4dC1hbGlnbjogY2VudGVyO1xuXHRcdFx0XHRcdFx0Ym90dG9tOiAzZW07XG5cdFx0XHRcdFx0XHRsZWZ0OiA1MCU7XG5cdFx0XHRcdFx0XHR0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTUwJSk7XG5cdFx0XHRcdFx0fVxuXHRcdFx0XHRgfVxuXHRcdFx0XHQ8L3N0eWxlPlxuXHR7XG5cdFx0dGhpcy5wcm9wcy51c2VyXG5cdFx0XHQ/IChcblx0XHRcdFx0PGJ1dHRvbiB0eXBlPVwiYnV0dG9uXCIgb25DbGljaz17dGhpcy5zaWduT3V0fT5cblx0XHRcdFx0XHRTaWduIG91dFxuXHRcdFx0XHQ8L2J1dHRvbj5cblx0XHRcdClcblx0XHRcdDogKFxuXHRcdFx0XHQ8YnV0dG9uIHR5cGU9XCJidXR0b25cIiBvbkNsaWNrPXt0aGlzLmZhY2Vib29rU2lnbklufT5cblx0XHRcdFx0XHRGYWNlYm9va1xuXHRcdFx0XHQ8L2J1dHRvbj5cblx0XHRcdClcblxuXHR9XG5cdFx0XHQ8L2Rpdj5cblx0XHQpO1xuXHR9XG5cblx0c2lnbk91dCgpe1xuXHRcdGZpcmViYXNlLmF1dGgoKS5zaWduT3V0KCk7XG5cdH1cblxuXHRnb29nbGVTaWduSW4oKXtcblx0XHRjb25zdCBwcm92aWRlciA9IG5ldyBmaXJlYmFzZS5hdXRoLkdvb2dsZUF1dGhQcm92aWRlcigpO1xuXHRcdGZpcmViYXNlLmF1dGgoKS5zaWduSW5XaXRoUmVkaXJlY3QocHJvdmlkZXIpO1xuXHR9XG5cblx0ZmFjZWJvb2tTaWduSW4oKXtcblx0XHRjb25zdCBwcm92aWRlciA9IG5ldyBmaXJlYmFzZS5hdXRoLkZhY2Vib29rQXV0aFByb3ZpZGVyKCk7XG5cdFx0ZmlyZWJhc2UuYXV0aCgpLnNpZ25JbldpdGhSZWRpcmVjdChwcm92aWRlcik7XG5cdH1cbn1cblxuU2lnbkluLnByb3BUeXBlcyA9IHtcblx0dXNlcjogT2JqZWN0XG59O1xuIl19 */\n/*@ sourceURL=_js/components/SignIn.js */'
+				}),
 				this.props.user ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(
 					'button',
 					{ type: 'button', onClick: this.signOut, 'data-jsx': 1055803004
@@ -1912,7 +3922,7 @@ SignIn.propTypes = {
 };
 
 /***/ }),
-/* 34 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1925,41 +3935,54 @@ var BREAKPOINTS = {
 };
 
 /***/ }),
-/* 35 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 42 */
+/***/ (function(module, exports) {
 
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = isoDateString;
-/* harmony export (immutable) */ __webpack_exports__["b"] = isPromotionRedeemed;
-function isoDateString(date) {
-	var isoString = date.toISOString();
-	return isoString.substring(0, isoString.indexOf('T'));
-}
+(function() {
+  var colors = {
+    aqua:    '#7fdbff',
+    blue:    '#0074d9',
+    lime:    '#01ff70',
+    navy:    '#001f3f',
+    teal:    '#39cccc',
+    olive:   '#3d9970',
+    green:   '#2ecc40',
+    red:     '#ff4136',
+    maroon:  '#85144b',
+    orange:  '#ff851b',
+    purple:  '#b10dc9',
+    yellow:  '#ffdc00',
+    fuchsia: '#f012be',
+    gray:    '#aaaaaa',
+    white:   '#ffffff',
+    black:   '#111111',
+    silver:  '#dddddd'
+  };
 
-function isPromotionRedeemed(id, userData) {
-	return userData && userData.redeemedPromotions && userData.redeemedPromotions[id] && userData.redeemedPromotions[id].redeemed;
-}
+  if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+    module.exports = colors;
+  } else {
+    window.colors = colors;
+  }
+})();
+
 
 /***/ }),
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */
+/* 43 */,
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var $isNaN = __webpack_require__(15);
-var $isFinite = __webpack_require__(14);
+var $isNaN = __webpack_require__(22);
+var $isFinite = __webpack_require__(21);
 
-var sign = __webpack_require__(17);
-var mod = __webpack_require__(16);
+var sign = __webpack_require__(24);
+var mod = __webpack_require__(23);
 
-var IsCallable = __webpack_require__(8);
-var toPrimitive = __webpack_require__(45);
+var IsCallable = __webpack_require__(17);
+var toPrimitive = __webpack_require__(48);
 
 // https://es5.github.io/#x9
 var ES5 = {
@@ -2039,7 +4062,7 @@ module.exports = ES5;
 
 
 /***/ }),
-/* 42 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2049,17 +4072,17 @@ var toStr = Object.prototype.toString;
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol';
 var symbolToStr = hasSymbols ? Symbol.prototype.toString : toStr;
 
-var $isNaN = __webpack_require__(15);
-var $isFinite = __webpack_require__(14);
+var $isNaN = __webpack_require__(22);
+var $isFinite = __webpack_require__(21);
 var MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || Math.pow(2, 53) - 1;
 
-var assign = __webpack_require__(13);
-var sign = __webpack_require__(17);
-var mod = __webpack_require__(16);
-var isPrimitive = __webpack_require__(44);
-var toPrimitive = __webpack_require__(46);
+var assign = __webpack_require__(20);
+var sign = __webpack_require__(24);
+var mod = __webpack_require__(23);
+var isPrimitive = __webpack_require__(47);
+var toPrimitive = __webpack_require__(49);
 var parseInteger = parseInt;
-var bind = __webpack_require__(7);
+var bind = __webpack_require__(15);
 var strSlice = bind.call(Function.call, String.prototype.slice);
 var isBinary = bind.call(Function.call, RegExp.prototype.test, /^0b[01]+$/i);
 var isOctal = bind.call(Function.call, RegExp.prototype.test, /^0o[0-7]+$/i);
@@ -2082,9 +4105,9 @@ var trim = function (value) {
 	return replace(value, trimRegex, '');
 };
 
-var ES5 = __webpack_require__(41);
+var ES5 = __webpack_require__(44);
 
-var hasRegExpMatcher = __webpack_require__(66);
+var hasRegExpMatcher = __webpack_require__(68);
 
 // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-abstract-operations
 var ES6 = assign(assign({}, ES5), {
@@ -2307,14 +4330,14 @@ module.exports = ES6;
 
 
 /***/ }),
-/* 43 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var ES6 = __webpack_require__(42);
-var assign = __webpack_require__(13);
+var ES6 = __webpack_require__(45);
+var assign = __webpack_require__(20);
 
 var ES7 = assign(ES6, {
 	// https://github.com/tc39/ecma262/pull/60
@@ -2330,7 +4353,7 @@ module.exports = ES7;
 
 
 /***/ }),
-/* 44 */
+/* 47 */
 /***/ (function(module, exports) {
 
 module.exports = function isPrimitive(value) {
@@ -2339,7 +4362,7 @@ module.exports = function isPrimitive(value) {
 
 
 /***/ }),
-/* 45 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2347,9 +4370,9 @@ module.exports = function isPrimitive(value) {
 
 var toStr = Object.prototype.toString;
 
-var isPrimitive = __webpack_require__(18);
+var isPrimitive = __webpack_require__(25);
 
-var isCallable = __webpack_require__(8);
+var isCallable = __webpack_require__(17);
 
 // https://es5.github.io/#x8.12
 var ES5internalSlots = {
@@ -2383,7 +4406,7 @@ module.exports = function ToPrimitive(input, PreferredType) {
 
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2391,10 +4414,10 @@ module.exports = function ToPrimitive(input, PreferredType) {
 
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol';
 
-var isPrimitive = __webpack_require__(18);
-var isCallable = __webpack_require__(8);
-var isDate = __webpack_require__(65);
-var isSymbol = __webpack_require__(67);
+var isPrimitive = __webpack_require__(25);
+var isCallable = __webpack_require__(17);
+var isDate = __webpack_require__(67);
+var isSymbol = __webpack_require__(69);
 
 var ordinaryToPrimitive = function OrdinaryToPrimitive(O, hint) {
 	if (typeof O === 'undefined' || O === null) {
@@ -2464,10 +4487,10 @@ module.exports = function ToPrimitive(input, PreferredType) {
 
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {var firebase = __webpack_require__(3);
+/* WEBPACK VAR INJECTION */(function(global) {var firebase = __webpack_require__(5);
 (function(){
 /*! @license Firebase v3.6.6
     Build: 3.6.6-rc.3
@@ -2709,13 +4732,13 @@ a,function(a,c){if("create"===a)try{c.auth()}catch(d){}});firebase.INTERNAL.exte
 }).call(global);
 module.exports = firebase.auth;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 48 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {var firebase = __webpack_require__(3);
+/* WEBPACK VAR INJECTION */(function(global) {var firebase = __webpack_require__(5);
 (function(){
 /*! @license Firebase v3.6.6
     Build: 3.6.6-rc.3
@@ -2980,13 +5003,13 @@ d;return d.Ya},{Reference:U,Query:X,Database:Se,enableLogging:xc,INTERNAL:Y,TEST
 }).call(global);
 module.exports = firebase.database;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {var firebase = __webpack_require__(3);
+/* WEBPACK VAR INJECTION */(function(global) {var firebase = __webpack_require__(5);
 (function(){
 /*! @license Firebase v3.6.6
     Build: 3.6.6-rc.3
@@ -3026,13 +5049,13 @@ var U=function(a){"serviceWorker"in navigator&&navigator.serviceWorker.addEventL
 }).call(global);
 module.exports = firebase.messaging;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 50 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {var firebase = __webpack_require__(3);
+/* WEBPACK VAR INJECTION */(function(global) {var firebase = __webpack_require__(5);
 (function(){
 /*! @license Firebase v3.6.6
     Build: 3.6.6-rc.3
@@ -3085,12 +5108,9 @@ x.RUNNING="running";x.PAUSED="paused";x.SUCCESS="success";x.CANCELED="canceled";
 }).call(global);
 module.exports = firebase.storage;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 51 */,
-/* 52 */,
-/* 53 */,
 /* 54 */,
 /* 55 */,
 /* 56 */,
@@ -3098,7 +5118,10 @@ module.exports = firebase.storage;
 /* 58 */,
 /* 59 */,
 /* 60 */,
-/* 61 */
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */
 /***/ (function(module, exports) {
 
 
@@ -3126,7 +5149,7 @@ module.exports = function forEach (obj, fn, ctx) {
 
 
 /***/ }),
-/* 62 */
+/* 65 */
 /***/ (function(module, exports) {
 
 var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
@@ -3180,17 +5203,16 @@ module.exports = function bind(that) {
 
 
 /***/ }),
-/* 63 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var bind = __webpack_require__(7);
+var bind = __webpack_require__(15);
 
 module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
 
 
 /***/ }),
-/* 64 */,
-/* 65 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3217,7 +5239,7 @@ module.exports = function isDateObject(value) {
 
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3243,7 +5265,7 @@ module.exports = function isRegex(value) {
 
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3277,7 +5299,7 @@ if (hasSymbols) {
 
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3287,7 +5309,7 @@ if (hasSymbols) {
 var has = Object.prototype.hasOwnProperty;
 var toStr = Object.prototype.toString;
 var slice = Array.prototype.slice;
-var isArgs = __webpack_require__(69);
+var isArgs = __webpack_require__(71);
 var isEnumerable = Object.prototype.propertyIsEnumerable;
 var hasDontEnumBug = !isEnumerable.call({ toString: null }, 'toString');
 var hasProtoEnumBug = isEnumerable.call(function () {}, 'prototype');
@@ -3424,7 +5446,7 @@ module.exports = keysShim;
 
 
 /***/ }),
-/* 69 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3448,17 +5470,17 @@ module.exports = function isArguments(value) {
 
 
 /***/ }),
-/* 70 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var define = __webpack_require__(12);
+var define = __webpack_require__(19);
 
-var implementation = __webpack_require__(20);
-var getPolyfill = __webpack_require__(21);
-var shim = __webpack_require__(71);
+var implementation = __webpack_require__(27);
+var getPolyfill = __webpack_require__(28);
+var shim = __webpack_require__(73);
 
 var polyfill = getPolyfill();
 
@@ -3472,14 +5494,14 @@ module.exports = polyfill;
 
 
 /***/ }),
-/* 71 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var getPolyfill = __webpack_require__(21);
-var define = __webpack_require__(12);
+var getPolyfill = __webpack_require__(28);
+var define = __webpack_require__(19);
 
 module.exports = function shimEntries() {
 	var polyfill = getPolyfill();
@@ -3493,9 +5515,8 @@ module.exports = function shimEntries() {
 
 
 /***/ }),
-/* 72 */,
-/* 73 */,
-/* 74 */
+/* 74 */,
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3507,7 +5528,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-var _object = __webpack_require__(70);
+var _object = __webpack_require__(72);
 
 var _object2 = _interopRequireDefault(_object);
 
@@ -3653,7 +5674,7 @@ function makeStyleTag(str) {
 }
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3669,7 +5690,7 @@ exports.flush = flush;
 
 var _react = __webpack_require__(2);
 
-var _render = __webpack_require__(74);
+var _render = __webpack_require__(75);
 
 var _render2 = _interopRequireDefault(_render);
 
@@ -3786,13 +5807,13 @@ function doRender() {
 }
 
 /***/ }),
-/* 76 */,
 /* 77 */,
-/* 78 */
+/* 78 */,
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(29);
-module.exports = __webpack_require__(28);
+__webpack_require__(36);
+module.exports = __webpack_require__(35);
 
 
 /***/ })

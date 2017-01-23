@@ -1,7 +1,10 @@
 import { h, Component } from 'preact';
 import firebase from 'firebase';
+import Color from 'color';
+import * as colors from 'colors.css';
 
 import { isPromotionRedeemed } from '../utils.js';
+import { BREAKPOINTS } from '../constants.js';
 
 export default class ActivePromotion extends Component {
 	constructor(){
@@ -25,9 +28,9 @@ export default class ActivePromotion extends Component {
 		const style = {
 			backgroundColor: redeemed
 				? this.state.redeemed
-					? 'rgba(0, 255, 0, 0.5)'
-					: 'rgba(255, 0, 0, 0.5)'
-				: 'rgba(255, 255, 255, 0.3)'
+					? Color(colors.green).alpha(0.95).rgb().string()
+					: Color(colors.red).alpha(0.95).rgb().string()
+				: 'rgba(64, 64, 64, 0.95)'
 		};
 
 		return (
@@ -56,6 +59,34 @@ export default class ActivePromotion extends Component {
 
 					h2 {
 						text-align: center;
+						margin: 0;
+					}
+
+					img {
+						width: 20%;
+						height: auto;
+						margin: 2em;
+					}
+
+					.info-container,
+					.redeem-container {
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+						align-items: center;
+						text-align: center;
+					}
+
+					p {
+						text-align: center;
+						margin: 0.5em 2em;
+						font-size: 0.75em;
+					}
+
+					@media (min-width: ${BREAKPOINTS.SMALL_DESKTOP}px) {
+						p {
+							font-size: 1em;
+						}
 					}
 
 					.button {
@@ -64,7 +95,9 @@ export default class ActivePromotion extends Component {
 						border: 2px solid;
 						outline: none;
 						cursor: pointer;
+						color: white;
 						font-size: 1em;
+						padding: 0.25em 1em;
 					}
 
 					.redeem-button {
@@ -72,6 +105,7 @@ export default class ActivePromotion extends Component {
 						border-color: rgba(255, 255, 255, 0.5);
 						background-clip: padding-box;
 						padding: 0.25em 1em;
+						margin: 1em 0;
 					}
 
 					.redeem-button:hover {
@@ -87,6 +121,18 @@ export default class ActivePromotion extends Component {
 						cursor: not-allowed;
 					}
 
+					.close-button {
+						background: transparent;
+						background-clip: padding-box;
+						border-color: rgba(255, 255, 255, 0.5);
+						color: rgba(255, 255, 255, 0.5);
+					}
+
+					.close-button:hover {
+						background: rgba(255, 255, 255, 0.2);
+						background-clip: padding-box;
+					}
+
 				`}
 				</style>
 				<h2>{this.props.title}</h2>
@@ -94,25 +140,37 @@ export default class ActivePromotion extends Component {
 	{
 		redeemed
 			? (
-				<span>
+				<div className="info-container">
+					<span>
 		{
 			this.state.redeemed
-				? 'Redeemed successfully'
+				? 'Promotion redeemed successfully'
 				: 'This promotion has already been redeemed'
 		}
-				</span>
+					</span>
+					<img alt="" src={`/images/icons/${this.state.redeemed
+						? 'checkmark' : 'x-mark'}.svg`} width="300" height="300" />
+				</div>
 			)
 			: (
-				<button type="button" className="button"
-						onClick={this.redeem}>
-					Redeem
-				</button>
-
+				<div className="redeem-container">
+					<p>
+						Promotions must be redeemed in front of a bartender.
+						Are you sure you want to redeem this now?
+					</p>
+					<button type="button" className="button redeem-button"
+							onClick={this.redeem}>
+						Redeem
+					</button>
+					<p>
+						This can't be undone.
+					</p>
+				</div>
 			)
 	}
 
 
-				<button type="button" className="button"
+				<button type="button" className="button close-button"
 						onClick={this.props.close}>
 					Close
 				</button>
