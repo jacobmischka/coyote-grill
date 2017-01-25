@@ -2,8 +2,8 @@
   "errors": [],
   "warnings": [],
   "version": "2.2.0",
-  "hash": "1dd28b8da4ac5b67f8cf",
-  "time": 260,
+  "hash": "066bb9800320bb6f326b",
+  "time": 1562,
   "publicPath": "/js/",
   "assetsByChunkName": {
     "promotions": [
@@ -18,7 +18,7 @@
   "assets": [
     {
       "name": "promotions.js",
-      "size": 483082,
+      "size": 483032,
       "chunks": [
         0
       ],
@@ -37,7 +37,18 @@
       "chunkNames": [
         "bundle"
       ],
-      "emitted": false
+      "emitted": true
+    },
+    {
+      "name": "promotions.js.map",
+      "size": 567848,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "promotions"
+      ],
+      "emitted": true
     },
     {
       "name": "bundle.js.map",
@@ -47,17 +58,6 @@
       ],
       "chunkNames": [
         "bundle"
-      ],
-      "emitted": false
-    },
-    {
-      "name": "promotions.js.map",
-      "size": 568023,
-      "chunks": [
-        0
-      ],
-      "chunkNames": [
-        "promotions"
       ],
       "emitted": true
     }
@@ -90,7 +90,7 @@
       "initial": true,
       "entry": true,
       "extraAsync": false,
-      "size": 468538,
+      "size": 468573,
       "names": [
         "promotions"
       ],
@@ -98,7 +98,7 @@
         "promotions.js",
         "promotions.js.map"
       ],
-      "hash": "6a855b51ffdfdf996885",
+      "hash": "552084b6f078a7246d00",
       "parents": [],
       "origins": [
         {
@@ -114,7 +114,7 @@
     },
     {
       "id": 1,
-      "rendered": false,
+      "rendered": true,
       "initial": true,
       "entry": true,
       "extraAsync": false,
@@ -126,7 +126,7 @@
         "bundle.js",
         "bundle.js.map"
       ],
-      "hash": "0771204623adec124a6d",
+      "hash": "641f73ef8934d05d02a6",
       "parents": [],
       "origins": [
         {
@@ -150,7 +150,7 @@
       "index2": 15,
       "size": 5873,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -250,7 +250,7 @@
       "index2": 19,
       "size": 22546,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -341,7 +341,7 @@
       "index2": 32,
       "size": 23349,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -349,14 +349,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/preact/devtools.js",
-      "issuerId": 36,
+      "issuerId": 37,
       "issuerName": "./~/preact/devtools.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 35,
+          "moduleId": 36,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/promotions/index.js",
           "module": "./_js/promotions/index.js",
           "moduleName": "./_js/promotions/index.js",
@@ -365,7 +365,7 @@
           "loc": "1:0-35"
         },
         {
-          "moduleId": 36,
+          "moduleId": 37,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/preact/devtools.js",
           "module": "./~/preact/devtools.js",
           "moduleName": "./~/preact/devtools.js",
@@ -374,7 +374,7 @@
           "loc": "2:73-90"
         },
         {
-          "moduleId": 37,
+          "moduleId": 38,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/ActivePromotion.js",
           "module": "./_js/components/ActivePromotion.js",
           "moduleName": "./_js/components/ActivePromotion.js",
@@ -383,7 +383,7 @@
           "loc": "11:0-38"
         },
         {
-          "moduleId": 38,
+          "moduleId": 39,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotion.js",
           "module": "./_js/components/Promotion.js",
           "moduleName": "./_js/components/Promotion.js",
@@ -392,7 +392,7 @@
           "loc": "11:0-38"
         },
         {
-          "moduleId": 39,
+          "moduleId": 40,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
           "module": "./_js/components/Promotions.js",
           "moduleName": "./_js/components/Promotions.js",
@@ -401,7 +401,7 @@
           "loc": "13:0-38"
         },
         {
-          "moduleId": 40,
+          "moduleId": 41,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/SignIn.js",
           "module": "./_js/components/SignIn.js",
           "moduleName": "./_js/components/SignIn.js",
@@ -432,7 +432,7 @@
       "index2": 7,
       "size": 16750,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -479,7 +479,7 @@
       "index2": 3,
       "size": 4599,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -526,7 +526,7 @@
       "index2": 65,
       "size": 16409,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -599,16 +599,16 @@
       "index2": 64,
       "size": 509,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
         0
       ],
       "assets": [],
-      "issuer": "/home/mischka/projects/coyote-grill/node_modules/firebase/app.js",
-      "issuerId": 5,
-      "issuerName": "./~/firebase/app.js",
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/firebase/auth.js",
+      "issuerId": 50,
+      "issuerName": "./~/firebase/auth.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -672,7 +672,7 @@
       "index2": 63,
       "size": 41,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -680,14 +680,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
-      "issuerId": 39,
+      "issuerId": 40,
       "issuerName": "./_js/components/Promotions.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 37,
+          "moduleId": 38,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/ActivePromotion.js",
           "module": "./_js/components/ActivePromotion.js",
           "moduleName": "./_js/components/ActivePromotion.js",
@@ -696,7 +696,7 @@
           "loc": "3:0-41"
         },
         {
-          "moduleId": 38,
+          "moduleId": 39,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotion.js",
           "module": "./_js/components/Promotion.js",
           "moduleName": "./_js/components/Promotion.js",
@@ -705,7 +705,7 @@
           "loc": "3:0-41"
         },
         {
-          "moduleId": 39,
+          "moduleId": 40,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
           "module": "./_js/components/Promotions.js",
           "moduleName": "./_js/components/Promotions.js",
@@ -714,7 +714,7 @@
           "loc": "5:0-41"
         },
         {
-          "moduleId": 40,
+          "moduleId": 41,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/SignIn.js",
           "module": "./_js/components/SignIn.js",
           "moduleName": "./_js/components/SignIn.js",
@@ -738,7 +738,7 @@
       "index2": 71,
       "size": 315,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -746,14 +746,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
-      "issuerId": 39,
+      "issuerId": 40,
       "issuerName": "./_js/components/Promotions.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 37,
+          "moduleId": 38,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/ActivePromotion.js",
           "module": "./_js/components/ActivePromotion.js",
           "moduleName": "./_js/components/ActivePromotion.js",
@@ -762,7 +762,7 @@
           "loc": "16:0-50"
         },
         {
-          "moduleId": 38,
+          "moduleId": 39,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotion.js",
           "module": "./_js/components/Promotion.js",
           "moduleName": "./_js/components/Promotion.js",
@@ -771,7 +771,7 @@
           "loc": "13:0-50"
         },
         {
-          "moduleId": 39,
+          "moduleId": 40,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
           "module": "./_js/components/Promotions.js",
           "moduleName": "./_js/components/Promotions.js",
@@ -799,7 +799,7 @@
       "index2": 9,
       "size": 1725,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -837,7 +837,7 @@
       "index2": 8,
       "size": 2226,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -875,7 +875,7 @@
       "index2": 6,
       "size": 4925,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -913,7 +913,7 @@
       "index2": 10,
       "size": 10907,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -922,14 +922,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/bundle/header.js",
-      "issuerId": 33,
+      "issuerId": 34,
       "issuerName": "./_js/bundle/header.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 33,
+          "moduleId": 34,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/bundle/header.js",
           "module": "./_js/bundle/header.js",
           "moduleName": "./_js/bundle/header.js",
@@ -938,7 +938,7 @@
           "loc": "1:0-26"
         },
         {
-          "moduleId": 37,
+          "moduleId": 38,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/ActivePromotion.js",
           "module": "./_js/components/ActivePromotion.js",
           "moduleName": "./_js/components/ActivePromotion.js",
@@ -962,7 +962,7 @@
       "index2": 12,
       "size": 2596,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -986,7 +986,7 @@
           "loc": "7:4-16:6"
         },
         {
-          "moduleId": 30,
+          "moduleId": 31,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/unipointer/unipointer.js",
           "module": "./~/unipointer/unipointer.js",
           "moduleName": "./~/unipointer/unipointer.js",
@@ -1017,7 +1017,7 @@
       "index2": 70,
       "size": 259,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1025,42 +1025,44 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
-      "issuerId": 39,
+      "issuerId": 40,
       "issuerName": "./_js/components/Promotions.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 37,
+          "moduleId": 38,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/ActivePromotion.js",
           "module": "./_js/components/ActivePromotion.js",
           "moduleName": "./_js/components/ActivePromotion.js",
           "type": "harmony import",
           "userRequest": "firebase",
-          "loc": "12:0-32"
+          "loc": "12:0-37"
         },
         {
-          "moduleId": 39,
+          "moduleId": 40,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
           "module": "./_js/components/Promotions.js",
           "moduleName": "./_js/components/Promotions.js",
           "type": "harmony import",
           "userRequest": "firebase",
-          "loc": "14:0-32"
+          "loc": "14:0-37"
         },
         {
-          "moduleId": 40,
+          "moduleId": 41,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/SignIn.js",
           "module": "./_js/components/SignIn.js",
           "moduleName": "./_js/components/SignIn.js",
           "type": "harmony import",
           "userRequest": "firebase",
-          "loc": "12:0-32"
+          "loc": "12:0-37"
         }
       ],
       "usedExports": [
-        "default"
+        "initializeApp",
+        "auth",
+        "database"
       ],
       "providedExports": null,
       "depth": 3,
@@ -1074,7 +1076,7 @@
       "index2": 50,
       "size": 111,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1082,14 +1084,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/object.entries/implementation.js",
-      "issuerId": 27,
+      "issuerId": 28,
       "issuerName": "./~/object.entries/implementation.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 27,
+          "moduleId": 28,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/object.entries/implementation.js",
           "module": "./~/object.entries/implementation.js",
           "moduleName": "./~/object.entries/implementation.js",
@@ -1129,7 +1131,7 @@
       "index2": 4,
       "size": 333,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1167,7 +1169,7 @@
       "index2": 45,
       "size": 1250,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1222,7 +1224,7 @@
       "index2": 5,
       "size": 571,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1254,13 +1256,63 @@
     },
     {
       "id": 19,
+      "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/constants.js",
+      "name": "./_js/constants.js",
+      "index": 76,
+      "index2": 72,
+      "size": 118,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotion.js",
+      "issuerId": 39,
+      "issuerName": "./_js/components/Promotion.js",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 38,
+          "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/ActivePromotion.js",
+          "module": "./_js/components/ActivePromotion.js",
+          "moduleName": "./_js/components/ActivePromotion.js",
+          "type": "harmony import",
+          "userRequest": "../constants.js",
+          "loc": "17:0-46"
+        },
+        {
+          "moduleId": 39,
+          "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotion.js",
+          "module": "./_js/components/Promotion.js",
+          "moduleName": "./_js/components/Promotion.js",
+          "type": "harmony import",
+          "userRequest": "../constants.js",
+          "loc": "14:0-46"
+        }
+      ],
+      "usedExports": [
+        "BREAKPOINTS"
+      ],
+      "providedExports": [
+        "BREAKPOINTS"
+      ],
+      "depth": 4,
+      "source": "export var BREAKPOINTS = {\n\tVERY_SMALL_SCREEN: 550,\n\tSMALL_DESKTOP: 768,\n\tMEDIUM_DESKTOP: 992,\n\tLARGE_DESKTOP: 1200\n};"
+    },
+    {
+      "id": 20,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/define-properties/index.js",
       "name": "./~/define-properties/index.js",
       "index": 41,
       "index2": 37,
       "size": 1560,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1299,14 +1351,14 @@
       "source": "'use strict';\n\nvar keys = require('object-keys');\nvar foreach = require('foreach');\nvar hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';\n\nvar toStr = Object.prototype.toString;\n\nvar isFunction = function (fn) {\n\treturn typeof fn === 'function' && toStr.call(fn) === '[object Function]';\n};\n\nvar arePropertyDescriptorsSupported = function () {\n\tvar obj = {};\n\ttry {\n\t\tObject.defineProperty(obj, 'x', { enumerable: false, value: obj });\n        /* eslint-disable no-unused-vars, no-restricted-syntax */\n        for (var _ in obj) { return false; }\n        /* eslint-enable no-unused-vars, no-restricted-syntax */\n\t\treturn obj.x === obj;\n\t} catch (e) { /* this is IE 8. */\n\t\treturn false;\n\t}\n};\nvar supportsDescriptors = Object.defineProperty && arePropertyDescriptorsSupported();\n\nvar defineProperty = function (object, name, value, predicate) {\n\tif (name in object && (!isFunction(predicate) || !predicate())) {\n\t\treturn;\n\t}\n\tif (supportsDescriptors) {\n\t\tObject.defineProperty(object, name, {\n\t\t\tconfigurable: true,\n\t\t\tenumerable: false,\n\t\t\tvalue: value,\n\t\t\twritable: true\n\t\t});\n\t} else {\n\t\tobject[name] = value;\n\t}\n};\n\nvar defineProperties = function (object, map) {\n\tvar predicates = arguments.length > 2 ? arguments[2] : {};\n\tvar props = keys(map);\n\tif (hasSymbols) {\n\t\tprops = props.concat(Object.getOwnPropertySymbols(map));\n\t}\n\tforeach(props, function (name) {\n\t\tdefineProperty(object, name, map[name], predicates[name]);\n\t});\n};\n\ndefineProperties.supportsDescriptors = !!supportsDescriptors;\n\nmodule.exports = defineProperties;\n"
     },
     {
-      "id": 20,
+      "id": 21,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/es-abstract/helpers/assign.js",
       "name": "./~/es-abstract/helpers/assign.js",
       "index": 50,
       "index2": 40,
       "size": 225,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1345,14 +1397,14 @@
       "source": "var has = Object.prototype.hasOwnProperty;\nmodule.exports = Object.assign || function assign(target, source) {\n\tfor (var key in source) {\n\t\tif (has.call(source, key)) {\n\t\t\ttarget[key] = source[key];\n\t\t}\n\t}\n\treturn target;\n};\n"
     },
     {
-      "id": 21,
+      "id": 22,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/es-abstract/helpers/isFinite.js",
       "name": "./~/es-abstract/helpers/isFinite.js",
       "index": 49,
       "index2": 39,
       "size": 199,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1391,14 +1443,14 @@
       "source": "var $isNaN = Number.isNaN || function (a) { return a !== a; };\n\nmodule.exports = Number.isFinite || function (x) { return typeof x === 'number' && !$isNaN(x) && x !== Infinity && x !== -Infinity; };\n"
     },
     {
-      "id": 22,
+      "id": 23,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/es-abstract/helpers/isNaN.js",
       "name": "./~/es-abstract/helpers/isNaN.js",
       "index": 48,
       "index2": 38,
       "size": 73,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1437,14 +1489,14 @@
       "source": "module.exports = Number.isNaN || function isNaN(a) {\n\treturn a !== a;\n};\n"
     },
     {
-      "id": 23,
+      "id": 24,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/es-abstract/helpers/mod.js",
       "name": "./~/es-abstract/helpers/mod.js",
       "index": 52,
       "index2": 42,
       "size": 142,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1483,14 +1535,14 @@
       "source": "module.exports = function mod(number, modulo) {\n\tvar remain = number % modulo;\n\treturn Math.floor(remain >= 0 ? remain : remain + modulo);\n};\n"
     },
     {
-      "id": 24,
+      "id": 25,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/es-abstract/helpers/sign.js",
       "name": "./~/es-abstract/helpers/sign.js",
       "index": 51,
       "index2": 41,
       "size": 74,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1529,14 +1581,14 @@
       "source": "module.exports = function sign(number) {\n\treturn number >= 0 ? 1 : -1;\n};\n"
     },
     {
-      "id": 25,
+      "id": 26,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/es-to-primitive/helpers/isPrimitive.js",
       "name": "./~/es-to-primitive/helpers/isPrimitive.js",
       "index": 55,
       "index2": 44,
       "size": 136,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1575,14 +1627,14 @@
       "source": "module.exports = function isPrimitive(value) {\n\treturn value === null || (typeof value !== 'function' && typeof value !== 'object');\n};\n"
     },
     {
-      "id": 26,
+      "id": 27,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/get-size/get-size.js",
       "name": "./~/get-size/get-size.js",
       "index": 17,
       "index2": 13,
       "size": 5296,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1621,14 +1673,14 @@
       "source": "/*!\n * getSize v2.0.2\n * measure size of elements\n * MIT license\n */\n\n/*jshint browser: true, strict: true, undef: true, unused: true */\n/*global define: false, module: false, console: false */\n\n( function( window, factory ) {\n  'use strict';\n\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( function() {\n      return factory();\n    });\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory();\n  } else {\n    // browser global\n    window.getSize = factory();\n  }\n\n})( window, function factory() {\n'use strict';\n\n// -------------------------- helpers -------------------------- //\n\n// get a number from a string, not a percentage\nfunction getStyleSize( value ) {\n  var num = parseFloat( value );\n  // not a percent like '100%', and a number\n  var isValid = value.indexOf('%') == -1 && !isNaN( num );\n  return isValid && num;\n}\n\nfunction noop() {}\n\nvar logError = typeof console == 'undefined' ? noop :\n  function( message ) {\n    console.error( message );\n  };\n\n// -------------------------- measurements -------------------------- //\n\nvar measurements = [\n  'paddingLeft',\n  'paddingRight',\n  'paddingTop',\n  'paddingBottom',\n  'marginLeft',\n  'marginRight',\n  'marginTop',\n  'marginBottom',\n  'borderLeftWidth',\n  'borderRightWidth',\n  'borderTopWidth',\n  'borderBottomWidth'\n];\n\nvar measurementsLength = measurements.length;\n\nfunction getZeroSize() {\n  var size = {\n    width: 0,\n    height: 0,\n    innerWidth: 0,\n    innerHeight: 0,\n    outerWidth: 0,\n    outerHeight: 0\n  };\n  for ( var i=0; i < measurementsLength; i++ ) {\n    var measurement = measurements[i];\n    size[ measurement ] = 0;\n  }\n  return size;\n}\n\n// -------------------------- getStyle -------------------------- //\n\n/**\n * getStyle, get style of element, check for Firefox bug\n * https://bugzilla.mozilla.org/show_bug.cgi?id=548397\n */\nfunction getStyle( elem ) {\n  var style = getComputedStyle( elem );\n  if ( !style ) {\n    logError( 'Style returned ' + style +\n      '. Are you running this code in a hidden iframe on Firefox? ' +\n      'See http://bit.ly/getsizebug1' );\n  }\n  return style;\n}\n\n// -------------------------- setup -------------------------- //\n\nvar isSetup = false;\n\nvar isBoxSizeOuter;\n\n/**\n * setup\n * check isBoxSizerOuter\n * do on first getSize() rather than on page load for Firefox bug\n */\nfunction setup() {\n  // setup once\n  if ( isSetup ) {\n    return;\n  }\n  isSetup = true;\n\n  // -------------------------- box sizing -------------------------- //\n\n  /**\n   * WebKit measures the outer-width on style.width on border-box elems\n   * IE & Firefox<29 measures the inner-width\n   */\n  var div = document.createElement('div');\n  div.style.width = '200px';\n  div.style.padding = '1px 2px 3px 4px';\n  div.style.borderStyle = 'solid';\n  div.style.borderWidth = '1px 2px 3px 4px';\n  div.style.boxSizing = 'border-box';\n\n  var body = document.body || document.documentElement;\n  body.appendChild( div );\n  var style = getStyle( div );\n\n  getSize.isBoxSizeOuter = isBoxSizeOuter = getStyleSize( style.width ) == 200;\n  body.removeChild( div );\n\n}\n\n// -------------------------- getSize -------------------------- //\n\nfunction getSize( elem ) {\n  setup();\n\n  // use querySeletor if elem is string\n  if ( typeof elem == 'string' ) {\n    elem = document.querySelector( elem );\n  }\n\n  // do not proceed on non-objects\n  if ( !elem || typeof elem != 'object' || !elem.nodeType ) {\n    return;\n  }\n\n  var style = getStyle( elem );\n\n  // if hidden, everything is 0\n  if ( style.display == 'none' ) {\n    return getZeroSize();\n  }\n\n  var size = {};\n  size.width = elem.offsetWidth;\n  size.height = elem.offsetHeight;\n\n  var isBorderBox = size.isBorderBox = style.boxSizing == 'border-box';\n\n  // get all measurements\n  for ( var i=0; i < measurementsLength; i++ ) {\n    var measurement = measurements[i];\n    var value = style[ measurement ];\n    var num = parseFloat( value );\n    // any 'auto', 'medium' value will be 0\n    size[ measurement ] = !isNaN( num ) ? num : 0;\n  }\n\n  var paddingWidth = size.paddingLeft + size.paddingRight;\n  var paddingHeight = size.paddingTop + size.paddingBottom;\n  var marginWidth = size.marginLeft + size.marginRight;\n  var marginHeight = size.marginTop + size.marginBottom;\n  var borderWidth = size.borderLeftWidth + size.borderRightWidth;\n  var borderHeight = size.borderTopWidth + size.borderBottomWidth;\n\n  var isBorderBoxSizeOuter = isBorderBox && isBoxSizeOuter;\n\n  // overwrite width and height if we can get it from style\n  var styleWidth = getStyleSize( style.width );\n  if ( styleWidth !== false ) {\n    size.width = styleWidth +\n      // add padding and border unless it's already including it\n      ( isBorderBoxSizeOuter ? 0 : paddingWidth + borderWidth );\n  }\n\n  var styleHeight = getStyleSize( style.height );\n  if ( styleHeight !== false ) {\n    size.height = styleHeight +\n      // add padding and border unless it's already including it\n      ( isBorderBoxSizeOuter ? 0 : paddingHeight + borderHeight );\n  }\n\n  size.innerWidth = size.width - ( paddingWidth + borderWidth );\n  size.innerHeight = size.height - ( paddingHeight + borderHeight );\n\n  size.outerWidth = size.width + marginWidth;\n  size.outerHeight = size.height + marginHeight;\n\n  return size;\n}\n\nreturn getSize;\n\n});\n"
     },
     {
-      "id": 27,
+      "id": 28,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/object.entries/implementation.js",
       "name": "./~/object.entries/implementation.js",
       "index": 45,
       "index2": 57,
       "size": 430,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1643,7 +1695,7 @@
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 28,
+          "moduleId": 29,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/object.entries/polyfill.js",
           "module": "./~/object.entries/polyfill.js",
           "moduleName": "./~/object.entries/polyfill.js",
@@ -1667,14 +1719,14 @@
       "source": "'use strict';\n\nvar ES = require('es-abstract/es7');\nvar has = require('has');\nvar bind = require('function-bind');\nvar isEnumerable = bind.call(Function.call, Object.prototype.propertyIsEnumerable);\n\nmodule.exports = function entries(O) {\n\tvar obj = ES.RequireObjectCoercible(O);\n\tvar entrys = [];\n\tfor (var key in obj) {\n\t\tif (has(obj, key) && isEnumerable(obj, key)) {\n\t\t\tentrys.push([key, obj[key]]);\n\t\t}\n\t}\n\treturn entrys;\n};\n"
     },
     {
-      "id": 28,
+      "id": 29,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/object.entries/polyfill.js",
       "name": "./~/object.entries/polyfill.js",
       "index": 65,
       "index2": 58,
       "size": 191,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1713,14 +1765,14 @@
       "source": "'use strict';\n\nvar implementation = require('./implementation');\n\nmodule.exports = function getPolyfill() {\n\treturn typeof Object.entries === 'function' ? Object.entries : implementation;\n};\n"
     },
     {
-      "id": 29,
+      "id": 30,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/tap-listener/tap-listener.js",
       "name": "./~/tap-listener/tap-listener.js",
       "index": 27,
       "index2": 23,
       "size": 2636,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1759,14 +1811,14 @@
       "source": "/*!\n * Tap listener v2.0.0\n * listens to taps\n * MIT license\n */\n\n/*jshint browser: true, unused: true, undef: true, strict: true */\n\n( function( window, factory ) {\n  // universal module definition\n  /*jshint strict: false*/ /*globals define, module, require */\n\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( [\n      'unipointer/unipointer'\n    ], function( Unipointer ) {\n      return factory( window, Unipointer );\n    });\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory(\n      window,\n      require('unipointer')\n    );\n  } else {\n    // browser global\n    window.TapListener = factory(\n      window,\n      window.Unipointer\n    );\n  }\n\n}( window, function factory( window, Unipointer ) {\n\n'use strict';\n\n// --------------------------  TapListener -------------------------- //\n\nfunction TapListener( elem ) {\n  this.bindTap( elem );\n}\n\n// inherit Unipointer & EventEmitter\nvar proto = TapListener.prototype = Object.create( Unipointer.prototype );\n\n/**\n * bind tap event to element\n * @param {Element} elem\n */\nproto.bindTap = function( elem ) {\n  if ( !elem ) {\n    return;\n  }\n  this.unbindTap();\n  this.tapElement = elem;\n  this._bindStartEvent( elem, true );\n};\n\nproto.unbindTap = function() {\n  if ( !this.tapElement ) {\n    return;\n  }\n  this._bindStartEvent( this.tapElement, true );\n  delete this.tapElement;\n};\n\n/**\n * pointer up\n * @param {Event} event\n * @param {Event or Touch} pointer\n */\nproto.pointerUp = function( event, pointer ) {\n  // ignore emulated mouse up clicks\n  if ( this.isIgnoringMouseUp && event.type == 'mouseup' ) {\n    return;\n  }\n\n  var pointerPoint = Unipointer.getPointerPoint( pointer );\n  var boundingRect = this.tapElement.getBoundingClientRect();\n  var scrollX = window.pageXOffset;\n  var scrollY = window.pageYOffset;\n  // calculate if pointer is inside tapElement\n  var isInside = pointerPoint.x >= boundingRect.left + scrollX &&\n    pointerPoint.x <= boundingRect.right + scrollX &&\n    pointerPoint.y >= boundingRect.top + scrollY &&\n    pointerPoint.y <= boundingRect.bottom + scrollY;\n  // trigger callback if pointer is inside element\n  if ( isInside ) {\n    this.emitEvent( 'tap', [ event, pointer ] );\n  }\n\n  // set flag for emulated clicks 300ms after touchend\n  if ( event.type != 'mouseup' ) {\n    this.isIgnoringMouseUp = true;\n    // reset flag after 300ms\n    var _this = this;\n    setTimeout( function() {\n      delete _this.isIgnoringMouseUp;\n    }, 400 );\n  }\n};\n\nproto.destroy = function() {\n  this.pointerDone();\n  this.unbindTap();\n};\n\n// -----  ----- //\n\nreturn TapListener;\n\n}));\n"
     },
     {
-      "id": 30,
+      "id": 31,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/unipointer/unipointer.js",
       "name": "./~/unipointer/unipointer.js",
       "index": 25,
       "index2": 20,
       "size": 7201,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1781,7 +1833,7 @@
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 29,
+          "moduleId": 30,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/tap-listener/tap-listener.js",
           "module": "./~/tap-listener/tap-listener.js",
           "moduleName": "./~/tap-listener/tap-listener.js",
@@ -1805,14 +1857,14 @@
       "source": "/*!\n * Unipointer v2.1.0\n * base class for doing one thing with pointer event\n * MIT license\n */\n\n/*jshint browser: true, undef: true, unused: true, strict: true */\n\n( function( window, factory ) {\n  // universal module definition\n  /* jshint strict: false */ /*global define, module, require */\n  if ( typeof define == 'function' && define.amd ) {\n    // AMD\n    define( [\n      'ev-emitter/ev-emitter'\n    ], function( EvEmitter ) {\n      return factory( window, EvEmitter );\n    });\n  } else if ( typeof module == 'object' && module.exports ) {\n    // CommonJS\n    module.exports = factory(\n      window,\n      require('ev-emitter')\n    );\n  } else {\n    // browser global\n    window.Unipointer = factory(\n      window,\n      window.EvEmitter\n    );\n  }\n\n}( window, function factory( window, EvEmitter ) {\n\n'use strict';\n\nfunction noop() {}\n\nfunction Unipointer() {}\n\n// inherit EvEmitter\nvar proto = Unipointer.prototype = Object.create( EvEmitter.prototype );\n\nproto.bindStartEvent = function( elem ) {\n  this._bindStartEvent( elem, true );\n};\n\nproto.unbindStartEvent = function( elem ) {\n  this._bindStartEvent( elem, false );\n};\n\n/**\n * works as unbinder, as you can ._bindStart( false ) to unbind\n * @param {Boolean} isBind - will unbind if falsey\n */\nproto._bindStartEvent = function( elem, isBind ) {\n  // munge isBind, default to true\n  isBind = isBind === undefined ? true : !!isBind;\n  var bindMethod = isBind ? 'addEventListener' : 'removeEventListener';\n\n  if ( window.navigator.pointerEnabled ) {\n    // W3C Pointer Events, IE11. See https://coderwall.com/p/mfreca\n    elem[ bindMethod ]( 'pointerdown', this );\n  } else if ( window.navigator.msPointerEnabled ) {\n    // IE10 Pointer Events\n    elem[ bindMethod ]( 'MSPointerDown', this );\n  } else {\n    // listen for both, for devices like Chrome Pixel\n    elem[ bindMethod ]( 'mousedown', this );\n    elem[ bindMethod ]( 'touchstart', this );\n  }\n};\n\n// trigger handler methods for events\nproto.handleEvent = function( event ) {\n  var method = 'on' + event.type;\n  if ( this[ method ] ) {\n    this[ method ]( event );\n  }\n};\n\n// returns the touch that we're keeping track of\nproto.getTouch = function( touches ) {\n  for ( var i=0; i < touches.length; i++ ) {\n    var touch = touches[i];\n    if ( touch.identifier == this.pointerIdentifier ) {\n      return touch;\n    }\n  }\n};\n\n// ----- start event ----- //\n\nproto.onmousedown = function( event ) {\n  // dismiss clicks from right or middle buttons\n  var button = event.button;\n  if ( button && ( button !== 0 && button !== 1 ) ) {\n    return;\n  }\n  this._pointerDown( event, event );\n};\n\nproto.ontouchstart = function( event ) {\n  this._pointerDown( event, event.changedTouches[0] );\n};\n\nproto.onMSPointerDown =\nproto.onpointerdown = function( event ) {\n  this._pointerDown( event, event );\n};\n\n/**\n * pointer start\n * @param {Event} event\n * @param {Event or Touch} pointer\n */\nproto._pointerDown = function( event, pointer ) {\n  // dismiss other pointers\n  if ( this.isPointerDown ) {\n    return;\n  }\n\n  this.isPointerDown = true;\n  // save pointer identifier to match up touch events\n  this.pointerIdentifier = pointer.pointerId !== undefined ?\n    // pointerId for pointer events, touch.indentifier for touch events\n    pointer.pointerId : pointer.identifier;\n\n  this.pointerDown( event, pointer );\n};\n\nproto.pointerDown = function( event, pointer ) {\n  this._bindPostStartEvents( event );\n  this.emitEvent( 'pointerDown', [ event, pointer ] );\n};\n\n// hash of events to be bound after start event\nvar postStartEvents = {\n  mousedown: [ 'mousemove', 'mouseup' ],\n  touchstart: [ 'touchmove', 'touchend', 'touchcancel' ],\n  pointerdown: [ 'pointermove', 'pointerup', 'pointercancel' ],\n  MSPointerDown: [ 'MSPointerMove', 'MSPointerUp', 'MSPointerCancel' ]\n};\n\nproto._bindPostStartEvents = function( event ) {\n  if ( !event ) {\n    return;\n  }\n  // get proper events to match start event\n  var events = postStartEvents[ event.type ];\n  // bind events to node\n  events.forEach( function( eventName ) {\n    window.addEventListener( eventName, this );\n  }, this );\n  // save these arguments\n  this._boundPointerEvents = events;\n};\n\nproto._unbindPostStartEvents = function() {\n  // check for _boundEvents, in case dragEnd triggered twice (old IE8 bug)\n  if ( !this._boundPointerEvents ) {\n    return;\n  }\n  this._boundPointerEvents.forEach( function( eventName ) {\n    window.removeEventListener( eventName, this );\n  }, this );\n\n  delete this._boundPointerEvents;\n};\n\n// ----- move event ----- //\n\nproto.onmousemove = function( event ) {\n  this._pointerMove( event, event );\n};\n\nproto.onMSPointerMove =\nproto.onpointermove = function( event ) {\n  if ( event.pointerId == this.pointerIdentifier ) {\n    this._pointerMove( event, event );\n  }\n};\n\nproto.ontouchmove = function( event ) {\n  var touch = this.getTouch( event.changedTouches );\n  if ( touch ) {\n    this._pointerMove( event, touch );\n  }\n};\n\n/**\n * pointer move\n * @param {Event} event\n * @param {Event or Touch} pointer\n * @private\n */\nproto._pointerMove = function( event, pointer ) {\n  this.pointerMove( event, pointer );\n};\n\n// public\nproto.pointerMove = function( event, pointer ) {\n  this.emitEvent( 'pointerMove', [ event, pointer ] );\n};\n\n// ----- end event ----- //\n\n\nproto.onmouseup = function( event ) {\n  this._pointerUp( event, event );\n};\n\nproto.onMSPointerUp =\nproto.onpointerup = function( event ) {\n  if ( event.pointerId == this.pointerIdentifier ) {\n    this._pointerUp( event, event );\n  }\n};\n\nproto.ontouchend = function( event ) {\n  var touch = this.getTouch( event.changedTouches );\n  if ( touch ) {\n    this._pointerUp( event, touch );\n  }\n};\n\n/**\n * pointer up\n * @param {Event} event\n * @param {Event or Touch} pointer\n * @private\n */\nproto._pointerUp = function( event, pointer ) {\n  this._pointerDone();\n  this.pointerUp( event, pointer );\n};\n\n// public\nproto.pointerUp = function( event, pointer ) {\n  this.emitEvent( 'pointerUp', [ event, pointer ] );\n};\n\n// ----- pointer done ----- //\n\n// triggered on pointer up & pointer cancel\nproto._pointerDone = function() {\n  // reset properties\n  this.isPointerDown = false;\n  delete this.pointerIdentifier;\n  // remove events\n  this._unbindPostStartEvents();\n  this.pointerDone();\n};\n\nproto.pointerDone = noop;\n\n// ----- pointer cancel ----- //\n\nproto.onMSPointerCancel =\nproto.onpointercancel = function( event ) {\n  if ( event.pointerId == this.pointerIdentifier ) {\n    this._pointerCancel( event, event );\n  }\n};\n\nproto.ontouchcancel = function( event ) {\n  var touch = this.getTouch( event.changedTouches );\n  if ( touch ) {\n    this._pointerCancel( event, touch );\n  }\n};\n\n/**\n * pointer cancel\n * @param {Event} event\n * @param {Event or Touch} pointer\n * @private\n */\nproto._pointerCancel = function( event, pointer ) {\n  this._pointerDone();\n  this.pointerCancel( event, pointer );\n};\n\n// public\nproto.pointerCancel = function( event, pointer ) {\n  this.emitEvent( 'pointerCancel', [ event, pointer ] );\n};\n\n// -----  ----- //\n\n// utility function for getting x/y coords from event\nUnipointer.getPointerPoint = function( pointer ) {\n  return {\n    x: pointer.pageX,\n    y: pointer.pageY\n  };\n};\n\n// -----  ----- //\n\nreturn Unipointer;\n\n}));\n"
     },
     {
-      "id": 31,
+      "id": 32,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/bundle/food.js",
       "name": "./_js/bundle/food.js",
       "index": 1,
       "index2": 1,
       "size": 2065,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1842,14 +1894,14 @@
       "source": "import ScrollReveal from 'scrollreveal';\n\nvar imageMenuItemListsSection = document.querySelector('#image-menu-item-lists');\nvar tabs = imageMenuItemListsSection.querySelector('.tabs');\nvar content = imageMenuItemListsSection.querySelector('.content');\nvar _iteratorNormalCompletion = true;\nvar _didIteratorError = false;\nvar _iteratorError = undefined;\n\ntry {\n\tfor (var _iterator = Array.from(tabs.querySelectorAll('.tab-link'))[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n\t\tvar tabLink = _step.value;\n\n\t\ttabLink.addEventListener('click', function (event) {\n\t\t\tevent.preventDefault();\n\n\t\t\tArray.from(content.querySelectorAll('.active')).map(function (activeGroup) {\n\t\t\t\tactiveGroup.classList.remove('active');\n\t\t\t});\n\t\t\tArray.from(tabs.querySelectorAll('.tab-link.active')).map(function (activeLink) {\n\t\t\t\tif (activeLink !== event.target) activeLink.classList.remove('active');\n\t\t\t});\n\n\t\t\tevent.target.classList.toggle('active');\n\t\t\tif (event.target.classList.contains('active')) {\n\t\t\t\tvar group = event.target.getAttribute('href');\n\t\t\t\tcontent.querySelector(group).classList.add('active');\n\t\t\t}\n\t\t});\n\t}\n} catch (err) {\n\t_didIteratorError = true;\n\t_iteratorError = err;\n} finally {\n\ttry {\n\t\tif (!_iteratorNormalCompletion && _iterator.return) {\n\t\t\t_iterator.return();\n\t\t}\n\t} finally {\n\t\tif (_didIteratorError) {\n\t\t\tthrow _iteratorError;\n\t\t}\n\t}\n}\n\nvar showMenuButton = document.querySelector('#show-menu');\nvar menu = document.querySelector('#menu');\nshowMenuButton.addEventListener('click', function (event) {\n\tevent.preventDefault();\n\n\tmenu.classList.toggle('collapsed');\n\n\tif (menu.classList.contains('collapsed')) showMenuButton.textContent = 'Show full menu';else showMenuButton.textContent = 'Hide full menu';\n});\n\nScrollReveal().reveal('.food-special-details', {\n\tduration: 500,\n\topacity: 0,\n\tdistance: '500px',\n\teasing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',\n\tviewFactor: 1.3,\n\tafterReveal: function afterReveal(special) {\n\t\tspecial.classList.add('revealed');\n\t}\n}, 50);"
     },
     {
-      "id": 32,
+      "id": 33,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/bundle/footer.js",
       "name": "./_js/bundle/footer.js",
       "index": 3,
       "index2": 2,
       "size": 1816,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1879,14 +1931,14 @@
       "source": "var picture = document.querySelector('#coyote-grill-external');\nvar pictureSwitch = document.querySelector('#coyote-grill-external-switch');\n\nvar dayWide = '/images/front-wide.jpg';\nvar day = '/images/front.jpg';\nvar nightWide = '/images/front-wide-night.jpg';\nvar night = '/images/front-night.jpg';\n\nvar now = new Date();\nif (now.getHours() < 6 || now.getHours() > 17) {\n\tpicture.classList.remove('day-picture');\n\tpicture.classList.add('night-picture');\n\tpicture.querySelector('source').setAttribute('srcset', nightWide);\n\tpicture.querySelector('img').setAttribute('src', night);\n\n\tpictureSwitch.querySelector('#external-night').checked = true;\n}\n\nvar _iteratorNormalCompletion = true;\nvar _didIteratorError = false;\nvar _iteratorError = undefined;\n\ntry {\n\tfor (var _iterator = Array.from(pictureSwitch.querySelectorAll('input[name=\"coyote-grill-external-switch\"]'))[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n\t\tvar option = _step.value;\n\n\t\toption.addEventListener('change', function (event) {\n\t\t\tif (event.target.checked) {\n\t\t\t\tpicture.style.opacity = 0;\n\n\t\t\t\tswitch (event.target.value) {\n\t\t\t\t\tcase 'night':\n\t\t\t\t\t\tpicture.querySelector('source').setAttribute('srcset', nightWide);\n\t\t\t\t\t\tpicture.querySelector('img').setAttribute('src', night);\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tcase 'day':\n\t\t\t\t\tdefault:\n\t\t\t\t\t\tpicture.querySelector('source').setAttribute('srcset', dayWide);\n\t\t\t\t\t\tpicture.querySelector('img').setAttribute('src', day);\n\t\t\t\t\t\tbreak;\n\t\t\t\t}\n\n\t\t\t\tpicture.style.opacity = null;\n\t\t\t}\n\t\t});\n\t}\n} catch (err) {\n\t_didIteratorError = true;\n\t_iteratorError = err;\n} finally {\n\ttry {\n\t\tif (!_iteratorNormalCompletion && _iterator.return) {\n\t\t\t_iterator.return();\n\t\t}\n\t} finally {\n\t\tif (_didIteratorError) {\n\t\t\tthrow _iteratorError;\n\t\t}\n\t}\n}"
     },
     {
-      "id": 33,
+      "id": 34,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/bundle/header.js",
       "name": "./_js/bundle/header.js",
       "index": 4,
       "index2": 11,
       "size": 2718,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1916,14 +1968,14 @@
       "source": "import Color from 'color';\n\nvar hero = document.querySelector('.carousel-overlay');\nvar header = document.querySelector('header.site-header');\nvar collapseMargin = 60;\nvar expandMargin = 200;\n\nvar initialHeroBackgroundColor = hero.style.backgroundColor;\nhero.style.backgroundColor = null;\nvar heroBackgroundColor = new Color(window.getComputedStyle(hero).getPropertyValue('background-color'));\nif (initialHeroBackgroundColor) hero.style.backgroundColor = initialHeroBackgroundColor;\n\nvar isCollapsed = header.classList.contains('collapsed');\nif (!isCollapsed) header.classList.add('collapsed');\nvar headerBackgroundColor = new Color(window.getComputedStyle(header).getPropertyValue('background-color'));\nif (!isCollapsed) header.classList.remove('collapsed');\n\nif (header.classList.contains('expanded') && hero.getBoundingClientRect().bottom < header.getBoundingClientRect().bottom + collapseMargin) {\n\theader.classList.add('notransition');\n\theader.classList.remove('expanded');\n\theader.classList.add('collapsed');\n\twindow.requestAnimationFrame(function () {\n\t\twindow.requestAnimationFrame(function () {\n\t\t\theader.classList.remove('notransition');\n\t\t});\n\t});\n}\n\n['resize', 'scroll'].map(function (event) {\n\twindow.addEventListener(event, function () {\n\t\twindow.requestAnimationFrame(step);\n\t});\n});\n\nfunction step() {\n\tvar heroRect = hero.getBoundingClientRect();\n\tvar headerHeight = header.clientHeight;\n\tvar headerRect = header.getBoundingClientRect();\n\n\tif (header.classList.contains('expanded')) {\n\t\tif (heroRect.bottom < headerRect.bottom + collapseMargin) {\n\n\t\t\theader.classList.remove('expanded');\n\t\t}\n\t} else {\n\t\tif (heroRect.bottom > headerRect.bottom + expandMargin) {\n\n\t\t\theader.classList.add('expanded');\n\t\t}\n\t}\n\n\tif (header.classList.contains('collapsed')) {\n\t\tif (heroRect.bottom > headerHeight) {\n\t\t\theader.classList.remove('collapsed');\n\t\t}\n\t} else {\n\t\tif (heroRect.bottom < headerHeight) {\n\t\t\theader.classList.add('collapsed');\n\t\t}\n\t}\n\n\tvar scrolledValue = (heroRect.height - (heroRect.bottom - headerHeight)) / heroRect.height;\n\tscrolledValue > 0 ? scrolledValue : 0;\n\tscrolledValue < 1 ? scrolledValue : 1;\n\n\tvar newHeroColor = Color().red(heroBackgroundColor.red() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.red() - heroBackgroundColor.red())).green(heroBackgroundColor.green() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.green() - heroBackgroundColor.green())).blue(heroBackgroundColor.blue() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.blue() - heroBackgroundColor.blue())).alpha(heroBackgroundColor.alpha() + Math.pow(scrolledValue, 2) * (headerBackgroundColor.alpha() - heroBackgroundColor.alpha())).rgb().string(0);\n\n\thero.style.backgroundColor = newHeroColor;\n}"
     },
     {
-      "id": 34,
+      "id": 35,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/bundle/hero.js",
       "name": "./_js/bundle/hero.js",
       "index": 13,
       "index2": 30,
       "size": 134,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1953,14 +2005,14 @@
       "source": "import Flickity from 'flickity';\n\nnew Flickity('.carousel', {\n\tcellSelector: '.carousel-image',\n\twrapAround: true,\n\tautoPlay: true\n});"
     },
     {
-      "id": 35,
+      "id": 36,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/promotions/index.js",
       "name": "./_js/promotions/index.js",
       "index": 35,
       "index2": 78,
       "size": 158,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -1990,14 +2042,14 @@
       "source": "import { render, h } from 'preact';\nimport Promotions from '../components/Promotions.js';\n\nrender(h(Promotions, null), document.querySelector('#promotions'));"
     },
     {
-      "id": 36,
+      "id": 37,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/preact/devtools.js",
       "name": "./~/preact/devtools.js",
       "index": 33,
       "index2": 33,
       "size": 16757,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2027,12 +2079,12 @@
       "source": "(function (global, factory) {\n  typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('preact')) :\n  typeof define === 'function' && define.amd ? define(['preact'], factory) :\n  (factory(global.preact));\n}(this, function (preact) { 'use strict';\n\n  var babelHelpers = {};\n\n  babelHelpers.inherits = function (subClass, superClass) {\n    if (typeof superClass !== \"function\" && superClass !== null) {\n      throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass);\n    }\n\n    subClass.prototype = Object.create(superClass && superClass.prototype, {\n      constructor: {\n        value: subClass,\n        enumerable: false,\n        writable: true,\n        configurable: true\n      }\n    });\n    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;\n  };\n\n  babelHelpers.classCallCheck = function (instance, Constructor) {\n    if (!(instance instanceof Constructor)) {\n      throw new TypeError(\"Cannot call a class as a function\");\n    }\n  };\n  var ATTR_KEY = typeof Symbol !== 'undefined' ? Symbol['for']('preactattr') : '__preactattr_';\n\n  /** @private is the given object a Function? */\n\n  function isFunction(obj) {\n  \treturn 'function' === typeof obj;\n  }\n\n  /** Check if a VNode is a reference to a stateless functional component.\n   *\tA function component is represented as a VNode whose `nodeName` property is a reference to a function.\n   *\tIf that function is not a Component (ie, has no `.render()` method on a prototype), it is considered a stateless functional component.\n   *\t@param {VNode} vnode\tA VNode\n   *\t@private\n   */\n\n  function isFunctionalComponent(vnode) {\n    var nodeName = vnode && vnode.nodeName;\n    return nodeName && isFunction(nodeName) && !(nodeName.prototype && nodeName.prototype.render);\n  }\n\n  /**\n   * Return a ReactElement-compatible object for the current state of a preact\n   * component.\n   */\n  function createReactElement(component) {\n  \treturn {\n  \t\ttype: component.constructor,\n  \t\tkey: component.key,\n  \t\tref: null, // Unsupported\n  \t\tprops: component.props\n  \t};\n  }\n\n  /**\n   * Create a ReactDOMComponent-compatible object for a given DOM node rendered\n   * by preact.\n   *\n   * This implements the subset of the ReactDOMComponent interface that\n   * React DevTools requires in order to display DOM nodes in the inspector with\n   * the correct type and properties.\n   *\n   * @param {Node} node\n   */\n  function createReactDOMComponent(node) {\n  \tvar childNodes = node.nodeType === Node.ELEMENT_NODE ? Array.from(node.childNodes) : [];\n\n  \tvar isText = node.nodeType === Node.TEXT_NODE;\n\n  \treturn {\n  \t\t// --- ReactDOMComponent interface\n  \t\t_currentElement: isText ? node.textContent : {\n  \t\t\ttype: node.nodeName.toLowerCase(),\n  \t\t\tprops: node[ATTR_KEY]\n  \t\t},\n  \t\t_renderedChildren: childNodes.map(function (child) {\n  \t\t\tif (child._component) {\n  \t\t\t\treturn updateReactComponent(child._component);\n  \t\t\t}\n  \t\t\treturn updateReactComponent(child);\n  \t\t}),\n  \t\t_stringText: isText ? node.textContent : null,\n\n  \t\t// --- Additional properties used by preact devtools\n\n  \t\t// A flag indicating whether the devtools have been notified about the\n  \t\t// existence of this component instance yet.\n  \t\t// This is used to send the appropriate notifications when DOM components\n  \t\t// are added or updated between composite component updates.\n  \t\t_inDevTools: false,\n  \t\tnode: node\n  \t};\n  }\n\n  /**\n   * Return the name of a component created by a `ReactElement`-like object.\n   *\n   * @param {ReactElement} element\n   */\n  function typeName(element) {\n  \tif (typeof element.type === 'function') {\n  \t\treturn element.type.displayName || element.type.name;\n  \t}\n  \treturn element.type;\n  }\n\n  /**\n   * Return a ReactCompositeComponent-compatible object for a given preact\n   * component instance.\n   *\n   * This implements the subset of the ReactCompositeComponent interface that\n   * the DevTools requires in order to walk the component tree and inspect the\n   * component's properties.\n   *\n   * See https://github.com/facebook/react-devtools/blob/e31ec5825342eda570acfc9bcb43a44258fceb28/backend/getData.js\n   */\n  function createReactCompositeComponent(component) {\n  \tvar _currentElement = createReactElement(component);\n  \tvar node = component.base;\n\n  \tvar instance = {\n  \t\t// --- ReactDOMComponent properties\n  \t\tgetName: function getName() {\n  \t\t\treturn typeName(_currentElement);\n  \t\t},\n  \t\t_currentElement: createReactElement(component),\n  \t\tprops: component.props,\n  \t\tstate: component.state,\n  \t\tforceUpdate: component.forceUpdate.bind(component),\n  \t\tsetState: component.setState.bind(component),\n\n  \t\t// --- Additional properties used by preact devtools\n  \t\tnode: node\n  \t};\n\n  \t// React DevTools exposes the `_instance` field of the selected item in the\n  \t// component tree as `$r` in the console.  `_instance` must refer to a\n  \t// React Component (or compatible) class instance with `props` and `state`\n  \t// fields and `setState()`, `forceUpdate()` methods.\n  \tinstance._instance = component;\n\n  \t// If the root node returned by this component instance's render function\n  \t// was itself a composite component, there will be a `_component` property\n  \t// containing the child component instance.\n  \tif (component._component) {\n  \t\tinstance._renderedComponent = updateReactComponent(component._component);\n  \t} else {\n  \t\t// Otherwise, if the render() function returned an HTML/SVG element,\n  \t\t// create a ReactDOMComponent-like object for the DOM node itself.\n  \t\tinstance._renderedComponent = updateReactComponent(node);\n  \t}\n\n  \treturn instance;\n  }\n\n  /**\n   * Map of Component|Node to ReactDOMComponent|ReactCompositeComponent-like\n   * object.\n   *\n   * The same React*Component instance must be used when notifying devtools\n   * about the initial mount of a component and subsequent updates.\n   */\n  var instanceMap = new Map();\n\n  /**\n   * Update (and create if necessary) the ReactDOMComponent|ReactCompositeComponent-like\n   * instance for a given preact component instance or DOM Node.\n   *\n   * @param {Component|Node} componentOrNode\n   */\n  function updateReactComponent(componentOrNode) {\n  \tvar newInstance = componentOrNode instanceof Node ? createReactDOMComponent(componentOrNode) : createReactCompositeComponent(componentOrNode);\n  \tif (instanceMap.has(componentOrNode)) {\n  \t\tvar inst = instanceMap.get(componentOrNode);\n  \t\tObject.assign(inst, newInstance);\n  \t\treturn inst;\n  \t}\n  \tinstanceMap.set(componentOrNode, newInstance);\n  \treturn newInstance;\n  }\n\n  function nextRootKey(roots) {\n  \treturn '.' + Object.keys(roots).length;\n  }\n\n  /**\n   * Find all root component instances rendered by preact in `node`'s children\n   * and add them to the `roots` map.\n   *\n   * @param {DOMElement} node\n   * @param {[key: string] => ReactDOMComponent|ReactCompositeComponent}\n   */\n  function findRoots(node, roots) {\n  \tArray.from(node.childNodes).forEach(function (child) {\n  \t\tif (child._component) {\n  \t\t\troots[nextRootKey(roots)] = updateReactComponent(child._component);\n  \t\t} else {\n  \t\t\tfindRoots(child, roots);\n  \t\t}\n  \t});\n  }\n\n  /**\n   * Map of functional component name -> wrapper class.\n   */\n  var functionalComponentWrappers = new Map();\n\n  /**\n   * Wrap a functional component with a stateful component.\n   *\n   * preact does not record any information about the original hierarchy of\n   * functional components in the rendered DOM nodes. Wrapping functional components\n   * with a trivial wrapper allows us to recover information about the original\n   * component structure from the DOM.\n   *\n   * @param {VNode} vnode\n   */\n  function wrapFunctionalComponent(vnode) {\n  \tvar originalRender = vnode.nodeName;\n  \tvar name = vnode.nodeName.name || '(Function.name missing)';\n  \tvar wrappers = functionalComponentWrappers;\n  \tif (!wrappers.has(originalRender)) {\n  \t\t(function () {\n  \t\t\tvar wrapper = (function (_Component) {\n  \t\t\t\tbabelHelpers.inherits(wrapper, _Component);\n\n  \t\t\t\tfunction wrapper() {\n  \t\t\t\t\tbabelHelpers.classCallCheck(this, wrapper);\n\n  \t\t\t\t\t_Component.apply(this, arguments);\n  \t\t\t\t}\n\n  \t\t\t\twrapper.prototype.render = function render(props, state, context) {\n  \t\t\t\t\treturn originalRender(props, context);\n  \t\t\t\t};\n\n  \t\t\t\treturn wrapper;\n  \t\t\t})(preact.Component);\n\n  \t\t\t// Expose the original component name. React Dev Tools will use\n  \t\t\t// this property if it exists or fall back to Function.name\n  \t\t\t// otherwise.\n  \t\t\twrapper.displayName = name;\n\n  \t\t\twrappers.set(originalRender, wrapper);\n  \t\t})();\n  \t}\n  \tvnode.nodeName = wrappers.get(originalRender);\n  }\n\n  /**\n   * Create a bridge for exposing preact's component tree to React DevTools.\n   *\n   * It creates implementations of the interfaces that ReactDOM passes to\n   * devtools to enable it to query the component tree and hook into component\n   * updates.\n   *\n   * See https://github.com/facebook/react/blob/59ff7749eda0cd858d5ee568315bcba1be75a1ca/src/renderers/dom/ReactDOM.js\n   * for how ReactDOM exports its internals for use by the devtools and\n   * the `attachRenderer()` function in\n   * https://github.com/facebook/react-devtools/blob/e31ec5825342eda570acfc9bcb43a44258fceb28/backend/attachRenderer.js\n   * for how the devtools consumes the resulting objects.\n   */\n  function createDevToolsBridge() {\n  \t// The devtools has different paths for interacting with the renderers from\n  \t// React Native, legacy React DOM and current React DOM.\n  \t//\n  \t// Here we emulate the interface for the current React DOM (v15+) lib.\n\n  \t// ReactDOMComponentTree-like object\n  \tvar ComponentTree = {\n  \t\tgetNodeFromInstance: function getNodeFromInstance(instance) {\n  \t\t\treturn instance.node;\n  \t\t},\n  \t\tgetClosestInstanceFromNode: function getClosestInstanceFromNode(node) {\n  \t\t\twhile (node && !node._component) {\n  \t\t\t\tnode = node.parentNode;\n  \t\t\t}\n  \t\t\treturn node ? updateReactComponent(node._component) : null;\n  \t\t}\n  \t};\n\n  \t// Map of root ID (the ID is unimportant) to component instance.\n  \tvar roots = {};\n  \tfindRoots(document.body, roots);\n\n  \t// ReactMount-like object\n  \t//\n  \t// Used by devtools to discover the list of root component instances and get\n  \t// notified when new root components are rendered.\n  \tvar Mount = {\n  \t\t_instancesByReactRootID: roots,\n\n  \t\t// Stub - React DevTools expects to find this method and replace it\n  \t\t// with a wrapper in order to observe new root components being added\n  \t\t_renderNewRootComponent: function _renderNewRootComponent() /* instance, ... */{}\n  \t};\n\n  \t// ReactReconciler-like object\n  \tvar Reconciler = {\n  \t\t// Stubs - React DevTools expects to find these methods and replace them\n  \t\t// with wrappers in order to observe components being mounted, updated and\n  \t\t// unmounted\n  \t\tmountComponent: function mountComponent() /* instance, ... */{},\n  \t\tperformUpdateIfNecessary: function performUpdateIfNecessary() /* instance, ... */{},\n  \t\treceiveComponent: function receiveComponent() /* instance, ... */{},\n  \t\tunmountComponent: function unmountComponent() /* instance, ... */{}\n  \t};\n\n  \t/** Notify devtools that a new component instance has been mounted into the DOM. */\n  \tvar componentAdded = function componentAdded(component) {\n  \t\tvar instance = updateReactComponent(component);\n  \t\tif (isRootComponent(component)) {\n  \t\t\tinstance._rootID = nextRootKey(roots);\n  \t\t\troots[instance._rootID] = instance;\n  \t\t\tMount._renderNewRootComponent(instance);\n  \t\t}\n  \t\tvisitNonCompositeChildren(instance, function (childInst) {\n  \t\t\tchildInst._inDevTools = true;\n  \t\t\tReconciler.mountComponent(childInst);\n  \t\t});\n  \t\tReconciler.mountComponent(instance);\n  \t};\n\n  \t/** Notify devtools that a component has been updated with new props/state. */\n  \tvar componentUpdated = function componentUpdated(component) {\n  \t\tvar prevRenderedChildren = [];\n  \t\tvisitNonCompositeChildren(instanceMap.get(component), function (childInst) {\n  \t\t\tprevRenderedChildren.push(childInst);\n  \t\t});\n\n  \t\t// Notify devtools about updates to this component and any non-composite\n  \t\t// children\n  \t\tvar instance = updateReactComponent(component);\n  \t\tReconciler.receiveComponent(instance);\n  \t\tvisitNonCompositeChildren(instance, function (childInst) {\n  \t\t\tif (!childInst._inDevTools) {\n  \t\t\t\t// New DOM child component\n  \t\t\t\tchildInst._inDevTools = true;\n  \t\t\t\tReconciler.mountComponent(childInst);\n  \t\t\t} else {\n  \t\t\t\t// Updated DOM child component\n  \t\t\t\tReconciler.receiveComponent(childInst);\n  \t\t\t}\n  \t\t});\n\n  \t\t// For any non-composite children that were removed by the latest render,\n  \t\t// remove the corresponding ReactDOMComponent-like instances and notify\n  \t\t// the devtools\n  \t\tprevRenderedChildren.forEach(function (childInst) {\n  \t\t\tif (!document.body.contains(childInst.node)) {\n  \t\t\t\tinstanceMap['delete'](childInst.node);\n  \t\t\t\tReconciler.unmountComponent(childInst);\n  \t\t\t}\n  \t\t});\n  \t};\n\n  \t/** Notify devtools that a component has been unmounted from the DOM. */\n  \tvar componentRemoved = function componentRemoved(component) {\n  \t\tvar instance = updateReactComponent(component);\n  \t\tvisitNonCompositeChildren(function (childInst) {\n  \t\t\tinstanceMap['delete'](childInst.node);\n  \t\t\tReconciler.unmountComponent(childInst);\n  \t\t});\n  \t\tReconciler.unmountComponent(instance);\n  \t\tinstanceMap['delete'](component);\n  \t\tif (instance._rootID) {\n  \t\t\tdelete roots[instance._rootID];\n  \t\t}\n  \t};\n\n  \treturn {\n  \t\tcomponentAdded: componentAdded,\n  \t\tcomponentUpdated: componentUpdated,\n  \t\tcomponentRemoved: componentRemoved,\n\n  \t\t// Interfaces passed to devtools via __REACT_DEVTOOLS_GLOBAL_HOOK__.inject()\n  \t\tComponentTree: ComponentTree,\n  \t\tMount: Mount,\n  \t\tReconciler: Reconciler\n  \t};\n  }\n\n  /**\n   * Return `true` if a preact component is a top level component rendered by\n   * `render()` into a container Element.\n   */\n  function isRootComponent(component) {\n  \treturn !component.base.parentElement || !component.base.parentElement[ATTR_KEY];\n  }\n\n  /**\n   * Visit all child instances of a ReactCompositeComponent-like object that are\n   * not composite components (ie. they represent DOM elements or text)\n   *\n   * @param {Component} component\n   * @param {(Component) => void} visitor\n   */\n  function visitNonCompositeChildren(component, visitor) {\n  \tif (component._renderedComponent) {\n  \t\tif (!component._renderedComponent._component) {\n  \t\t\tvisitor(component._renderedComponent);\n  \t\t\tvisitNonCompositeChildren(component._renderedComponent, visitor);\n  \t\t}\n  \t} else if (component._renderedChildren) {\n  \t\tcomponent._renderedChildren.forEach(function (child) {\n  \t\t\tvisitor(child);\n  \t\t\tif (!child._component) visitNonCompositeChildren(child, visitor);\n  \t\t});\n  \t}\n  }\n\n  /**\n   * Create a bridge between the preact component tree and React's dev tools\n   * and register it.\n   *\n   * After this function is called, the React Dev Tools should be able to detect\n   * \"React\" on the page and show the component tree.\n   *\n   * This function hooks into preact VNode creation in order to expose functional\n   * components correctly, so it should be called before the root component(s)\n   * are rendered.\n   *\n   * Returns a cleanup function which unregisters the hooks.\n   */\n\n  function initDevTools() {\n  \tif (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {\n  \t\t// React DevTools are not installed\n  \t\treturn;\n  \t}\n\n  \t// Hook into preact element creation in order to wrap functional components\n  \t// with stateful ones in order to make them visible in the devtools\n  \tvar nextVNode = preact.options.vnode;\n  \tpreact.options.vnode = function (vnode) {\n  \t\tif (isFunctionalComponent(vnode)) wrapFunctionalComponent(vnode);\n  \t\tif (nextVNode) return nextVNode(vnode);\n  \t};\n\n  \t// Notify devtools when preact components are mounted, updated or unmounted\n  \tvar bridge = createDevToolsBridge();\n\n  \tvar nextAfterMount = preact.options.afterMount;\n  \tpreact.options.afterMount = function (component) {\n  \t\tbridge.componentAdded(component);\n  \t\tif (nextAfterMount) nextAfterMount(component);\n  \t};\n\n  \tvar nextAfterUpdate = preact.options.afterUpdate;\n  \tpreact.options.afterUpdate = function (component) {\n  \t\tbridge.componentUpdated(component);\n  \t\tif (nextAfterUpdate) nextAfterUpdate(component);\n  \t};\n\n  \tvar nextBeforeUnmount = preact.options.beforeUnmount;\n  \tpreact.options.beforeUnmount = function (component) {\n  \t\tbridge.componentRemoved(component);\n  \t\tif (nextBeforeUnmount) nextBeforeUnmount(component);\n  \t};\n\n  \t// Notify devtools about this instance of \"React\"\n  \t__REACT_DEVTOOLS_GLOBAL_HOOK__.inject(bridge);\n\n  \treturn function () {\n  \t\tpreact.options.afterMount = nextAfterMount;\n  \t\tpreact.options.afterUpdate = nextAfterUpdate;\n  \t\tpreact.options.beforeUnmount = nextBeforeUnmount;\n  \t};\n  }\n\n  initDevTools();\n\n}));\n//# sourceMappingURL=devtools.js.map\n"
     },
     {
-      "id": 37,
+      "id": 38,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/ActivePromotion.js",
       "name": "./_js/components/ActivePromotion.js",
       "index": 77,
       "index2": 75,
-      "size": 15159,
+      "size": 15172,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -2042,14 +2094,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
-      "issuerId": 39,
+      "issuerId": 40,
       "issuerName": "./_js/components/Promotions.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 39,
+          "moduleId": 40,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
           "module": "./_js/components/Promotions.js",
           "moduleName": "./_js/components/Promotions.js",
@@ -2065,17 +2117,17 @@
         "default"
       ],
       "depth": 3,
-      "source": "var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nimport _JSXStyle from 'styled-jsx/style';\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nimport { h, Component } from 'preact';\nimport firebase from 'firebase';\nimport Color from 'color';\nimport * as colors from 'colors.css';\n\nimport { isPromotionRedeemed } from '../utils.js';\nimport { BREAKPOINTS } from '../constants.js';\n\nvar ActivePromotion = function (_Component) {\n\t_inherits(ActivePromotion, _Component);\n\n\tfunction ActivePromotion() {\n\t\t_classCallCheck(this, ActivePromotion);\n\n\t\tvar _this = _possibleConstructorReturn(this, (ActivePromotion.__proto__ || Object.getPrototypeOf(ActivePromotion)).call(this));\n\n\t\t_this.state = {\n\t\t\tredeemed: false\n\t\t};\n\n\t\t_this.redeem = _this.redeem.bind(_this);\n\t\t_this.handleKeyup = _this.handleKeyup.bind(_this);\n\t\treturn _this;\n\t}\n\n\t_createClass(ActivePromotion, [{\n\t\tkey: 'componentDidMount',\n\t\tvalue: function componentDidMount() {\n\t\t\tdocument.querySelector('html').classList.add('locked');\n\t\t\tdocument.addEventListener('keyup', this.handleKeyup);\n\t\t}\n\t}, {\n\t\tkey: 'render',\n\t\tvalue: function render() {\n\t\t\tvar redeemed = isPromotionRedeemed(this.props.id, this.props.userData);\n\n\t\t\tvar style = {\n\t\t\t\tbackgroundColor: redeemed ? this.state.redeemed ? Color(colors.green).alpha(0.95).rgb().string() : Color(colors.red).alpha(0.95).rgb().string() : 'rgba(64, 64, 64, 0.95)'\n\t\t\t};\n\n\t\t\treturn h(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'active-promotion', style: style, 'data-jsx': 3533501187\n\t\t\t\t},\n\t\t\t\th(_JSXStyle, {\n\t\t\t\t\tstyleId: 3799021935,\n\t\t\t\t\tcss: '.active-promotion[data-jsx=\"3533501187\"] {z-index: 10000;position: fixed;top: 0;right: 0;bottom: 0;left: 0;backface-visibility: hidden;overflow: auto;display:-webkit-flex; display:flex;-webkit-flex-direction: column;-moz-flex-direction: column;flex-direction: column;justify-content: space-around;align-items: center;color: white;font-size: 2em;font-family: sans-serif;}h2[data-jsx=\"3533501187\"] {text-align: center;margin: 0;}img[data-jsx=\"3533501187\"] {width: 20%;height: auto;margin: 2em;}.info-container[data-jsx=\"3533501187\"],.redeem-container[data-jsx=\"3533501187\"] {display:-webkit-flex; display:flex;-webkit-flex-direction: column;-moz-flex-direction: column;flex-direction: column;justify-content: space-between;align-items: center;text-align: center;}p[data-jsx=\"3533501187\"] {text-align: center;margin: 0.5em 2em;font-size: 0.75em;}@media (min-width: ' + BREAKPOINTS.SMALL_DESKTOP + 'px) {p[data-jsx=\"3533501187\"] {font-size: 1em;}}.button[data-jsx=\"3533501187\"] {border-radius: 5px;background-clip: padding-box;border: 2px solid;outline: none;cursor: pointer;color: white;font-size: 1em;padding: 0.25em 1em;}.redeem-button[data-jsx=\"3533501187\"] {background: rgba(255, 255, 255, 0.5);border-color: rgba(255, 255, 255, 0.5);background-clip: padding-box;padding: 0.25em 1em;margin: 1em 0;}.redeem-button[data-jsx=\"3533501187\"]:hover {background: rgba(255, 255, 255, 0.3);background-clip: padding-box;}.redeem-button[disabled][data-jsx=\"3533501187\"] {-webkit-transform: none;-moz-transform: none;-ms-transform: none;transform: none;background: rgba(0, 0, 0, 0.3);background-clip: padding-box;color: rgba(255, 255, 255, 0.8);cursor: not-allowed;}.close-button[data-jsx=\"3533501187\"] {background: transparent;background-clip: padding-box;border-color: rgba(255, 255, 255, 0.5);color: rgba(255, 255, 255, 0.5);}.close-button[data-jsx=\"3533501187\"]:hover {background: rgba(255, 255, 255, 0.2);background-clip: padding-box;}\\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9qcy9jb21wb25lbnRzL0FjdGl2ZVByb21vdGlvbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFzQ0ssQUFDbUIsMENBQ0gsZUFDQyxnQkFDVCxPQUNFLFNBQ0MsVUFDRixRQUNvQiw0QkFDYixlQUVELG1DQUNTLGtGQUNPLDhCQUNWLG9CQUVQLGFBQ0UsZUFDUyx3QkFDeEIsQ0FFRywyQkFDZ0IsbUJBQ1QsVUFDVixDQUVJLDRCQUNPLFdBQ0UsYUFDRCxZQUNaLENBR2tCLGlGQUNKLG1DQUNTLGtGQUNRLCtCQUNYLG9CQUNELG1CQUNuQixDQUVFLDBCQUNpQixtQkFDRCxrQkFDQSxrQkFDbEIsQ0FFa0QsbURBQy9DLDBCQUNhLGVBQ2YsQ0FDRCxDQUVRLGdDQUNXLG1CQUNVLDZCQUNYLGtCQUNKLGNBQ0UsZ0JBQ0gsYUFDRSxlQUNLLG9CQUNwQixDQUVlLHVDQUNzQixxQ0FDRSx1Q0FDViw2QkFDVCxvQkFDTixjQUNkLENBRXFCLDZDQUNnQixxQ0FDUiw2QkFDN0IsQ0FFeUIsaURBQ1QsaUZBQ2UsK0JBQ0YsNkJBQ0csZ0NBQ1osb0JBQ3BCLENBRWMsc0NBQ1Usd0JBQ0ssNkJBQ1UsdUNBQ1AsZ0NBQ2hDLENBRW9CLDRDQUNpQixxQ0FDUiw2QkFDN0IiLCJmaWxlIjoiX2pzL2NvbXBvbmVudHMvQWN0aXZlUHJvbW90aW9uLmpzIiwic291cmNlUm9vdCI6Ii9ob21lL21pc2Noa2EvcHJvamVjdHMvY295b3RlLWdyaWxsIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgaCwgQ29tcG9uZW50IH0gZnJvbSAncHJlYWN0JztcbmltcG9ydCBmaXJlYmFzZSBmcm9tICdmaXJlYmFzZSc7XG5pbXBvcnQgQ29sb3IgZnJvbSAnY29sb3InO1xuaW1wb3J0ICogYXMgY29sb3JzIGZyb20gJ2NvbG9ycy5jc3MnO1xuXG5pbXBvcnQgeyBpc1Byb21vdGlvblJlZGVlbWVkIH0gZnJvbSAnLi4vdXRpbHMuanMnO1xuaW1wb3J0IHsgQlJFQUtQT0lOVFMgfSBmcm9tICcuLi9jb25zdGFudHMuanMnO1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBBY3RpdmVQcm9tb3Rpb24gZXh0ZW5kcyBDb21wb25lbnQge1xuXHRjb25zdHJ1Y3Rvcigpe1xuXHRcdHN1cGVyKCk7XG5cdFx0dGhpcy5zdGF0ZSA9IHtcblx0XHRcdHJlZGVlbWVkOiBmYWxzZVxuXHRcdH07XG5cblx0XHR0aGlzLnJlZGVlbSA9IHRoaXMucmVkZWVtLmJpbmQodGhpcyk7XG5cdFx0dGhpcy5oYW5kbGVLZXl1cCA9IHRoaXMuaGFuZGxlS2V5dXAuYmluZCh0aGlzKTtcblx0fVxuXG5cdGNvbXBvbmVudERpZE1vdW50KCl7XG5cdFx0ZG9jdW1lbnQucXVlcnlTZWxlY3RvcignaHRtbCcpLmNsYXNzTGlzdC5hZGQoJ2xvY2tlZCcpO1xuXHRcdGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ2tleXVwJywgdGhpcy5oYW5kbGVLZXl1cCk7XG5cdH1cblxuXHRyZW5kZXIoKXtcblx0XHRjb25zdCByZWRlZW1lZCA9IGlzUHJvbW90aW9uUmVkZWVtZWQodGhpcy5wcm9wcy5pZCwgdGhpcy5wcm9wcy51c2VyRGF0YSk7XG5cblx0XHRjb25zdCBzdHlsZSA9IHtcblx0XHRcdGJhY2tncm91bmRDb2xvcjogcmVkZWVtZWRcblx0XHRcdFx0PyB0aGlzLnN0YXRlLnJlZGVlbWVkXG5cdFx0XHRcdFx0PyBDb2xvcihjb2xvcnMuZ3JlZW4pLmFscGhhKDAuOTUpLnJnYigpLnN0cmluZygpXG5cdFx0XHRcdFx0OiBDb2xvcihjb2xvcnMucmVkKS5hbHBoYSgwLjk1KS5yZ2IoKS5zdHJpbmcoKVxuXHRcdFx0XHQ6ICdyZ2JhKDY0LCA2NCwgNjQsIDAuOTUpJ1xuXHRcdH07XG5cblx0XHRyZXR1cm4gKFxuXHRcdFx0PGRpdiBjbGFzc05hbWU9XCJhY3RpdmUtcHJvbW90aW9uXCIgc3R5bGU9e3N0eWxlfT5cblx0XHRcdFx0PHN0eWxlIGpzeD5cblx0XHRcdFx0e2Bcblx0XHRcdFx0XHQuYWN0aXZlLXByb21vdGlvbiB7XG5cdFx0XHRcdFx0XHR6LWluZGV4OiAxMDAwMDtcblx0XHRcdFx0XHRcdHBvc2l0aW9uOiBmaXhlZDtcblx0XHRcdFx0XHRcdHRvcDogMDtcblx0XHRcdFx0XHRcdHJpZ2h0OiAwO1xuXHRcdFx0XHRcdFx0Ym90dG9tOiAwO1xuXHRcdFx0XHRcdFx0bGVmdDogMDtcblx0XHRcdFx0XHRcdGJhY2tmYWNlLXZpc2liaWxpdHk6IGhpZGRlbjtcblx0XHRcdFx0XHRcdG92ZXJmbG93OiBhdXRvO1xuXG5cdFx0XHRcdFx0XHRkaXNwbGF5OiBmbGV4O1xuXHRcdFx0XHRcdFx0ZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcblx0XHRcdFx0XHRcdGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xuXHRcdFx0XHRcdFx0YWxpZ24taXRlbXM6IGNlbnRlcjtcblxuXHRcdFx0XHRcdFx0Y29sb3I6IHdoaXRlO1xuXHRcdFx0XHRcdFx0Zm9udC1zaXplOiAyZW07XG5cdFx0XHRcdFx0XHRmb250LWZhbWlseTogc2Fucy1zZXJpZjtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHRoMiB7XG5cdFx0XHRcdFx0XHR0ZXh0LWFsaWduOiBjZW50ZXI7XG5cdFx0XHRcdFx0XHRtYXJnaW46IDA7XG5cdFx0XHRcdFx0fVxuXG5cdFx0XHRcdFx0aW1nIHtcblx0XHRcdFx0XHRcdHdpZHRoOiAyMCU7XG5cdFx0XHRcdFx0XHRoZWlnaHQ6IGF1dG87XG5cdFx0XHRcdFx0XHRtYXJnaW46IDJlbTtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQuaW5mby1jb250YWluZXIsXG5cdFx0XHRcdFx0LnJlZGVlbS1jb250YWluZXIge1xuXHRcdFx0XHRcdFx0ZGlzcGxheTogZmxleDtcblx0XHRcdFx0XHRcdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG5cdFx0XHRcdFx0XHRqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG5cdFx0XHRcdFx0XHRhbGlnbi1pdGVtczogY2VudGVyO1xuXHRcdFx0XHRcdFx0dGV4dC1hbGlnbjogY2VudGVyO1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdHAge1xuXHRcdFx0XHRcdFx0dGV4dC1hbGlnbjogY2VudGVyO1xuXHRcdFx0XHRcdFx0bWFyZ2luOiAwLjVlbSAyZW07XG5cdFx0XHRcdFx0XHRmb250LXNpemU6IDAuNzVlbTtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHRAbWVkaWEgKG1pbi13aWR0aDogJHtCUkVBS1BPSU5UUy5TTUFMTF9ERVNLVE9QfXB4KSB7XG5cdFx0XHRcdFx0XHRwIHtcblx0XHRcdFx0XHRcdFx0Zm9udC1zaXplOiAxZW07XG5cdFx0XHRcdFx0XHR9XG5cdFx0XHRcdFx0fVxuXG5cdFx0XHRcdFx0LmJ1dHRvbiB7XG5cdFx0XHRcdFx0XHRib3JkZXItcmFkaXVzOiA1cHg7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLWNsaXA6IHBhZGRpbmctYm94O1xuXHRcdFx0XHRcdFx0Ym9yZGVyOiAycHggc29saWQ7XG5cdFx0XHRcdFx0XHRvdXRsaW5lOiBub25lO1xuXHRcdFx0XHRcdFx0Y3Vyc29yOiBwb2ludGVyO1xuXHRcdFx0XHRcdFx0Y29sb3I6IHdoaXRlO1xuXHRcdFx0XHRcdFx0Zm9udC1zaXplOiAxZW07XG5cdFx0XHRcdFx0XHRwYWRkaW5nOiAwLjI1ZW0gMWVtO1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdC5yZWRlZW0tYnV0dG9uIHtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC41KTtcblx0XHRcdFx0XHRcdGJvcmRlci1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpO1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZC1jbGlwOiBwYWRkaW5nLWJveDtcblx0XHRcdFx0XHRcdHBhZGRpbmc6IDAuMjVlbSAxZW07XG5cdFx0XHRcdFx0XHRtYXJnaW46IDFlbSAwO1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdC5yZWRlZW0tYnV0dG9uOmhvdmVyIHtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC4zKTtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XG5cdFx0XHRcdFx0fVxuXG5cdFx0XHRcdFx0LnJlZGVlbS1idXR0b25bZGlzYWJsZWRdIHtcblx0XHRcdFx0XHRcdHRyYW5zZm9ybTogbm9uZTtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC4zKTtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XG5cdFx0XHRcdFx0XHRjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjgpO1xuXHRcdFx0XHRcdFx0Y3Vyc29yOiBub3QtYWxsb3dlZDtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQuY2xvc2UtYnV0dG9uIHtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZC1jbGlwOiBwYWRkaW5nLWJveDtcblx0XHRcdFx0XHRcdGJvcmRlci1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpO1xuXHRcdFx0XHRcdFx0Y29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC41KTtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQuY2xvc2UtYnV0dG9uOmhvdmVyIHtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC4yKTtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XG5cdFx0XHRcdFx0fVxuXG5cdFx0XHRcdGB9XG5cdFx0XHRcdDwvc3R5bGU+XG5cdFx0XHRcdDxoMj57dGhpcy5wcm9wcy50aXRsZX08L2gyPlxuXG5cdHtcblx0XHRyZWRlZW1lZFxuXHRcdFx0PyAoXG5cdFx0XHRcdDxkaXYgY2xhc3NOYW1lPVwiaW5mby1jb250YWluZXJcIj5cblx0XHRcdFx0XHQ8c3Bhbj5cblx0XHR7XG5cdFx0XHR0aGlzLnN0YXRlLnJlZGVlbWVkXG5cdFx0XHRcdD8gJ1Byb21vdGlvbiByZWRlZW1lZCBzdWNjZXNzZnVsbHknXG5cdFx0XHRcdDogJ1RoaXMgcHJvbW90aW9uIGhhcyBhbHJlYWR5IGJlZW4gcmVkZWVtZWQnXG5cdFx0fVxuXHRcdFx0XHRcdDwvc3Bhbj5cblx0XHRcdFx0XHQ8aW1nIGFsdD1cIlwiIHNyYz17YC9pbWFnZXMvaWNvbnMvJHt0aGlzLnN0YXRlLnJlZGVlbWVkXG5cdFx0XHRcdFx0XHQ/ICdjaGVja21hcmsnIDogJ3gtbWFyayd9LnN2Z2B9IHdpZHRoPVwiMzAwXCIgaGVpZ2h0PVwiMzAwXCIgLz5cblx0XHRcdFx0PC9kaXY+XG5cdFx0XHQpXG5cdFx0XHQ6IChcblx0XHRcdFx0PGRpdiBjbGFzc05hbWU9XCJyZWRlZW0tY29udGFpbmVyXCI+XG5cdFx0XHRcdFx0PHA+XG5cdFx0XHRcdFx0XHRQcm9tb3Rpb25zIG11c3QgYmUgcmVkZWVtZWQgaW4gZnJvbnQgb2YgYSBiYXJ0ZW5kZXIuXG5cdFx0XHRcdFx0XHRBcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gcmVkZWVtIHRoaXMgbm93P1xuXHRcdFx0XHRcdDwvcD5cblx0XHRcdFx0XHQ8YnV0dG9uIHR5cGU9XCJidXR0b25cIiBjbGFzc05hbWU9XCJidXR0b24gcmVkZWVtLWJ1dHRvblwiXG5cdFx0XHRcdFx0XHRcdG9uQ2xpY2s9e3RoaXMucmVkZWVtfT5cblx0XHRcdFx0XHRcdFJlZGVlbVxuXHRcdFx0XHRcdDwvYnV0dG9uPlxuXHRcdFx0XHRcdDxwPlxuXHRcdFx0XHRcdFx0VGhpcyBjYW4ndCBiZSB1bmRvbmUuXG5cdFx0XHRcdFx0PC9wPlxuXHRcdFx0XHQ8L2Rpdj5cblx0XHRcdClcblx0fVxuXG5cblx0XHRcdFx0PGJ1dHRvbiB0eXBlPVwiYnV0dG9uXCIgY2xhc3NOYW1lPVwiYnV0dG9uIGNsb3NlLWJ1dHRvblwiXG5cdFx0XHRcdFx0XHRvbkNsaWNrPXt0aGlzLnByb3BzLmNsb3NlfT5cblx0XHRcdFx0XHRDbG9zZVxuXHRcdFx0XHQ8L2J1dHRvbj5cblx0XHRcdDwvZGl2PlxuXHRcdCk7XG5cdH1cblxuXHRyZWRlZW0oKXtcblx0XHR0aGlzLnNldFN0YXRlKHtyZWRlZW1lZDogdHJ1ZX0pO1xuXG5cdFx0Y29uc3QgdXNlcklkID0gdGhpcy5wcm9wcy51c2VyLnVpZDtcblx0XHRmaXJlYmFzZS5kYXRhYmFzZSgpXG5cdFx0XHQucmVmKGB1c2Vycy8ke3VzZXJJZH0vcmVkZWVtZWRQcm9tb3Rpb25zLyR7dGhpcy5wcm9wcy5pZH1gKS5zZXQoe1xuXHRcdFx0XHRyZWRlZW1lZDogdHJ1ZSxcblx0XHRcdFx0cmVkZWVtZWRBdDogbmV3IERhdGUoKS50b0lTT1N0cmluZygpXG5cdFx0XHR9KTtcblx0fVxuXG5cdGhhbmRsZUtleXVwKGV2ZW50KXtcblx0XHRpZihldmVudC5rZXkgPT09ICdFc2NhcGUnKVxuXHRcdFx0dGhpcy5wcm9wcy5jbG9zZSgpO1xuXHR9XG5cblx0Y29tcG9uZW50V2lsbFVubW91bnQoKXtcblx0XHRkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCdodG1sJykuY2xhc3NMaXN0LnJlbW92ZSgnbG9ja2VkJyk7XG5cdFx0ZG9jdW1lbnQucmVtb3ZlRXZlbnRMaXN0ZW5lcigna2V5dXAnLCB0aGlzLmhhbmRsZUtleXVwKTtcblx0fVxufVxuXG5BY3RpdmVQcm9tb3Rpb24ucHJvcFR5cGVzID0ge1xuXHR1c2VyOiBPYmplY3QsXG5cdHVzZXJEYXRhOiBPYmplY3QsXG5cdGlkOiBTdHJpbmcsXG5cdHRpdGxlOiBTdHJpbmcsXG5cdGRlc2M6IFN0cmluZyxcblx0Y2xvc2U6IEZ1bmN0aW9uXG59O1xuIl19 */\\n/*@ sourceURL=_js/components/ActivePromotion.js */'\n\t\t\t\t}),\n\t\t\t\th(\n\t\t\t\t\t'h2',\n\t\t\t\t\t{\n\t\t\t\t\t\t'data-jsx': 3533501187\n\t\t\t\t\t},\n\t\t\t\t\tthis.props.title\n\t\t\t\t),\n\t\t\t\tredeemed ? h(\n\t\t\t\t\t'div',\n\t\t\t\t\t{ className: 'info-container', 'data-jsx': 3533501187\n\t\t\t\t\t},\n\t\t\t\t\th(\n\t\t\t\t\t\t'span',\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t'data-jsx': 3533501187\n\t\t\t\t\t\t},\n\t\t\t\t\t\tthis.state.redeemed ? 'Promotion redeemed successfully' : 'This promotion has already been redeemed'\n\t\t\t\t\t),\n\t\t\t\t\th('img', { alt: '', src: '/images/icons/' + (this.state.redeemed ? 'checkmark' : 'x-mark') + '.svg', width: '300', height: '300', 'data-jsx': 3533501187\n\t\t\t\t\t})\n\t\t\t\t) : h(\n\t\t\t\t\t'div',\n\t\t\t\t\t{ className: 'redeem-container', 'data-jsx': 3533501187\n\t\t\t\t\t},\n\t\t\t\t\th(\n\t\t\t\t\t\t'p',\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t'data-jsx': 3533501187\n\t\t\t\t\t\t},\n\t\t\t\t\t\t'Promotions must be redeemed in front of a bartender. Are you sure you want to redeem this now?'\n\t\t\t\t\t),\n\t\t\t\t\th(\n\t\t\t\t\t\t'button',\n\t\t\t\t\t\t{ type: 'button', className: 'button redeem-button',\n\t\t\t\t\t\t\tonClick: this.redeem, 'data-jsx': 3533501187\n\t\t\t\t\t\t},\n\t\t\t\t\t\t'Redeem'\n\t\t\t\t\t),\n\t\t\t\t\th(\n\t\t\t\t\t\t'p',\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t'data-jsx': 3533501187\n\t\t\t\t\t\t},\n\t\t\t\t\t\t'This can\\'t be undone.'\n\t\t\t\t\t)\n\t\t\t\t),\n\t\t\t\th(\n\t\t\t\t\t'button',\n\t\t\t\t\t{ type: 'button', className: 'button close-button',\n\t\t\t\t\t\tonClick: this.props.close, 'data-jsx': 3533501187\n\t\t\t\t\t},\n\t\t\t\t\t'Close'\n\t\t\t\t)\n\t\t\t);\n\t\t}\n\t}, {\n\t\tkey: 'redeem',\n\t\tvalue: function redeem() {\n\t\t\tthis.setState({ redeemed: true });\n\n\t\t\tvar userId = this.props.user.uid;\n\t\t\tfirebase.database().ref('users/' + userId + '/redeemedPromotions/' + this.props.id).set({\n\t\t\t\tredeemed: true,\n\t\t\t\tredeemedAt: new Date().toISOString()\n\t\t\t});\n\t\t}\n\t}, {\n\t\tkey: 'handleKeyup',\n\t\tvalue: function handleKeyup(event) {\n\t\t\tif (event.key === 'Escape') this.props.close();\n\t\t}\n\t}, {\n\t\tkey: 'componentWillUnmount',\n\t\tvalue: function componentWillUnmount() {\n\t\t\tdocument.querySelector('html').classList.remove('locked');\n\t\t\tdocument.removeEventListener('keyup', this.handleKeyup);\n\t\t}\n\t}]);\n\n\treturn ActivePromotion;\n}(Component);\n\nexport default ActivePromotion;\n\n\nActivePromotion.propTypes = {\n\tuser: Object,\n\tuserData: Object,\n\tid: String,\n\ttitle: String,\n\tdesc: String,\n\tclose: Function\n};"
+      "source": "var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nimport _JSXStyle from 'styled-jsx/style';\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nimport { h, Component } from 'preact';\nimport * as firebase from 'firebase';\nimport Color from 'color';\nimport * as colors from 'colors.css';\n\nimport { isPromotionRedeemed } from '../utils.js';\nimport { BREAKPOINTS } from '../constants.js';\n\nvar ActivePromotion = function (_Component) {\n\t_inherits(ActivePromotion, _Component);\n\n\tfunction ActivePromotion() {\n\t\t_classCallCheck(this, ActivePromotion);\n\n\t\tvar _this = _possibleConstructorReturn(this, (ActivePromotion.__proto__ || Object.getPrototypeOf(ActivePromotion)).call(this));\n\n\t\t_this.state = {\n\t\t\tredeemed: false\n\t\t};\n\n\t\t_this.redeem = _this.redeem.bind(_this);\n\t\t_this.handleKeyup = _this.handleKeyup.bind(_this);\n\t\treturn _this;\n\t}\n\n\t_createClass(ActivePromotion, [{\n\t\tkey: 'componentDidMount',\n\t\tvalue: function componentDidMount() {\n\t\t\tdocument.querySelector('html').classList.add('locked');\n\t\t\tdocument.addEventListener('keyup', this.handleKeyup);\n\t\t}\n\t}, {\n\t\tkey: 'render',\n\t\tvalue: function render() {\n\t\t\tvar redeemed = isPromotionRedeemed(this.props.id, this.props.userData);\n\n\t\t\tvar style = {\n\t\t\t\tbackgroundColor: redeemed ? this.state.redeemed ? Color(colors.green).alpha(0.95).rgb().string() : Color(colors.red).alpha(0.95).rgb().string() : 'rgba(64, 64, 64, 0.95)'\n\t\t\t};\n\n\t\t\treturn h(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'active-promotion', style: style, 'data-jsx': 3533501187\n\t\t\t\t},\n\t\t\t\th(_JSXStyle, {\n\t\t\t\t\tstyleId: 3799021935,\n\t\t\t\t\tcss: '.active-promotion[data-jsx=\"3533501187\"] {z-index: 10000;position: fixed;top: 0;right: 0;bottom: 0;left: 0;backface-visibility: hidden;overflow: auto;display:-webkit-flex; display:flex;-webkit-flex-direction: column;-moz-flex-direction: column;flex-direction: column;justify-content: space-around;align-items: center;color: white;font-size: 2em;font-family: sans-serif;}h2[data-jsx=\"3533501187\"] {text-align: center;margin: 0;}img[data-jsx=\"3533501187\"] {width: 20%;height: auto;margin: 2em;}.info-container[data-jsx=\"3533501187\"],.redeem-container[data-jsx=\"3533501187\"] {display:-webkit-flex; display:flex;-webkit-flex-direction: column;-moz-flex-direction: column;flex-direction: column;justify-content: space-between;align-items: center;text-align: center;}p[data-jsx=\"3533501187\"] {text-align: center;margin: 0.5em 2em;font-size: 0.75em;}@media (min-width: ' + BREAKPOINTS.SMALL_DESKTOP + 'px) {p[data-jsx=\"3533501187\"] {font-size: 1em;}}.button[data-jsx=\"3533501187\"] {border-radius: 5px;background-clip: padding-box;border: 2px solid;outline: none;cursor: pointer;color: white;font-size: 1em;padding: 0.25em 1em;}.redeem-button[data-jsx=\"3533501187\"] {background: rgba(255, 255, 255, 0.5);border-color: rgba(255, 255, 255, 0.5);background-clip: padding-box;padding: 0.25em 1em;margin: 1em 0;}.redeem-button[data-jsx=\"3533501187\"]:hover {background: rgba(255, 255, 255, 0.3);background-clip: padding-box;}.redeem-button[disabled][data-jsx=\"3533501187\"] {-webkit-transform: none;-moz-transform: none;-ms-transform: none;transform: none;background: rgba(0, 0, 0, 0.3);background-clip: padding-box;color: rgba(255, 255, 255, 0.8);cursor: not-allowed;}.close-button[data-jsx=\"3533501187\"] {background: transparent;background-clip: padding-box;border-color: rgba(255, 255, 255, 0.5);color: rgba(255, 255, 255, 0.5);}.close-button[data-jsx=\"3533501187\"]:hover {background: rgba(255, 255, 255, 0.2);background-clip: padding-box;}\\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9qcy9jb21wb25lbnRzL0FjdGl2ZVByb21vdGlvbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFzQ0ssQUFDbUIsMENBQ0gsZUFDQyxnQkFDVCxPQUNFLFNBQ0MsVUFDRixRQUNvQiw0QkFDYixlQUVELG1DQUNTLGtGQUNPLDhCQUNWLG9CQUVQLGFBQ0UsZUFDUyx3QkFDeEIsQ0FFRywyQkFDZ0IsbUJBQ1QsVUFDVixDQUVJLDRCQUNPLFdBQ0UsYUFDRCxZQUNaLENBR2tCLGlGQUNKLG1DQUNTLGtGQUNRLCtCQUNYLG9CQUNELG1CQUNuQixDQUVFLDBCQUNpQixtQkFDRCxrQkFDQSxrQkFDbEIsQ0FFa0QsbURBQy9DLDBCQUNhLGVBQ2YsQ0FDRCxDQUVRLGdDQUNXLG1CQUNVLDZCQUNYLGtCQUNKLGNBQ0UsZ0JBQ0gsYUFDRSxlQUNLLG9CQUNwQixDQUVlLHVDQUNzQixxQ0FDRSx1Q0FDViw2QkFDVCxvQkFDTixjQUNkLENBRXFCLDZDQUNnQixxQ0FDUiw2QkFDN0IsQ0FFeUIsaURBQ1QsaUZBQ2UsK0JBQ0YsNkJBQ0csZ0NBQ1osb0JBQ3BCLENBRWMsc0NBQ1Usd0JBQ0ssNkJBQ1UsdUNBQ1AsZ0NBQ2hDLENBRW9CLDRDQUNpQixxQ0FDUiw2QkFDN0IiLCJmaWxlIjoiX2pzL2NvbXBvbmVudHMvQWN0aXZlUHJvbW90aW9uLmpzIiwic291cmNlUm9vdCI6Ii9ob21lL21pc2Noa2EvcHJvamVjdHMvY295b3RlLWdyaWxsIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgaCwgQ29tcG9uZW50IH0gZnJvbSAncHJlYWN0JztcbmltcG9ydCAqIGFzIGZpcmViYXNlIGZyb20gJ2ZpcmViYXNlJztcbmltcG9ydCBDb2xvciBmcm9tICdjb2xvcic7XG5pbXBvcnQgKiBhcyBjb2xvcnMgZnJvbSAnY29sb3JzLmNzcyc7XG5cbmltcG9ydCB7IGlzUHJvbW90aW9uUmVkZWVtZWQgfSBmcm9tICcuLi91dGlscy5qcyc7XG5pbXBvcnQgeyBCUkVBS1BPSU5UUyB9IGZyb20gJy4uL2NvbnN0YW50cy5qcyc7XG5cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIEFjdGl2ZVByb21vdGlvbiBleHRlbmRzIENvbXBvbmVudCB7XG5cdGNvbnN0cnVjdG9yKCl7XG5cdFx0c3VwZXIoKTtcblx0XHR0aGlzLnN0YXRlID0ge1xuXHRcdFx0cmVkZWVtZWQ6IGZhbHNlXG5cdFx0fTtcblxuXHRcdHRoaXMucmVkZWVtID0gdGhpcy5yZWRlZW0uYmluZCh0aGlzKTtcblx0XHR0aGlzLmhhbmRsZUtleXVwID0gdGhpcy5oYW5kbGVLZXl1cC5iaW5kKHRoaXMpO1xuXHR9XG5cblx0Y29tcG9uZW50RGlkTW91bnQoKXtcblx0XHRkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCdodG1sJykuY2xhc3NMaXN0LmFkZCgnbG9ja2VkJyk7XG5cdFx0ZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcigna2V5dXAnLCB0aGlzLmhhbmRsZUtleXVwKTtcblx0fVxuXG5cdHJlbmRlcigpe1xuXHRcdGNvbnN0IHJlZGVlbWVkID0gaXNQcm9tb3Rpb25SZWRlZW1lZCh0aGlzLnByb3BzLmlkLCB0aGlzLnByb3BzLnVzZXJEYXRhKTtcblxuXHRcdGNvbnN0IHN0eWxlID0ge1xuXHRcdFx0YmFja2dyb3VuZENvbG9yOiByZWRlZW1lZFxuXHRcdFx0XHQ/IHRoaXMuc3RhdGUucmVkZWVtZWRcblx0XHRcdFx0XHQ/IENvbG9yKGNvbG9ycy5ncmVlbikuYWxwaGEoMC45NSkucmdiKCkuc3RyaW5nKClcblx0XHRcdFx0XHQ6IENvbG9yKGNvbG9ycy5yZWQpLmFscGhhKDAuOTUpLnJnYigpLnN0cmluZygpXG5cdFx0XHRcdDogJ3JnYmEoNjQsIDY0LCA2NCwgMC45NSknXG5cdFx0fTtcblxuXHRcdHJldHVybiAoXG5cdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cImFjdGl2ZS1wcm9tb3Rpb25cIiBzdHlsZT17c3R5bGV9PlxuXHRcdFx0XHQ8c3R5bGUganN4PlxuXHRcdFx0XHR7YFxuXHRcdFx0XHRcdC5hY3RpdmUtcHJvbW90aW9uIHtcblx0XHRcdFx0XHRcdHotaW5kZXg6IDEwMDAwO1xuXHRcdFx0XHRcdFx0cG9zaXRpb246IGZpeGVkO1xuXHRcdFx0XHRcdFx0dG9wOiAwO1xuXHRcdFx0XHRcdFx0cmlnaHQ6IDA7XG5cdFx0XHRcdFx0XHRib3R0b206IDA7XG5cdFx0XHRcdFx0XHRsZWZ0OiAwO1xuXHRcdFx0XHRcdFx0YmFja2ZhY2UtdmlzaWJpbGl0eTogaGlkZGVuO1xuXHRcdFx0XHRcdFx0b3ZlcmZsb3c6IGF1dG87XG5cblx0XHRcdFx0XHRcdGRpc3BsYXk6IGZsZXg7XG5cdFx0XHRcdFx0XHRmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuXHRcdFx0XHRcdFx0anVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XG5cdFx0XHRcdFx0XHRhbGlnbi1pdGVtczogY2VudGVyO1xuXG5cdFx0XHRcdFx0XHRjb2xvcjogd2hpdGU7XG5cdFx0XHRcdFx0XHRmb250LXNpemU6IDJlbTtcblx0XHRcdFx0XHRcdGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdGgyIHtcblx0XHRcdFx0XHRcdHRleHQtYWxpZ246IGNlbnRlcjtcblx0XHRcdFx0XHRcdG1hcmdpbjogMDtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHRpbWcge1xuXHRcdFx0XHRcdFx0d2lkdGg6IDIwJTtcblx0XHRcdFx0XHRcdGhlaWdodDogYXV0bztcblx0XHRcdFx0XHRcdG1hcmdpbjogMmVtO1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdC5pbmZvLWNvbnRhaW5lcixcblx0XHRcdFx0XHQucmVkZWVtLWNvbnRhaW5lciB7XG5cdFx0XHRcdFx0XHRkaXNwbGF5OiBmbGV4O1xuXHRcdFx0XHRcdFx0ZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcblx0XHRcdFx0XHRcdGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcblx0XHRcdFx0XHRcdGFsaWduLWl0ZW1zOiBjZW50ZXI7XG5cdFx0XHRcdFx0XHR0ZXh0LWFsaWduOiBjZW50ZXI7XG5cdFx0XHRcdFx0fVxuXG5cdFx0XHRcdFx0cCB7XG5cdFx0XHRcdFx0XHR0ZXh0LWFsaWduOiBjZW50ZXI7XG5cdFx0XHRcdFx0XHRtYXJnaW46IDAuNWVtIDJlbTtcblx0XHRcdFx0XHRcdGZvbnQtc2l6ZTogMC43NWVtO1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdEBtZWRpYSAobWluLXdpZHRoOiAke0JSRUFLUE9JTlRTLlNNQUxMX0RFU0tUT1B9cHgpIHtcblx0XHRcdFx0XHRcdHAge1xuXHRcdFx0XHRcdFx0XHRmb250LXNpemU6IDFlbTtcblx0XHRcdFx0XHRcdH1cblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQuYnV0dG9uIHtcblx0XHRcdFx0XHRcdGJvcmRlci1yYWRpdXM6IDVweDtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XG5cdFx0XHRcdFx0XHRib3JkZXI6IDJweCBzb2xpZDtcblx0XHRcdFx0XHRcdG91dGxpbmU6IG5vbmU7XG5cdFx0XHRcdFx0XHRjdXJzb3I6IHBvaW50ZXI7XG5cdFx0XHRcdFx0XHRjb2xvcjogd2hpdGU7XG5cdFx0XHRcdFx0XHRmb250LXNpemU6IDFlbTtcblx0XHRcdFx0XHRcdHBhZGRpbmc6IDAuMjVlbSAxZW07XG5cdFx0XHRcdFx0fVxuXG5cdFx0XHRcdFx0LnJlZGVlbS1idXR0b24ge1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZDogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpO1xuXHRcdFx0XHRcdFx0Ym9yZGVyLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSk7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLWNsaXA6IHBhZGRpbmctYm94O1xuXHRcdFx0XHRcdFx0cGFkZGluZzogMC4yNWVtIDFlbTtcblx0XHRcdFx0XHRcdG1hcmdpbjogMWVtIDA7XG5cdFx0XHRcdFx0fVxuXG5cdFx0XHRcdFx0LnJlZGVlbS1idXR0b246aG92ZXIge1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZDogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjMpO1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZC1jbGlwOiBwYWRkaW5nLWJveDtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQucmVkZWVtLWJ1dHRvbltkaXNhYmxlZF0ge1xuXHRcdFx0XHRcdFx0dHJhbnNmb3JtOiBub25lO1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjMpO1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZC1jbGlwOiBwYWRkaW5nLWJveDtcblx0XHRcdFx0XHRcdGNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuOCk7XG5cdFx0XHRcdFx0XHRjdXJzb3I6IG5vdC1hbGxvd2VkO1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdC5jbG9zZS1idXR0b24ge1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLWNsaXA6IHBhZGRpbmctYm94O1xuXHRcdFx0XHRcdFx0Ym9yZGVyLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSk7XG5cdFx0XHRcdFx0XHRjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpO1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdC5jbG9zZS1idXR0b246aG92ZXIge1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZDogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjIpO1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZC1jbGlwOiBwYWRkaW5nLWJveDtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0YH1cblx0XHRcdFx0PC9zdHlsZT5cblx0XHRcdFx0PGgyPnt0aGlzLnByb3BzLnRpdGxlfTwvaDI+XG5cblx0e1xuXHRcdHJlZGVlbWVkXG5cdFx0XHQ/IChcblx0XHRcdFx0PGRpdiBjbGFzc05hbWU9XCJpbmZvLWNvbnRhaW5lclwiPlxuXHRcdFx0XHRcdDxzcGFuPlxuXHRcdHtcblx0XHRcdHRoaXMuc3RhdGUucmVkZWVtZWRcblx0XHRcdFx0PyAnUHJvbW90aW9uIHJlZGVlbWVkIHN1Y2Nlc3NmdWxseSdcblx0XHRcdFx0OiAnVGhpcyBwcm9tb3Rpb24gaGFzIGFscmVhZHkgYmVlbiByZWRlZW1lZCdcblx0XHR9XG5cdFx0XHRcdFx0PC9zcGFuPlxuXHRcdFx0XHRcdDxpbWcgYWx0PVwiXCIgc3JjPXtgL2ltYWdlcy9pY29ucy8ke3RoaXMuc3RhdGUucmVkZWVtZWRcblx0XHRcdFx0XHRcdD8gJ2NoZWNrbWFyaycgOiAneC1tYXJrJ30uc3ZnYH0gd2lkdGg9XCIzMDBcIiBoZWlnaHQ9XCIzMDBcIiAvPlxuXHRcdFx0XHQ8L2Rpdj5cblx0XHRcdClcblx0XHRcdDogKFxuXHRcdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cInJlZGVlbS1jb250YWluZXJcIj5cblx0XHRcdFx0XHQ8cD5cblx0XHRcdFx0XHRcdFByb21vdGlvbnMgbXVzdCBiZSByZWRlZW1lZCBpbiBmcm9udCBvZiBhIGJhcnRlbmRlci5cblx0XHRcdFx0XHRcdEFyZSB5b3Ugc3VyZSB5b3Ugd2FudCB0byByZWRlZW0gdGhpcyBub3c/XG5cdFx0XHRcdFx0PC9wPlxuXHRcdFx0XHRcdDxidXR0b24gdHlwZT1cImJ1dHRvblwiIGNsYXNzTmFtZT1cImJ1dHRvbiByZWRlZW0tYnV0dG9uXCJcblx0XHRcdFx0XHRcdFx0b25DbGljaz17dGhpcy5yZWRlZW19PlxuXHRcdFx0XHRcdFx0UmVkZWVtXG5cdFx0XHRcdFx0PC9idXR0b24+XG5cdFx0XHRcdFx0PHA+XG5cdFx0XHRcdFx0XHRUaGlzIGNhbid0IGJlIHVuZG9uZS5cblx0XHRcdFx0XHQ8L3A+XG5cdFx0XHRcdDwvZGl2PlxuXHRcdFx0KVxuXHR9XG5cblxuXHRcdFx0XHQ8YnV0dG9uIHR5cGU9XCJidXR0b25cIiBjbGFzc05hbWU9XCJidXR0b24gY2xvc2UtYnV0dG9uXCJcblx0XHRcdFx0XHRcdG9uQ2xpY2s9e3RoaXMucHJvcHMuY2xvc2V9PlxuXHRcdFx0XHRcdENsb3NlXG5cdFx0XHRcdDwvYnV0dG9uPlxuXHRcdFx0PC9kaXY+XG5cdFx0KTtcblx0fVxuXG5cdHJlZGVlbSgpe1xuXHRcdHRoaXMuc2V0U3RhdGUoe3JlZGVlbWVkOiB0cnVlfSk7XG5cblx0XHRjb25zdCB1c2VySWQgPSB0aGlzLnByb3BzLnVzZXIudWlkO1xuXHRcdGZpcmViYXNlLmRhdGFiYXNlKClcblx0XHRcdC5yZWYoYHVzZXJzLyR7dXNlcklkfS9yZWRlZW1lZFByb21vdGlvbnMvJHt0aGlzLnByb3BzLmlkfWApLnNldCh7XG5cdFx0XHRcdHJlZGVlbWVkOiB0cnVlLFxuXHRcdFx0XHRyZWRlZW1lZEF0OiBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKClcblx0XHRcdH0pO1xuXHR9XG5cblx0aGFuZGxlS2V5dXAoZXZlbnQpe1xuXHRcdGlmKGV2ZW50LmtleSA9PT0gJ0VzY2FwZScpXG5cdFx0XHR0aGlzLnByb3BzLmNsb3NlKCk7XG5cdH1cblxuXHRjb21wb25lbnRXaWxsVW5tb3VudCgpe1xuXHRcdGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJ2h0bWwnKS5jbGFzc0xpc3QucmVtb3ZlKCdsb2NrZWQnKTtcblx0XHRkb2N1bWVudC5yZW1vdmVFdmVudExpc3RlbmVyKCdrZXl1cCcsIHRoaXMuaGFuZGxlS2V5dXApO1xuXHR9XG59XG5cbkFjdGl2ZVByb21vdGlvbi5wcm9wVHlwZXMgPSB7XG5cdHVzZXI6IE9iamVjdCxcblx0dXNlckRhdGE6IE9iamVjdCxcblx0aWQ6IFN0cmluZyxcblx0dGl0bGU6IFN0cmluZyxcblx0ZGVzYzogU3RyaW5nLFxuXHRjbG9zZTogRnVuY3Rpb25cbn07XG4iXX0= */\\n/*@ sourceURL=_js/components/ActivePromotion.js */'\n\t\t\t\t}),\n\t\t\t\th(\n\t\t\t\t\t'h2',\n\t\t\t\t\t{\n\t\t\t\t\t\t'data-jsx': 3533501187\n\t\t\t\t\t},\n\t\t\t\t\tthis.props.title\n\t\t\t\t),\n\t\t\t\tredeemed ? h(\n\t\t\t\t\t'div',\n\t\t\t\t\t{ className: 'info-container', 'data-jsx': 3533501187\n\t\t\t\t\t},\n\t\t\t\t\th(\n\t\t\t\t\t\t'span',\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t'data-jsx': 3533501187\n\t\t\t\t\t\t},\n\t\t\t\t\t\tthis.state.redeemed ? 'Promotion redeemed successfully' : 'This promotion has already been redeemed'\n\t\t\t\t\t),\n\t\t\t\t\th('img', { alt: '', src: '/images/icons/' + (this.state.redeemed ? 'checkmark' : 'x-mark') + '.svg', width: '300', height: '300', 'data-jsx': 3533501187\n\t\t\t\t\t})\n\t\t\t\t) : h(\n\t\t\t\t\t'div',\n\t\t\t\t\t{ className: 'redeem-container', 'data-jsx': 3533501187\n\t\t\t\t\t},\n\t\t\t\t\th(\n\t\t\t\t\t\t'p',\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t'data-jsx': 3533501187\n\t\t\t\t\t\t},\n\t\t\t\t\t\t'Promotions must be redeemed in front of a bartender. Are you sure you want to redeem this now?'\n\t\t\t\t\t),\n\t\t\t\t\th(\n\t\t\t\t\t\t'button',\n\t\t\t\t\t\t{ type: 'button', className: 'button redeem-button',\n\t\t\t\t\t\t\tonClick: this.redeem, 'data-jsx': 3533501187\n\t\t\t\t\t\t},\n\t\t\t\t\t\t'Redeem'\n\t\t\t\t\t),\n\t\t\t\t\th(\n\t\t\t\t\t\t'p',\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t'data-jsx': 3533501187\n\t\t\t\t\t\t},\n\t\t\t\t\t\t'This can\\'t be undone.'\n\t\t\t\t\t)\n\t\t\t\t),\n\t\t\t\th(\n\t\t\t\t\t'button',\n\t\t\t\t\t{ type: 'button', className: 'button close-button',\n\t\t\t\t\t\tonClick: this.props.close, 'data-jsx': 3533501187\n\t\t\t\t\t},\n\t\t\t\t\t'Close'\n\t\t\t\t)\n\t\t\t);\n\t\t}\n\t}, {\n\t\tkey: 'redeem',\n\t\tvalue: function redeem() {\n\t\t\tthis.setState({ redeemed: true });\n\n\t\t\tvar userId = this.props.user.uid;\n\t\t\tfirebase.database().ref('users/' + userId + '/redeemedPromotions/' + this.props.id).set({\n\t\t\t\tredeemed: true,\n\t\t\t\tredeemedAt: new Date().toISOString()\n\t\t\t});\n\t\t}\n\t}, {\n\t\tkey: 'handleKeyup',\n\t\tvalue: function handleKeyup(event) {\n\t\t\tif (event.key === 'Escape') this.props.close();\n\t\t}\n\t}, {\n\t\tkey: 'componentWillUnmount',\n\t\tvalue: function componentWillUnmount() {\n\t\t\tdocument.querySelector('html').classList.remove('locked');\n\t\t\tdocument.removeEventListener('keyup', this.handleKeyup);\n\t\t}\n\t}]);\n\n\treturn ActivePromotion;\n}(Component);\n\nexport default ActivePromotion;\n\n\nActivePromotion.propTypes = {\n\tuser: Object,\n\tuserData: Object,\n\tid: String,\n\ttitle: String,\n\tdesc: String,\n\tclose: Function\n};"
     },
     {
-      "id": 38,
+      "id": 39,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotion.js",
       "name": "./_js/components/Promotion.js",
       "index": 74,
       "index2": 73,
       "size": 11850,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2083,14 +2135,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
-      "issuerId": 39,
+      "issuerId": 40,
       "issuerName": "./_js/components/Promotions.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 39,
+          "moduleId": 40,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
           "module": "./_js/components/Promotions.js",
           "moduleName": "./_js/components/Promotions.js",
@@ -2109,14 +2161,14 @@
       "source": "var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nimport _JSXStyle from 'styled-jsx/style';\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nimport { h, Component } from 'preact';\n\nimport { isPromotionRedeemed } from '../utils.js';\nimport { BREAKPOINTS } from '../constants.js';\n\nvar Promotion = function (_Component) {\n\t_inherits(Promotion, _Component);\n\n\tfunction Promotion() {\n\t\t_classCallCheck(this, Promotion);\n\n\t\tvar _this = _possibleConstructorReturn(this, (Promotion.__proto__ || Object.getPrototypeOf(Promotion)).call(this));\n\n\t\t_this.handleClick = _this.handleClick.bind(_this);\n\t\treturn _this;\n\t}\n\n\t_createClass(Promotion, [{\n\t\tkey: 'render',\n\t\tvalue: function render() {\n\t\t\tvar redeemed = isPromotionRedeemed(this.props.id, this.props.userData);\n\n\t\t\tvar redeemedAt = redeemed ? new Date(this.props.userData.redeemedPromotions[this.props.id].redeemedAt).toLocaleDateString() : null;\n\n\t\t\tvar style = {\n\t\t\t\tbackgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),\\n\\t\\t\\t\\t\\t\\t\\t\\turl(' + this.props.image + ')'\n\t\t\t};\n\n\t\t\treturn h(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'promotion ' + (redeemed ? 'redeemed' : ''),\n\t\t\t\t\tstyle: style, 'data-jsx': 3533501187\n\t\t\t\t},\n\t\t\t\th(_JSXStyle, {\n\t\t\t\t\tstyleId: 1736536099,\n\t\t\t\t\tcss: '.promotion[data-jsx=\"3533501187\"] {-webkit-flex: 1 1;-moz-flex: 1 1;flex: 1 1;display:-webkit-flex; display:flex;-webkit-flex-direction: column;-moz-flex-direction: column;flex-direction: column;justify-content: space-between;align-items: center;background-position: center;background-size: cover;margin: 1em 0;padding: 1em;min-height: 200px;border-radius: 3px;box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);border: none;color: white;font-size: 1.5em;font-family: sans-serif;text-align: center;-webkit-transition: 0.05s ease-out;-moz-transition: 0.05s ease-out;-ms-transition: 0.05s ease-out;transition: 0.05s ease-out;-webkit-transition-property: transform, box-shadow;-moz-transition-property: transform, box-shadow;-ms-transition-property: transform, box-shadow;transition-property: transform, box-shadow;}@media (min-width: ' + BREAKPOINTS.SMALL_DESKTOP + 'px) {.promotion[data-jsx=\"3533501187\"] {font-size: 2em;}}.promotion[data-jsx=\"3533501187\"]:hover {-webkit-transform: scale(1.01);-moz-transform: scale(1.01);-ms-transform: scale(1.01);transform: scale(1.01);box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.25);}.promotion.redeemed[data-jsx=\"3533501187\"] {-webkit-transform: none;-moz-transform: none;-ms-transform: none;transform: none;box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);opacity: 0.8;}.promotion[data-jsx=\"3533501187\"] > *[data-jsx=\"3533501187\"] {margin: 0.5em 0;}h2[data-jsx=\"3533501187\"] {margin: 0;font-size: 1.5em;pointer-events: none;}.button[data-jsx=\"3533501187\"] {border-radius: 5px;background-clip: padding-box;border: 2px solid;outline: none;cursor: pointer;color: white;font-size: 1em;padding: 0.25em 1em;}.redeem-button[data-jsx=\"3533501187\"] {background: rgba(255, 255, 255, 0.5);border-color: rgba(255, 255, 255, 0.5);background-clip: padding-box;}.redeem-button[data-jsx=\"3533501187\"]:hover {background: rgba(255, 255, 255, 0.3);background-clip: padding-box;}.redeem-button[disabled][data-jsx=\"3533501187\"] {-webkit-transform: none;-moz-transform: none;-ms-transform: none;transform: none;background: rgba(0, 0, 0, 0.3);background-clip: padding-box;color: rgba(255, 255, 255, 0.8);cursor: not-allowed;}p[data-jsx=\"3533501187\"] {margin: 0;pointer-events: none;}\\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9qcy9jb21wb25lbnRzL1Byb21vdGlvbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUE2QkssQUFDWSxtQ0FDRCwyQ0FDSSxtQ0FDUyxrRkFDUSwrQkFDWCxvQkFFUSw0QkFDTCx1QkFDVCxjQUNELGFBQ0ssa0JBQ0MsbUJBQzJCLDhDQUNqQyxhQUNBLGFBQ0ksaUJBQ08sd0JBQ0wsbUJBRVEsNkhBQ2dCLDZMQUMzQyxDQUVrRCxtREFFdEMsbUNBQ0ksZUFDZixDQUNELENBRWlCLHlDQUNNLDZHQUN1Qiw4Q0FFOUMsQ0FFb0IsNENBQ0osaUZBQzhCLDhDQUNqQyxhQUNiLENBRWUsOERBQ0MsZ0JBQ2hCLENBR0csMkJBQ08sVUFDTyxpQkFDSSxxQkFDckIsQ0FFUSxnQ0FDVyxtQkFDVSw2QkFDWCxrQkFDSixjQUNFLGdCQUNILGFBQ0UsZUFDSyxvQkFDcEIsQ0FFZSx1Q0FDc0IscUNBQ0UsdUNBQ1YsNkJBQzdCLENBRXFCLDZDQUNnQixxQ0FDUiw2QkFDN0IsQ0FFeUIsaURBQ1QsaUZBQ2UsK0JBQ0YsNkJBQ0csZ0NBQ1osb0JBQ3BCLENBR0UsMEJBQ1EsVUFDVyxxQkFDckIiLCJmaWxlIjoiX2pzL2NvbXBvbmVudHMvUHJvbW90aW9uLmpzIiwic291cmNlUm9vdCI6Ii9ob21lL21pc2Noa2EvcHJvamVjdHMvY295b3RlLWdyaWxsIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgaCwgQ29tcG9uZW50IH0gZnJvbSAncHJlYWN0JztcblxuaW1wb3J0IHsgaXNQcm9tb3Rpb25SZWRlZW1lZCB9IGZyb20gJy4uL3V0aWxzLmpzJztcbmltcG9ydCB7IEJSRUFLUE9JTlRTIH0gZnJvbSAnLi4vY29uc3RhbnRzLmpzJztcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgUHJvbW90aW9uIGV4dGVuZHMgQ29tcG9uZW50IHtcblx0Y29uc3RydWN0b3IoKXtcblx0XHRzdXBlcigpO1xuXG5cdFx0dGhpcy5oYW5kbGVDbGljayA9IHRoaXMuaGFuZGxlQ2xpY2suYmluZCh0aGlzKTtcblx0fVxuXG5cdHJlbmRlcigpe1xuXHRcdGNvbnN0IHJlZGVlbWVkID0gaXNQcm9tb3Rpb25SZWRlZW1lZCh0aGlzLnByb3BzLmlkLCB0aGlzLnByb3BzLnVzZXJEYXRhKTtcblxuXHRcdGNvbnN0IHJlZGVlbWVkQXQgPSByZWRlZW1lZFxuXHRcdFx0PyBuZXcgRGF0ZSh0aGlzLnByb3BzLnVzZXJEYXRhLnJlZGVlbWVkUHJvbW90aW9uc1t0aGlzLnByb3BzLmlkXS5yZWRlZW1lZEF0KVxuXHRcdFx0XHQudG9Mb2NhbGVEYXRlU3RyaW5nKClcblx0XHRcdDogbnVsbDtcblxuXHRcdGNvbnN0IHN0eWxlID0ge1xuXHRcdFx0YmFja2dyb3VuZEltYWdlOiBgbGluZWFyLWdyYWRpZW50KHJnYmEoMCwgMCwgMCwgMC4zKSwgcmdiYSgwLCAwLCAwLCAwLjMpKSxcblx0XHRcdFx0XHRcdFx0XHR1cmwoJHt0aGlzLnByb3BzLmltYWdlfSlgXG5cdFx0fTtcblxuXHRcdHJldHVybiAoXG5cdFx0XHQ8ZGl2IGNsYXNzTmFtZT17YHByb21vdGlvbiAke3JlZGVlbWVkID8gJ3JlZGVlbWVkJzogJyd9YH1cblx0XHRcdFx0XHRzdHlsZT17c3R5bGV9PlxuXHRcdFx0XHQ8c3R5bGUganN4PlxuXHRcdFx0XHR7YFxuXHRcdFx0XHRcdC5wcm9tb3Rpb24ge1xuXHRcdFx0XHRcdFx0ZmxleDogMSAxO1xuXHRcdFx0XHRcdFx0ZGlzcGxheTogZmxleDtcblx0XHRcdFx0XHRcdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG5cdFx0XHRcdFx0XHRqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG5cdFx0XHRcdFx0XHRhbGlnbi1pdGVtczogY2VudGVyO1xuXG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuXHRcdFx0XHRcdFx0bWFyZ2luOiAxZW0gMDtcblx0XHRcdFx0XHRcdHBhZGRpbmc6IDFlbTtcblx0XHRcdFx0XHRcdG1pbi1oZWlnaHQ6IDIwMHB4O1xuXHRcdFx0XHRcdFx0Ym9yZGVyLXJhZGl1czogM3B4O1xuXHRcdFx0XHRcdFx0Ym94LXNoYWRvdzogMCAycHggNXB4IDJweCByZ2JhKDAsIDAsIDAsIDAuMjUpO1xuXHRcdFx0XHRcdFx0Ym9yZGVyOiBub25lO1xuXHRcdFx0XHRcdFx0Y29sb3I6IHdoaXRlO1xuXHRcdFx0XHRcdFx0Zm9udC1zaXplOiAxLjVlbTtcblx0XHRcdFx0XHRcdGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xuXHRcdFx0XHRcdFx0dGV4dC1hbGlnbjogY2VudGVyO1xuXG5cdFx0XHRcdFx0XHR0cmFuc2l0aW9uOiAwLjA1cyBlYXNlLW91dDtcblx0XHRcdFx0XHRcdHRyYW5zaXRpb24tcHJvcGVydHk6IHRyYW5zZm9ybSwgYm94LXNoYWRvdztcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHRAbWVkaWEgKG1pbi13aWR0aDogJHtCUkVBS1BPSU5UUy5TTUFMTF9ERVNLVE9QfXB4KSB7XG5cblx0XHRcdFx0XHRcdC5wcm9tb3Rpb24ge1xuXHRcdFx0XHRcdFx0XHRmb250LXNpemU6IDJlbTtcblx0XHRcdFx0XHRcdH1cblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQucHJvbW90aW9uOmhvdmVyIHtcblx0XHRcdFx0XHRcdHRyYW5zZm9ybTogc2NhbGUoMS4wMSk7XG5cdFx0XHRcdFx0XHRib3gtc2hhZG93OiAwIDJweCA1cHggM3B4IHJnYmEoMCwgMCwgMCwgMC4yNSk7XG5cblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQucHJvbW90aW9uLnJlZGVlbWVkIHtcblx0XHRcdFx0XHRcdHRyYW5zZm9ybTogbm9uZTtcblx0XHRcdFx0XHRcdGJveC1zaGFkb3c6IDAgMnB4IDVweCAycHggcmdiYSgwLCAwLCAwLCAwLjI1KTtcblx0XHRcdFx0XHRcdG9wYWNpdHk6IDAuODtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQucHJvbW90aW9uID4gKiB7XG5cdFx0XHRcdFx0XHRtYXJnaW46IDAuNWVtIDA7XG5cdFx0XHRcdFx0fVxuXG5cblx0XHRcdFx0XHRoMiB7XG5cdFx0XHRcdFx0XHRtYXJnaW46IDA7XG5cdFx0XHRcdFx0XHRmb250LXNpemU6IDEuNWVtO1xuXHRcdFx0XHRcdFx0cG9pbnRlci1ldmVudHM6IG5vbmU7XG5cdFx0XHRcdFx0fVxuXG5cdFx0XHRcdFx0LmJ1dHRvbiB7XG5cdFx0XHRcdFx0XHRib3JkZXItcmFkaXVzOiA1cHg7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLWNsaXA6IHBhZGRpbmctYm94O1xuXHRcdFx0XHRcdFx0Ym9yZGVyOiAycHggc29saWQ7XG5cdFx0XHRcdFx0XHRvdXRsaW5lOiBub25lO1xuXHRcdFx0XHRcdFx0Y3Vyc29yOiBwb2ludGVyO1xuXHRcdFx0XHRcdFx0Y29sb3I6IHdoaXRlO1xuXHRcdFx0XHRcdFx0Zm9udC1zaXplOiAxZW07XG5cdFx0XHRcdFx0XHRwYWRkaW5nOiAwLjI1ZW0gMWVtO1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdC5yZWRlZW0tYnV0dG9uIHtcblx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC41KTtcblx0XHRcdFx0XHRcdGJvcmRlci1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpO1xuXHRcdFx0XHRcdFx0YmFja2dyb3VuZC1jbGlwOiBwYWRkaW5nLWJveDtcblx0XHRcdFx0XHR9XG5cblx0XHRcdFx0XHQucmVkZWVtLWJ1dHRvbjpob3ZlciB7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMyk7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLWNsaXA6IHBhZGRpbmctYm94O1xuXHRcdFx0XHRcdH1cblxuXHRcdFx0XHRcdC5yZWRlZW0tYnV0dG9uW2Rpc2FibGVkXSB7XG5cdFx0XHRcdFx0XHR0cmFuc2Zvcm06IG5vbmU7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuMyk7XG5cdFx0XHRcdFx0XHRiYWNrZ3JvdW5kLWNsaXA6IHBhZGRpbmctYm94O1xuXHRcdFx0XHRcdFx0Y29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC44KTtcblx0XHRcdFx0XHRcdGN1cnNvcjogbm90LWFsbG93ZWQ7XG5cdFx0XHRcdFx0fVxuXG5cblx0XHRcdFx0XHRwIHtcblx0XHRcdFx0XHRcdG1hcmdpbjogMDtcblx0XHRcdFx0XHRcdHBvaW50ZXItZXZlbnRzOiBub25lO1xuXHRcdFx0XHRcdH1cblx0XHRcdFx0YH1cblx0XHRcdFx0PC9zdHlsZT5cblx0XHRcdFx0PGgyPnt0aGlzLnByb3BzLnRpdGxlfTwvaDI+XG5cblxuXHRcdFx0XHQ8YnV0dG9uIGNsYXNzTmFtZT1cImJ1dHRvbiByZWRlZW0tYnV0dG9uXCJcblx0XHRcdFx0XHRcdGRpc2FibGVkPXshdGhpcy5wcm9wcy51c2VyIHx8IHJlZGVlbWVkfVxuXHRcdFx0XHRcdFx0b25DbGljaz17dGhpcy5oYW5kbGVDbGlja30+XG5cdFx0XHR7XG5cdFx0XHRcdHRoaXMucHJvcHMudXNlclxuXHRcdFx0XHRcdD8gcmVkZWVtZWRcblx0XHRcdFx0XHRcdD8gYFJlZWRlZW1lZCBvbiAke3JlZGVlbWVkQXR9YFxuXHRcdFx0XHRcdFx0OiAnUmVkZWVtJ1xuXHRcdFx0XHRcdDogJ1NpZ24gaW4gdG8gcmVkZWVtIHByb21vdGlvbidcblx0XHRcdH1cblx0XHRcdFx0PC9idXR0b24+XG5cblxuXHRcdFx0XHQ8cD5cblx0XHRcdFx0XHR7dGhpcy5wcm9wcy5kZXNjfVxuXHRcdFx0XHQ8L3A+XG5cdFx0XHQ8L2Rpdj5cblx0XHQpO1xuXHR9XG5cblx0aGFuZGxlQ2xpY2soKXtcblx0XHR0aGlzLnByb3BzLmFjdGl2YXRlKHRoaXMucHJvcHMuaWQpO1xuXHR9XG59XG5cblByb21vdGlvbi5wcm9wVHlwZXMgPSB7XG5cdHVzZXI6IE9iamVjdCxcblx0dXNlckRhdGE6IE9iamVjdCxcblx0aWQ6IFN0cmluZyxcblx0dGl0bGU6IFN0cmluZyxcblx0ZGVzYzogU3RyaW5nLFxuXHRlbmREYXRlOiBTdHJpbmcsXG5cdHN0YXJ0RGF0ZTogU3RyaW5nLFxuXHRpbWFnZTogU3RyaW5nLFxuXHRhY3RpdmF0ZTogRnVuY3Rpb25cbn07XG4iXX0= */\\n/*@ sourceURL=_js/components/Promotion.js */'\n\t\t\t\t}),\n\t\t\t\th(\n\t\t\t\t\t'h2',\n\t\t\t\t\t{\n\t\t\t\t\t\t'data-jsx': 3533501187\n\t\t\t\t\t},\n\t\t\t\t\tthis.props.title\n\t\t\t\t),\n\t\t\t\th(\n\t\t\t\t\t'button',\n\t\t\t\t\t{ className: 'button redeem-button',\n\t\t\t\t\t\tdisabled: !this.props.user || redeemed,\n\t\t\t\t\t\tonClick: this.handleClick, 'data-jsx': 3533501187\n\t\t\t\t\t},\n\t\t\t\t\tthis.props.user ? redeemed ? 'Reedeemed on ' + redeemedAt : 'Redeem' : 'Sign in to redeem promotion'\n\t\t\t\t),\n\t\t\t\th(\n\t\t\t\t\t'p',\n\t\t\t\t\t{\n\t\t\t\t\t\t'data-jsx': 3533501187\n\t\t\t\t\t},\n\t\t\t\t\tthis.props.desc\n\t\t\t\t)\n\t\t\t);\n\t\t}\n\t}, {\n\t\tkey: 'handleClick',\n\t\tvalue: function handleClick() {\n\t\t\tthis.props.activate(this.props.id);\n\t\t}\n\t}]);\n\n\treturn Promotion;\n}(Component);\n\nexport default Promotion;\n\n\nPromotion.propTypes = {\n\tuser: Object,\n\tuserData: Object,\n\tid: String,\n\ttitle: String,\n\tdesc: String,\n\tendDate: String,\n\tstartDate: String,\n\timage: String,\n\tactivate: Function\n};"
     },
     {
-      "id": 39,
+      "id": 40,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
       "name": "./_js/components/Promotions.js",
       "index": 36,
       "index2": 77,
-      "size": 13679,
+      "size": 13688,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2124,14 +2176,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/promotions/index.js",
-      "issuerId": 35,
+      "issuerId": 36,
       "issuerName": "./_js/promotions/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 35,
+          "moduleId": 36,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/promotions/index.js",
           "module": "./_js/promotions/index.js",
           "moduleName": "./_js/promotions/index.js",
@@ -2147,17 +2199,17 @@
         "default"
       ],
       "depth": 2,
-      "source": "var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nimport _JSXStyle from 'styled-jsx/style';\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nimport { h, Component } from 'preact';\nimport firebase from 'firebase';\n\nimport Promotion from './Promotion.js';\nimport ActivePromotion from './ActivePromotion.js';\nimport SignIn from './SignIn.js';\n\nimport { isoDateString, isPromotionRedeemed } from '../utils.js';\n\nvar Promotions = function (_Component) {\n\t_inherits(Promotions, _Component);\n\n\tfunction Promotions() {\n\t\t_classCallCheck(this, Promotions);\n\n\t\tvar _this = _possibleConstructorReturn(this, (Promotions.__proto__ || Object.getPrototypeOf(Promotions)).call(this));\n\n\t\t_this.state = {\n\t\t\tfirebaseConfig: null,\n\t\t\tuser: null,\n\t\t\tuserData: null,\n\t\t\tpromotions: [],\n\t\t\tactivePromotion: null\n\t\t};\n\n\t\t_this.subToPromotions = _this.subToPromotions.bind(_this);\n\t\t_this.setActivePromotion = _this.setActivePromotion.bind(_this);\n\t\t_this.unsetActivePromotion = _this.unsetActivePromotion.bind(_this);\n\t\treturn _this;\n\t}\n\n\t_createClass(Promotions, [{\n\t\tkey: 'componentDidMount',\n\t\tvalue: function componentDidMount() {\n\t\t\tvar _this2 = this;\n\n\t\t\tfetch('/env.json').then(function (response) {\n\t\t\t\tif (response.ok) return response.json();\n\t\t\t\tthrow new Error(response.message);\n\t\t\t}).then(function (config) {\n\t\t\t\tfirebase.initializeApp(config);\n\t\t\t\tfirebase.auth().onAuthStateChanged(function (user) {\n\t\t\t\t\t_this2.setState({ user: user });\n\t\t\t\t\tif (user) {\n\t\t\t\t\t\tvar userRef = firebase.database().ref('users/' + user.uid);\n\t\t\t\t\t\tuserRef.child('lastLoggedIn').set(new Date().toISOString());\n\n\t\t\t\t\t\tuserRef.on('value', function (snapshot) {\n\t\t\t\t\t\t\tvar userData = snapshot.val();\n\t\t\t\t\t\t\tif (userData) _this2.setState({ userData: userData });\n\t\t\t\t\t\t});\n\t\t\t\t\t} else {\n\t\t\t\t\t\t_this2.setState({ userData: null });\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t\t_this2.setState({ firebaseConfig: config });\n\t\t\t\t_this2.subToPromotions();\n\t\t\t}).catch(function (err) {\n\t\t\t\tconsole.error(err);\n\t\t\t});\n\t\t}\n\t}, {\n\t\tkey: 'render',\n\t\tvalue: function render() {\n\t\t\tvar _this3 = this;\n\n\t\t\treturn h(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'promotions', 'data-jsx': 2302483471\n\t\t\t\t},\n\t\t\t\th(_JSXStyle, {\n\t\t\t\t\tstyleId: 2302483471,\n\t\t\t\t\tcss: '.promotions[data-jsx=\"2302483471\"] {position: relative;box-sizing: border-box;min-height: 100%;width: 100%;padding: 3em 10% 6em;display:-webkit-flex; display:flex;-webkit-flex-direction: column;-moz-flex-direction: column;flex-direction: column;justify-content: center;align-items: stretch;}\\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9qcy9jb21wb25lbnRzL1Byb21vdGlvbnMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBNERLLEFBQ2Esb0NBQ08sbUJBQ0ksdUJBQ04saUJBQ0wsWUFDUyxxQkFDUCxtQ0FDUyxrRkFDQyx3QkFDSCxxQkFDckIiLCJmaWxlIjoiX2pzL2NvbXBvbmVudHMvUHJvbW90aW9ucy5qcyIsInNvdXJjZVJvb3QiOiIvaG9tZS9taXNjaGthL3Byb2plY3RzL2NveW90ZS1ncmlsbCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGgsIENvbXBvbmVudCB9IGZyb20gJ3ByZWFjdCc7XG5pbXBvcnQgZmlyZWJhc2UgZnJvbSAnZmlyZWJhc2UnO1xuXG5pbXBvcnQgUHJvbW90aW9uIGZyb20gJy4vUHJvbW90aW9uLmpzJztcbmltcG9ydCBBY3RpdmVQcm9tb3Rpb24gZnJvbSAnLi9BY3RpdmVQcm9tb3Rpb24uanMnO1xuaW1wb3J0IFNpZ25JbiBmcm9tICcuL1NpZ25Jbi5qcyc7XG5cbmltcG9ydCB7IGlzb0RhdGVTdHJpbmcsIGlzUHJvbW90aW9uUmVkZWVtZWQgfSBmcm9tICcuLi91dGlscy5qcyc7XG5cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIFByb21vdGlvbnMgZXh0ZW5kcyBDb21wb25lbnQge1xuXHRjb25zdHJ1Y3Rvcigpe1xuXHRcdHN1cGVyKCk7XG5cdFx0dGhpcy5zdGF0ZSA9IHtcblx0XHRcdGZpcmViYXNlQ29uZmlnOiBudWxsLFxuXHRcdFx0dXNlcjogbnVsbCxcblx0XHRcdHVzZXJEYXRhOiBudWxsLFxuXHRcdFx0cHJvbW90aW9uczogW10sXG5cdFx0XHRhY3RpdmVQcm9tb3Rpb246IG51bGxcblx0XHR9O1xuXG5cdFx0dGhpcy5zdWJUb1Byb21vdGlvbnMgPSB0aGlzLnN1YlRvUHJvbW90aW9ucy5iaW5kKHRoaXMpO1xuXHRcdHRoaXMuc2V0QWN0aXZlUHJvbW90aW9uID0gdGhpcy5zZXRBY3RpdmVQcm9tb3Rpb24uYmluZCh0aGlzKTtcblx0XHR0aGlzLnVuc2V0QWN0aXZlUHJvbW90aW9uID0gdGhpcy51bnNldEFjdGl2ZVByb21vdGlvbi5iaW5kKHRoaXMpO1xuXHR9XG5cblx0Y29tcG9uZW50RGlkTW91bnQoKXtcblxuXG5cdFx0ZmV0Y2goJy9lbnYuanNvbicpLnRoZW4ocmVzcG9uc2UgPT4ge1xuXHRcdFx0aWYocmVzcG9uc2Uub2spXG5cdFx0XHRcdHJldHVybiByZXNwb25zZS5qc29uKCk7XG5cdFx0XHR0aHJvdyBuZXcgRXJyb3IocmVzcG9uc2UubWVzc2FnZSk7XG5cdFx0fSkudGhlbihjb25maWcgPT4ge1xuXHRcdFx0ZmlyZWJhc2UuaW5pdGlhbGl6ZUFwcChjb25maWcpO1xuXHRcdFx0ZmlyZWJhc2UuYXV0aCgpLm9uQXV0aFN0YXRlQ2hhbmdlZCh1c2VyID0+IHtcblx0XHRcdFx0dGhpcy5zZXRTdGF0ZSh7dXNlcn0pO1xuXHRcdFx0XHRpZih1c2VyKXtcblx0XHRcdFx0XHRjb25zdCB1c2VyUmVmID0gZmlyZWJhc2UuZGF0YWJhc2UoKS5yZWYoYHVzZXJzLyR7dXNlci51aWR9YCk7XG5cdFx0XHRcdFx0dXNlclJlZi5jaGlsZCgnbGFzdExvZ2dlZEluJykuc2V0KG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSk7XG5cblx0XHRcdFx0XHR1c2VyUmVmLm9uKCd2YWx1ZScsIHNuYXBzaG90ID0+IHtcblx0XHRcdFx0XHRcdGxldCB1c2VyRGF0YSA9IHNuYXBzaG90LnZhbCgpO1xuXHRcdFx0XHRcdFx0aWYodXNlckRhdGEpXG5cdFx0XHRcdFx0XHRcdHRoaXMuc2V0U3RhdGUoe3VzZXJEYXRhfSk7XG5cdFx0XHRcdFx0fSk7XG5cdFx0XHRcdH0gZWxzZSB7XG5cdFx0XHRcdFx0dGhpcy5zZXRTdGF0ZSh7dXNlckRhdGE6IG51bGx9KTtcblx0XHRcdFx0fVxuXHRcdFx0fSk7XG5cdFx0XHR0aGlzLnNldFN0YXRlKHtmaXJlYmFzZUNvbmZpZzogY29uZmlnfSk7XG5cdFx0XHR0aGlzLnN1YlRvUHJvbW90aW9ucygpO1xuXHRcdH0pLmNhdGNoKGVyciA9PiB7XG5cdFx0XHRjb25zb2xlLmVycm9yKGVycik7XG5cdFx0fSk7XG5cdH1cblxuXHRyZW5kZXIoKXtcblx0XHRyZXR1cm4gKFxuXHRcdFx0PGRpdiBjbGFzc05hbWU9XCJwcm9tb3Rpb25zXCI+XG5cdFx0XHRcdDxzdHlsZSBqc3g+XG5cdFx0XHRcdHtgXG5cdFx0XHRcdFx0LnByb21vdGlvbnMge1xuXHRcdFx0XHRcdFx0cG9zaXRpb246IHJlbGF0aXZlO1xuXHRcdFx0XHRcdFx0Ym94LXNpemluZzogYm9yZGVyLWJveDtcblx0XHRcdFx0XHRcdG1pbi1oZWlnaHQ6IDEwMCU7XG5cdFx0XHRcdFx0XHR3aWR0aDogMTAwJTtcblx0XHRcdFx0XHRcdHBhZGRpbmc6IDNlbSAxMCUgNmVtO1xuXHRcdFx0XHRcdFx0ZGlzcGxheTogZmxleDtcblx0XHRcdFx0XHRcdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG5cdFx0XHRcdFx0XHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcblx0XHRcdFx0XHRcdGFsaWduLWl0ZW1zOiBzdHJldGNoO1xuXHRcdFx0XHRcdH1cblx0XHRcdFx0YH1cblx0XHRcdFx0PC9zdHlsZT5cblxuXHRcdFx0XHR7dGhpcy5zdGF0ZS5maXJlYmFzZUNvbmZpZyAmJiA8U2lnbkluIHVzZXI9e3RoaXMuc3RhdGUudXNlcn0gLz59XG5cblx0XHR7IHRoaXMuc3RhdGUuYWN0aXZlUHJvbW90aW9uICYmIChcblx0XHRcdFx0PEFjdGl2ZVByb21vdGlvbiB1c2VyPXt0aGlzLnN0YXRlLnVzZXJ9IHVzZXJEYXRhPXt0aGlzLnN0YXRlLnVzZXJEYXRhfVxuXHRcdFx0XHRcdHsuLi50aGlzLnN0YXRlLnByb21vdGlvbnNbdGhpcy5zdGF0ZS5hY3RpdmVQcm9tb3Rpb25dfVxuXHRcdFx0XHRcdGNsb3NlPXt0aGlzLnVuc2V0QWN0aXZlUHJvbW90aW9ufSAvPlxuXHRcdCl9XG5cblx0XHR7XG5cdFx0XHRPYmplY3QudmFsdWVzKHRoaXMuc3RhdGUucHJvbW90aW9ucykubWFwKHByb21vdGlvbiA9PiAoXG5cdFx0XHRcdDxQcm9tb3Rpb24gdXNlcj17dGhpcy5zdGF0ZS51c2VyfSB1c2VyRGF0YT17dGhpcy5zdGF0ZS51c2VyRGF0YX1cblx0XHRcdFx0XHR7Li4ucHJvbW90aW9ufSBhY3RpdmF0ZT17dGhpcy5zZXRBY3RpdmVQcm9tb3Rpb259IC8+XG5cdFx0XHQpKVxuXHRcdH1cblx0XHRcdDwvZGl2PlxuXHRcdCk7XG5cdH1cblxuXHRzdWJUb1Byb21vdGlvbnMoKXtcblx0XHRjb25zdCBkYXRhYmFzZSA9IGZpcmViYXNlLmRhdGFiYXNlKCk7XG5cdFx0Y29uc3QgdG9kYXkgPSBuZXcgRGF0ZSgpO1xuXG5cdFx0dGhpcy5wcm9tb3Rpb25zUmVmID0gZGF0YWJhc2UucmVmKCcvcHJvbW90aW9ucycpXG5cdFx0XHQub3JkZXJCeUNoaWxkKCdzdGFydERhdGUnKS5lbmRBdChpc29EYXRlU3RyaW5nKHRvZGF5KSk7XG5cblx0XHR0aGlzLnByb21vdGlvbnNSZWYub24oJ2NoaWxkX2FkZGVkJywgc25hcHNob3QgPT4ge1xuXHRcdFx0Y29uc3QgcHJvbW90aW9uID0gc25hcHNob3QudmFsKCk7XG5cdFx0XHRwcm9tb3Rpb24uaWQgPSBzbmFwc2hvdC5rZXk7XG5cblx0XHRcdGlmKHByb21vdGlvbklzQWN0aXZlKHByb21vdGlvbikpXG5cdFx0XHRcdHRoaXMuc2V0U3RhdGUocHJldlN0YXRlID0+IHtcblx0XHRcdFx0XHRsZXQgcHJvbW90aW9ucyA9IE9iamVjdC5hc3NpZ24oe30sIHByZXZTdGF0ZS5wcm9tb3Rpb25zKTtcblx0XHRcdFx0XHRwcm9tb3Rpb25zW3Byb21vdGlvbi5pZF0gPSBwcm9tb3Rpb247XG5cblx0XHRcdFx0XHRyZXR1cm4ge1xuXHRcdFx0XHRcdFx0cHJvbW90aW9uc1xuXHRcdFx0XHRcdH07XG5cdFx0XHRcdH0pO1xuXHRcdH0pO1xuXG5cdFx0dGhpcy5wcm9tb3Rpb25zUmVmLm9uKCdjaGlsZF9jaGFuZ2VkJywgc25hcHNob3QgPT4ge1xuXHRcdFx0Y29uc3QgcHJvbW90aW9uID0gc25hcHNob3QudmFsKCk7XG5cdFx0XHRwcm9tb3Rpb24uaWQgPSBzbmFwc2hvdC5rZXk7XG5cdFx0XHR0aGlzLnNldFN0YXRlKHByZXZTdGF0ZSA9PiB7XG5cdFx0XHRcdGxldCBwcm9tb3Rpb25zID0gT2JqZWN0LmFzc2lnbih7fSwgcHJldlN0YXRlLnByb21vdGlvbnMpO1xuXG5cdFx0XHRcdGlmKHByb21vdGlvbklzQWN0aXZlKHByb21vdGlvbikpXG5cdFx0XHRcdFx0cHJvbW90aW9uc1twcm9tb3Rpb24uaWRdID0gcHJvbW90aW9uO1xuXHRcdFx0XHRlbHNlIGlmKHByb21vdGlvbnNbcHJvbW90aW9uLmlkXSlcblx0XHRcdFx0XHRkZWxldGUgcHJvbW90aW9uc1twcm9tb3Rpb24uaWRdO1xuXG5cdFx0XHRcdHJldHVybiB7XG5cdFx0XHRcdFx0cHJvbW90aW9uc1xuXHRcdFx0XHR9O1xuXHRcdFx0fSk7XG5cdFx0fSk7XG5cblx0XHR0aGlzLnByb21vdGlvbnNSZWYub24oJ2NoaWxkX3JlbW92ZWQnLCBzbmFwc2hvdCA9PiB7XG5cdFx0XHRjb25zdCBwcm9tb3Rpb25JZCA9IHNuYXBzaG90LmtleTtcblx0XHRcdHRoaXMuc2V0U3RhdGUocHJldlN0YXRlID0+IHtcblx0XHRcdFx0aWYocHJldlN0YXRlLnByb21vdGlvbnNbcHJvbW90aW9uSWRdKXtcblx0XHRcdFx0XHRsZXQgcHJvbW90aW9ucyA9IE9iamVjdC5hc3NpZ24oe30sIHByZXZTdGF0ZS5wcm9tb3Rpb25zKTtcblx0XHRcdFx0XHRkZWxldGUgcHJvbW90aW9uc1twcm9tb3Rpb25JZF07XG5cblx0XHRcdFx0XHRyZXR1cm4ge1xuXHRcdFx0XHRcdFx0cHJvbW90aW9uc1xuXHRcdFx0XHRcdH07XG5cdFx0XHRcdH1cblx0XHRcdH0pO1xuXHRcdH0pO1xuXHR9XG5cblx0c2V0QWN0aXZlUHJvbW90aW9uKGFjdGl2ZVByb21vdGlvbil7XG5cdFx0aWYoIWlzUHJvbW90aW9uUmVkZWVtZWQoYWN0aXZlUHJvbW90aW9uLCB0aGlzLnN0YXRlLnVzZXJEYXRhKSlcblx0XHRcdHRoaXMuc2V0U3RhdGUoe2FjdGl2ZVByb21vdGlvbn0pO1xuXHR9XG5cblx0dW5zZXRBY3RpdmVQcm9tb3Rpb24oKXtcblx0XHR0aGlzLnNldFN0YXRlKHthY3RpdmVQcm9tb3Rpb246IG51bGx9KTtcblx0fVxuXG5cdGNvbXBvbmVudFdpbGxVbm1vdW50KCl7XG5cdFx0aWYodGhpcy5wcm9tb3Rpb25zUmVmKVxuXHRcdFx0dGhpcy5wcm9tb3Rpb25zUmVmLm9mZignY2hpbGRfYWRkZWQnKTtcblx0fVxufVxuXG5mdW5jdGlvbiBwcm9tb3Rpb25Jc0FjdGl2ZShwcm9tb3Rpb24pe1xuXHRjb25zdCB0b2RheSA9IG5ldyBEYXRlKCk7XG5cdGNvbnN0IHByb21vdGlvblN0YXJ0ID0gbmV3IERhdGUocHJvbW90aW9uLnN0YXJ0RGF0ZSk7XG5cdGNvbnN0IHByb21vdGlvbkVuZCA9IG5ldyBEYXRlKHByb21vdGlvbi5lbmREYXRlKTtcblx0cmV0dXJuIHByb21vdGlvblN0YXJ0IDw9IHRvZGF5ICYmIHByb21vdGlvbkVuZCA+PSB0b2RheTtcbn1cbiJdfQ== */\\n/*@ sourceURL=_js/components/Promotions.js */'\n\t\t\t\t}),\n\t\t\t\tthis.state.firebaseConfig && h(SignIn, { user: this.state.user }),\n\t\t\t\tthis.state.activePromotion && h(ActivePromotion, _extends({ user: this.state.user, userData: this.state.userData\n\t\t\t\t}, this.state.promotions[this.state.activePromotion], {\n\t\t\t\t\tclose: this.unsetActivePromotion })),\n\t\t\t\tObject.values(this.state.promotions).map(function (promotion) {\n\t\t\t\t\treturn h(Promotion, _extends({ user: _this3.state.user, userData: _this3.state.userData\n\t\t\t\t\t}, promotion, { activate: _this3.setActivePromotion }));\n\t\t\t\t})\n\t\t\t);\n\t\t}\n\t}, {\n\t\tkey: 'subToPromotions',\n\t\tvalue: function subToPromotions() {\n\t\t\tvar _this4 = this;\n\n\t\t\tvar database = firebase.database();\n\t\t\tvar today = new Date();\n\n\t\t\tthis.promotionsRef = database.ref('/promotions').orderByChild('startDate').endAt(isoDateString(today));\n\n\t\t\tthis.promotionsRef.on('child_added', function (snapshot) {\n\t\t\t\tvar promotion = snapshot.val();\n\t\t\t\tpromotion.id = snapshot.key;\n\n\t\t\t\tif (promotionIsActive(promotion)) _this4.setState(function (prevState) {\n\t\t\t\t\tvar promotions = Object.assign({}, prevState.promotions);\n\t\t\t\t\tpromotions[promotion.id] = promotion;\n\n\t\t\t\t\treturn {\n\t\t\t\t\t\tpromotions: promotions\n\t\t\t\t\t};\n\t\t\t\t});\n\t\t\t});\n\n\t\t\tthis.promotionsRef.on('child_changed', function (snapshot) {\n\t\t\t\tvar promotion = snapshot.val();\n\t\t\t\tpromotion.id = snapshot.key;\n\t\t\t\t_this4.setState(function (prevState) {\n\t\t\t\t\tvar promotions = Object.assign({}, prevState.promotions);\n\n\t\t\t\t\tif (promotionIsActive(promotion)) promotions[promotion.id] = promotion;else if (promotions[promotion.id]) delete promotions[promotion.id];\n\n\t\t\t\t\treturn {\n\t\t\t\t\t\tpromotions: promotions\n\t\t\t\t\t};\n\t\t\t\t});\n\t\t\t});\n\n\t\t\tthis.promotionsRef.on('child_removed', function (snapshot) {\n\t\t\t\tvar promotionId = snapshot.key;\n\t\t\t\t_this4.setState(function (prevState) {\n\t\t\t\t\tif (prevState.promotions[promotionId]) {\n\t\t\t\t\t\tvar promotions = Object.assign({}, prevState.promotions);\n\t\t\t\t\t\tdelete promotions[promotionId];\n\n\t\t\t\t\t\treturn {\n\t\t\t\t\t\t\tpromotions: promotions\n\t\t\t\t\t\t};\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t});\n\t\t}\n\t}, {\n\t\tkey: 'setActivePromotion',\n\t\tvalue: function setActivePromotion(activePromotion) {\n\t\t\tif (!isPromotionRedeemed(activePromotion, this.state.userData)) this.setState({ activePromotion: activePromotion });\n\t\t}\n\t}, {\n\t\tkey: 'unsetActivePromotion',\n\t\tvalue: function unsetActivePromotion() {\n\t\t\tthis.setState({ activePromotion: null });\n\t\t}\n\t}, {\n\t\tkey: 'componentWillUnmount',\n\t\tvalue: function componentWillUnmount() {\n\t\t\tif (this.promotionsRef) this.promotionsRef.off('child_added');\n\t\t}\n\t}]);\n\n\treturn Promotions;\n}(Component);\n\nexport default Promotions;\n\n\nfunction promotionIsActive(promotion) {\n\tvar today = new Date();\n\tvar promotionStart = new Date(promotion.startDate);\n\tvar promotionEnd = new Date(promotion.endDate);\n\treturn promotionStart <= today && promotionEnd >= today;\n}"
+      "source": "var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nimport _JSXStyle from 'styled-jsx/style';\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nimport { h, Component } from 'preact';\nimport * as firebase from 'firebase';\n\nimport Promotion from './Promotion.js';\nimport ActivePromotion from './ActivePromotion.js';\nimport SignIn from './SignIn.js';\n\nimport { isoDateString, isPromotionRedeemed } from '../utils.js';\n\nvar Promotions = function (_Component) {\n\t_inherits(Promotions, _Component);\n\n\tfunction Promotions() {\n\t\t_classCallCheck(this, Promotions);\n\n\t\tvar _this = _possibleConstructorReturn(this, (Promotions.__proto__ || Object.getPrototypeOf(Promotions)).call(this));\n\n\t\t_this.state = {\n\t\t\tfirebaseConfig: null,\n\t\t\tuser: null,\n\t\t\tuserData: null,\n\t\t\tpromotions: [],\n\t\t\tactivePromotion: null\n\t\t};\n\n\t\t_this.subToPromotions = _this.subToPromotions.bind(_this);\n\t\t_this.setActivePromotion = _this.setActivePromotion.bind(_this);\n\t\t_this.unsetActivePromotion = _this.unsetActivePromotion.bind(_this);\n\t\treturn _this;\n\t}\n\n\t_createClass(Promotions, [{\n\t\tkey: 'componentDidMount',\n\t\tvalue: function componentDidMount() {\n\t\t\tvar _this2 = this;\n\n\t\t\tfetch('/env.json').then(function (response) {\n\t\t\t\tif (response.ok) return response.json();\n\t\t\t\tthrow new Error(response.message);\n\t\t\t}).then(function (config) {\n\t\t\t\tfirebase.initializeApp(config);\n\t\t\t\tfirebase.auth().onAuthStateChanged(function (user) {\n\t\t\t\t\t_this2.setState({ user: user });\n\t\t\t\t\tif (user) {\n\t\t\t\t\t\tvar userRef = firebase.database().ref('users/' + user.uid);\n\t\t\t\t\t\tuserRef.child('lastLoggedIn').set(new Date().toISOString());\n\n\t\t\t\t\t\tuserRef.on('value', function (snapshot) {\n\t\t\t\t\t\t\tvar userData = snapshot.val();\n\t\t\t\t\t\t\tif (userData) _this2.setState({ userData: userData });\n\t\t\t\t\t\t});\n\t\t\t\t\t} else {\n\t\t\t\t\t\t_this2.setState({ userData: null });\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t\t_this2.setState({ firebaseConfig: config });\n\t\t\t\t_this2.subToPromotions();\n\t\t\t}).catch(function (err) {\n\t\t\t\tconsole.error(err);\n\t\t\t});\n\t\t}\n\t}, {\n\t\tkey: 'render',\n\t\tvalue: function render() {\n\t\t\tvar _this3 = this;\n\n\t\t\treturn h(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'promotions', 'data-jsx': 2302483471\n\t\t\t\t},\n\t\t\t\th(_JSXStyle, {\n\t\t\t\t\tstyleId: 2302483471,\n\t\t\t\t\tcss: '.promotions[data-jsx=\"2302483471\"] {position: relative;box-sizing: border-box;min-height: 100%;width: 100%;padding: 3em 10% 6em;display:-webkit-flex; display:flex;-webkit-flex-direction: column;-moz-flex-direction: column;flex-direction: column;justify-content: center;align-items: stretch;}\\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9qcy9jb21wb25lbnRzL1Byb21vdGlvbnMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBNERLLEFBQ2Esb0NBQ08sbUJBQ0ksdUJBQ04saUJBQ0wsWUFDUyxxQkFDUCxtQ0FDUyxrRkFDQyx3QkFDSCxxQkFDckIiLCJmaWxlIjoiX2pzL2NvbXBvbmVudHMvUHJvbW90aW9ucy5qcyIsInNvdXJjZVJvb3QiOiIvaG9tZS9taXNjaGthL3Byb2plY3RzL2NveW90ZS1ncmlsbCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGgsIENvbXBvbmVudCB9IGZyb20gJ3ByZWFjdCc7XG5pbXBvcnQgKiBhcyBmaXJlYmFzZSBmcm9tICdmaXJlYmFzZSc7XG5cbmltcG9ydCBQcm9tb3Rpb24gZnJvbSAnLi9Qcm9tb3Rpb24uanMnO1xuaW1wb3J0IEFjdGl2ZVByb21vdGlvbiBmcm9tICcuL0FjdGl2ZVByb21vdGlvbi5qcyc7XG5pbXBvcnQgU2lnbkluIGZyb20gJy4vU2lnbkluLmpzJztcblxuaW1wb3J0IHsgaXNvRGF0ZVN0cmluZywgaXNQcm9tb3Rpb25SZWRlZW1lZCB9IGZyb20gJy4uL3V0aWxzLmpzJztcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgUHJvbW90aW9ucyBleHRlbmRzIENvbXBvbmVudCB7XG5cdGNvbnN0cnVjdG9yKCl7XG5cdFx0c3VwZXIoKTtcblx0XHR0aGlzLnN0YXRlID0ge1xuXHRcdFx0ZmlyZWJhc2VDb25maWc6IG51bGwsXG5cdFx0XHR1c2VyOiBudWxsLFxuXHRcdFx0dXNlckRhdGE6IG51bGwsXG5cdFx0XHRwcm9tb3Rpb25zOiBbXSxcblx0XHRcdGFjdGl2ZVByb21vdGlvbjogbnVsbFxuXHRcdH07XG5cblx0XHR0aGlzLnN1YlRvUHJvbW90aW9ucyA9IHRoaXMuc3ViVG9Qcm9tb3Rpb25zLmJpbmQodGhpcyk7XG5cdFx0dGhpcy5zZXRBY3RpdmVQcm9tb3Rpb24gPSB0aGlzLnNldEFjdGl2ZVByb21vdGlvbi5iaW5kKHRoaXMpO1xuXHRcdHRoaXMudW5zZXRBY3RpdmVQcm9tb3Rpb24gPSB0aGlzLnVuc2V0QWN0aXZlUHJvbW90aW9uLmJpbmQodGhpcyk7XG5cdH1cblxuXHRjb21wb25lbnREaWRNb3VudCgpe1xuXG5cblx0XHRmZXRjaCgnL2Vudi5qc29uJykudGhlbihyZXNwb25zZSA9PiB7XG5cdFx0XHRpZihyZXNwb25zZS5vaylcblx0XHRcdFx0cmV0dXJuIHJlc3BvbnNlLmpzb24oKTtcblx0XHRcdHRocm93IG5ldyBFcnJvcihyZXNwb25zZS5tZXNzYWdlKTtcblx0XHR9KS50aGVuKGNvbmZpZyA9PiB7XG5cdFx0XHRmaXJlYmFzZS5pbml0aWFsaXplQXBwKGNvbmZpZyk7XG5cdFx0XHRmaXJlYmFzZS5hdXRoKCkub25BdXRoU3RhdGVDaGFuZ2VkKHVzZXIgPT4ge1xuXHRcdFx0XHR0aGlzLnNldFN0YXRlKHt1c2VyfSk7XG5cdFx0XHRcdGlmKHVzZXIpe1xuXHRcdFx0XHRcdGNvbnN0IHVzZXJSZWYgPSBmaXJlYmFzZS5kYXRhYmFzZSgpLnJlZihgdXNlcnMvJHt1c2VyLnVpZH1gKTtcblx0XHRcdFx0XHR1c2VyUmVmLmNoaWxkKCdsYXN0TG9nZ2VkSW4nKS5zZXQobmV3IERhdGUoKS50b0lTT1N0cmluZygpKTtcblxuXHRcdFx0XHRcdHVzZXJSZWYub24oJ3ZhbHVlJywgc25hcHNob3QgPT4ge1xuXHRcdFx0XHRcdFx0bGV0IHVzZXJEYXRhID0gc25hcHNob3QudmFsKCk7XG5cdFx0XHRcdFx0XHRpZih1c2VyRGF0YSlcblx0XHRcdFx0XHRcdFx0dGhpcy5zZXRTdGF0ZSh7dXNlckRhdGF9KTtcblx0XHRcdFx0XHR9KTtcblx0XHRcdFx0fSBlbHNlIHtcblx0XHRcdFx0XHR0aGlzLnNldFN0YXRlKHt1c2VyRGF0YTogbnVsbH0pO1xuXHRcdFx0XHR9XG5cdFx0XHR9KTtcblx0XHRcdHRoaXMuc2V0U3RhdGUoe2ZpcmViYXNlQ29uZmlnOiBjb25maWd9KTtcblx0XHRcdHRoaXMuc3ViVG9Qcm9tb3Rpb25zKCk7XG5cdFx0fSkuY2F0Y2goZXJyID0+IHtcblx0XHRcdGNvbnNvbGUuZXJyb3IoZXJyKTtcblx0XHR9KTtcblx0fVxuXG5cdHJlbmRlcigpe1xuXHRcdHJldHVybiAoXG5cdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cInByb21vdGlvbnNcIj5cblx0XHRcdFx0PHN0eWxlIGpzeD5cblx0XHRcdFx0e2Bcblx0XHRcdFx0XHQucHJvbW90aW9ucyB7XG5cdFx0XHRcdFx0XHRwb3NpdGlvbjogcmVsYXRpdmU7XG5cdFx0XHRcdFx0XHRib3gtc2l6aW5nOiBib3JkZXItYm94O1xuXHRcdFx0XHRcdFx0bWluLWhlaWdodDogMTAwJTtcblx0XHRcdFx0XHRcdHdpZHRoOiAxMDAlO1xuXHRcdFx0XHRcdFx0cGFkZGluZzogM2VtIDEwJSA2ZW07XG5cdFx0XHRcdFx0XHRkaXNwbGF5OiBmbGV4O1xuXHRcdFx0XHRcdFx0ZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcblx0XHRcdFx0XHRcdGp1c3RpZnktY29udGVudDogY2VudGVyO1xuXHRcdFx0XHRcdFx0YWxpZ24taXRlbXM6IHN0cmV0Y2g7XG5cdFx0XHRcdFx0fVxuXHRcdFx0XHRgfVxuXHRcdFx0XHQ8L3N0eWxlPlxuXG5cdFx0XHRcdHt0aGlzLnN0YXRlLmZpcmViYXNlQ29uZmlnICYmIDxTaWduSW4gdXNlcj17dGhpcy5zdGF0ZS51c2VyfSAvPn1cblxuXHRcdHsgdGhpcy5zdGF0ZS5hY3RpdmVQcm9tb3Rpb24gJiYgKFxuXHRcdFx0XHQ8QWN0aXZlUHJvbW90aW9uIHVzZXI9e3RoaXMuc3RhdGUudXNlcn0gdXNlckRhdGE9e3RoaXMuc3RhdGUudXNlckRhdGF9XG5cdFx0XHRcdFx0ey4uLnRoaXMuc3RhdGUucHJvbW90aW9uc1t0aGlzLnN0YXRlLmFjdGl2ZVByb21vdGlvbl19XG5cdFx0XHRcdFx0Y2xvc2U9e3RoaXMudW5zZXRBY3RpdmVQcm9tb3Rpb259IC8+XG5cdFx0KX1cblxuXHRcdHtcblx0XHRcdE9iamVjdC52YWx1ZXModGhpcy5zdGF0ZS5wcm9tb3Rpb25zKS5tYXAocHJvbW90aW9uID0+IChcblx0XHRcdFx0PFByb21vdGlvbiB1c2VyPXt0aGlzLnN0YXRlLnVzZXJ9IHVzZXJEYXRhPXt0aGlzLnN0YXRlLnVzZXJEYXRhfVxuXHRcdFx0XHRcdHsuLi5wcm9tb3Rpb259IGFjdGl2YXRlPXt0aGlzLnNldEFjdGl2ZVByb21vdGlvbn0gLz5cblx0XHRcdCkpXG5cdFx0fVxuXHRcdFx0PC9kaXY+XG5cdFx0KTtcblx0fVxuXG5cdHN1YlRvUHJvbW90aW9ucygpe1xuXHRcdGNvbnN0IGRhdGFiYXNlID0gZmlyZWJhc2UuZGF0YWJhc2UoKTtcblx0XHRjb25zdCB0b2RheSA9IG5ldyBEYXRlKCk7XG5cblx0XHR0aGlzLnByb21vdGlvbnNSZWYgPSBkYXRhYmFzZS5yZWYoJy9wcm9tb3Rpb25zJylcblx0XHRcdC5vcmRlckJ5Q2hpbGQoJ3N0YXJ0RGF0ZScpLmVuZEF0KGlzb0RhdGVTdHJpbmcodG9kYXkpKTtcblxuXHRcdHRoaXMucHJvbW90aW9uc1JlZi5vbignY2hpbGRfYWRkZWQnLCBzbmFwc2hvdCA9PiB7XG5cdFx0XHRjb25zdCBwcm9tb3Rpb24gPSBzbmFwc2hvdC52YWwoKTtcblx0XHRcdHByb21vdGlvbi5pZCA9IHNuYXBzaG90LmtleTtcblxuXHRcdFx0aWYocHJvbW90aW9uSXNBY3RpdmUocHJvbW90aW9uKSlcblx0XHRcdFx0dGhpcy5zZXRTdGF0ZShwcmV2U3RhdGUgPT4ge1xuXHRcdFx0XHRcdGxldCBwcm9tb3Rpb25zID0gT2JqZWN0LmFzc2lnbih7fSwgcHJldlN0YXRlLnByb21vdGlvbnMpO1xuXHRcdFx0XHRcdHByb21vdGlvbnNbcHJvbW90aW9uLmlkXSA9IHByb21vdGlvbjtcblxuXHRcdFx0XHRcdHJldHVybiB7XG5cdFx0XHRcdFx0XHRwcm9tb3Rpb25zXG5cdFx0XHRcdFx0fTtcblx0XHRcdFx0fSk7XG5cdFx0fSk7XG5cblx0XHR0aGlzLnByb21vdGlvbnNSZWYub24oJ2NoaWxkX2NoYW5nZWQnLCBzbmFwc2hvdCA9PiB7XG5cdFx0XHRjb25zdCBwcm9tb3Rpb24gPSBzbmFwc2hvdC52YWwoKTtcblx0XHRcdHByb21vdGlvbi5pZCA9IHNuYXBzaG90LmtleTtcblx0XHRcdHRoaXMuc2V0U3RhdGUocHJldlN0YXRlID0+IHtcblx0XHRcdFx0bGV0IHByb21vdGlvbnMgPSBPYmplY3QuYXNzaWduKHt9LCBwcmV2U3RhdGUucHJvbW90aW9ucyk7XG5cblx0XHRcdFx0aWYocHJvbW90aW9uSXNBY3RpdmUocHJvbW90aW9uKSlcblx0XHRcdFx0XHRwcm9tb3Rpb25zW3Byb21vdGlvbi5pZF0gPSBwcm9tb3Rpb247XG5cdFx0XHRcdGVsc2UgaWYocHJvbW90aW9uc1twcm9tb3Rpb24uaWRdKVxuXHRcdFx0XHRcdGRlbGV0ZSBwcm9tb3Rpb25zW3Byb21vdGlvbi5pZF07XG5cblx0XHRcdFx0cmV0dXJuIHtcblx0XHRcdFx0XHRwcm9tb3Rpb25zXG5cdFx0XHRcdH07XG5cdFx0XHR9KTtcblx0XHR9KTtcblxuXHRcdHRoaXMucHJvbW90aW9uc1JlZi5vbignY2hpbGRfcmVtb3ZlZCcsIHNuYXBzaG90ID0+IHtcblx0XHRcdGNvbnN0IHByb21vdGlvbklkID0gc25hcHNob3Qua2V5O1xuXHRcdFx0dGhpcy5zZXRTdGF0ZShwcmV2U3RhdGUgPT4ge1xuXHRcdFx0XHRpZihwcmV2U3RhdGUucHJvbW90aW9uc1twcm9tb3Rpb25JZF0pe1xuXHRcdFx0XHRcdGxldCBwcm9tb3Rpb25zID0gT2JqZWN0LmFzc2lnbih7fSwgcHJldlN0YXRlLnByb21vdGlvbnMpO1xuXHRcdFx0XHRcdGRlbGV0ZSBwcm9tb3Rpb25zW3Byb21vdGlvbklkXTtcblxuXHRcdFx0XHRcdHJldHVybiB7XG5cdFx0XHRcdFx0XHRwcm9tb3Rpb25zXG5cdFx0XHRcdFx0fTtcblx0XHRcdFx0fVxuXHRcdFx0fSk7XG5cdFx0fSk7XG5cdH1cblxuXHRzZXRBY3RpdmVQcm9tb3Rpb24oYWN0aXZlUHJvbW90aW9uKXtcblx0XHRpZighaXNQcm9tb3Rpb25SZWRlZW1lZChhY3RpdmVQcm9tb3Rpb24sIHRoaXMuc3RhdGUudXNlckRhdGEpKVxuXHRcdFx0dGhpcy5zZXRTdGF0ZSh7YWN0aXZlUHJvbW90aW9ufSk7XG5cdH1cblxuXHR1bnNldEFjdGl2ZVByb21vdGlvbigpe1xuXHRcdHRoaXMuc2V0U3RhdGUoe2FjdGl2ZVByb21vdGlvbjogbnVsbH0pO1xuXHR9XG5cblx0Y29tcG9uZW50V2lsbFVubW91bnQoKXtcblx0XHRpZih0aGlzLnByb21vdGlvbnNSZWYpXG5cdFx0XHR0aGlzLnByb21vdGlvbnNSZWYub2ZmKCdjaGlsZF9hZGRlZCcpO1xuXHR9XG59XG5cbmZ1bmN0aW9uIHByb21vdGlvbklzQWN0aXZlKHByb21vdGlvbil7XG5cdGNvbnN0IHRvZGF5ID0gbmV3IERhdGUoKTtcblx0Y29uc3QgcHJvbW90aW9uU3RhcnQgPSBuZXcgRGF0ZShwcm9tb3Rpb24uc3RhcnREYXRlKTtcblx0Y29uc3QgcHJvbW90aW9uRW5kID0gbmV3IERhdGUocHJvbW90aW9uLmVuZERhdGUpO1xuXHRyZXR1cm4gcHJvbW90aW9uU3RhcnQgPD0gdG9kYXkgJiYgcHJvbW90aW9uRW5kID49IHRvZGF5O1xufVxuIl19 */\\n/*@ sourceURL=_js/components/Promotions.js */'\n\t\t\t\t}),\n\t\t\t\tthis.state.firebaseConfig && h(SignIn, { user: this.state.user }),\n\t\t\t\tthis.state.activePromotion && h(ActivePromotion, _extends({ user: this.state.user, userData: this.state.userData\n\t\t\t\t}, this.state.promotions[this.state.activePromotion], {\n\t\t\t\t\tclose: this.unsetActivePromotion })),\n\t\t\t\tObject.values(this.state.promotions).map(function (promotion) {\n\t\t\t\t\treturn h(Promotion, _extends({ user: _this3.state.user, userData: _this3.state.userData\n\t\t\t\t\t}, promotion, { activate: _this3.setActivePromotion }));\n\t\t\t\t})\n\t\t\t);\n\t\t}\n\t}, {\n\t\tkey: 'subToPromotions',\n\t\tvalue: function subToPromotions() {\n\t\t\tvar _this4 = this;\n\n\t\t\tvar database = firebase.database();\n\t\t\tvar today = new Date();\n\n\t\t\tthis.promotionsRef = database.ref('/promotions').orderByChild('startDate').endAt(isoDateString(today));\n\n\t\t\tthis.promotionsRef.on('child_added', function (snapshot) {\n\t\t\t\tvar promotion = snapshot.val();\n\t\t\t\tpromotion.id = snapshot.key;\n\n\t\t\t\tif (promotionIsActive(promotion)) _this4.setState(function (prevState) {\n\t\t\t\t\tvar promotions = Object.assign({}, prevState.promotions);\n\t\t\t\t\tpromotions[promotion.id] = promotion;\n\n\t\t\t\t\treturn {\n\t\t\t\t\t\tpromotions: promotions\n\t\t\t\t\t};\n\t\t\t\t});\n\t\t\t});\n\n\t\t\tthis.promotionsRef.on('child_changed', function (snapshot) {\n\t\t\t\tvar promotion = snapshot.val();\n\t\t\t\tpromotion.id = snapshot.key;\n\t\t\t\t_this4.setState(function (prevState) {\n\t\t\t\t\tvar promotions = Object.assign({}, prevState.promotions);\n\n\t\t\t\t\tif (promotionIsActive(promotion)) promotions[promotion.id] = promotion;else if (promotions[promotion.id]) delete promotions[promotion.id];\n\n\t\t\t\t\treturn {\n\t\t\t\t\t\tpromotions: promotions\n\t\t\t\t\t};\n\t\t\t\t});\n\t\t\t});\n\n\t\t\tthis.promotionsRef.on('child_removed', function (snapshot) {\n\t\t\t\tvar promotionId = snapshot.key;\n\t\t\t\t_this4.setState(function (prevState) {\n\t\t\t\t\tif (prevState.promotions[promotionId]) {\n\t\t\t\t\t\tvar promotions = Object.assign({}, prevState.promotions);\n\t\t\t\t\t\tdelete promotions[promotionId];\n\n\t\t\t\t\t\treturn {\n\t\t\t\t\t\t\tpromotions: promotions\n\t\t\t\t\t\t};\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t});\n\t\t}\n\t}, {\n\t\tkey: 'setActivePromotion',\n\t\tvalue: function setActivePromotion(activePromotion) {\n\t\t\tif (!isPromotionRedeemed(activePromotion, this.state.userData)) this.setState({ activePromotion: activePromotion });\n\t\t}\n\t}, {\n\t\tkey: 'unsetActivePromotion',\n\t\tvalue: function unsetActivePromotion() {\n\t\t\tthis.setState({ activePromotion: null });\n\t\t}\n\t}, {\n\t\tkey: 'componentWillUnmount',\n\t\tvalue: function componentWillUnmount() {\n\t\t\tif (this.promotionsRef) this.promotionsRef.off('child_added');\n\t\t}\n\t}]);\n\n\treturn Promotions;\n}(Component);\n\nexport default Promotions;\n\n\nfunction promotionIsActive(promotion) {\n\tvar today = new Date();\n\tvar promotionStart = new Date(promotion.startDate);\n\tvar promotionEnd = new Date(promotion.endDate);\n\treturn promotionStart <= today && promotionEnd >= today;\n}"
     },
     {
-      "id": 40,
+      "id": 41,
       "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/SignIn.js",
       "name": "./_js/components/SignIn.js",
       "index": 79,
       "index2": 76,
-      "size": 5568,
+      "size": 5581,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2165,14 +2217,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
-      "issuerId": 39,
+      "issuerId": 40,
       "issuerName": "./_js/components/Promotions.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 39,
+          "moduleId": 40,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotions.js",
           "module": "./_js/components/Promotions.js",
           "moduleName": "./_js/components/Promotions.js",
@@ -2188,57 +2240,7 @@
         "default"
       ],
       "depth": 3,
-      "source": "var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nimport _JSXStyle from 'styled-jsx/style';\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nimport { h, Component } from 'preact';\nimport firebase from 'firebase';\n\n// TODO: Store auth type and only allow that type afterward\n\nvar SignIn = function (_Component) {\n\t_inherits(SignIn, _Component);\n\n\tfunction SignIn() {\n\t\t_classCallCheck(this, SignIn);\n\n\t\tvar _this = _possibleConstructorReturn(this, (SignIn.__proto__ || Object.getPrototypeOf(SignIn)).call(this));\n\n\t\t_this.signOut = _this.signOut.bind(_this);\n\t\t_this.googleSignIn = _this.googleSignIn.bind(_this);\n\t\t_this.facebookSignIn = _this.facebookSignIn.bind(_this);\n\t\treturn _this;\n\t}\n\n\t_createClass(SignIn, [{\n\t\tkey: 'render',\n\t\tvalue: function render() {\n\t\t\treturn h(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'sign-in', 'data-jsx': 1055803004\n\t\t\t\t},\n\t\t\t\th(_JSXStyle, {\n\t\t\t\t\tstyleId: 1055803004,\n\t\t\t\t\tcss: '.sign-in[data-jsx=\"1055803004\"] {position: absolute;text-align: center;bottom: 3em;left: 50%;-webkit-transform: translateX(-50%);-moz-transform: translateX(-50%);-ms-transform: translateX(-50%);transform: translateX(-50%);}\\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9qcy9jb21wb25lbnRzL1NpZ25Jbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFrQkssQUFDVSxpQ0FDVSxtQkFDQSxtQkFDUCxZQUNGLFVBQ2tCLGlJQUM1QiIsImZpbGUiOiJfanMvY29tcG9uZW50cy9TaWduSW4uanMiLCJzb3VyY2VSb290IjoiL2hvbWUvbWlzY2hrYS9wcm9qZWN0cy9jb3lvdGUtZ3JpbGwiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBoLCBDb21wb25lbnQgfSBmcm9tICdwcmVhY3QnO1xuaW1wb3J0IGZpcmViYXNlIGZyb20gJ2ZpcmViYXNlJztcblxuLy8gVE9ETzogU3RvcmUgYXV0aCB0eXBlIGFuZCBvbmx5IGFsbG93IHRoYXQgdHlwZSBhZnRlcndhcmRcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgU2lnbkluIGV4dGVuZHMgQ29tcG9uZW50IHtcblx0Y29uc3RydWN0b3IoKXtcblx0XHRzdXBlcigpO1xuXG5cdFx0dGhpcy5zaWduT3V0ID0gdGhpcy5zaWduT3V0LmJpbmQodGhpcyk7XG5cdFx0dGhpcy5nb29nbGVTaWduSW4gPSB0aGlzLmdvb2dsZVNpZ25Jbi5iaW5kKHRoaXMpO1xuXHRcdHRoaXMuZmFjZWJvb2tTaWduSW4gPSB0aGlzLmZhY2Vib29rU2lnbkluLmJpbmQodGhpcyk7XG5cdH1cblxuXHRyZW5kZXIoKXtcblx0XHRyZXR1cm4gKFxuXHRcdFx0PGRpdiBjbGFzc05hbWU9XCJzaWduLWluXCI+XG5cdFx0XHRcdDxzdHlsZSBqc3g+XG5cdFx0XHRcdHtgXG5cdFx0XHRcdFx0LnNpZ24taW4ge1xuXHRcdFx0XHRcdFx0cG9zaXRpb246IGFic29sdXRlO1xuXHRcdFx0XHRcdFx0dGV4dC1hbGlnbjogY2VudGVyO1xuXHRcdFx0XHRcdFx0Ym90dG9tOiAzZW07XG5cdFx0XHRcdFx0XHRsZWZ0OiA1MCU7XG5cdFx0XHRcdFx0XHR0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTUwJSk7XG5cdFx0XHRcdFx0fVxuXHRcdFx0XHRgfVxuXHRcdFx0XHQ8L3N0eWxlPlxuXHR7XG5cdFx0dGhpcy5wcm9wcy51c2VyXG5cdFx0XHQ/IChcblx0XHRcdFx0PGJ1dHRvbiB0eXBlPVwiYnV0dG9uXCIgb25DbGljaz17dGhpcy5zaWduT3V0fT5cblx0XHRcdFx0XHRTaWduIG91dFxuXHRcdFx0XHQ8L2J1dHRvbj5cblx0XHRcdClcblx0XHRcdDogKFxuXHRcdFx0XHQ8YnV0dG9uIHR5cGU9XCJidXR0b25cIiBvbkNsaWNrPXt0aGlzLmZhY2Vib29rU2lnbklufT5cblx0XHRcdFx0XHRGYWNlYm9va1xuXHRcdFx0XHQ8L2J1dHRvbj5cblx0XHRcdClcblxuXHR9XG5cdFx0XHQ8L2Rpdj5cblx0XHQpO1xuXHR9XG5cblx0c2lnbk91dCgpe1xuXHRcdGZpcmViYXNlLmF1dGgoKS5zaWduT3V0KCk7XG5cdH1cblxuXHRnb29nbGVTaWduSW4oKXtcblx0XHRjb25zdCBwcm92aWRlciA9IG5ldyBmaXJlYmFzZS5hdXRoLkdvb2dsZUF1dGhQcm92aWRlcigpO1xuXHRcdGZpcmViYXNlLmF1dGgoKS5zaWduSW5XaXRoUmVkaXJlY3QocHJvdmlkZXIpO1xuXHR9XG5cblx0ZmFjZWJvb2tTaWduSW4oKXtcblx0XHRjb25zdCBwcm92aWRlciA9IG5ldyBmaXJlYmFzZS5hdXRoLkZhY2Vib29rQXV0aFByb3ZpZGVyKCk7XG5cdFx0ZmlyZWJhc2UuYXV0aCgpLnNpZ25JbldpdGhSZWRpcmVjdChwcm92aWRlcik7XG5cdH1cbn1cblxuU2lnbkluLnByb3BUeXBlcyA9IHtcblx0dXNlcjogT2JqZWN0XG59O1xuIl19 */\\n/*@ sourceURL=_js/components/SignIn.js */'\n\t\t\t\t}),\n\t\t\t\tthis.props.user ? h(\n\t\t\t\t\t'button',\n\t\t\t\t\t{ type: 'button', onClick: this.signOut, 'data-jsx': 1055803004\n\t\t\t\t\t},\n\t\t\t\t\t'Sign out'\n\t\t\t\t) : h(\n\t\t\t\t\t'button',\n\t\t\t\t\t{ type: 'button', onClick: this.facebookSignIn, 'data-jsx': 1055803004\n\t\t\t\t\t},\n\t\t\t\t\t'Facebook'\n\t\t\t\t)\n\t\t\t);\n\t\t}\n\t}, {\n\t\tkey: 'signOut',\n\t\tvalue: function signOut() {\n\t\t\tfirebase.auth().signOut();\n\t\t}\n\t}, {\n\t\tkey: 'googleSignIn',\n\t\tvalue: function googleSignIn() {\n\t\t\tvar provider = new firebase.auth.GoogleAuthProvider();\n\t\t\tfirebase.auth().signInWithRedirect(provider);\n\t\t}\n\t}, {\n\t\tkey: 'facebookSignIn',\n\t\tvalue: function facebookSignIn() {\n\t\t\tvar provider = new firebase.auth.FacebookAuthProvider();\n\t\t\tfirebase.auth().signInWithRedirect(provider);\n\t\t}\n\t}]);\n\n\treturn SignIn;\n}(Component);\n\nexport default SignIn;\n\n\nSignIn.propTypes = {\n\tuser: Object\n};"
-    },
-    {
-      "id": 41,
-      "identifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/constants.js",
-      "name": "./_js/constants.js",
-      "index": 76,
-      "index2": 72,
-      "size": 118,
-      "cacheable": true,
-      "built": false,
-      "optional": false,
-      "prefetched": false,
-      "chunks": [
-        0
-      ],
-      "assets": [],
-      "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotion.js",
-      "issuerId": 38,
-      "issuerName": "./_js/components/Promotion.js",
-      "failed": false,
-      "errors": 0,
-      "warnings": 0,
-      "reasons": [
-        {
-          "moduleId": 37,
-          "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/ActivePromotion.js",
-          "module": "./_js/components/ActivePromotion.js",
-          "moduleName": "./_js/components/ActivePromotion.js",
-          "type": "harmony import",
-          "userRequest": "../constants.js",
-          "loc": "17:0-46"
-        },
-        {
-          "moduleId": 38,
-          "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/Promotion.js",
-          "module": "./_js/components/Promotion.js",
-          "moduleName": "./_js/components/Promotion.js",
-          "type": "harmony import",
-          "userRequest": "../constants.js",
-          "loc": "14:0-46"
-        }
-      ],
-      "usedExports": [
-        "BREAKPOINTS"
-      ],
-      "providedExports": [
-        "BREAKPOINTS"
-      ],
-      "depth": 4,
-      "source": "export var BREAKPOINTS = {\n\tVERY_SMALL_SCREEN: 550,\n\tSMALL_DESKTOP: 768,\n\tMEDIUM_DESKTOP: 992,\n\tLARGE_DESKTOP: 1200\n};"
+      "source": "var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nimport _JSXStyle from 'styled-jsx/style';\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nimport { h, Component } from 'preact';\nimport * as firebase from 'firebase';\n\n// TODO: Store auth type and only allow that type afterward\n\nvar SignIn = function (_Component) {\n\t_inherits(SignIn, _Component);\n\n\tfunction SignIn() {\n\t\t_classCallCheck(this, SignIn);\n\n\t\tvar _this = _possibleConstructorReturn(this, (SignIn.__proto__ || Object.getPrototypeOf(SignIn)).call(this));\n\n\t\t_this.signOut = _this.signOut.bind(_this);\n\t\t_this.googleSignIn = _this.googleSignIn.bind(_this);\n\t\t_this.facebookSignIn = _this.facebookSignIn.bind(_this);\n\t\treturn _this;\n\t}\n\n\t_createClass(SignIn, [{\n\t\tkey: 'render',\n\t\tvalue: function render() {\n\t\t\treturn h(\n\t\t\t\t'div',\n\t\t\t\t{ className: 'sign-in', 'data-jsx': 1055803004\n\t\t\t\t},\n\t\t\t\th(_JSXStyle, {\n\t\t\t\t\tstyleId: 1055803004,\n\t\t\t\t\tcss: '.sign-in[data-jsx=\"1055803004\"] {position: absolute;text-align: center;bottom: 3em;left: 50%;-webkit-transform: translateX(-50%);-moz-transform: translateX(-50%);-ms-transform: translateX(-50%);transform: translateX(-50%);}\\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9qcy9jb21wb25lbnRzL1NpZ25Jbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFrQkssQUFDVSxpQ0FDVSxtQkFDQSxtQkFDUCxZQUNGLFVBQ2tCLGlJQUM1QiIsImZpbGUiOiJfanMvY29tcG9uZW50cy9TaWduSW4uanMiLCJzb3VyY2VSb290IjoiL2hvbWUvbWlzY2hrYS9wcm9qZWN0cy9jb3lvdGUtZ3JpbGwiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBoLCBDb21wb25lbnQgfSBmcm9tICdwcmVhY3QnO1xuaW1wb3J0ICogYXMgZmlyZWJhc2UgZnJvbSAnZmlyZWJhc2UnO1xuXG4vLyBUT0RPOiBTdG9yZSBhdXRoIHR5cGUgYW5kIG9ubHkgYWxsb3cgdGhhdCB0eXBlIGFmdGVyd2FyZFxuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBTaWduSW4gZXh0ZW5kcyBDb21wb25lbnQge1xuXHRjb25zdHJ1Y3Rvcigpe1xuXHRcdHN1cGVyKCk7XG5cblx0XHR0aGlzLnNpZ25PdXQgPSB0aGlzLnNpZ25PdXQuYmluZCh0aGlzKTtcblx0XHR0aGlzLmdvb2dsZVNpZ25JbiA9IHRoaXMuZ29vZ2xlU2lnbkluLmJpbmQodGhpcyk7XG5cdFx0dGhpcy5mYWNlYm9va1NpZ25JbiA9IHRoaXMuZmFjZWJvb2tTaWduSW4uYmluZCh0aGlzKTtcblx0fVxuXG5cdHJlbmRlcigpe1xuXHRcdHJldHVybiAoXG5cdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cInNpZ24taW5cIj5cblx0XHRcdFx0PHN0eWxlIGpzeD5cblx0XHRcdFx0e2Bcblx0XHRcdFx0XHQuc2lnbi1pbiB7XG5cdFx0XHRcdFx0XHRwb3NpdGlvbjogYWJzb2x1dGU7XG5cdFx0XHRcdFx0XHR0ZXh0LWFsaWduOiBjZW50ZXI7XG5cdFx0XHRcdFx0XHRib3R0b206IDNlbTtcblx0XHRcdFx0XHRcdGxlZnQ6IDUwJTtcblx0XHRcdFx0XHRcdHRyYW5zZm9ybTogdHJhbnNsYXRlWCgtNTAlKTtcblx0XHRcdFx0XHR9XG5cdFx0XHRcdGB9XG5cdFx0XHRcdDwvc3R5bGU+XG5cdHtcblx0XHR0aGlzLnByb3BzLnVzZXJcblx0XHRcdD8gKFxuXHRcdFx0XHQ8YnV0dG9uIHR5cGU9XCJidXR0b25cIiBvbkNsaWNrPXt0aGlzLnNpZ25PdXR9PlxuXHRcdFx0XHRcdFNpZ24gb3V0XG5cdFx0XHRcdDwvYnV0dG9uPlxuXHRcdFx0KVxuXHRcdFx0OiAoXG5cdFx0XHRcdDxidXR0b24gdHlwZT1cImJ1dHRvblwiIG9uQ2xpY2s9e3RoaXMuZmFjZWJvb2tTaWduSW59PlxuXHRcdFx0XHRcdEZhY2Vib29rXG5cdFx0XHRcdDwvYnV0dG9uPlxuXHRcdFx0KVxuXG5cdH1cblx0XHRcdDwvZGl2PlxuXHRcdCk7XG5cdH1cblxuXHRzaWduT3V0KCl7XG5cdFx0ZmlyZWJhc2UuYXV0aCgpLnNpZ25PdXQoKTtcblx0fVxuXG5cdGdvb2dsZVNpZ25Jbigpe1xuXHRcdGNvbnN0IHByb3ZpZGVyID0gbmV3IGZpcmViYXNlLmF1dGguR29vZ2xlQXV0aFByb3ZpZGVyKCk7XG5cdFx0ZmlyZWJhc2UuYXV0aCgpLnNpZ25JbldpdGhSZWRpcmVjdChwcm92aWRlcik7XG5cdH1cblxuXHRmYWNlYm9va1NpZ25Jbigpe1xuXHRcdGNvbnN0IHByb3ZpZGVyID0gbmV3IGZpcmViYXNlLmF1dGguRmFjZWJvb2tBdXRoUHJvdmlkZXIoKTtcblx0XHRmaXJlYmFzZS5hdXRoKCkuc2lnbkluV2l0aFJlZGlyZWN0KHByb3ZpZGVyKTtcblx0fVxufVxuXG5TaWduSW4ucHJvcFR5cGVzID0ge1xuXHR1c2VyOiBPYmplY3Rcbn07XG4iXX0= */\\n/*@ sourceURL=_js/components/SignIn.js */'\n\t\t\t\t}),\n\t\t\t\tthis.props.user ? h(\n\t\t\t\t\t'button',\n\t\t\t\t\t{ type: 'button', onClick: this.signOut, 'data-jsx': 1055803004\n\t\t\t\t\t},\n\t\t\t\t\t'Sign out'\n\t\t\t\t) : h(\n\t\t\t\t\t'button',\n\t\t\t\t\t{ type: 'button', onClick: this.facebookSignIn, 'data-jsx': 1055803004\n\t\t\t\t\t},\n\t\t\t\t\t'Facebook'\n\t\t\t\t)\n\t\t\t);\n\t\t}\n\t}, {\n\t\tkey: 'signOut',\n\t\tvalue: function signOut() {\n\t\t\tfirebase.auth().signOut();\n\t\t}\n\t}, {\n\t\tkey: 'googleSignIn',\n\t\tvalue: function googleSignIn() {\n\t\t\tvar provider = new firebase.auth.GoogleAuthProvider();\n\t\t\tfirebase.auth().signInWithRedirect(provider);\n\t\t}\n\t}, {\n\t\tkey: 'facebookSignIn',\n\t\tvalue: function facebookSignIn() {\n\t\t\tvar provider = new firebase.auth.FacebookAuthProvider();\n\t\t\tfirebase.auth().signInWithRedirect(provider);\n\t\t}\n\t}]);\n\n\treturn SignIn;\n}(Component);\n\nexport default SignIn;\n\n\nSignIn.propTypes = {\n\tuser: Object\n};"
     },
     {
       "id": 42,
@@ -2248,7 +2250,7 @@
       "index2": 74,
       "size": 601,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2256,14 +2258,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/ActivePromotion.js",
-      "issuerId": 37,
+      "issuerId": 38,
       "issuerName": "./_js/components/ActivePromotion.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 37,
+          "moduleId": 38,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/components/ActivePromotion.js",
           "module": "./_js/components/ActivePromotion.js",
           "moduleName": "./_js/components/ActivePromotion.js",
@@ -2288,7 +2290,7 @@
       "index2": 14,
       "size": 1296,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2325,7 +2327,7 @@
       "index2": 52,
       "size": 2167,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2362,7 +2364,7 @@
       "index2": 54,
       "size": 9101,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2399,7 +2401,7 @@
       "index2": 55,
       "size": 427,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2407,14 +2409,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/object.entries/implementation.js",
-      "issuerId": 27,
+      "issuerId": 28,
       "issuerName": "./~/object.entries/implementation.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 27,
+          "moduleId": 28,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/object.entries/implementation.js",
           "module": "./~/object.entries/implementation.js",
           "moduleName": "./~/object.entries/implementation.js",
@@ -2436,7 +2438,7 @@
       "index2": 43,
       "size": 136,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2473,7 +2475,7 @@
       "index2": 51,
       "size": 1003,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2510,7 +2512,7 @@
       "index2": 48,
       "size": 2140,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2547,7 +2549,7 @@
       "index2": 66,
       "size": 118579,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2584,7 +2586,7 @@
       "index2": 67,
       "size": 120752,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2621,7 +2623,7 @@
       "index2": 69,
       "size": 16905,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2658,7 +2660,7 @@
       "index2": 68,
       "size": 28983,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2695,7 +2697,7 @@
       "index2": 27,
       "size": 4905,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2732,7 +2734,7 @@
       "index2": 18,
       "size": 5865,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2769,7 +2771,7 @@
       "index2": 16,
       "size": 2045,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2806,7 +2808,7 @@
       "index2": 22,
       "size": 11389,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2843,7 +2845,7 @@
       "index2": 29,
       "size": 991,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2851,14 +2853,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/bundle/hero.js",
-      "issuerId": 34,
+      "issuerId": 35,
       "issuerName": "./_js/bundle/hero.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 34,
+          "moduleId": 35,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/bundle/hero.js",
           "module": "./_js/bundle/hero.js",
           "moduleName": "./_js/bundle/hero.js",
@@ -2882,7 +2884,7 @@
       "index2": 28,
       "size": 3105,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2919,7 +2921,7 @@
       "index2": 25,
       "size": 4307,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2956,7 +2958,7 @@
       "index2": 26,
       "size": 5137,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2993,7 +2995,7 @@
       "index2": 24,
       "size": 5998,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3030,7 +3032,7 @@
       "index2": 17,
       "size": 1935,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3067,7 +3069,7 @@
       "index2": 36,
       "size": 555,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3075,14 +3077,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/define-properties/index.js",
-      "issuerId": 19,
+      "issuerId": 20,
       "issuerName": "./~/define-properties/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 19,
+          "moduleId": 20,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/define-properties/index.js",
           "module": "./~/define-properties/index.js",
           "moduleName": "./~/define-properties/index.js",
@@ -3104,7 +3106,7 @@
       "index2": 49,
       "size": 1415,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3141,7 +3143,7 @@
       "index2": 56,
       "size": 114,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3149,14 +3151,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/object.entries/implementation.js",
-      "issuerId": 27,
+      "issuerId": 28,
       "issuerName": "./~/object.entries/implementation.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 27,
+          "moduleId": 28,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/object.entries/implementation.js",
           "module": "./~/object.entries/implementation.js",
           "moduleName": "./~/object.entries/implementation.js",
@@ -3178,7 +3180,7 @@
       "index2": 46,
       "size": 551,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3215,7 +3217,7 @@
       "index2": 53,
       "size": 534,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3252,7 +3254,7 @@
       "index2": 47,
       "size": 773,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3289,7 +3291,7 @@
       "index2": 35,
       "size": 3505,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3297,14 +3299,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/define-properties/index.js",
-      "issuerId": 19,
+      "issuerId": 20,
       "issuerName": "./~/define-properties/index.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 19,
+          "moduleId": 20,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/define-properties/index.js",
           "module": "./~/define-properties/index.js",
           "moduleName": "./~/define-properties/index.js",
@@ -3326,7 +3328,7 @@
       "index2": 34,
       "size": 422,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3363,7 +3365,7 @@
       "index2": 60,
       "size": 335,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3400,7 +3402,7 @@
       "index2": 59,
       "size": 319,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3437,7 +3439,7 @@
       "index2": 0,
       "size": 27029,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3445,14 +3447,14 @@
       ],
       "assets": [],
       "issuer": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/bundle/food.js",
-      "issuerId": 31,
+      "issuerId": 32,
       "issuerName": "./_js/bundle/food.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 31,
+          "moduleId": 32,
           "moduleIdentifier": "/home/mischka/projects/coyote-grill/node_modules/babel-loader/lib/index.js!/home/mischka/projects/coyote-grill/_js/bundle/food.js",
           "module": "./_js/bundle/food.js",
           "moduleName": "./_js/bundle/food.js",
@@ -3476,7 +3478,7 @@
       "index2": 61,
       "size": 4493,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3513,7 +3515,7 @@
       "index2": 62,
       "size": 4090,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3550,7 +3552,7 @@
       "index2": 21,
       "size": 7220,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3587,7 +3589,7 @@
       "index2": 31,
       "size": 83,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3614,7 +3616,7 @@
       "index2": 79,
       "size": 40,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [

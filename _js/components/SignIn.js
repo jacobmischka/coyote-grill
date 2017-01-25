@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import firebase from 'firebase';
+import * as firebase from 'firebase';
 
 // TODO: Store auth type and only allow that type afterward
 

@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import firebase from 'firebase';
+import * as firebase from 'firebase';
 
 import Promotion from './Promotion.js';
 import ActivePromotion from './ActivePromotion.js';
