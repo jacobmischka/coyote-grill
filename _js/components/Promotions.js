@@ -5,13 +5,20 @@ import Promotion from './Promotion.js';
 import ActivePromotion from './ActivePromotion.js';
 import SignIn from './SignIn.js';
 
+import { BREAKPOINTS, CONTACT_EMAIL } from '../constants.js';
 import { isoDateString, isPromotionRedeemed } from '../utils.js';
 
 export default class Promotions extends Component {
 	constructor(){
 		super();
 		this.state = {
-			firebaseConfig: null,
+			firebaseConfig: {
+				apiKey: 'AIzaSyDiKrD81GWoCGGcmrip3BuGEiRXRS05itU',
+				authDomain: 'coyote-grill-promo-1.firebaseapp.com',
+				databaseURL: 'https://coyote-grill-promo-1.firebaseio.com',
+				storageBucket: 'coyote-grill-promo-1.appspot.com',
+				messagingSenderId: '263952148100'
+			},
 			user: null,
 			userData: null,
 			promotions: [],
@@ -24,34 +31,23 @@ export default class Promotions extends Component {
 	}
 
 	componentDidMount(){
+		firebase.initializeApp(this.state.firebaseConfig);
+		firebase.auth().onAuthStateChanged(user => {
+			this.setState({user});
+			if(user){
+				const userRef = firebase.database().ref(`users/${user.uid}`);
+				userRef.child('lastLoggedIn').set(new Date().toISOString());
 
-
-		fetch('/env.json').then(response => {
-			if(response.ok)
-				return response.json();
-			throw new Error(response.message);
-		}).then(config => {
-			firebase.initializeApp(config);
-			firebase.auth().onAuthStateChanged(user => {
-				this.setState({user});
-				if(user){
-					const userRef = firebase.database().ref(`users/${user.uid}`);
-					userRef.child('lastLoggedIn').set(new Date().toISOString());
-
-					userRef.on('value', snapshot => {
-						let userData = snapshot.val();
-						if(userData)
-							this.setState({userData});
-					});
-				} else {
-					this.setState({userData: null});
-				}
-			});
-			this.setState({firebaseConfig: config});
-			this.subToPromotions();
-		}).catch(err => {
-			console.error(err);
+				userRef.on('value', snapshot => {
+					let userData = snapshot.val();
+					if(userData)
+						this.setState({userData});
+				});
+			} else {
+				this.setState({userData: null});
+			}
 		});
+		this.subToPromotions();
 	}
 
 	render(){
@@ -64,16 +60,59 @@ export default class Promotions extends Component {
 						box-sizing: border-box;
 						min-height: 100%;
 						width: 100%;
-						padding: 3em 10% 6em;
+						font-size: 1.75em;
+						padding: 1.5em 10%;
 						display: flex;
 						flex-direction: column;
 						justify-content: center;
 						align-items: stretch;
+						font-family: sans-serif;
+						color: rgba(255, 255, 255, 0.95);
+					}
+
+					@media (min-width: ${BREAKPOINTS.VERY_SMALL_SCREEN}px) {
+						.promotions {
+							font-size: 2em;
+						}
+					}
+
+					@media (min-width: ${BREAKPOINTS.SMALL_DESKTOP}px) {
+						.promotions {
+							font-size: 2em;
+						}
+					}
+
+					p {
+						text-align: center;
+					}
+
+					small {
+						color: rgba(255, 255, 255, 0.5);
+						text-align: center;
+						font-size: 0.5em;
+						position: absolute;
+						bottom: 0.5em;
+						width: 100%;
+						left: 50%;
+						transform: translateX(-50%);
+					}
+
+					small a {
+						color: rgba(255, 255, 255, 0.3);
 					}
 				`}
 				</style>
 
-				{this.state.firebaseConfig && <SignIn user={this.state.user} />}
+				<SignIn user={this.state.user} />
+
+				<div>
+					<p>
+						Promotions must be redeemed in front of bartender.
+					</p>
+					<p>
+						Each promotion is redeemable only once per customer.
+					</p>
+				</div>
 
 		{ this.state.activePromotion && (
 				<ActivePromotion user={this.state.user} userData={this.state.userData}
@@ -87,6 +126,11 @@ export default class Promotions extends Component {
 					{...promotion} activate={this.setActivePromotion} />
 			))
 		}
+
+				<small>
+					<span>Problems? Email </span>
+					<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+				</small>
 			</div>
 		);
 	}

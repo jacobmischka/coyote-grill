@@ -4,7 +4,6 @@ import Color from 'color';
 import * as colors from 'colors.css';
 
 import { isPromotionRedeemed } from '../utils.js';
-import { BREAKPOINTS } from '../constants.js';
 
 export default class ActivePromotion extends Component {
 	constructor(){
@@ -25,12 +24,14 @@ export default class ActivePromotion extends Component {
 	render(){
 		const redeemed = isPromotionRedeemed(this.props.id, this.props.userData);
 
+		const backgroundAlpha = 0.98;
+
 		const style = {
 			backgroundColor: redeemed
 				? this.state.redeemed
-					? Color(colors.green).alpha(0.95).rgb().string()
-					: Color(colors.red).alpha(0.95).rgb().string()
-				: 'rgba(64, 64, 64, 0.95)'
+					? Color(colors.green).alpha(backgroundAlpha).rgb().string()
+					: Color(colors.red).alpha(backgroundAlpha).rgb().string()
+				: `rgba(64, 64, 64, %{backgroundAlpha})`
 		};
 
 		return (
@@ -53,7 +54,6 @@ export default class ActivePromotion extends Component {
 						align-items: center;
 
 						color: white;
-						font-size: 2em;
 						font-family: sans-serif;
 					}
 
@@ -80,13 +80,6 @@ export default class ActivePromotion extends Component {
 					p {
 						text-align: center;
 						margin: 0.5em 2em;
-						font-size: 0.75em;
-					}
-
-					@media (min-width: ${BREAKPOINTS.SMALL_DESKTOP}px) {
-						p {
-							font-size: 1em;
-						}
 					}
 
 					.button {
@@ -101,8 +94,8 @@ export default class ActivePromotion extends Component {
 					}
 
 					.redeem-button {
-						background: rgba(255, 255, 255, 0.5);
-						border-color: rgba(255, 255, 255, 0.5);
+						background: rgba(255, 255, 255, 0.4);
+						border-color: rgba(255, 255, 255, 0.4);
 						background-clip: padding-box;
 						padding: 0.25em 1em;
 						margin: 1em 0;

@@ -1,41 +1,86 @@
 import { h, Component } from 'preact';
 import * as firebase from 'firebase';
 
-// TODO: Store auth type and only allow that type afterward
+import { BREAKPOINTS } from '../constants.js';
 
 export default class SignIn extends Component {
 	constructor(){
 		super();
 
 		this.signOut = this.signOut.bind(this);
-		this.googleSignIn = this.googleSignIn.bind(this);
 		this.facebookSignIn = this.facebookSignIn.bind(this);
 	}
 
 	render(){
 		return (
-			<div className="sign-in">
+			<div className={`sign-in ${this.props.user ? 'signed-in' : 'not-signed-in' }`}>
 				<style jsx>
 				{`
 					.sign-in {
-						position: absolute;
+						box-sizing: border-box;
 						text-align: center;
-						bottom: 3em;
-						left: 50%;
-						transform: translateX(-50%);
+						width: 100%;
+						font-size: 0.66em;
+					}
+
+					.sign-in.signed-in {
+						order: 10000;
+					}
+
+					button {
+						border-radius: 5px;
+						background-clip: padding-box;
+						border: none;
+						outline: none;
+						cursor: pointer;
+						color: white;
+						font-size: 1em;
+						padding: 1em;
+					}
+
+					.facebook-button {
+						background-color: #3b5998;
+					}
+
+					.facebook-button:hover {
+						background-color: #5270b0;
+					}
+
+					.facebook-button img {
+						height: 2em;
+						padding-right: 1em;
+						vertical-align: middle;
+					}
+
+					.sign-out-button {
+						background: transparent;
+						color: rgba(255, 255, 255, 0.2);
+					}
+
+					.sign-out-button:hover {
+						background: rgba(255, 255, 255, 0.05);
+					}
+
+					@media (min-width: ${BREAKPOINTS.VERY_SMALL_SCREEN}px) {
+						.facebook-button {
+							font-size: 1.25em;
+						}
 					}
 				`}
 				</style>
 	{
 		this.props.user
 			? (
-				<button type="button" onClick={this.signOut}>
+				<button type="button" className="sign-out-button"
+						onClick={this.signOut}>
 					Sign out
 				</button>
 			)
 			: (
-				<button type="button" onClick={this.facebookSignIn}>
-					Facebook
+				<button type="button" className="facebook-button"
+						onClick={this.facebookSignIn}>
+					<img alt="" src="/images/icons/facebook.svg" />
+					Sign in with Facebook
 				</button>
 			)
 
@@ -48,14 +93,9 @@ export default class SignIn extends Component {
 		firebase.auth().signOut();
 	}
 
-	googleSignIn(){
-		const provider = new firebase.auth.GoogleAuthProvider();
-		firebase.auth().signInWithRedirect(provider);
-	}
-
 	facebookSignIn(){
 		const provider = new firebase.auth.FacebookAuthProvider();
-		firebase.auth().signInWithRedirect(provider);
+		firebase.auth().signInWithPopup(provider);
 	}
 }
 

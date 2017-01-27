@@ -1,7 +1,6 @@
 import { h, Component } from 'preact';
 
 import { isPromotionRedeemed } from '../utils.js';
-import { BREAKPOINTS } from '../constants.js';
 
 export default class Promotion extends Component {
 	constructor(){
@@ -44,19 +43,11 @@ export default class Promotion extends Component {
 						box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);
 						border: none;
 						color: white;
-						font-size: 1.5em;
 						font-family: sans-serif;
 						text-align: center;
 
 						transition: 0.05s ease-out;
 						transition-property: transform, box-shadow;
-					}
-
-					@media (min-width: ${BREAKPOINTS.SMALL_DESKTOP}px) {
-
-						.promotion {
-							font-size: 2em;
-						}
 					}
 
 					.promotion:hover {
@@ -94,8 +85,8 @@ export default class Promotion extends Component {
 					}
 
 					.redeem-button {
-						background: rgba(255, 255, 255, 0.5);
-						border-color: rgba(255, 255, 255, 0.5);
+						background: rgba(255, 255, 255, 0.4);
+						border-color: rgba(255, 255, 255, 0.4);
 						background-clip: padding-box;
 					}
 
