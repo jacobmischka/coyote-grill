@@ -119,7 +119,7 @@ export default class Promotion extends Component {
 			{
 				this.props.user
 					? redeemed
-						? `Reedeemed on ${redeemedAt}`
+						? `Redeemed on ${redeemedAt}`
 						: 'Redeem'
 					: 'Sign in to redeem promotion'
 			}

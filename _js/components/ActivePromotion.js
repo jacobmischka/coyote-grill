@@ -24,14 +24,12 @@ export default class ActivePromotion extends Component {
 	render(){
 		const redeemed = isPromotionRedeemed(this.props.id, this.props.userData);
 
-		const backgroundAlpha = 0.98;
-
 		const style = {
 			backgroundColor: redeemed
 				? this.state.redeemed
-					? Color(colors.green).alpha(backgroundAlpha).rgb().string()
-					: Color(colors.red).alpha(backgroundAlpha).rgb().string()
-				: `rgba(64, 64, 64, ${backgroundAlpha})`
+					? Color(colors.green).alpha(0.9).rgb().string()
+					: Color(colors.red).alpha(0.9).rgb().string()
+				: `rgba(64, 64, 64, 0.98)`
 		};
 
 		return (
@@ -149,15 +147,14 @@ export default class ActivePromotion extends Component {
 				<div className="redeem-container">
 					<p>
 						Promotions must be redeemed in front of a bartender.
-						Are you sure you want to redeem this now?
+					</p>
+					<p>
+						Are you sure you want to do this now?
 					</p>
 					<button type="button" className="button redeem-button"
 							onClick={this.redeem}>
 						Redeem
 					</button>
-					<p>
-						This can't be undone.
-					</p>
 				</div>
 			)
 	}

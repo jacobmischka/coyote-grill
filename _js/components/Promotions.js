@@ -110,7 +110,7 @@ export default class Promotions extends Component {
 						Promotions must be redeemed in front of bartender.
 					</p>
 					<p>
-						Each promotion is redeemable only once per customer.
+						Each promotion is redeemable once per customer.
 					</p>
 				</div>
 
