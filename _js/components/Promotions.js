@@ -121,7 +121,7 @@ export default class Promotions extends Component {
 		)}
 
 		{
-			Object.values(this.state.promotions).map(promotion => (
+			Object.keys(this.state.promotions).map(key => this.state.promotions[key]).map(promotion => (
 				<Promotion user={this.state.user} userData={this.state.userData}
 					{...promotion} activate={this.setActivePromotion} />
 			))

@@ -12,7 +12,7 @@
 		"browser": true,
 		"es6": true
 	},
-	"plugins": ["react"],
+	"plugins": ["react", "compat"],
 	"extends": ["eslint:recommended", "plugin:react/recommended"],
 	"rules": {
 		"no-console": "off",
@@ -22,18 +22,14 @@
 		"no-spaced-func": "warn",
 		"comma-style": "warn",
 		"comma-spacing": "warn",
-		"key-spacing": "warn"
+		"key-spacing": "warn",
+		"compat/compat": 2
 	},
 	"settings": {
 		"react": {
 			"pragma": "h",
 			"createClass": "h"
 		},
-		"polyfills": [
-			"fetch",
-			"promise"
-		],
-		"coverage": false,
 		"compiler": "babel"
 	}
 }
