@@ -2,8 +2,8 @@
   "errors": [],
   "warnings": [],
   "version": "2.2.0",
-  "hash": "57ee318d2881ba0240b4",
-  "time": 6358,
+  "hash": "c5d67dc760a071e7f31a",
+  "time": 6674,
   "publicPath": "/js/",
   "assetsByChunkName": {
     "promotions": [
@@ -30,7 +30,7 @@
     },
     {
       "name": "bundle.js",
-      "size": 80175,
+      "size": 80176,
       "chunks": [
         1
       ],
@@ -52,7 +52,7 @@
     },
     {
       "name": "bundle.js.map",
-      "size": 495395,
+      "size": 495396,
       "chunks": [
         1
       ],
@@ -126,7 +126,7 @@
         "bundle.js",
         "bundle.js.map"
       ],
-      "hash": "11ee658f5cef7e1d1dc2",
+      "hash": "4185f7dbc08aab52972b",
       "parents": [],
       "origins": [
         {
@@ -157,9 +157,9 @@
         1
       ],
       "assets": [],
-      "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/flickity.js",
-      "issuerId": 1,
-      "issuerName": "./~/flickity/js/flickity.js",
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/flickity/js/drag.js",
+      "issuerId": 54,
+      "issuerName": "./~/flickity/js/drag.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -1818,9 +1818,9 @@
         1
       ],
       "assets": [],
-      "issuer": "/home/mischka/projects/coyote-grill/node_modules/tap-listener/tap-listener.js",
-      "issuerId": 30,
-      "issuerName": "./~/tap-listener/tap-listener.js",
+      "issuer": "/home/mischka/projects/coyote-grill/node_modules/unidragger/unidragger.js",
+      "issuerId": 74,
+      "issuerName": "./~/unidragger/unidragger.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -1995,7 +1995,7 @@
       "usedExports": false,
       "providedExports": null,
       "depth": 1,
-      "source": "import Flickity from 'flickity';\n\nnew Flickity('.carousel', {\n\tcellSelector: '.carousel-image',\n\twrapAround: true,\n\tautoPlay: true\n});"
+      "source": "import Flickity from 'flickity';\n\nnew Flickity('.carousel', {\n\tcellSelector: '.carousel-image',\n\twrapAround: true,\n\tautoPlay: 6000\n});"
     },
     {
       "id": 36,
