@@ -31,7 +31,7 @@ export default class ActivePromotion extends Component {
 				? this.state.redeemed
 					? Color(colors.green).alpha(backgroundAlpha).rgb().string()
 					: Color(colors.red).alpha(backgroundAlpha).rgb().string()
-				: `rgba(64, 64, 64, %{backgroundAlpha})`
+				: `rgba(64, 64, 64, ${backgroundAlpha})`
 		};
 
 		return (
