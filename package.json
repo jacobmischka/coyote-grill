@@ -23,6 +23,7 @@
     "babel-core": "^6.11.4",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.4",
+    "babel-plugin-object-values-to-object-keys": "^1.0.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-env": "^1.1.8",
     "babel-preset-react": "^6.16.0",

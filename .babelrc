@@ -16,6 +16,7 @@
 	"plugins": [
 		"styled-jsx/babel",
 		["transform-react-jsx", {"pragma": "h"}],
-		"syntax-dynamic-import"
+		"syntax-dynamic-import",
+		"object-values-to-object-keys"
 	]
 }
