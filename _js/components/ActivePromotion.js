@@ -1,7 +1,6 @@
 import { h, Component } from 'preact';
 import * as firebase from 'firebase';
 import Color from 'color';
-import * as colors from 'colors.css';
 
 import { isPromotionRedeemed } from '../utils.js';
 
@@ -24,12 +23,14 @@ export default class ActivePromotion extends Component {
 	render(){
 		const redeemed = isPromotionRedeemed(this.props.id, this.props.userData);
 
+		const backgroundAlpha = 0.99;
+
 		const style = {
 			backgroundColor: redeemed
 				? this.state.redeemed
-					? Color(colors.green).alpha(0.9).rgb().string()
-					: Color(colors.red).alpha(0.9).rgb().string()
-				: `rgba(64, 64, 64, 0.98)`
+					? Color('forestgreen').alpha(backgroundAlpha).rgb().string()
+					: Color('crimson').alpha(backgroundAlpha).rgb().string()
+				: `rgba(64, 64, 64, ${backgroundAlpha})`
 		};
 
 		return (
@@ -153,7 +154,7 @@ export default class ActivePromotion extends Component {
 					</p>
 					<button type="button" className="button redeem-button"
 							onClick={this.redeem}>
-						Redeem
+						I'm sure
 					</button>
 				</div>
 			)
