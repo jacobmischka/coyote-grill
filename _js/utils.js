@@ -1,4 +1,6 @@
 export function isoDateString(date){
+	// FIXME: Convert to local timezone
+
 	let isoString = date.toISOString();
 	return isoString.substring(0, isoString.indexOf('T'));
 }

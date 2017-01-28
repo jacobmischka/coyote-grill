@@ -11,6 +11,7 @@ module.exports = {
 				'preact/devtools',
 				'./_js/promotions/index.js'
 			],
+		'promotions-homepage': './_js/promotions/homepage.js'
 	},
 	output: {
 		path: './js/',
@@ -31,6 +32,11 @@ module.exports = {
 				loader: 'babel-loader'
 			},
 			{
+				test: /\.html$/,
+				include: /svelte-components/,
+				loader: 'svelte-loader'
+			},
+			{
 				test: /\.yaml$/,
 				loaders: [
 					'json-loader',
@@ -40,6 +46,23 @@ module.exports = {
 		]
 	},
 	plugins: [
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'promotions-deps',
+			chunks: [
+				'promotions',
+				'promotions-homepage'
+			]
+		}),
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'promotions-deps',
+			chunks: [
+				'promotions-deps',
+				'bundle'
+			]
+		}),
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'manifest'
+		}),
 		new BundleAnalyzerPlugin({
 			analyzerMode: 'disabled',
 			generateStatsFile: true,

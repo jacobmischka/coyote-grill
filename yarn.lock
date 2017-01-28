@@ -433,11 +433,8 @@ babel-plugin-check-es2015-constants@^6.3.13:
     babel-runtime "^6.22.0"
 
 babel-plugin-object-values-to-object-keys@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-object-values-to-object-keys/-/babel-plugin-object-values-to-object-keys-1.0.0.tgz#84462d394d1512a112d8f92bada63f335ab9e7a1"
-
-"babel-plugin-object-values-to-object-keys@file://home/mischka/projects/babel-plugin-object-values-to-object-keys/":
-  version "1.0.0"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-object-values-to-object-keys/-/babel-plugin-object-values-to-object-keys-1.0.2.tgz#2b42eb93ea9036d7cea399a717e31b69129b995d"
 
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
@@ -2631,8 +2628,8 @@ ieee754@^1.1.4:
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.8.tgz#be33d40ac10ef1926701f6f08a2d86fbfd1ad3e4"
 
 ignore@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.2.0.tgz#8d88f03c3002a0ac52114db25d2c673b0bf1e435"
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.2.2.tgz#1c51e1ef53bab6ddc15db4d9ac4ec139eceb3410"
 
 immutable@3.8.1, immutable@^3.7.6:
   version "3.8.1"
@@ -3331,6 +3328,12 @@ lru-cache@^4.0.1:
 magic-string@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.14.0.tgz#57224aef1701caeed273b17a39a956e72b172462"
+  dependencies:
+    vlq "^0.2.1"
+
+magic-string@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.19.0.tgz#198948217254e3e0b93080e01146b7c73b2a06b2"
   dependencies:
     vlq "^0.2.1"
 
@@ -4587,8 +4590,8 @@ source-list-map@~0.1.7:
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-0.1.8.tgz#c550b2ab5427f6b3f21f5afead88c4f5587b2106"
 
 source-map-support@^0.4.2:
-  version "0.4.10"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.10.tgz#d7b19038040a14c0837a18e630a196453952b378"
+  version "0.4.11"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.11.tgz#647f939978b38535909530885303daf23279f322"
   dependencies:
     source-map "^0.5.3"
 
@@ -4777,8 +4780,8 @@ style-search@^0.1.0:
   resolved "https://registry.yarnpkg.com/style-search/-/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
 
 styled-jsx@^0.5.0:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/styled-jsx/-/styled-jsx-0.5.1.tgz#40bc6a77334d66c4483bcfc8b7de274e5e57bbce"
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/styled-jsx/-/styled-jsx-0.5.2.tgz#59740216c3db371636f9beec02149f9da5ea02e5"
   dependencies:
     babel-plugin-syntax-jsx "^6.18.0"
     babel-traverse "^6.21.0"
@@ -4866,6 +4869,16 @@ supports-color@^3.1.0, supports-color@^3.2.3:
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-3.2.3.tgz#65ac0504b3954171d8a64946b2ae3cbb8a5f54f6"
   dependencies:
     has-flag "^1.0.0"
+
+svelte-loader@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/svelte-loader/-/svelte-loader-1.2.1.tgz#727a9d80dbe1472d0291abef14493d5dab60aa93"
+
+svelte@^1.6.7:
+  version "1.6.7"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-1.6.7.tgz#230a0a812f416513bf6258506a106d376048098f"
+  dependencies:
+    magic-string "^0.19.0"
 
 svg-tags@^1.0.0:
   version "1.0.0"

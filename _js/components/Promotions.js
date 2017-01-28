@@ -1,24 +1,20 @@
 import { h, Component } from 'preact';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
 
 import Promotion from './Promotion.js';
 import ActivePromotion from './ActivePromotion.js';
 import SignIn from './SignIn.js';
 
-import { BREAKPOINTS, CONTACT_EMAIL } from '../constants.js';
+import { BREAKPOINTS, CONTACT_EMAIL, FIREBASE_CONFIG } from '../constants.js';
 import { isoDateString, isPromotionRedeemed } from '../utils.js';
 
 export default class Promotions extends Component {
 	constructor(){
 		super();
 		this.state = {
-			firebaseConfig: {
-				apiKey: 'AIzaSyDiKrD81GWoCGGcmrip3BuGEiRXRS05itU',
-				authDomain: 'coyote-grill-promo-1.firebaseapp.com',
-				databaseURL: 'https://coyote-grill-promo-1.firebaseio.com',
-				storageBucket: 'coyote-grill-promo-1.appspot.com',
-				messagingSenderId: '263952148100'
-			},
+			firebaseConfig: FIREBASE_CONFIG,
 			user: null,
 			userData: null,
 			promotions: [],

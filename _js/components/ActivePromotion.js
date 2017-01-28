@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/database';
 import Color from 'color';
 
 import { isPromotionRedeemed } from '../utils.js';
