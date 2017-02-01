@@ -34,7 +34,10 @@ module.exports = {
 			{
 				test: /\.html$/,
 				include: /svelte-components/,
-				loader: 'svelte-loader'
+				loaders: [
+					'babel-loader',
+					'svelte-loader'
+				]
 			},
 			{
 				test: /\.yaml$/,
