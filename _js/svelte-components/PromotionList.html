@@ -1,0 +1,71 @@
+<div class="promotion-list-container">
+	<h2>Current Promotions</h2>
+	<div class="promotion-list">
+{{#each promotions as promotion}}
+		<a href="/promotions" class="promotion"
+				style="background-image: url({{ promotion.image }});">
+			<span class="title">
+				{{ promotion.title }}
+			</span>
+			<p class="desc">
+				{{ promotion.desc }}
+			</p>
+		</a>
+{{/each}}
+	</div>
+</div>
+
+<script>
+export default {
+	data(){
+		return {
+			promotions: []
+		}
+	}
+};
+</script>
+
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Lato:300|Oswald');
+
+	.promotion-list-container {
+		padding: 2em;
+		overflow-x: auto;
+	}
+
+	.promotion-list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.promotion {
+		display: block;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);
+		margin: 1em;
+		padding: 2em;
+		background-size: cover;
+		background-position: center;
+		color: white;
+		text-decoration: none;
+		opacity: 0.9;
+	}
+
+	.promotion:hover {
+		transform: scale(1.01);
+		box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.25);
+		color: white;
+		text-decoration: none;
+	}
+
+	.title {
+		font-size: 1.6em;
+		font-family: 'Oswald', sans-serif;
+	}
+
+	.desc {
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+	}
+</style>

@@ -1,20 +1,38 @@
-import CallToActionButton from '../svelte-components/CallToActionButton.html';
 import * as firebase from 'firebase/app';
 import 'firebase/database';
 
+import CallToActionButton from '../svelte-components/CallToActionButton.html';
+import PromotionList from '../svelte-components/PromotionList.html';
+
 import { FIREBASE_CONFIG } from '../constants.js';
-import { isoDateString } from '../utils.js';
+import { isoDateString, promotionIsValid } from '../utils.js';
 
-// firebase.initializeApp(FIREBASE_CONFIG);
-// firebase.database().ref('/promotions').orderByChild('startDate')
-// 	.endAt(isoDateString(new Date())).once('value').then(snapshot => {
-//
-// 	});
+firebase.initializeApp(FIREBASE_CONFIG);
+firebase.database().ref('/promotions').orderByChild('startDate')
+	.endAt(isoDateString(new Date())).once('value').then(snapshot => {
+		const promotions = snapshot.val();
+		const validPromotions = promotions.filter(promotionIsValid);
 
-// function createComponents(promotions){
-	new CallToActionButton({
-		target: document.querySelector('.hero-button')
+		if(validPromotions.length > 0){
+			createComponents(validPromotions);
+		}
 	});
 
+function createComponents(promotions){
+	const heroButtonContainer = document.querySelector('.hero-button');
+	while(heroButtonContainer.firstChild)
+		heroButtonContainer.removeChild(heroButtonContainer.firstChild);
 
-// }
+	new CallToActionButton({
+		target: heroButtonContainer
+	});
+
+	const promotionsContainer = document.querySelector('#promotions');
+
+	new PromotionList({
+		target: promotionsContainer,
+		data: {
+			promotions
+		}
+	});
+}

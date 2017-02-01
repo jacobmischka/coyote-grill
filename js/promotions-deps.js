@@ -73,8 +73,9 @@ module.exports = firebase;
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = isoDateString;
-/* harmony export (immutable) */ __webpack_exports__["b"] = isPromotionRedeemed;
-/* harmony export (immutable) */ __webpack_exports__["c"] = getBaseUrl;
+/* harmony export (immutable) */ __webpack_exports__["c"] = isPromotionRedeemed;
+/* harmony export (immutable) */ __webpack_exports__["d"] = getBaseUrl;
+/* harmony export (immutable) */ __webpack_exports__["b"] = promotionIsValid;
 function isoDateString(date) {
 	// FIXME: Convert to local timezone
 
@@ -88,6 +89,15 @@ function isPromotionRedeemed(id, userData) {
 
 function getBaseUrl() {
 	return window.location.href.replace(window.location.search, '');
+}
+
+function promotionIsValid(promotion) {
+	if (!promotion || !promotion.startDate || !promotion.endDate) return false;
+
+	var today = new Date();
+	var promotionStart = new Date(promotion.startDate);
+	var promotionEnd = new Date(promotion.endDate);
+	return promotionStart <= today && promotionEnd >= today;
 }
 
 /***/ }),

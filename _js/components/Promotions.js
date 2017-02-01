@@ -8,7 +8,12 @@ import ActivePromotion from './ActivePromotion.js';
 import SignIn from './SignIn.js';
 
 import { BREAKPOINTS, CONTACT_EMAIL, FIREBASE_CONFIG } from '../constants.js';
-import { isoDateString, isPromotionRedeemed, getBaseUrl } from '../utils.js';
+import {
+	isoDateString,
+	isPromotionRedeemed,
+	getBaseUrl,
+	promotionIsValid
+} from '../utils.js';
 
 export default class Promotions extends Component {
 	constructor(){
@@ -74,6 +79,8 @@ export default class Promotions extends Component {
 			<div className="promotions">
 				<style jsx>
 				{`
+					@import url('https://fonts.googleapis.com/css?family=Lato:300|Oswald');
+
 					.promotions {
 						position: relative;
 						box-sizing: border-box;
@@ -103,6 +110,8 @@ export default class Promotions extends Component {
 
 					p {
 						text-align: center;
+						font-size: 1.1em;
+						font-family: 'Oswald', sans-serif;
 					}
 
 					small {
@@ -233,11 +242,4 @@ export default class Promotions extends Component {
 		if(this.onPopstate)
 			window.removeEventListener('popstate', this.onPopstate);
 	}
-}
-
-function promotionIsValid(promotion){
-	const today = new Date();
-	const promotionStart = new Date(promotion.startDate);
-	const promotionEnd = new Date(promotion.endDate);
-	return promotionStart <= today && promotionEnd >= today;
 }

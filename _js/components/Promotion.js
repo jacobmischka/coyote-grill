@@ -45,8 +45,9 @@ export default class Promotion extends Component {
 						box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);
 						border: none;
 						color: white;
-						font-family: sans-serif;
 						text-align: center;
+						font-family: 'Lato', sans-serif;
+						font-weight: 300;
 
 						transition: 0.05s ease-out;
 						transition-property: transform, box-shadow;
@@ -55,7 +56,6 @@ export default class Promotion extends Component {
 					.promotion:hover {
 						transform: scale(1.01);
 						box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.25);
-
 					}
 
 					.promotion.redeemed {
@@ -79,8 +79,10 @@ export default class Promotion extends Component {
 
 					h2 {
 						margin: 0;
-						font-size: 1.5em;
+						font-size: 2.25em;
 						pointer-events: none;
+						font-family: 'Oswald', sans-serif;
+						font-weight: normal;
 					}
 
 					.button {
@@ -92,6 +94,8 @@ export default class Promotion extends Component {
 						color: white;
 						font-size: 1em;
 						padding: 0.25em 1em;
+						font-family: 'Lato', sans-serif;
+						font-weight: 300;
 					}
 
 					.redeem-button {
