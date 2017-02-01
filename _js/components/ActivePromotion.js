@@ -54,12 +54,15 @@ export default class ActivePromotion extends Component {
 						align-items: center;
 
 						color: white;
-						font-family: sans-serif;
+						font-family: 'Lato', sans-serif;
+						font-weight: 300;
 					}
 
 					h2 {
 						text-align: center;
 						margin: 0;
+						font-family: 'Oswald', sans-serif;
+						font-weight: normal;
 					}
 
 					img {
@@ -80,6 +83,8 @@ export default class ActivePromotion extends Component {
 					p {
 						text-align: center;
 						margin: 0.5em 2em;
+						font-family: 'Oswald', sans-serif;
+						font-weight: normal;
 					}
 
 					.button {
@@ -91,19 +96,18 @@ export default class ActivePromotion extends Component {
 						color: white;
 						font-size: 1em;
 						padding: 0.25em 1em;
+						font-family: 'Lato', sans-serif;
+						font-weight: 300;
 					}
 
 					.redeem-button {
-						background: rgba(255, 255, 255, 0.4);
-						border-color: rgba(255, 255, 255, 0.4);
-						background-clip: padding-box;
-						padding: 0.25em 1em;
 						margin: 1em 0;
+						background: #eb5795;
+						border-color: #eb5795;
 					}
 
 					.redeem-button:hover {
-						background: rgba(255, 255, 255, 0.3);
-						background-clip: padding-box;
+						background: #f081b0;
 					}
 
 					.redeem-button[disabled] {

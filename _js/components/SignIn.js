@@ -38,6 +38,8 @@ export default class SignIn extends Component {
 						color: white;
 						font-size: 1em;
 						padding: 1em;
+						font-family: 'Lato', sans-serif;
+						font-weight: 300;
 					}
 
 					.facebook-button {

@@ -1,4 +1,5 @@
 import { h, Component } from 'preact';
+import Color from 'color';
 
 import { isPromotionRedeemed } from '../utils.js';
 
@@ -79,7 +80,7 @@ export default class Promotion extends Component {
 
 					h2 {
 						margin: 0;
-						font-size: 2.25em;
+						font-size: 2.5em;
 						pointer-events: none;
 						font-family: 'Oswald', sans-serif;
 						font-weight: normal;
@@ -99,22 +100,21 @@ export default class Promotion extends Component {
 					}
 
 					.redeem-button {
-						background: rgba(255, 255, 255, 0.4);
-						border-color: rgba(255, 255, 255, 0.4);
-						background-clip: padding-box;
+						background: #eb5795;
+						border-color: #eb5795;
 					}
 
 					.redeem-button:hover {
-						background: rgba(255, 255, 255, 0.3);
-						background-clip: padding-box;
+						background: #f081b0;
 					}
 
 					.redeem-button[disabled] {
 						transform: none;
-						background: rgba(0, 0, 0, 0.3);
-						background-clip: padding-box;
-						color: rgba(255, 255, 255, 0.8);
+						background: none;
 						cursor: not-allowed;
+						background: rgba(0, 0, 0, 0.15);
+						border-color: rgba(255, 255, 255, 0.4);
+						color: rgba(255, 255, 255, 0.8);
 					}
 
 

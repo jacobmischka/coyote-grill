@@ -162,59 +162,7 @@ function noop() {}
 
 /***/ }),
 
-/***/ 76:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase_app__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase_app__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase_database__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__svelte_components_CallToActionButton_html__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__svelte_components_PromotionList_html__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__constants_js__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_js__ = __webpack_require__(6);
-
-
-
-
-
-
-
-
-
-__WEBPACK_IMPORTED_MODULE_0_firebase_app__["initializeApp"](__WEBPACK_IMPORTED_MODULE_4__constants_js__["a" /* FIREBASE_CONFIG */]);
-__WEBPACK_IMPORTED_MODULE_0_firebase_app__["database"]().ref('/promotions').orderByChild('startDate').endAt(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__utils_js__["a" /* isoDateString */])(new Date())).once('value').then(function (snapshot) {
-	var promotions = snapshot.val();
-	var validPromotions = promotions.filter(__WEBPACK_IMPORTED_MODULE_5__utils_js__["b" /* promotionIsValid */]);
-
-	if (validPromotions.length > 0) {
-		createComponents(validPromotions);
-	}
-});
-
-function createComponents(promotions) {
-	var heroButtonContainer = document.querySelector('.hero-button');
-	while (heroButtonContainer.firstChild) {
-		heroButtonContainer.removeChild(heroButtonContainer.firstChild);
-	}new __WEBPACK_IMPORTED_MODULE_2__svelte_components_CallToActionButton_html__["a" /* default */]({
-		target: heroButtonContainer
-	});
-
-	var promotionsContainer = document.querySelector('#promotions');
-
-	new __WEBPACK_IMPORTED_MODULE_3__svelte_components_PromotionList_html__["a" /* default */]({
-		target: promotionsContainer,
-		data: {
-			promotions: promotions
-		}
-	});
-}
-
-/***/ }),
-
-/***/ 78:
+/***/ 40:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -483,7 +431,59 @@ function teardownEach( iterations, detach, start ) {
 
 /* harmony default export */ __webpack_exports__["a"] = SvelteComponent;
 
+/***/ }),
+
+/***/ 77:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase_app__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase_app__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase_database__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__svelte_components_CallToActionButton_html__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__svelte_components_PromotionList_html__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__constants_js__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_js__ = __webpack_require__(6);
+
+
+
+
+
+
+
+
+
+__WEBPACK_IMPORTED_MODULE_0_firebase_app__["initializeApp"](__WEBPACK_IMPORTED_MODULE_4__constants_js__["a" /* FIREBASE_CONFIG */]);
+__WEBPACK_IMPORTED_MODULE_0_firebase_app__["database"]().ref('/promotions').orderByChild('startDate').endAt(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__utils_js__["a" /* isoDateString */])(new Date())).once('value').then(function (snapshot) {
+	var promotions = snapshot.val();
+	var validPromotions = promotions.filter(__WEBPACK_IMPORTED_MODULE_5__utils_js__["b" /* promotionIsValid */]);
+
+	if (validPromotions.length > 0) {
+		createComponents(validPromotions);
+	}
+});
+
+function createComponents(promotions) {
+	var heroButtonContainer = document.querySelector('.hero-button');
+	while (heroButtonContainer.firstChild) {
+		heroButtonContainer.removeChild(heroButtonContainer.firstChild);
+	}new __WEBPACK_IMPORTED_MODULE_2__svelte_components_CallToActionButton_html__["a" /* default */]({
+		target: heroButtonContainer
+	});
+
+	var promotionsContainer = document.querySelector('#promotions');
+
+	new __WEBPACK_IMPORTED_MODULE_3__svelte_components_PromotionList_html__["a" /* default */]({
+		target: promotionsContainer,
+		data: {
+			promotions: promotions
+		}
+	});
+}
+
 /***/ })
 
-},[76]);
+},[77]);
 //# sourceMappingURL=promotions-homepage.js.map
