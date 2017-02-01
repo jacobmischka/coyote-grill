@@ -8,7 +8,7 @@ import ActivePromotion from './ActivePromotion.js';
 import SignIn from './SignIn.js';
 
 import { BREAKPOINTS, CONTACT_EMAIL, FIREBASE_CONFIG } from '../constants.js';
-import { isoDateString, isPromotionRedeemed } from '../utils.js';
+import { isoDateString, isPromotionRedeemed, getBaseUrl } from '../utils.js';
 
 export default class Promotions extends Component {
 	constructor(){
@@ -19,6 +19,13 @@ export default class Promotions extends Component {
 			userData: null,
 			promotions: [],
 			activePromotion: null
+		};
+
+		this.onPopstate = event => {
+			if(event.state)
+				this.setActivePromotion(event.state, false);
+			else
+				this.unsetActivePromotion(false);
 		};
 
 		this.subToPromotions = this.subToPromotions.bind(this);
@@ -44,6 +51,15 @@ export default class Promotions extends Component {
 			}
 		});
 		this.subToPromotions();
+
+		window.addEventListener('popstate', this.onPopstate);
+	}
+
+	componentDidUpdate(){
+		let searchId = window.location.search.replace('?', '');
+
+		if(searchId && searchId !== this.state.activePromotion)
+			this.setActivePromotion(searchId, false);
 	}
 
 	render(){
@@ -142,7 +158,7 @@ export default class Promotions extends Component {
 			const promotion = snapshot.val();
 			promotion.id = snapshot.key;
 
-			if(promotionIsActive(promotion))
+			if(promotionIsValid(promotion))
 				this.setState(prevState => {
 					let promotions = Object.assign({}, prevState.promotions);
 					promotions[promotion.id] = promotion;
@@ -159,7 +175,7 @@ export default class Promotions extends Component {
 			this.setState(prevState => {
 				let promotions = Object.assign({}, prevState.promotions);
 
-				if(promotionIsActive(promotion))
+				if(promotionIsValid(promotion))
 					promotions[promotion.id] = promotion;
 				else if(promotions[promotion.id])
 					delete promotions[promotion.id];
@@ -185,22 +201,34 @@ export default class Promotions extends Component {
 		});
 	}
 
-	setActivePromotion(activePromotion){
-		if(!isPromotionRedeemed(activePromotion, this.state.userData))
+	setActivePromotion(activePromotion, pushState = true){
+		if(activePromotion in this.state.promotions
+				&& !isPromotionRedeemed(activePromotion, this.state.userData)){
+			if(pushState)
+				window.history.pushState(activePromotion,
+					this.state.promotions[activePromotion],
+					`${getBaseUrl()}?${activePromotion}`);
+
 			this.setState({activePromotion});
+		}
 	}
 
-	unsetActivePromotion(){
+	unsetActivePromotion(pushState = true){
+		if(pushState)
+			window.history.pushState(null, null, getBaseUrl());
 		this.setState({activePromotion: null});
 	}
 
 	componentWillUnmount(){
 		if(this.promotionsRef)
 			this.promotionsRef.off('child_added');
+
+		if(this.onPopstate)
+			window.removeEventListener('popstate', this.onPopstate);
 	}
 }
 
-function promotionIsActive(promotion){
+function promotionIsValid(promotion){
 	const today = new Date();
 	const promotionStart = new Date(promotion.startDate);
 	const promotionEnd = new Date(promotion.endDate);

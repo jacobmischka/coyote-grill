@@ -74,6 +74,7 @@ module.exports = firebase;
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = isoDateString;
 /* harmony export (immutable) */ __webpack_exports__["b"] = isPromotionRedeemed;
+/* harmony export (immutable) */ __webpack_exports__["c"] = getBaseUrl;
 function isoDateString(date) {
 	// FIXME: Convert to local timezone
 
@@ -83,6 +84,10 @@ function isoDateString(date) {
 
 function isPromotionRedeemed(id, userData) {
 	return userData && userData.redeemedPromotions && userData.redeemedPromotions[id] && userData.redeemedPromotions[id].redeemed;
+}
+
+function getBaseUrl() {
+	return window.location.href.replace(window.location.search, '');
 }
 
 /***/ }),

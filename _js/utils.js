@@ -11,3 +11,7 @@ export function isPromotionRedeemed(id, userData){
 		&& userData.redeemedPromotions[id]
 		&& userData.redeemedPromotions[id].redeemed;
 }
+
+export function getBaseUrl(){
+	return window.location.href.replace(window.location.search, '');
+}
