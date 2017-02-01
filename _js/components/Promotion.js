@@ -17,6 +17,8 @@ export default class Promotion extends Component {
 				.toLocaleDateString()
 			: null;
 
+		const expiresAt = new Date(this.props.endDate).toLocaleDateString();
+
 		const style = {
 			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
 								url(${this.props.image})`
@@ -63,7 +65,15 @@ export default class Promotion extends Component {
 					}
 
 					.promotion > * {
-						margin: 0.5em 0;
+						margin: 0.6em 0;
+					}
+
+					.promotion > *:first-child {
+						margin-top: 0;
+					}
+
+					.promotion > *:last-child {
+						margin-bottom: 0;
 					}
 
 
@@ -108,6 +118,11 @@ export default class Promotion extends Component {
 						margin: 0;
 						pointer-events: none;
 					}
+
+					small {
+						color: rgba(255, 255, 255, 0.8);
+						font-size: 0.6em;
+					}
 				`}
 				</style>
 				<h2>{this.props.title}</h2>
@@ -126,9 +141,15 @@ export default class Promotion extends Component {
 				</button>
 
 
-				<p>
-					{this.props.desc}
-				</p>
+				<div>
+					<p>
+						{this.props.desc}
+					</p>
+
+					<small>
+						Expires {expiresAt}
+					</small>
+				</div>
 			</div>
 		);
 	}
