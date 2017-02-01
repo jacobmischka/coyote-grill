@@ -1,12 +1,11 @@
 <head>
-	{% include head_metadata.html %}
+	{% include head-metadata.html %}
 
 	<link rel="stylesheet" href="/css/main.css">
 
-{% if jekyll.environment == "production" %}
-	{% include google-analytics.html %}
-{% endif %}
 	<script>
 		document.querySelector('html').className = 'has-js';
 	</script>
+
+	{% include head-shared.html %}
 </head>
