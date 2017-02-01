@@ -39,7 +39,14 @@ export default class Promotions extends Component {
 			this.setState({user});
 			if(user){
 				const userRef = firebase.database().ref(`users/${user.uid}`);
+				userRef.child('id').set(user.uid);
 				userRef.child('lastLoggedIn').set(new Date().toISOString());
+
+				if(user.displayName)
+					userRef.child('name').set(user.displayName);
+
+				if(user.email)
+					userRef.child('email').set(user.email);
 
 				userRef.on('value', snapshot => {
 					let userData = snapshot.val();
