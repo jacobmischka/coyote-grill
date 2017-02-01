@@ -1,9 +1,19 @@
-<a href="/promotions" class="button outline accent">
-	Check out our current promotion!
+<a href="#promotions" class="button outline accent">
+	Check out our current promotion{{ plural }}!
 </a>
 
 <script>
 export default {
+	data(){
+		return {
+			promotions: []
+		}
+	},
 
+	computed: {
+		plural(promotions){
+			return promotions.length > 1 ? 's' : '';
+		}
+	}
 };
 </script>

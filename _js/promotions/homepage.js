@@ -24,7 +24,10 @@ function createComponents(promotions){
 		heroButtonContainer.removeChild(heroButtonContainer.firstChild);
 
 	new CallToActionButton({
-		target: heroButtonContainer
+		target: heroButtonContainer,
+		data: {
+			promotions
+		}
 	});
 
 	const promotionsContainer = document.querySelector('#promotions');

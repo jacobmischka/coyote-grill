@@ -4,25 +4,46 @@ webpackJsonp([3,4],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+function applyComputations ( state, newState, oldState ) {
+	if ( ( 'promotions' in newState && typeof state.promotions === 'object' || state.promotions !== oldState.promotions ) ) {
+		state.plural = newState.plural = template.computed.plural( state.promotions );
+	}
+}
+
 var template = (function () {
 return {
+	data(){
+		return {
+			promotions: []
+		}
+	},
 
+	computed: {
+		plural(promotions){
+			return promotions.length > 1 ? 's' : '';
+		}
+	}
 };
 }());
 
 function renderMainFragment ( root, component ) {
 	var a = createElement( 'a' );
-	a.href = "/promotions";
+	a.href = "#promotions";
 	a.className = "button outline accent";
 	
-	appendNode( createText( "Check out our current promotion!" ), a );
+	appendNode( createText( "Check out our current promotion" ), a );
+	var text1 = createText( root.plural );
+	appendNode( text1, a );
+	appendNode( createText( "!" ), a );
 
 	return {
 		mount: function ( target, anchor ) {
 			insertNode( a, target, anchor );
 		},
 		
-		update: noop,
+		update: function ( changed, root ) {
+			text1.data = root.plural;
+		},
 		
 		teardown: function ( detach ) {
 			if ( detach ) {
@@ -35,7 +56,8 @@ function renderMainFragment ( root, component ) {
 function SvelteComponent ( options ) {
 	options = options || {};
 	
-	this._state = options.data || {};
+	this._state = Object.assign( template.data(), options.data );
+applyComputations( this._state, this._state, {} );
 
 	this._observers = {
 		pre: Object.create( null ),
@@ -98,6 +120,7 @@ SvelteComponent.prototype.on = function on( eventName, handler ) {
 SvelteComponent.prototype.set = function set ( newState ) {
 	var oldState = this._state;
 	this._state = Object.assign( {}, oldState, newState );
+	applyComputations( this._state, newState, oldState )
 	
 	dispatchObservers( this, this._observers.pre, newState, oldState );
 	if ( this._fragment ) this._fragment.update( newState, this._state );
@@ -156,8 +179,6 @@ function createText( data ) {
 	return document.createTextNode( data );
 }
 
-function noop() {}
-
 /* harmony default export */ __webpack_exports__["a"] = SvelteComponent;
 
 /***/ }),
@@ -166,11 +187,23 @@ function noop() {}
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+function applyComputations ( state, newState, oldState ) {
+	if ( ( 'promotions' in newState && typeof state.promotions === 'object' || state.promotions !== oldState.promotions ) ) {
+		state.plural = newState.plural = template.computed.plural( state.promotions );
+	}
+}
+
 var template = (function () {
 return {
 	data(){
 		return {
 			promotions: []
+		}
+	},
+
+	computed: {
+		plural(promotions){
+			return promotions.length > 1 ? 's' : '';
 		}
 	}
 };
@@ -179,7 +212,7 @@ return {
 let addedCss = false;
 function addCss () {
 	var style = createElement( 'style' );
-	style.textContent = "\n\t@import url('https://fonts.googleapis.com/css?family=Lato:300|Oswald');\n\n\t.promotion-list-container {\n\t\tpadding: 2em;\n\t\toverflow-x: auto;\n\t}\n\n\t.promotion-list[svelte-3888157496], [svelte-3888157496] .promotion-list {\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t}\n\n\t.promotion[svelte-3888157496], [svelte-3888157496] .promotion {\n\t\tdisplay: block;\n\t\tborder-radius: 5px;\n\t\tbox-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);\n\t\tmargin: 1em;\n\t\tpadding: 2em;\n\t\tbackground-size: cover;\n\t\tbackground-position: center;\n\t\tcolor: white;\n\t\ttext-decoration: none;\n\t\topacity: 0.9;\n\t}\n\n\t.promotion[svelte-3888157496]:hover, [svelte-3888157496] .promotion:hover {\n\t\ttransform: scale(1.01);\n\t\tbox-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.25);\n\t\tcolor: white;\n\t\ttext-decoration: none;\n\t}\n\n\t.title[svelte-3888157496], [svelte-3888157496] .title {\n\t\tfont-size: 1.6em;\n\t\tfont-family: 'Oswald', sans-serif;\n\t}\n\n\t.desc[svelte-3888157496], [svelte-3888157496] .desc {\n\t\tfont-family: 'Lato', sans-serif;\n\t\tfont-weight: 300;\n\t}\n";
+	style.textContent = "\n\t@import url('https://fonts.googleapis.com/css?family=Lato:300|Oswald');\n\n\t.promotion-list-container {\n\t\tpadding: 2em;\n\t\tfont-size: 1.25em;\n\t\ttext-align: center;\n\t}\n\n\t.promotion-list[svelte-515446853], [svelte-515446853] .promotion-list {\n\t\tdisplay: flex;\n\t\tjustify-content: flex-start;;\n\t\talign-items: stretch;\n\t\toverflow-x: auto;\n\t\toverflow-y: hidden;\n\t\ttext-align: left;\n\t}\n\n\t.promotion[svelte-515446853], [svelte-515446853] .promotion {\n\t\tflex-grow: 1;\n\t\tflex-shrink: 0;\n\t\twidth: 300px;\n\t\tposition: relative;\n\t\tpadding: 0;\n\t\tdisplay: block;\n\t\tborder-radius: 5px;\n\t\tbox-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);\n\t\tmargin: 1em;\n\t\tbackground-size: cover;\n\t\tbackground-position: center;\n\t\tcolor: white;\n\t\ttext-decoration: none;\n\t\topacity: 0.9;\n\t\tcursor: pointer;\n\t\tborder: none;\n\t\tborder-color: transparent;\n\t\toutline: none;\n\t\toutline-color: transparent;\n\t}\n\n\t.promotion[svelte-515446853]:hover, [svelte-515446853] .promotion:hover {\n\t\ttransform: scale(1.01);\n\t\tbox-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.25);\n\t\tcolor: white;\n\t\ttext-decoration: none;\n\t}\n\n\t.promotion-backdrop[svelte-515446853], [svelte-515446853] .promotion-backdrop {\n\t\tbox-sizing: border-box;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tmargin: 0;\n\t\tpadding: 1em;\n\t\tbackground-color: rgba(0, 0, 0, 0.4);\n\t}\n\n\t.title[svelte-515446853], [svelte-515446853] .title {\n\t\tfont-size: 1.6em;\n\t\tfont-family: 'Oswald', sans-serif;\n\t}\n\n\t.desc[svelte-515446853], [svelte-515446853] .desc {\n\t\tfont-family: 'Lato', sans-serif;\n\t\tfont-weight: 300;\n\t}\n\n\tsmall[svelte-515446853], [svelte-515446853] small {\n\t\tdisplay: block;\n\t\tmargin: 2em 0;\n\t}\n";
 	appendNode( style, document.head );
 
 	addedCss = true;
@@ -187,18 +220,20 @@ function addCss () {
 
 function renderMainFragment ( root, component ) {
 	var div = createElement( 'div' );
-	setAttribute( div, 'svelte-3888157496', '' );
+	setAttribute( div, 'svelte-515446853', '' );
 	div.className = "promotion-list-container";
 	
 	var h2 = createElement( 'h2' );
-	setAttribute( h2, 'svelte-3888157496', '' );
+	setAttribute( h2, 'svelte-515446853', '' );
 	
 	appendNode( h2, div );
-	appendNode( createText( "Current Promotions" ), h2 );
+	appendNode( createText( "Current Promotion" ), h2 );
+	var text1 = createText( root.plural );
+	appendNode( text1, h2 );
 	appendNode( createText( "\n\t" ), div );
 	
 	var div1 = createElement( 'div' );
-	setAttribute( div1, 'svelte-3888157496', '' );
+	setAttribute( div1, 'svelte-515446853', '' );
 	div1.className = "promotion-list";
 	
 	appendNode( div1, div );
@@ -211,6 +246,25 @@ function renderMainFragment ( root, component ) {
 		eachBlock_iterations[i] = renderEachBlock( root, eachBlock_value, eachBlock_value[i], i, component );
 		eachBlock_iterations[i].mount( eachBlock_anchor.parentNode, eachBlock_anchor );
 	}
+	
+	appendNode( createText( "\n\n\t" ), div );
+	
+	var small = createElement( 'small' );
+	setAttribute( small, 'svelte-515446853', '' );
+	
+	appendNode( small, div );
+	appendNode( createText( "Promotions must be redeemed in front of a bartender.\n\t\tRequires Facebook login and a personal device." ), small );
+	appendNode( createText( "\n\n\t" ), div );
+	
+	var a = createElement( 'a' );
+	setAttribute( a, 'svelte-515446853', '' );
+	a.href = "/promotions";
+	a.className = "button outline accent";
+	
+	appendNode( a, div );
+	appendNode( createText( "Redeem promotion" ), a );
+	var text7 = createText( root.plural );
+	appendNode( text7, a );
 
 	return {
 		mount: function ( target, anchor ) {
@@ -218,6 +272,8 @@ function renderMainFragment ( root, component ) {
 		},
 		
 		update: function ( changed, root ) {
+			text1.data = root.plural;
+			
 			var eachBlock_value = root.promotions;
 			
 			for ( var i = 0; i < eachBlock_value.length; i += 1 ) {
@@ -232,6 +288,8 @@ function renderMainFragment ( root, component ) {
 			teardownEach( eachBlock_iterations, true, eachBlock_value.length );
 			
 			eachBlock_iterations.length = eachBlock_value.length;
+			
+			text7.data = root.plural;
 		},
 		
 		teardown: function ( detach ) {
@@ -246,25 +304,31 @@ function renderMainFragment ( root, component ) {
 
 function renderEachBlock ( root, eachBlock_value, promotion, promotion__index, component ) {
 	var a = createElement( 'a' );
-	setAttribute( a, 'svelte-3888157496', '' );
+	setAttribute( a, 'svelte-515446853', '' );
 	a.href = "/promotions";
 	a.className = "promotion";
 	a.style.cssText = "background-image: url(" + ( promotion.image ) + ");";
 	
+	var div = createElement( 'div' );
+	setAttribute( div, 'svelte-515446853', '' );
+	div.className = "promotion-backdrop";
+	
+	appendNode( div, a );
+	
 	var span = createElement( 'span' );
-	setAttribute( span, 'svelte-3888157496', '' );
+	setAttribute( span, 'svelte-515446853', '' );
 	span.className = "title";
 	
-	appendNode( span, a );
+	appendNode( span, div );
 	var text = createText( promotion.title );
 	appendNode( text, span );
-	appendNode( createText( "\n\t\t\t" ), a );
+	appendNode( createText( "\n\t\t\t\t" ), div );
 	
 	var p = createElement( 'p' );
-	setAttribute( p, 'svelte-3888157496', '' );
+	setAttribute( p, 'svelte-515446853', '' );
 	p.className = "desc";
 	
-	appendNode( p, a );
+	appendNode( p, div );
 	var text2 = createText( promotion.desc );
 	appendNode( text2, p );
 
@@ -293,6 +357,7 @@ function SvelteComponent ( options ) {
 	options = options || {};
 	
 	this._state = Object.assign( template.data(), options.data );
+applyComputations( this._state, this._state, {} );
 
 	this._observers = {
 		pre: Object.create( null ),
@@ -357,6 +422,7 @@ SvelteComponent.prototype.on = function on( eventName, handler ) {
 SvelteComponent.prototype.set = function set ( newState ) {
 	var oldState = this._state;
 	this._state = Object.assign( {}, oldState, newState );
+	applyComputations( this._state, newState, oldState )
 	
 	dispatchObservers( this, this._observers.pre, newState, oldState );
 	if ( this._fragment ) this._fragment.update( newState, this._state );
@@ -470,7 +536,10 @@ function createComponents(promotions) {
 	while (heroButtonContainer.firstChild) {
 		heroButtonContainer.removeChild(heroButtonContainer.firstChild);
 	}new __WEBPACK_IMPORTED_MODULE_2__svelte_components_CallToActionButton_html__["a" /* default */]({
-		target: heroButtonContainer
+		target: heroButtonContainer,
+		data: {
+			promotions: promotions
+		}
 	});
 
 	var promotionsContainer = document.querySelector('#promotions');

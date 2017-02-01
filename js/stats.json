@@ -2,8 +2,8 @@
   "errors": [],
   "warnings": [],
   "version": "2.2.0",
-  "hash": "da0de756305e3f02f0ae",
-  "time": 254,
+  "hash": "f78d136e1e5a7a109215",
+  "time": 49,
   "publicPath": "/js/",
   "assetsByChunkName": {
     "promotions": [
@@ -38,7 +38,7 @@
       "chunkNames": [
         "promotions"
       ],
-      "emitted": true,
+      "emitted": false,
       "isOverSizeLimit": true
     },
     {
@@ -67,7 +67,7 @@
     },
     {
       "name": "promotions-homepage.js",
-      "size": 14371,
+      "size": 17100,
       "chunks": [
         3,
         4
@@ -75,7 +75,7 @@
       "chunkNames": [
         "promotions-homepage"
       ],
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "manifest.js",
@@ -85,6 +85,18 @@
       ],
       "chunkNames": [
         "manifest"
+      ],
+      "emitted": false
+    },
+    {
+      "name": "promotions.js.map",
+      "size": 336292,
+      "chunks": [
+        0,
+        4
+      ],
+      "chunkNames": [
+        "promotions"
       ],
       "emitted": false
     },
@@ -113,18 +125,6 @@
       "emitted": false
     },
     {
-      "name": "promotions-homepage.js.map",
-      "size": 4889,
-      "chunks": [
-        3,
-        4
-      ],
-      "chunkNames": [
-        "promotions-homepage"
-      ],
-      "emitted": false
-    },
-    {
       "name": "manifest.js.map",
       "size": 5817,
       "chunks": [
@@ -136,14 +136,14 @@
       "emitted": false
     },
     {
-      "name": "promotions.js.map",
-      "size": 336292,
+      "name": "promotions-homepage.js.map",
+      "size": 6509,
       "chunks": [
-        0,
+        3,
         4
       ],
       "chunkNames": [
-        "promotions"
+        "promotions-homepage"
       ],
       "emitted": true
     }
@@ -200,7 +200,7 @@
   "chunks": [
     {
       "id": 0,
-      "rendered": true,
+      "rendered": false,
       "initial": true,
       "entry": false,
       "extraAsync": false,
@@ -280,11 +280,11 @@
     },
     {
       "id": 3,
-      "rendered": false,
+      "rendered": true,
       "initial": true,
       "entry": false,
       "extraAsync": false,
-      "size": 12820,
+      "size": 15549,
       "names": [
         "promotions-homepage"
       ],
@@ -292,7 +292,7 @@
         "promotions-homepage.js",
         "promotions-homepage.js.map"
       ],
-      "hash": "14dd720fd93a19e133b3",
+      "hash": "c309ac7ebf97f61b9228",
       "parents": [
         2
       ],
@@ -2347,7 +2347,7 @@
       "name": "./_js/svelte-components/CallToActionButton.html",
       "index": 77,
       "index2": 76,
-      "size": 3719,
+      "size": 4391,
       "cacheable": true,
       "built": false,
       "optional": false,
@@ -2380,7 +2380,7 @@
         "default"
       ],
       "depth": 1,
-      "source": "var template = (function () {\nreturn {\n\n};\n}());\n\nfunction renderMainFragment ( root, component ) {\n\tvar a = createElement( 'a' );\n\ta.href = \"/promotions\";\n\ta.className = \"button outline accent\";\n\t\n\tappendNode( createText( \"Check out our current promotion!\" ), a );\n\n\treturn {\n\t\tmount: function ( target, anchor ) {\n\t\t\tinsertNode( a, target, anchor );\n\t\t},\n\t\t\n\t\tupdate: noop,\n\t\t\n\t\tteardown: function ( detach ) {\n\t\t\tif ( detach ) {\n\t\t\t\tdetachNode( a );\n\t\t\t}\n\t\t}\n\t};\n}\n\nfunction SvelteComponent ( options ) {\n\toptions = options || {};\n\t\n\tthis._state = options.data || {};\n\n\tthis._observers = {\n\t\tpre: Object.create( null ),\n\t\tpost: Object.create( null )\n\t};\n\n\tthis._handlers = Object.create( null );\n\n\tthis._root = options._root;\n\tthis._yield = options._yield;\n\n\tthis._fragment = renderMainFragment( this._state, this );\n\tif ( options.target ) this._fragment.mount( options.target, null );\n}\n\nSvelteComponent.prototype.get = function get( key ) {\n \treturn key ? this._state[ key ] : this._state;\n };\n\nSvelteComponent.prototype.fire = function fire( eventName, data ) {\n \tvar handlers = eventName in this._handlers && this._handlers[ eventName ].slice();\n \tif ( !handlers ) return;\n \n \tfor ( var i = 0; i < handlers.length; i += 1 ) {\n \t\thandlers[i].call( this, data );\n \t}\n };\n\nSvelteComponent.prototype.observe = function observe( key, callback, options ) {\n \tvar group = ( options && options.defer ) ? this._observers.pre : this._observers.post;\n \n \t( group[ key ] || ( group[ key ] = [] ) ).push( callback );\n \n \tif ( !options || options.init !== false ) {\n \t\tcallback.__calling = true;\n \t\tcallback.call( this, this._state[ key ] );\n \t\tcallback.__calling = false;\n \t}\n \n \treturn {\n \t\tcancel: function () {\n \t\t\tvar index = group[ key ].indexOf( callback );\n \t\t\tif ( ~index ) group[ key ].splice( index, 1 );\n \t\t}\n \t};\n };\n\nSvelteComponent.prototype.on = function on( eventName, handler ) {\n \tvar handlers = this._handlers[ eventName ] || ( this._handlers[ eventName ] = [] );\n \thandlers.push( handler );\n \n \treturn {\n \t\tcancel: function () {\n \t\t\tvar index = handlers.indexOf( handler );\n \t\t\tif ( ~index ) handlers.splice( index, 1 );\n \t\t}\n \t};\n };\n\nSvelteComponent.prototype.set = function set ( newState ) {\n\tvar oldState = this._state;\n\tthis._state = Object.assign( {}, oldState, newState );\n\t\n\tdispatchObservers( this, this._observers.pre, newState, oldState );\n\tif ( this._fragment ) this._fragment.update( newState, this._state );\n\tdispatchObservers( this, this._observers.post, newState, oldState );\n};\n\nSvelteComponent.prototype.teardown = function teardown ( detach ) {\n\tthis.fire( 'teardown' );\n\n\tthis._fragment.teardown( detach !== false );\n\tthis._fragment = null;\n\n\tthis._state = {};\n};\n\nfunction dispatchObservers( component, group, newState, oldState ) {\n\tfor ( var key in group ) {\n\t\tif ( !( key in newState ) ) continue;\n\n\t\tvar newValue = newState[ key ];\n\t\tvar oldValue = oldState[ key ];\n\n\t\tif ( newValue === oldValue && typeof newValue !== 'object' ) continue;\n\n\t\tvar callbacks = group[ key ];\n\t\tif ( !callbacks ) continue;\n\n\t\tfor ( var i = 0; i < callbacks.length; i += 1 ) {\n\t\t\tvar callback = callbacks[i];\n\t\t\tif ( callback.__calling ) continue;\n\n\t\t\tcallback.__calling = true;\n\t\t\tcallback.call( component, newValue, oldValue );\n\t\t\tcallback.__calling = false;\n\t\t}\n\t}\n}\n\nfunction createElement( name ) {\n\treturn document.createElement( name );\n}\n\nfunction detachNode( node ) {\n\tnode.parentNode.removeChild( node );\n}\n\nfunction insertNode( node, target, anchor ) {\n\ttarget.insertBefore( node, anchor );\n}\n\nfunction appendNode( node, target ) {\n\ttarget.appendChild( node );\n}\n\nfunction createText( data ) {\n\treturn document.createTextNode( data );\n}\n\nfunction noop() {}\n\nexport default SvelteComponent;"
+      "source": "function applyComputations ( state, newState, oldState ) {\n\tif ( ( 'promotions' in newState && typeof state.promotions === 'object' || state.promotions !== oldState.promotions ) ) {\n\t\tstate.plural = newState.plural = template.computed.plural( state.promotions );\n\t}\n}\n\nvar template = (function () {\nreturn {\n\tdata(){\n\t\treturn {\n\t\t\tpromotions: []\n\t\t}\n\t},\n\n\tcomputed: {\n\t\tplural(promotions){\n\t\t\treturn promotions.length > 1 ? 's' : '';\n\t\t}\n\t}\n};\n}());\n\nfunction renderMainFragment ( root, component ) {\n\tvar a = createElement( 'a' );\n\ta.href = \"#promotions\";\n\ta.className = \"button outline accent\";\n\t\n\tappendNode( createText( \"Check out our current promotion\" ), a );\n\tvar text1 = createText( root.plural );\n\tappendNode( text1, a );\n\tappendNode( createText( \"!\" ), a );\n\n\treturn {\n\t\tmount: function ( target, anchor ) {\n\t\t\tinsertNode( a, target, anchor );\n\t\t},\n\t\t\n\t\tupdate: function ( changed, root ) {\n\t\t\ttext1.data = root.plural;\n\t\t},\n\t\t\n\t\tteardown: function ( detach ) {\n\t\t\tif ( detach ) {\n\t\t\t\tdetachNode( a );\n\t\t\t}\n\t\t}\n\t};\n}\n\nfunction SvelteComponent ( options ) {\n\toptions = options || {};\n\t\n\tthis._state = Object.assign( template.data(), options.data );\napplyComputations( this._state, this._state, {} );\n\n\tthis._observers = {\n\t\tpre: Object.create( null ),\n\t\tpost: Object.create( null )\n\t};\n\n\tthis._handlers = Object.create( null );\n\n\tthis._root = options._root;\n\tthis._yield = options._yield;\n\n\tthis._fragment = renderMainFragment( this._state, this );\n\tif ( options.target ) this._fragment.mount( options.target, null );\n}\n\nSvelteComponent.prototype.get = function get( key ) {\n \treturn key ? this._state[ key ] : this._state;\n };\n\nSvelteComponent.prototype.fire = function fire( eventName, data ) {\n \tvar handlers = eventName in this._handlers && this._handlers[ eventName ].slice();\n \tif ( !handlers ) return;\n \n \tfor ( var i = 0; i < handlers.length; i += 1 ) {\n \t\thandlers[i].call( this, data );\n \t}\n };\n\nSvelteComponent.prototype.observe = function observe( key, callback, options ) {\n \tvar group = ( options && options.defer ) ? this._observers.pre : this._observers.post;\n \n \t( group[ key ] || ( group[ key ] = [] ) ).push( callback );\n \n \tif ( !options || options.init !== false ) {\n \t\tcallback.__calling = true;\n \t\tcallback.call( this, this._state[ key ] );\n \t\tcallback.__calling = false;\n \t}\n \n \treturn {\n \t\tcancel: function () {\n \t\t\tvar index = group[ key ].indexOf( callback );\n \t\t\tif ( ~index ) group[ key ].splice( index, 1 );\n \t\t}\n \t};\n };\n\nSvelteComponent.prototype.on = function on( eventName, handler ) {\n \tvar handlers = this._handlers[ eventName ] || ( this._handlers[ eventName ] = [] );\n \thandlers.push( handler );\n \n \treturn {\n \t\tcancel: function () {\n \t\t\tvar index = handlers.indexOf( handler );\n \t\t\tif ( ~index ) handlers.splice( index, 1 );\n \t\t}\n \t};\n };\n\nSvelteComponent.prototype.set = function set ( newState ) {\n\tvar oldState = this._state;\n\tthis._state = Object.assign( {}, oldState, newState );\n\tapplyComputations( this._state, newState, oldState )\n\t\n\tdispatchObservers( this, this._observers.pre, newState, oldState );\n\tif ( this._fragment ) this._fragment.update( newState, this._state );\n\tdispatchObservers( this, this._observers.post, newState, oldState );\n};\n\nSvelteComponent.prototype.teardown = function teardown ( detach ) {\n\tthis.fire( 'teardown' );\n\n\tthis._fragment.teardown( detach !== false );\n\tthis._fragment = null;\n\n\tthis._state = {};\n};\n\nfunction dispatchObservers( component, group, newState, oldState ) {\n\tfor ( var key in group ) {\n\t\tif ( !( key in newState ) ) continue;\n\n\t\tvar newValue = newState[ key ];\n\t\tvar oldValue = oldState[ key ];\n\n\t\tif ( newValue === oldValue && typeof newValue !== 'object' ) continue;\n\n\t\tvar callbacks = group[ key ];\n\t\tif ( !callbacks ) continue;\n\n\t\tfor ( var i = 0; i < callbacks.length; i += 1 ) {\n\t\t\tvar callback = callbacks[i];\n\t\t\tif ( callback.__calling ) continue;\n\n\t\t\tcallback.__calling = true;\n\t\t\tcallback.call( component, newValue, oldValue );\n\t\t\tcallback.__calling = false;\n\t\t}\n\t}\n}\n\nfunction createElement( name ) {\n\treturn document.createElement( name );\n}\n\nfunction detachNode( node ) {\n\tnode.parentNode.removeChild( node );\n}\n\nfunction insertNode( node, target, anchor ) {\n\ttarget.insertBefore( node, anchor );\n}\n\nfunction appendNode( node, target ) {\n\ttarget.appendChild( node );\n}\n\nfunction createText( data ) {\n\treturn document.createTextNode( data );\n}\n\nexport default SvelteComponent;"
     },
     {
       "id": 40,
@@ -2388,9 +2388,9 @@
       "name": "./_js/svelte-components/PromotionList.html",
       "index": 78,
       "index2": 77,
-      "size": 7967,
+      "size": 9983,
       "cacheable": true,
-      "built": false,
+      "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -2421,7 +2421,7 @@
         "default"
       ],
       "depth": 1,
-      "source": "var template = (function () {\nreturn {\n\tdata(){\n\t\treturn {\n\t\t\tpromotions: []\n\t\t}\n\t}\n};\n}());\n\nlet addedCss = false;\nfunction addCss () {\n\tvar style = createElement( 'style' );\n\tstyle.textContent = \"\\n\\t@import url('https://fonts.googleapis.com/css?family=Lato:300|Oswald');\\n\\n\\t.promotion-list-container {\\n\\t\\tpadding: 2em;\\n\\t\\toverflow-x: auto;\\n\\t}\\n\\n\\t.promotion-list[svelte-3888157496], [svelte-3888157496] .promotion-list {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t}\\n\\n\\t.promotion[svelte-3888157496], [svelte-3888157496] .promotion {\\n\\t\\tdisplay: block;\\n\\t\\tborder-radius: 5px;\\n\\t\\tbox-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);\\n\\t\\tmargin: 1em;\\n\\t\\tpadding: 2em;\\n\\t\\tbackground-size: cover;\\n\\t\\tbackground-position: center;\\n\\t\\tcolor: white;\\n\\t\\ttext-decoration: none;\\n\\t\\topacity: 0.9;\\n\\t}\\n\\n\\t.promotion[svelte-3888157496]:hover, [svelte-3888157496] .promotion:hover {\\n\\t\\ttransform: scale(1.01);\\n\\t\\tbox-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.25);\\n\\t\\tcolor: white;\\n\\t\\ttext-decoration: none;\\n\\t}\\n\\n\\t.title[svelte-3888157496], [svelte-3888157496] .title {\\n\\t\\tfont-size: 1.6em;\\n\\t\\tfont-family: 'Oswald', sans-serif;\\n\\t}\\n\\n\\t.desc[svelte-3888157496], [svelte-3888157496] .desc {\\n\\t\\tfont-family: 'Lato', sans-serif;\\n\\t\\tfont-weight: 300;\\n\\t}\\n\";\n\tappendNode( style, document.head );\n\n\taddedCss = true;\n}\n\nfunction renderMainFragment ( root, component ) {\n\tvar div = createElement( 'div' );\n\tsetAttribute( div, 'svelte-3888157496', '' );\n\tdiv.className = \"promotion-list-container\";\n\t\n\tvar h2 = createElement( 'h2' );\n\tsetAttribute( h2, 'svelte-3888157496', '' );\n\t\n\tappendNode( h2, div );\n\tappendNode( createText( \"Current Promotions\" ), h2 );\n\tappendNode( createText( \"\\n\\t\" ), div );\n\t\n\tvar div1 = createElement( 'div' );\n\tsetAttribute( div1, 'svelte-3888157496', '' );\n\tdiv1.className = \"promotion-list\";\n\t\n\tappendNode( div1, div );\n\tvar eachBlock_anchor = createComment();\n\tappendNode( eachBlock_anchor, div1 );\n\tvar eachBlock_value = root.promotions;\n\tvar eachBlock_iterations = [];\n\t\n\tfor ( var i = 0; i < eachBlock_value.length; i += 1 ) {\n\t\teachBlock_iterations[i] = renderEachBlock( root, eachBlock_value, eachBlock_value[i], i, component );\n\t\teachBlock_iterations[i].mount( eachBlock_anchor.parentNode, eachBlock_anchor );\n\t}\n\n\treturn {\n\t\tmount: function ( target, anchor ) {\n\t\t\tinsertNode( div, target, anchor );\n\t\t},\n\t\t\n\t\tupdate: function ( changed, root ) {\n\t\t\tvar eachBlock_value = root.promotions;\n\t\t\t\n\t\t\tfor ( var i = 0; i < eachBlock_value.length; i += 1 ) {\n\t\t\t\tif ( !eachBlock_iterations[i] ) {\n\t\t\t\t\teachBlock_iterations[i] = renderEachBlock( root, eachBlock_value, eachBlock_value[i], i, component );\n\t\t\t\t\teachBlock_iterations[i].mount( eachBlock_anchor.parentNode, eachBlock_anchor );\n\t\t\t\t} else {\n\t\t\t\t\teachBlock_iterations[i].update( changed, root, eachBlock_value, eachBlock_value[i], i );\n\t\t\t\t}\n\t\t\t}\n\t\t\t\n\t\t\tteardownEach( eachBlock_iterations, true, eachBlock_value.length );\n\t\t\t\n\t\t\teachBlock_iterations.length = eachBlock_value.length;\n\t\t},\n\t\t\n\t\tteardown: function ( detach ) {\n\t\t\tteardownEach( eachBlock_iterations, false );\n\t\t\t\n\t\t\tif ( detach ) {\n\t\t\t\tdetachNode( div );\n\t\t\t}\n\t\t}\n\t};\n}\n\nfunction renderEachBlock ( root, eachBlock_value, promotion, promotion__index, component ) {\n\tvar a = createElement( 'a' );\n\tsetAttribute( a, 'svelte-3888157496', '' );\n\ta.href = \"/promotions\";\n\ta.className = \"promotion\";\n\ta.style.cssText = \"background-image: url(\" + ( promotion.image ) + \");\";\n\t\n\tvar span = createElement( 'span' );\n\tsetAttribute( span, 'svelte-3888157496', '' );\n\tspan.className = \"title\";\n\t\n\tappendNode( span, a );\n\tvar text = createText( promotion.title );\n\tappendNode( text, span );\n\tappendNode( createText( \"\\n\\t\\t\\t\" ), a );\n\t\n\tvar p = createElement( 'p' );\n\tsetAttribute( p, 'svelte-3888157496', '' );\n\tp.className = \"desc\";\n\t\n\tappendNode( p, a );\n\tvar text2 = createText( promotion.desc );\n\tappendNode( text2, p );\n\n\treturn {\n\t\tmount: function ( target, anchor ) {\n\t\t\tinsertNode( a, target, anchor );\n\t\t},\n\t\t\n\t\tupdate: function ( changed, root, eachBlock_value, promotion, promotion__index ) {\n\t\t\ta.style.cssText = \"background-image: url(\" + ( promotion.image ) + \");\";\n\t\t\t\n\t\t\ttext.data = promotion.title;\n\t\t\t\n\t\t\ttext2.data = promotion.desc;\n\t\t},\n\t\t\n\t\tteardown: function ( detach ) {\n\t\t\tif ( detach ) {\n\t\t\t\tdetachNode( a );\n\t\t\t}\n\t\t}\n\t};\n}\n\nfunction SvelteComponent ( options ) {\n\toptions = options || {};\n\t\n\tthis._state = Object.assign( template.data(), options.data );\n\n\tthis._observers = {\n\t\tpre: Object.create( null ),\n\t\tpost: Object.create( null )\n\t};\n\n\tthis._handlers = Object.create( null );\n\n\tthis._root = options._root;\n\tthis._yield = options._yield;\n\n\tif ( !addedCss ) addCss();\n\t\n\tthis._fragment = renderMainFragment( this._state, this );\n\tif ( options.target ) this._fragment.mount( options.target, null );\n}\n\nSvelteComponent.prototype.get = function get( key ) {\n \treturn key ? this._state[ key ] : this._state;\n };\n\nSvelteComponent.prototype.fire = function fire( eventName, data ) {\n \tvar handlers = eventName in this._handlers && this._handlers[ eventName ].slice();\n \tif ( !handlers ) return;\n \n \tfor ( var i = 0; i < handlers.length; i += 1 ) {\n \t\thandlers[i].call( this, data );\n \t}\n };\n\nSvelteComponent.prototype.observe = function observe( key, callback, options ) {\n \tvar group = ( options && options.defer ) ? this._observers.pre : this._observers.post;\n \n \t( group[ key ] || ( group[ key ] = [] ) ).push( callback );\n \n \tif ( !options || options.init !== false ) {\n \t\tcallback.__calling = true;\n \t\tcallback.call( this, this._state[ key ] );\n \t\tcallback.__calling = false;\n \t}\n \n \treturn {\n \t\tcancel: function () {\n \t\t\tvar index = group[ key ].indexOf( callback );\n \t\t\tif ( ~index ) group[ key ].splice( index, 1 );\n \t\t}\n \t};\n };\n\nSvelteComponent.prototype.on = function on( eventName, handler ) {\n \tvar handlers = this._handlers[ eventName ] || ( this._handlers[ eventName ] = [] );\n \thandlers.push( handler );\n \n \treturn {\n \t\tcancel: function () {\n \t\t\tvar index = handlers.indexOf( handler );\n \t\t\tif ( ~index ) handlers.splice( index, 1 );\n \t\t}\n \t};\n };\n\nSvelteComponent.prototype.set = function set ( newState ) {\n\tvar oldState = this._state;\n\tthis._state = Object.assign( {}, oldState, newState );\n\t\n\tdispatchObservers( this, this._observers.pre, newState, oldState );\n\tif ( this._fragment ) this._fragment.update( newState, this._state );\n\tdispatchObservers( this, this._observers.post, newState, oldState );\n};\n\nSvelteComponent.prototype.teardown = function teardown ( detach ) {\n\tthis.fire( 'teardown' );\n\n\tthis._fragment.teardown( detach !== false );\n\tthis._fragment = null;\n\n\tthis._state = {};\n};\n\nfunction dispatchObservers( component, group, newState, oldState ) {\n\tfor ( var key in group ) {\n\t\tif ( !( key in newState ) ) continue;\n\n\t\tvar newValue = newState[ key ];\n\t\tvar oldValue = oldState[ key ];\n\n\t\tif ( newValue === oldValue && typeof newValue !== 'object' ) continue;\n\n\t\tvar callbacks = group[ key ];\n\t\tif ( !callbacks ) continue;\n\n\t\tfor ( var i = 0; i < callbacks.length; i += 1 ) {\n\t\t\tvar callback = callbacks[i];\n\t\t\tif ( callback.__calling ) continue;\n\n\t\t\tcallback.__calling = true;\n\t\t\tcallback.call( component, newValue, oldValue );\n\t\t\tcallback.__calling = false;\n\t\t}\n\t}\n}\n\nfunction createElement( name ) {\n\treturn document.createElement( name );\n}\n\nfunction setAttribute( node, attribute, value ) {\n\tnode.setAttribute ( attribute, value );\n}\n\nfunction detachNode( node ) {\n\tnode.parentNode.removeChild( node );\n}\n\nfunction insertNode( node, target, anchor ) {\n\ttarget.insertBefore( node, anchor );\n}\n\nfunction appendNode( node, target ) {\n\ttarget.appendChild( node );\n}\n\nfunction createText( data ) {\n\treturn document.createTextNode( data );\n}\n\nfunction createComment() {\n\treturn document.createComment( '' );\n}\n\nfunction teardownEach( iterations, detach, start ) {\n\tfor ( var i = ( start || 0 ); i < iterations.length; i += 1 ) {\n\t\titerations[i].teardown( detach );\n\t}\n}\n\nexport default SvelteComponent;"
+      "source": "function applyComputations ( state, newState, oldState ) {\n\tif ( ( 'promotions' in newState && typeof state.promotions === 'object' || state.promotions !== oldState.promotions ) ) {\n\t\tstate.plural = newState.plural = template.computed.plural( state.promotions );\n\t}\n}\n\nvar template = (function () {\nreturn {\n\tdata(){\n\t\treturn {\n\t\t\tpromotions: []\n\t\t}\n\t},\n\n\tcomputed: {\n\t\tplural(promotions){\n\t\t\treturn promotions.length > 1 ? 's' : '';\n\t\t}\n\t}\n};\n}());\n\nlet addedCss = false;\nfunction addCss () {\n\tvar style = createElement( 'style' );\n\tstyle.textContent = \"\\n\\t@import url('https://fonts.googleapis.com/css?family=Lato:300|Oswald');\\n\\n\\t.promotion-list-container {\\n\\t\\tpadding: 2em;\\n\\t\\tfont-size: 1.25em;\\n\\t\\ttext-align: center;\\n\\t}\\n\\n\\t.promotion-list[svelte-515446853], [svelte-515446853] .promotion-list {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: flex-start;;\\n\\t\\talign-items: stretch;\\n\\t\\toverflow-x: auto;\\n\\t\\toverflow-y: hidden;\\n\\t\\ttext-align: left;\\n\\t}\\n\\n\\t.promotion[svelte-515446853], [svelte-515446853] .promotion {\\n\\t\\tflex-grow: 1;\\n\\t\\tflex-shrink: 0;\\n\\t\\twidth: 300px;\\n\\t\\tposition: relative;\\n\\t\\tpadding: 0;\\n\\t\\tdisplay: block;\\n\\t\\tborder-radius: 5px;\\n\\t\\tbox-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);\\n\\t\\tmargin: 1em;\\n\\t\\tbackground-size: cover;\\n\\t\\tbackground-position: center;\\n\\t\\tcolor: white;\\n\\t\\ttext-decoration: none;\\n\\t\\topacity: 0.9;\\n\\t\\tcursor: pointer;\\n\\t\\tborder: none;\\n\\t\\tborder-color: transparent;\\n\\t\\toutline: none;\\n\\t\\toutline-color: transparent;\\n\\t}\\n\\n\\t.promotion[svelte-515446853]:hover, [svelte-515446853] .promotion:hover {\\n\\t\\ttransform: scale(1.01);\\n\\t\\tbox-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.25);\\n\\t\\tcolor: white;\\n\\t\\ttext-decoration: none;\\n\\t}\\n\\n\\t.promotion-backdrop[svelte-515446853], [svelte-515446853] .promotion-backdrop {\\n\\t\\tbox-sizing: border-box;\\n\\t\\twidth: 100%;\\n\\t\\theight: 100%;\\n\\t\\tmargin: 0;\\n\\t\\tpadding: 1em;\\n\\t\\tbackground-color: rgba(0, 0, 0, 0.4);\\n\\t}\\n\\n\\t.title[svelte-515446853], [svelte-515446853] .title {\\n\\t\\tfont-size: 1.6em;\\n\\t\\tfont-family: 'Oswald', sans-serif;\\n\\t}\\n\\n\\t.desc[svelte-515446853], [svelte-515446853] .desc {\\n\\t\\tfont-family: 'Lato', sans-serif;\\n\\t\\tfont-weight: 300;\\n\\t}\\n\\n\\tsmall[svelte-515446853], [svelte-515446853] small {\\n\\t\\tdisplay: block;\\n\\t\\tmargin: 2em 0;\\n\\t}\\n\";\n\tappendNode( style, document.head );\n\n\taddedCss = true;\n}\n\nfunction renderMainFragment ( root, component ) {\n\tvar div = createElement( 'div' );\n\tsetAttribute( div, 'svelte-515446853', '' );\n\tdiv.className = \"promotion-list-container\";\n\t\n\tvar h2 = createElement( 'h2' );\n\tsetAttribute( h2, 'svelte-515446853', '' );\n\t\n\tappendNode( h2, div );\n\tappendNode( createText( \"Current Promotion\" ), h2 );\n\tvar text1 = createText( root.plural );\n\tappendNode( text1, h2 );\n\tappendNode( createText( \"\\n\\t\" ), div );\n\t\n\tvar div1 = createElement( 'div' );\n\tsetAttribute( div1, 'svelte-515446853', '' );\n\tdiv1.className = \"promotion-list\";\n\t\n\tappendNode( div1, div );\n\tvar eachBlock_anchor = createComment();\n\tappendNode( eachBlock_anchor, div1 );\n\tvar eachBlock_value = root.promotions;\n\tvar eachBlock_iterations = [];\n\t\n\tfor ( var i = 0; i < eachBlock_value.length; i += 1 ) {\n\t\teachBlock_iterations[i] = renderEachBlock( root, eachBlock_value, eachBlock_value[i], i, component );\n\t\teachBlock_iterations[i].mount( eachBlock_anchor.parentNode, eachBlock_anchor );\n\t}\n\t\n\tappendNode( createText( \"\\n\\n\\t\" ), div );\n\t\n\tvar small = createElement( 'small' );\n\tsetAttribute( small, 'svelte-515446853', '' );\n\t\n\tappendNode( small, div );\n\tappendNode( createText( \"Promotions must be redeemed in front of a bartender.\\n\\t\\tRequires Facebook login and a personal device.\" ), small );\n\tappendNode( createText( \"\\n\\n\\t\" ), div );\n\t\n\tvar a = createElement( 'a' );\n\tsetAttribute( a, 'svelte-515446853', '' );\n\ta.href = \"/promotions\";\n\ta.className = \"button outline accent\";\n\t\n\tappendNode( a, div );\n\tappendNode( createText( \"Redeem promotion\" ), a );\n\tvar text7 = createText( root.plural );\n\tappendNode( text7, a );\n\n\treturn {\n\t\tmount: function ( target, anchor ) {\n\t\t\tinsertNode( div, target, anchor );\n\t\t},\n\t\t\n\t\tupdate: function ( changed, root ) {\n\t\t\ttext1.data = root.plural;\n\t\t\t\n\t\t\tvar eachBlock_value = root.promotions;\n\t\t\t\n\t\t\tfor ( var i = 0; i < eachBlock_value.length; i += 1 ) {\n\t\t\t\tif ( !eachBlock_iterations[i] ) {\n\t\t\t\t\teachBlock_iterations[i] = renderEachBlock( root, eachBlock_value, eachBlock_value[i], i, component );\n\t\t\t\t\teachBlock_iterations[i].mount( eachBlock_anchor.parentNode, eachBlock_anchor );\n\t\t\t\t} else {\n\t\t\t\t\teachBlock_iterations[i].update( changed, root, eachBlock_value, eachBlock_value[i], i );\n\t\t\t\t}\n\t\t\t}\n\t\t\t\n\t\t\tteardownEach( eachBlock_iterations, true, eachBlock_value.length );\n\t\t\t\n\t\t\teachBlock_iterations.length = eachBlock_value.length;\n\t\t\t\n\t\t\ttext7.data = root.plural;\n\t\t},\n\t\t\n\t\tteardown: function ( detach ) {\n\t\t\tteardownEach( eachBlock_iterations, false );\n\t\t\t\n\t\t\tif ( detach ) {\n\t\t\t\tdetachNode( div );\n\t\t\t}\n\t\t}\n\t};\n}\n\nfunction renderEachBlock ( root, eachBlock_value, promotion, promotion__index, component ) {\n\tvar a = createElement( 'a' );\n\tsetAttribute( a, 'svelte-515446853', '' );\n\ta.href = \"/promotions\";\n\ta.className = \"promotion\";\n\ta.style.cssText = \"background-image: url(\" + ( promotion.image ) + \");\";\n\t\n\tvar div = createElement( 'div' );\n\tsetAttribute( div, 'svelte-515446853', '' );\n\tdiv.className = \"promotion-backdrop\";\n\t\n\tappendNode( div, a );\n\t\n\tvar span = createElement( 'span' );\n\tsetAttribute( span, 'svelte-515446853', '' );\n\tspan.className = \"title\";\n\t\n\tappendNode( span, div );\n\tvar text = createText( promotion.title );\n\tappendNode( text, span );\n\tappendNode( createText( \"\\n\\t\\t\\t\\t\" ), div );\n\t\n\tvar p = createElement( 'p' );\n\tsetAttribute( p, 'svelte-515446853', '' );\n\tp.className = \"desc\";\n\t\n\tappendNode( p, div );\n\tvar text2 = createText( promotion.desc );\n\tappendNode( text2, p );\n\n\treturn {\n\t\tmount: function ( target, anchor ) {\n\t\t\tinsertNode( a, target, anchor );\n\t\t},\n\t\t\n\t\tupdate: function ( changed, root, eachBlock_value, promotion, promotion__index ) {\n\t\t\ta.style.cssText = \"background-image: url(\" + ( promotion.image ) + \");\";\n\t\t\t\n\t\t\ttext.data = promotion.title;\n\t\t\t\n\t\t\ttext2.data = promotion.desc;\n\t\t},\n\t\t\n\t\tteardown: function ( detach ) {\n\t\t\tif ( detach ) {\n\t\t\t\tdetachNode( a );\n\t\t\t}\n\t\t}\n\t};\n}\n\nfunction SvelteComponent ( options ) {\n\toptions = options || {};\n\t\n\tthis._state = Object.assign( template.data(), options.data );\napplyComputations( this._state, this._state, {} );\n\n\tthis._observers = {\n\t\tpre: Object.create( null ),\n\t\tpost: Object.create( null )\n\t};\n\n\tthis._handlers = Object.create( null );\n\n\tthis._root = options._root;\n\tthis._yield = options._yield;\n\n\tif ( !addedCss ) addCss();\n\t\n\tthis._fragment = renderMainFragment( this._state, this );\n\tif ( options.target ) this._fragment.mount( options.target, null );\n}\n\nSvelteComponent.prototype.get = function get( key ) {\n \treturn key ? this._state[ key ] : this._state;\n };\n\nSvelteComponent.prototype.fire = function fire( eventName, data ) {\n \tvar handlers = eventName in this._handlers && this._handlers[ eventName ].slice();\n \tif ( !handlers ) return;\n \n \tfor ( var i = 0; i < handlers.length; i += 1 ) {\n \t\thandlers[i].call( this, data );\n \t}\n };\n\nSvelteComponent.prototype.observe = function observe( key, callback, options ) {\n \tvar group = ( options && options.defer ) ? this._observers.pre : this._observers.post;\n \n \t( group[ key ] || ( group[ key ] = [] ) ).push( callback );\n \n \tif ( !options || options.init !== false ) {\n \t\tcallback.__calling = true;\n \t\tcallback.call( this, this._state[ key ] );\n \t\tcallback.__calling = false;\n \t}\n \n \treturn {\n \t\tcancel: function () {\n \t\t\tvar index = group[ key ].indexOf( callback );\n \t\t\tif ( ~index ) group[ key ].splice( index, 1 );\n \t\t}\n \t};\n };\n\nSvelteComponent.prototype.on = function on( eventName, handler ) {\n \tvar handlers = this._handlers[ eventName ] || ( this._handlers[ eventName ] = [] );\n \thandlers.push( handler );\n \n \treturn {\n \t\tcancel: function () {\n \t\t\tvar index = handlers.indexOf( handler );\n \t\t\tif ( ~index ) handlers.splice( index, 1 );\n \t\t}\n \t};\n };\n\nSvelteComponent.prototype.set = function set ( newState ) {\n\tvar oldState = this._state;\n\tthis._state = Object.assign( {}, oldState, newState );\n\tapplyComputations( this._state, newState, oldState )\n\t\n\tdispatchObservers( this, this._observers.pre, newState, oldState );\n\tif ( this._fragment ) this._fragment.update( newState, this._state );\n\tdispatchObservers( this, this._observers.post, newState, oldState );\n};\n\nSvelteComponent.prototype.teardown = function teardown ( detach ) {\n\tthis.fire( 'teardown' );\n\n\tthis._fragment.teardown( detach !== false );\n\tthis._fragment = null;\n\n\tthis._state = {};\n};\n\nfunction dispatchObservers( component, group, newState, oldState ) {\n\tfor ( var key in group ) {\n\t\tif ( !( key in newState ) ) continue;\n\n\t\tvar newValue = newState[ key ];\n\t\tvar oldValue = oldState[ key ];\n\n\t\tif ( newValue === oldValue && typeof newValue !== 'object' ) continue;\n\n\t\tvar callbacks = group[ key ];\n\t\tif ( !callbacks ) continue;\n\n\t\tfor ( var i = 0; i < callbacks.length; i += 1 ) {\n\t\t\tvar callback = callbacks[i];\n\t\t\tif ( callback.__calling ) continue;\n\n\t\t\tcallback.__calling = true;\n\t\t\tcallback.call( component, newValue, oldValue );\n\t\t\tcallback.__calling = false;\n\t\t}\n\t}\n}\n\nfunction createElement( name ) {\n\treturn document.createElement( name );\n}\n\nfunction setAttribute( node, attribute, value ) {\n\tnode.setAttribute ( attribute, value );\n}\n\nfunction detachNode( node ) {\n\tnode.parentNode.removeChild( node );\n}\n\nfunction insertNode( node, target, anchor ) {\n\ttarget.insertBefore( node, anchor );\n}\n\nfunction appendNode( node, target ) {\n\ttarget.appendChild( node );\n}\n\nfunction createText( data ) {\n\treturn document.createTextNode( data );\n}\n\nfunction createComment() {\n\treturn document.createComment( '' );\n}\n\nfunction teardownEach( iterations, detach, start ) {\n\tfor ( var i = ( start || 0 ); i < iterations.length; i += 1 ) {\n\t\titerations[i].teardown( detach );\n\t}\n}\n\nexport default SvelteComponent;"
     },
     {
       "id": 41,
@@ -2472,7 +2472,7 @@
       "index2": 69,
       "size": 12823,
       "cacheable": true,
-      "built": true,
+      "built": false,
       "optional": false,
       "prefetched": false,
       "chunks": [
@@ -3771,7 +3771,7 @@
       "name": "./_js/promotions/homepage.js",
       "index": 76,
       "index2": 78,
-      "size": 1134,
+      "size": 1175,
       "cacheable": true,
       "built": false,
       "optional": false,
@@ -3790,7 +3790,7 @@
       "usedExports": true,
       "providedExports": null,
       "depth": 0,
-      "source": "import * as firebase from 'firebase/app';\nimport 'firebase/database';\n\nimport CallToActionButton from '../svelte-components/CallToActionButton.html';\nimport PromotionList from '../svelte-components/PromotionList.html';\n\nimport { FIREBASE_CONFIG } from '../constants.js';\nimport { isoDateString, promotionIsValid } from '../utils.js';\n\nfirebase.initializeApp(FIREBASE_CONFIG);\nfirebase.database().ref('/promotions').orderByChild('startDate').endAt(isoDateString(new Date())).once('value').then(function (snapshot) {\n\tvar promotions = snapshot.val();\n\tvar validPromotions = promotions.filter(promotionIsValid);\n\n\tif (validPromotions.length > 0) {\n\t\tcreateComponents(validPromotions);\n\t}\n});\n\nfunction createComponents(promotions) {\n\tvar heroButtonContainer = document.querySelector('.hero-button');\n\twhile (heroButtonContainer.firstChild) {\n\t\theroButtonContainer.removeChild(heroButtonContainer.firstChild);\n\t}new CallToActionButton({\n\t\ttarget: heroButtonContainer\n\t});\n\n\tvar promotionsContainer = document.querySelector('#promotions');\n\n\tnew PromotionList({\n\t\ttarget: promotionsContainer,\n\t\tdata: {\n\t\t\tpromotions: promotions\n\t\t}\n\t});\n}"
+      "source": "import * as firebase from 'firebase/app';\nimport 'firebase/database';\n\nimport CallToActionButton from '../svelte-components/CallToActionButton.html';\nimport PromotionList from '../svelte-components/PromotionList.html';\n\nimport { FIREBASE_CONFIG } from '../constants.js';\nimport { isoDateString, promotionIsValid } from '../utils.js';\n\nfirebase.initializeApp(FIREBASE_CONFIG);\nfirebase.database().ref('/promotions').orderByChild('startDate').endAt(isoDateString(new Date())).once('value').then(function (snapshot) {\n\tvar promotions = snapshot.val();\n\tvar validPromotions = promotions.filter(promotionIsValid);\n\n\tif (validPromotions.length > 0) {\n\t\tcreateComponents(validPromotions);\n\t}\n});\n\nfunction createComponents(promotions) {\n\tvar heroButtonContainer = document.querySelector('.hero-button');\n\twhile (heroButtonContainer.firstChild) {\n\t\theroButtonContainer.removeChild(heroButtonContainer.firstChild);\n\t}new CallToActionButton({\n\t\ttarget: heroButtonContainer,\n\t\tdata: {\n\t\t\tpromotions: promotions\n\t\t}\n\t});\n\n\tvar promotionsContainer = document.querySelector('#promotions');\n\n\tnew PromotionList({\n\t\ttarget: promotionsContainer,\n\t\tdata: {\n\t\t\tpromotions: promotions\n\t\t}\n\t});\n}"
     },
     {
       "id": 78,
