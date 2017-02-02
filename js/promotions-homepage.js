@@ -279,7 +279,7 @@ var template = function () {
 var addedCss = false;
 function addCss() {
 	var style = createElement('style');
-	style.textContent = "\n\t.promotion-list-container[svelte-1252560939], [svelte-1252560939] .promotion-list-container {\n\t\tpadding: 2em;\n\t\tfont-size: 1.25em;\n\t\ttext-align: center;\n\t}\n\n\t.promotion-list[svelte-1252560939], [svelte-1252560939] .promotion-list {\n\t\tdisplay: flex;\n\t\tjustify-content: flex-start;;\n\t\talign-items: stretch;\n\t\toverflow-x: auto;\n\t\toverflow-y: hidden;\n\t\ttext-align: left;\n\t}\n\n\t.promotion[svelte-1252560939], [svelte-1252560939] .promotion {\n\t\tflex-grow: 1;\n\t\tflex-shrink: 0;\n\t\twidth: 300px;\n\t\tposition: relative;\n\t\tpadding: 0;\n\t\tdisplay: block;\n\t\tborder-radius: 5px;\n\t\tbox-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);\n\t\tmargin: 1em;\n\t\tbackground-size: cover;\n\t\tbackground-position: center;\n\t\tcolor: white;\n\t\ttext-decoration: none;\n\t\topacity: 0.9;\n\t\tcursor: pointer;\n\t\tborder: none;\n\t\tborder-color: transparent;\n\t\toutline: none;\n\t\toutline-color: transparent;\n\t}\n\n\t.promotion[svelte-1252560939]:hover, [svelte-1252560939] .promotion:hover {\n\t\ttransform: scale(1.01);\n\t\tbox-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.25);\n\t\tcolor: white;\n\t\ttext-decoration: none;\n\t}\n\n\t.promotion-backdrop[svelte-1252560939], [svelte-1252560939] .promotion-backdrop {\n\t\tbox-sizing: border-box;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tmargin: 0;\n\t\tpadding: 1em;\n\t\tbackground-color: rgba(0, 0, 0, 0.4);\n\t}\n\n\t.title[svelte-1252560939], [svelte-1252560939] .title {\n\t\tfont-size: 1.6em;\n\t\tfont-family: 'Oswald', sans-serif;\n\t}\n\n\t.desc[svelte-1252560939], [svelte-1252560939] .desc {\n\t\tfont-family: 'Lato', sans-serif;\n\t\tfont-weight: 300;\n\t}\n\n\tsmall[svelte-1252560939], [svelte-1252560939] small {\n\t\tdisplay: block;\n\t\tmargin: 2em 0;\n\t}\n";
+	style.textContent = "\n\t.promotion-list-container[svelte-54136354], [svelte-54136354] .promotion-list-container {\n\t\tpadding: 2em 1em;\n\t\tfont-size: 1.25em;\n\t\ttext-align: center;\n\t}\n\n\t.promotion-list[svelte-54136354], [svelte-54136354] .promotion-list {\n\t\tdisplay: flex;\n\t\tjustify-content: flex-start;\n\t\talign-items: stretch;\n\t\toverflow-x: auto;\n\t\toverflow-y: hidden;\n\t\ttext-align: left;\n\t}\n\n\t.promotion[svelte-54136354], [svelte-54136354] .promotion {\n\t\tflex-grow: 1;\n\t\tflex-shrink: 0;\n\t\twidth: 300px;\n\t\tmax-width: 100%;\n\t\tposition: relative;\n\t\tpadding: 0;\n\t\tdisplay: block;\n\t\tborder-radius: 5px;\n\t\tbox-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);\n\t\tmargin: 1em;\n\t\tbackground-size: cover;\n\t\tbackground-position: center;\n\t\tcolor: white;\n\t\ttext-decoration: none;\n\t\topacity: 0.9;\n\t\tcursor: pointer;\n\t\tborder: none;\n\t\tborder-color: transparent;\n\t\toutline: none;\n\t\toutline-color: transparent;\n\t}\n\n\t.promotion[svelte-54136354]:first-child, [svelte-54136354] .promotion:first-child {\n\t\tmargin-left: 0;\n\t}\n\n\t.promotion[svelte-54136354]:last-child, [svelte-54136354] .promotion:last-child {\n\t\tmargin-right: 0;\n\t}\n\n\t.promotion[svelte-54136354]:hover, [svelte-54136354] .promotion:hover {\n\t\ttransform: scale(1.01);\n\t\tbox-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.25);\n\t\tcolor: white;\n\t\ttext-decoration: none;\n\t}\n\n\t.promotion-backdrop[svelte-54136354], [svelte-54136354] .promotion-backdrop {\n\t\tbox-sizing: border-box;\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tmargin: 0;\n\t\tpadding: 1em;\n\t\tbackground-color: rgba(0, 0, 0, 0.4);\n\t}\n\n\t.title[svelte-54136354], [svelte-54136354] .title {\n\t\tfont-size: 1.6em;\n\t\tfont-family: 'Oswald', sans-serif;\n\t}\n\n\t.desc[svelte-54136354], [svelte-54136354] .desc {\n\t\tfont-family: 'Lato', sans-serif;\n\t\tfont-weight: 300;\n\t}\n\n\tsmall[svelte-54136354], [svelte-54136354] small {\n\t\tdisplay: block;\n\t\tmargin: 2em 0;\n\t}\n";
 	appendNode(style, document.head);
 
 	addedCss = true;
@@ -287,11 +287,11 @@ function addCss() {
 
 function renderMainFragment(root, component) {
 	var div = createElement('div');
-	setAttribute(div, 'svelte-1252560939', '');
+	setAttribute(div, 'svelte-54136354', '');
 	div.className = "promotion-list-container";
 
 	var h2 = createElement('h2');
-	setAttribute(h2, 'svelte-1252560939', '');
+	setAttribute(h2, 'svelte-54136354', '');
 
 	appendNode(h2, div);
 	appendNode(createText("Current Promotion"), h2);
@@ -300,7 +300,7 @@ function renderMainFragment(root, component) {
 	appendNode(createText("\n\t"), div);
 
 	var div1 = createElement('div');
-	setAttribute(div1, 'svelte-1252560939', '');
+	setAttribute(div1, 'svelte-54136354', '');
 	div1.className = "promotion-list";
 
 	appendNode(div1, div);
@@ -317,14 +317,14 @@ function renderMainFragment(root, component) {
 	appendNode(createText("\n\n\t"), div);
 
 	var small = createElement('small');
-	setAttribute(small, 'svelte-1252560939', '');
+	setAttribute(small, 'svelte-54136354', '');
 
 	appendNode(small, div);
 	appendNode(createText("Promotions must be redeemed in front of a bartender.\n\t\tRequires Facebook login and a personal device."), small);
 	appendNode(createText("\n\n\t"), div);
 
 	var a = createElement('a');
-	setAttribute(a, 'svelte-1252560939', '');
+	setAttribute(a, 'svelte-54136354', '');
 	a.href = "/promotions";
 	a.className = "button outline accent";
 
@@ -371,19 +371,19 @@ function renderMainFragment(root, component) {
 
 function renderEachBlock(root, eachBlock_value, promotion, promotion__index, component) {
 	var a = createElement('a');
-	setAttribute(a, 'svelte-1252560939', '');
+	setAttribute(a, 'svelte-54136354', '');
 	a.href = "/promotions";
 	a.className = "promotion";
 	a.style.cssText = "background-image: url(" + promotion.image + ");";
 
 	var div = createElement('div');
-	setAttribute(div, 'svelte-1252560939', '');
+	setAttribute(div, 'svelte-54136354', '');
 	div.className = "promotion-backdrop";
 
 	appendNode(div, a);
 
 	var span = createElement('span');
-	setAttribute(span, 'svelte-1252560939', '');
+	setAttribute(span, 'svelte-54136354', '');
 	span.className = "title";
 
 	appendNode(span, div);
@@ -392,7 +392,7 @@ function renderEachBlock(root, eachBlock_value, promotion, promotion__index, com
 	appendNode(createText("\n\t\t\t\t"), div);
 
 	var p = createElement('p');
-	setAttribute(p, 'svelte-1252560939', '');
+	setAttribute(p, 'svelte-54136354', '');
 	p.className = "desc";
 
 	appendNode(p, div);

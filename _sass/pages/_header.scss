@@ -11,6 +11,10 @@ header.site-header {
 	transition-duration: 0.3s;
 	transition-property: padding, font-size;
 
+	@media (max-width: $incredibly-small-screen) {
+		font-size: 0.9em;
+	}
+
 	@media (min-width: $very-small-screen) {
 		font-size: 1.25em;
 		padding: 0 1em;
