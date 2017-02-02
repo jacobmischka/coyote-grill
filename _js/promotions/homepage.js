@@ -1,5 +1,7 @@
 import * as firebase from 'firebase/app';
 import 'firebase/database';
+import 'typeface-lato';
+import 'typeface-oswald';
 
 import CallToActionButton from '../svelte-components/CallToActionButton.html';
 import PromotionList from '../svelte-components/PromotionList.html';

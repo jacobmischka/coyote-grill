@@ -40,11 +40,23 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.yaml$/,
+				test: /\.css$/,
+				include: /typeface-/,
 				loaders: [
-					'json-loader',
-					'yaml-loader'
+					'style-loader',
+					'css-loader'
 				]
+			},
+			{
+				test: /\.(eot|svg|ttf|woff|woff2)$/,
+				loader: 'file-loader',
+				options: {
+					name: 'assets/[name].[ext]'
+				}
+			},
+			{
+				test: /\.yaml$/,
+				loader: 'yaml-loader'
 			}
 		]
 	},

@@ -2,6 +2,8 @@ import { h, Component } from 'preact';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import 'typeface-lato';
+import 'typeface-oswald';
 
 import Promotion from './Promotion.js';
 import ActivePromotion from './ActivePromotion.js';
@@ -79,8 +81,6 @@ export default class Promotions extends Component {
 			<div className="promotions">
 				<style jsx>
 				{`
-					@import url('https://fonts.googleapis.com/css?family=Lato:300|Oswald');
-
 					.promotions {
 						position: relative;
 						box-sizing: border-box;
