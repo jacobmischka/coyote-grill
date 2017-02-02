@@ -9,6 +9,7 @@ module.exports = {
 			'core-js/modules/es6.array.from',
 			'core-js/modules/es6.array.iterator',
 			'core-js/modules/es6.symbol',
+			'core-js/modules/es6.promise',
 			'./_js/bundle/index.js'
 		],
 		promotions: process.env.NODE_ENV === 'production'
