@@ -4,7 +4,13 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 module.exports = {
 	entry: {
-		bundle: './_js/bundle/index.js',
+		bundle: [
+			'core-js/modules/es6.object.assign',
+			'core-js/modules/es6.array.from',
+			'core-js/modules/es6.array.iterator',
+			'core-js/modules/es6.symbol',
+			'./_js/bundle/index.js'
+		],
 		promotions: process.env.NODE_ENV === 'production'
 			? './_js/promotions/index.js'
 			: [

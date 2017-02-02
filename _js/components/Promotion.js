@@ -1,5 +1,4 @@
 import { h, Component } from 'preact';
-import Color from 'color';
 
 import { isPromotionRedeemed } from '../utils.js';
 
