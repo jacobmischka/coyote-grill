@@ -126,6 +126,7 @@ export default class Promotion extends Component {
 					small {
 						color: rgba(255, 255, 255, 0.8);
 						font-size: 0.6em;
+						pointer-events: none;
 					}
 				`}
 				</style>
