@@ -56,10 +56,12 @@ module.exports = {
 			},
 			{
 				test: /\.svg$/,
+				exclude: /node_modules/,
 				loader: 'raw-loader'
 			},
 			{
-				test: /\.(eot|ttf|woff|woff2)$/,
+				test: /\.(eot|svg|ttf|woff|woff2)$/,
+				include: /node_modules/,
 				loader: 'file-loader',
 				options: {
 					name: 'assets/[name].[ext]'
