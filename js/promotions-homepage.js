@@ -1,253 +1,6 @@
 webpackJsonp([3,4],{
 
-/***/ 213:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase_app__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase_app__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase_database__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_typeface_lato__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_typeface_lato___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_typeface_lato__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_typeface_oswald__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_typeface_oswald___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_typeface_oswald__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__svelte_components_CallToActionButton_html__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__svelte_components_PromotionList_html__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants_js__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_js__ = __webpack_require__(23);
-
-
-
-
-
-
-
-
-
-
-
-__WEBPACK_IMPORTED_MODULE_0_firebase_app__["initializeApp"](__WEBPACK_IMPORTED_MODULE_6__constants_js__["a" /* FIREBASE_CONFIG */]);
-__WEBPACK_IMPORTED_MODULE_0_firebase_app__["database"]().ref('/promotions').orderByChild('startDate').endAt(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__utils_js__["a" /* isoDateString */])(new Date())).once('value').then(function (snapshot) {
-	var promotions = snapshot.val();
-	var validPromotions = promotions.filter(__WEBPACK_IMPORTED_MODULE_7__utils_js__["b" /* promotionIsValid */]);
-
-	if (validPromotions.length > 0) {
-		createComponents(validPromotions);
-	}
-});
-
-function createComponents(promotions) {
-	var heroButtonContainer = document.querySelector('.hero-button');
-	while (heroButtonContainer.firstChild) {
-		heroButtonContainer.removeChild(heroButtonContainer.firstChild);
-	}new __WEBPACK_IMPORTED_MODULE_4__svelte_components_CallToActionButton_html__["a" /* default */]({
-		target: heroButtonContainer,
-		data: {
-			promotions: promotions
-		}
-	});
-
-	var promotionsContainer = document.querySelector('#promotions');
-
-	new __WEBPACK_IMPORTED_MODULE_5__svelte_components_PromotionList_html__["a" /* default */]({
-		target: promotionsContainer,
-		data: {
-			promotions: promotions
-		}
-	});
-}
-
-/***/ }),
-
-/***/ 98:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function applyComputations(state, newState, oldState) {
-	if ('promotions' in newState && _typeof(state.promotions) === 'object' || state.promotions !== oldState.promotions) {
-		state.plural = newState.plural = template.computed.plural(state.promotions);
-	}
-}
-
-var template = function () {
-	return {
-		data: function data() {
-			return {
-				promotions: []
-			};
-		},
-
-
-		computed: {
-			plural: function plural(promotions) {
-				return promotions.length > 1 ? 's' : '';
-			}
-		}
-	};
-}();
-
-function renderMainFragment(root, component) {
-	var a = createElement('a');
-	a.href = "#promotions";
-	a.className = "button outline accent";
-
-	appendNode(createText("Check out our current promotion"), a);
-	var text1 = createText(root.plural);
-	appendNode(text1, a);
-	appendNode(createText("!"), a);
-
-	return {
-		mount: function mount(target, anchor) {
-			insertNode(a, target, anchor);
-		},
-
-		update: function update(changed, root) {
-			text1.data = root.plural;
-		},
-
-		teardown: function teardown(detach) {
-			if (detach) {
-				detachNode(a);
-			}
-		}
-	};
-}
-
-function SvelteComponent(options) {
-	options = options || {};
-
-	this._state = Object.assign(template.data(), options.data);
-	applyComputations(this._state, this._state, {});
-
-	this._observers = {
-		pre: Object.create(null),
-		post: Object.create(null)
-	};
-
-	this._handlers = Object.create(null);
-
-	this._root = options._root;
-	this._yield = options._yield;
-
-	this._fragment = renderMainFragment(this._state, this);
-	if (options.target) this._fragment.mount(options.target, null);
-}
-
-SvelteComponent.prototype.get = function get(key) {
-	return key ? this._state[key] : this._state;
-};
-
-SvelteComponent.prototype.fire = function fire(eventName, data) {
-	var handlers = eventName in this._handlers && this._handlers[eventName].slice();
-	if (!handlers) return;
-
-	for (var i = 0; i < handlers.length; i += 1) {
-		handlers[i].call(this, data);
-	}
-};
-
-SvelteComponent.prototype.observe = function observe(key, callback, options) {
-	var group = options && options.defer ? this._observers.pre : this._observers.post;
-
-	(group[key] || (group[key] = [])).push(callback);
-
-	if (!options || options.init !== false) {
-		callback.__calling = true;
-		callback.call(this, this._state[key]);
-		callback.__calling = false;
-	}
-
-	return {
-		cancel: function cancel() {
-			var index = group[key].indexOf(callback);
-			if (~index) group[key].splice(index, 1);
-		}
-	};
-};
-
-SvelteComponent.prototype.on = function on(eventName, handler) {
-	var handlers = this._handlers[eventName] || (this._handlers[eventName] = []);
-	handlers.push(handler);
-
-	return {
-		cancel: function cancel() {
-			var index = handlers.indexOf(handler);
-			if (~index) handlers.splice(index, 1);
-		}
-	};
-};
-
-SvelteComponent.prototype.set = function set(newState) {
-	var oldState = this._state;
-	this._state = Object.assign({}, oldState, newState);
-	applyComputations(this._state, newState, oldState);
-
-	dispatchObservers(this, this._observers.pre, newState, oldState);
-	if (this._fragment) this._fragment.update(newState, this._state);
-	dispatchObservers(this, this._observers.post, newState, oldState);
-};
-
-SvelteComponent.prototype.teardown = function teardown(detach) {
-	this.fire('teardown');
-
-	this._fragment.teardown(detach !== false);
-	this._fragment = null;
-
-	this._state = {};
-};
-
-function dispatchObservers(component, group, newState, oldState) {
-	for (var key in group) {
-		if (!(key in newState)) continue;
-
-		var newValue = newState[key];
-		var oldValue = oldState[key];
-
-		if (newValue === oldValue && (typeof newValue === 'undefined' ? 'undefined' : _typeof(newValue)) !== 'object') continue;
-
-		var callbacks = group[key];
-		if (!callbacks) continue;
-
-		for (var i = 0; i < callbacks.length; i += 1) {
-			var callback = callbacks[i];
-			if (callback.__calling) continue;
-
-			callback.__calling = true;
-			callback.call(component, newValue, oldValue);
-			callback.__calling = false;
-		}
-	}
-}
-
-function createElement(name) {
-	return document.createElement(name);
-}
-
-function detachNode(node) {
-	node.parentNode.removeChild(node);
-}
-
-function insertNode(node, target, anchor) {
-	target.insertBefore(node, anchor);
-}
-
-function appendNode(node, target) {
-	target.appendChild(node);
-}
-
-function createText(data) {
-	return document.createTextNode(data);
-}
-
-/* harmony default export */ __webpack_exports__["a"] = SvelteComponent;
-
-/***/ }),
-
-/***/ 99:
+/***/ 100:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -564,7 +317,254 @@ function teardownEach(iterations, detach, start) {
 
 /* harmony default export */ __webpack_exports__["a"] = SvelteComponent;
 
+/***/ }),
+
+/***/ 214:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase_app__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase_app__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase_database__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_typeface_lato__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_typeface_lato___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_typeface_lato__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_typeface_oswald__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_typeface_oswald___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_typeface_oswald__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__svelte_components_CallToActionButton_html__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__svelte_components_PromotionList_html__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants_js__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_js__ = __webpack_require__(24);
+
+
+
+
+
+
+
+
+
+
+
+__WEBPACK_IMPORTED_MODULE_0_firebase_app__["initializeApp"](__WEBPACK_IMPORTED_MODULE_6__constants_js__["a" /* FIREBASE_CONFIG */]);
+__WEBPACK_IMPORTED_MODULE_0_firebase_app__["database"]().ref('/promotions').orderByChild('startDate').endAt(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__utils_js__["a" /* isoDateString */])(new Date())).once('value').then(function (snapshot) {
+	var promotions = snapshot.val();
+	var validPromotions = promotions.filter(__WEBPACK_IMPORTED_MODULE_7__utils_js__["b" /* promotionIsValid */]);
+
+	if (validPromotions.length > 0) {
+		createComponents(validPromotions);
+	}
+});
+
+function createComponents(promotions) {
+	var heroButtonContainer = document.querySelector('.hero-button');
+	while (heroButtonContainer.firstChild) {
+		heroButtonContainer.removeChild(heroButtonContainer.firstChild);
+	}new __WEBPACK_IMPORTED_MODULE_4__svelte_components_CallToActionButton_html__["a" /* default */]({
+		target: heroButtonContainer,
+		data: {
+			promotions: promotions
+		}
+	});
+
+	var promotionsContainer = document.querySelector('#promotions');
+
+	new __WEBPACK_IMPORTED_MODULE_5__svelte_components_PromotionList_html__["a" /* default */]({
+		target: promotionsContainer,
+		data: {
+			promotions: promotions
+		}
+	});
+}
+
+/***/ }),
+
+/***/ 99:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+function applyComputations(state, newState, oldState) {
+	if ('promotions' in newState && _typeof(state.promotions) === 'object' || state.promotions !== oldState.promotions) {
+		state.plural = newState.plural = template.computed.plural(state.promotions);
+	}
+}
+
+var template = function () {
+	return {
+		data: function data() {
+			return {
+				promotions: []
+			};
+		},
+
+
+		computed: {
+			plural: function plural(promotions) {
+				return promotions.length > 1 ? 's' : '';
+			}
+		}
+	};
+}();
+
+function renderMainFragment(root, component) {
+	var a = createElement('a');
+	a.href = "#promotions";
+	a.className = "button outline accent";
+
+	appendNode(createText("Check out our current promotion"), a);
+	var text1 = createText(root.plural);
+	appendNode(text1, a);
+	appendNode(createText("!"), a);
+
+	return {
+		mount: function mount(target, anchor) {
+			insertNode(a, target, anchor);
+		},
+
+		update: function update(changed, root) {
+			text1.data = root.plural;
+		},
+
+		teardown: function teardown(detach) {
+			if (detach) {
+				detachNode(a);
+			}
+		}
+	};
+}
+
+function SvelteComponent(options) {
+	options = options || {};
+
+	this._state = Object.assign(template.data(), options.data);
+	applyComputations(this._state, this._state, {});
+
+	this._observers = {
+		pre: Object.create(null),
+		post: Object.create(null)
+	};
+
+	this._handlers = Object.create(null);
+
+	this._root = options._root;
+	this._yield = options._yield;
+
+	this._fragment = renderMainFragment(this._state, this);
+	if (options.target) this._fragment.mount(options.target, null);
+}
+
+SvelteComponent.prototype.get = function get(key) {
+	return key ? this._state[key] : this._state;
+};
+
+SvelteComponent.prototype.fire = function fire(eventName, data) {
+	var handlers = eventName in this._handlers && this._handlers[eventName].slice();
+	if (!handlers) return;
+
+	for (var i = 0; i < handlers.length; i += 1) {
+		handlers[i].call(this, data);
+	}
+};
+
+SvelteComponent.prototype.observe = function observe(key, callback, options) {
+	var group = options && options.defer ? this._observers.pre : this._observers.post;
+
+	(group[key] || (group[key] = [])).push(callback);
+
+	if (!options || options.init !== false) {
+		callback.__calling = true;
+		callback.call(this, this._state[key]);
+		callback.__calling = false;
+	}
+
+	return {
+		cancel: function cancel() {
+			var index = group[key].indexOf(callback);
+			if (~index) group[key].splice(index, 1);
+		}
+	};
+};
+
+SvelteComponent.prototype.on = function on(eventName, handler) {
+	var handlers = this._handlers[eventName] || (this._handlers[eventName] = []);
+	handlers.push(handler);
+
+	return {
+		cancel: function cancel() {
+			var index = handlers.indexOf(handler);
+			if (~index) handlers.splice(index, 1);
+		}
+	};
+};
+
+SvelteComponent.prototype.set = function set(newState) {
+	var oldState = this._state;
+	this._state = Object.assign({}, oldState, newState);
+	applyComputations(this._state, newState, oldState);
+
+	dispatchObservers(this, this._observers.pre, newState, oldState);
+	if (this._fragment) this._fragment.update(newState, this._state);
+	dispatchObservers(this, this._observers.post, newState, oldState);
+};
+
+SvelteComponent.prototype.teardown = function teardown(detach) {
+	this.fire('teardown');
+
+	this._fragment.teardown(detach !== false);
+	this._fragment = null;
+
+	this._state = {};
+};
+
+function dispatchObservers(component, group, newState, oldState) {
+	for (var key in group) {
+		if (!(key in newState)) continue;
+
+		var newValue = newState[key];
+		var oldValue = oldState[key];
+
+		if (newValue === oldValue && (typeof newValue === 'undefined' ? 'undefined' : _typeof(newValue)) !== 'object') continue;
+
+		var callbacks = group[key];
+		if (!callbacks) continue;
+
+		for (var i = 0; i < callbacks.length; i += 1) {
+			var callback = callbacks[i];
+			if (callback.__calling) continue;
+
+			callback.__calling = true;
+			callback.call(component, newValue, oldValue);
+			callback.__calling = false;
+		}
+	}
+}
+
+function createElement(name) {
+	return document.createElement(name);
+}
+
+function detachNode(node) {
+	node.parentNode.removeChild(node);
+}
+
+function insertNode(node, target, anchor) {
+	target.insertBefore(node, anchor);
+}
+
+function appendNode(node, target) {
+	target.appendChild(node);
+}
+
+function createText(data) {
+	return document.createTextNode(data);
+}
+
+/* harmony default export */ __webpack_exports__["a"] = SvelteComponent;
+
 /***/ })
 
-},[213]);
+},[214]);
 //# sourceMappingURL=promotions-homepage.js.map

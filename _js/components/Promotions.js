@@ -84,10 +84,10 @@ export default class Promotions extends Component {
 					.promotions {
 						position: relative;
 						box-sizing: border-box;
-						min-height: 100%;
+						min-height: 100vh;
 						width: 100%;
 						font-size: 1.75em;
-						padding: 1.5em 10%;
+						padding: 1.5em 10% 2.75em;
 						display: flex;
 						flex-direction: column;
 						justify-content: center;
@@ -114,10 +114,9 @@ export default class Promotions extends Component {
 						font-family: 'Oswald', sans-serif;
 					}
 
-					small {
+					aside {
 						color: rgba(255, 255, 255, 0.5);
 						text-align: center;
-						font-size: 0.5em;
 						position: absolute;
 						bottom: 0.5em;
 						width: 100%;
@@ -125,7 +124,13 @@ export default class Promotions extends Component {
 						transform: translateX(-50%);
 					}
 
-					small a {
+					aside small {
+						display: block;
+						font-size: 0.5em;
+						margin: 0 0 0.25em;
+					}
+
+					aside a {
 						color: rgba(255, 255, 255, 0.3);
 					}
 				`}
@@ -155,10 +160,21 @@ export default class Promotions extends Component {
 			))
 		}
 
-				<small>
-					<span>Problems? Email </span>
-					<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-				</small>
+				<aside>
+					<small>
+						<span>Problems? Email </span>
+						<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+					</small>
+					<small>
+						Checkmark by <a
+								href="https://thenounproject.com/term/check-mark/10734/">
+							Nathan Thomson
+						</a>. Multiply by <a
+								href="https://thenounproject.com/term/multiply/543602/">
+							Doejo
+						</a>.
+					</small>
+				</aside>
 			</div>
 		);
 	}
