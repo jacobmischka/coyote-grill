@@ -3,6 +3,10 @@ import * as firebase from 'firebase/app';
 import 'firebase/database';
 import Color from 'color';
 
+import SvgIcon from './SvgIcon.js';
+import checkmarkIcon from '../../images/icons/checkmark.svg';
+import xmarkIcon from '../../images/icons/x-mark.svg';
+
 import { isPromotionRedeemed } from '../utils.js';
 
 export default class ActivePromotion extends Component {
@@ -34,6 +38,12 @@ export default class ActivePromotion extends Component {
 				: `rgba(64, 64, 64, ${backgroundAlpha})`
 		};
 
+		const iconStyle = {
+			width: '20%',
+			height: 'auto',
+			margin: '2em'
+		};
+
 		return (
 			<div className="active-promotion" style={style}>
 				<style jsx>
@@ -63,12 +73,6 @@ export default class ActivePromotion extends Component {
 						margin: 0;
 						font-family: 'Oswald', sans-serif;
 						font-weight: normal;
-					}
-
-					img {
-						width: 20%;
-						height: auto;
-						margin: 2em;
 					}
 
 					.info-container,
@@ -129,7 +133,6 @@ export default class ActivePromotion extends Component {
 						background: rgba(255, 255, 255, 0.2);
 						background-clip: padding-box;
 					}
-
 				`}
 				</style>
 				<h2>{this.props.title}</h2>
@@ -145,8 +148,10 @@ export default class ActivePromotion extends Component {
 				: 'This promotion has already been redeemed'
 		}
 					</span>
-					<img alt="" src={`/images/icons/${this.state.redeemed
-						? 'checkmark' : 'x-mark'}.svg`} width="300" height="300" />
+
+					<SvgIcon style={iconStyle}
+						src={this.state.redeemed ? checkmarkIcon : xmarkIcon}/>
+
 				</div>
 			)
 			: (

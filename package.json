@@ -46,6 +46,7 @@
     "npm-run-all": "^4.0.0",
     "preact": "^7.1.0",
     "proptypes": "^0.14.3",
+    "raw-loader": "^0.5.1",
     "rollbar": "^0.6.3",
     "scrollreveal": "^3.3.2",
     "style-loader": "^0.13.1",

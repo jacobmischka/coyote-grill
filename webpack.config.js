@@ -55,7 +55,11 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(eot|svg|ttf|woff|woff2)$/,
+				test: /\.svg$/,
+				loader: 'raw-loader'
+			},
+			{
+				test: /\.(eot|ttf|woff|woff2)$/,
 				loader: 'file-loader',
 				options: {
 					name: 'assets/[name].[ext]'
