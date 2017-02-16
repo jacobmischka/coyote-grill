@@ -36,20 +36,19 @@ module.exports = {
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				loader: 'babel-loader'
+				use: 'babel-loader'
 			},
 			{
 				test: /\.html$/,
 				include: /svelte-components/,
-				loaders: [
+				use: [
 					'babel-loader',
 					'svelte-loader'
 				]
 			},
 			{
 				test: /\.css$/,
-				include: /typeface-/,
-				loaders: [
+				use: [
 					'style-loader',
 					'css-loader'
 				]
@@ -57,19 +56,21 @@ module.exports = {
 			{
 				test: /\.svg$/,
 				exclude: /node_modules/,
-				loader: 'raw-loader'
+				use: 'raw-loader'
 			},
 			{
 				test: /\.(eot|svg|ttf|woff|woff2)$/,
 				include: /node_modules/,
-				loader: 'file-loader',
-				options: {
-					name: 'assets/[name].[ext]'
+				use: {
+					loader: 'file-loader',
+					options: {
+						name: 'assets/[name].[ext]'
+					}
 				}
 			},
 			{
 				test: /\.yaml$/,
-				loader: 'yaml-loader'
+				use: 'yaml-loader'
 			}
 		]
 	},
