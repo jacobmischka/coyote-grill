@@ -9,7 +9,7 @@ order: 1
 		<div class="food-special-details">
 			<span class="name">{{ food_special.name }}</span>
 			<span class="price">${% include price.html price=food_special.price %}</span>
-			<p class="desc">{{ food_special.desc }}</p>
+			<p class="desc">{{ food_special.desc | markdownify }}</p>
 		</div>
 		<span class="type">{{ food_special.type }}</span>
 	</div>

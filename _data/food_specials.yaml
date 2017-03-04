@@ -1,4 +1,7 @@
 - type: Burger of the Month
-  name: Heart & Soul Chicken Sandwich
-  desc: Grilled chicken breast topped with fried onions, chile lime salsa, soul seasoning, and cheddar cheese. Served on a Kaiser roll with fries and coleslaw.
+  name: Spicy Spring Burger
+  desc: |
+    A Cajun-seasoned half-pound patty topped with jalape&ntilde;o cream cheese poppers, jalape&ntilde;o crisps, and pepperjack cheese.
+
+    Served with coleslaw and mushroom cheddar fries.
   price: 8.00
