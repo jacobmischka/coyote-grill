@@ -1,7 +1,8 @@
 - type: Burger of the Month
-  name: Spicy Spring Burger
+  name: The Motherload
   desc: |
-    A Cajun-seasoned half-pound patty topped with jalape&ntilde;o cream cheese poppers, jalape&ntilde;o crisps, and pepperjack cheese.
+    A half-pound patty with bacon, egg, ham, and swiss cheese.
+    Topped with lettuce, tomato, and onion, and served on a bakery roll.
 
-    Served with coleslaw and mushroom cheddar fries.
-  price: 8.00
+    Comes with fries and coleslaw.
+  price: 9.00
