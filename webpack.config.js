@@ -5,19 +5,11 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 module.exports = {
 	entry: {
 		bundle: [
-			'core-js/modules/es6.object.assign',
-			'core-js/modules/es6.array.from',
-			'core-js/modules/es6.array.iterator',
-			'core-js/modules/es6.symbol',
-			'core-js/modules/es6.promise',
+			'./_js/polyfills.js',
 			'./_js/bundle/index.js'
 		],
 		promotions: (process.env.NODE_ENV === 'production' ? [] : ['preact/devtools']).concat([
-			'core-js/modules/es6.object.assign',
-			'core-js/modules/es6.array.from',
-			'core-js/modules/es6.array.iterator',
-			'core-js/modules/es6.symbol',
-			'core-js/modules/es6.promise',
+			'./_js/polyfills.js',
 			'./_js/promotions/index.js'
 		]),
 		'promotions-homepage': './_js/promotions/homepage.js'
