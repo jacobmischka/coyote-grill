@@ -77,14 +77,8 @@ module.exports = {
 			]
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
-			name: 'promotions-deps',
-			chunks: [
-				'promotions-deps',
-				'bundle'
-			]
-		}),
-		new webpack.optimize.CommonsChunkPlugin({
-			name: 'manifest'
+			name: 'manifest',
+			minChunks: Infinity
 		}),
 		new BundleAnalyzerPlugin({
 			analyzerMode: 'disabled',
