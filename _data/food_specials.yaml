@@ -1,8 +1,8 @@
 - type: Burger of the Month
-  name: The Motherload
+  name: Red White and Blue Burger
   desc: |
-    A half-pound patty with bacon, egg, ham, and swiss cheese.
-    Topped with lettuce, tomato, and onion, and served on a bakery roll.
+    A half-pound patty topped with tomatoes, garlic aioli sauce, and blue cheese.
+    Served on a bakery roll.
 
     Comes with fries and coleslaw.
-  price: 9.00
+  price: 8.00
