@@ -1,4 +1,5 @@
 /* eslint-env node */
+const path = require('path');
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -15,7 +16,7 @@ module.exports = {
 		'promotions-homepage': './_js/promotions/homepage.js'
 	},
 	output: {
-		path: './js/',
+		path: path.join(__dirname, 'js'),
 		publicPath: '/js/',
 		filename: '[name].js'
 	},
