@@ -1,6 +1,6 @@
 ---
 ---
-@import 'https://fonts.googleapis.com/css?family=Farsan|Lobster|Open+Sans';
+@import 'https://fonts.googleapis.com/css?family=Graduate|Lobster|Open+Sans';
 
 $logo-background-color: #fdeaf6;
 $menu-background-color: white;
@@ -18,6 +18,10 @@ $text-color: 				#000;
 $primary-text: 0.87;
 $secondary-text: 0.54;
 $disabled-text: 0.38;
+
+$menu-primary-font-family: 'Open Sans', sans-serif;
+$menu-heading-font-family: 'Lobster', cursive;
+$menu-accent-font-family: 'Graduate', cursive;
 
 
 html,

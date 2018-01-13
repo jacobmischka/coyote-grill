@@ -1,13 +1,8 @@
 {
-	"extends": "stylelint-config-standard",
-	"ignoreFiles": [
-		"css/*.scss"
-	],
+	"extends": "stylelint-config-recommended",
 	"rules": {
 		"indentation": "tab",
 		"color-hex-case": "lower",
-		"at-rule-empty-line-before": "always",
-		"rule-nested-empty-line-before": "always",
 		"max-empty-lines": 3
 	}
 }

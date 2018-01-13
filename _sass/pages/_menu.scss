@@ -1,5 +1,5 @@
 #menu {
-	font-family: 'Open Sans', sans-serif;
+	font-family: $menu-primary-font-family;
 
 	@media print {
 
@@ -49,7 +49,7 @@
 				padding: 0;
 				margin: 0;
 				margin-top: 40px;
-				font-family: 'Lobster', cursive;
+				font-family: $menu-heading-font-family;
 				font-weight: 100;
 				font-size: 4em;
 				text-align: center;
@@ -58,7 +58,7 @@
 				.supertitle {
 					display: inline-block;
 					font-size: 0.75em;
-					font-family: 'Farsan', cursive;
+					font-family: $menu-accent-font-family;
 					text-transform: none;
 					transform: translate(100px, -50px) rotate(-10deg);
 				}
@@ -66,22 +66,21 @@
 
 			h2 {
 				color: rgba($logo-text-color, $primary-text);
-				font-family: 'Lobster', cursive;
+				font-family: $menu-heading-font-family;
 				font-weight: 100;
 				font-size: 1.5em;
 				margin: 0 0 0.1em;
 			}
 
 			h3 {
-				font-family: 'Farsan', cursive;
-				font-size: 1.35em;
-				font-weight: 600;
+				font-family: $menu-accent-font-family;
+				font-size: 1.2em;
+				font-weight: 400;
 			}
 
+			p,
 			small {
-				display: block;
 				text-align: center;
-				margin: 0.25em 0 0.5em;
 			}
 
 			.row {
@@ -113,6 +112,11 @@
 						}
 					}
 				}
+			}
+
+			small {
+				display: block;
+				margin: 0.25em 0 0.5em;
 			}
 
 			footer {
@@ -216,9 +220,9 @@
 						justify-content: space-between;
 						align-items: flex-end;
 						padding: 0;
-						overflow-x: hidden;
-						overflow-y: visible;
+						overflow: hidden;
 						margin-left: 0;
+						margin-right: -5px;
 
 						& + .menu-item {
 							margin-top: 0.25em;
@@ -249,7 +253,6 @@
 								background: $menu-background-color;
 								padding: 0 0.25em;
 								font-size: 0.9em;
-								margin: 0 2em 0 0;
 
 								&.show-inline-desc {
 									display: inline;
@@ -262,7 +265,7 @@
 							flex-shrink: 0;
 							background: $menu-background-color;
 							padding-left: 1em;
-							padding-right: 0.25em;
+							padding-right: calc(0.25em + 5px);
 						}
 
 						> .prices {
@@ -271,9 +274,11 @@
 
 							.price {
 								display: inline-block;
+								text-align: right;
 
 								& + .price {
 									margin-left: 0.5em;
+									width: 2.5em;
 								}
 
 								span + span {

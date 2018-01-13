@@ -13,7 +13,9 @@
 		<li class="price">
 			{% if price.name %}
 				{% if price.name != previous_name %}
-			{{ price.name }}
+			<span>
+				{{ price.name }}<br />
+			</span>
 				{% endif %}
 			{% include price.html price=price.price %}
 				{% assign previous_name = price.name %}

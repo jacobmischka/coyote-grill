@@ -1,22 +1,18 @@
 - name: Soup of the Day
   prices:
     - name: Cup
-      price: 2.00
-    - name: Bowl
       price: 3.00
+    - name: Bowl
+      price: 4.00
 
 - name: Chili (in season)
   prices:
-    - name: Cup
-      price: 2.00
-    - name: Bowl
-      price: 3.00
+    - 3.00
+    - 4.00
 
 - name: Chili Deluxe
   desc: Shredded cheese, sour cream, and chopped onions
   prices:
-    - name: Cup
-      price: 3.00
-    - name: Bowl
-      price: 4.00
+    - 4.00
+    - 5.00
   block_desc: true

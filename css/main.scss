@@ -3,13 +3,17 @@
 ---
 @charset "utf-8";
 
-@import 'https://fonts.googleapis.com/css?family=Lobster|Farsan|Noto+Sans|Open+Sans';
+@import 'https://fonts.googleapis.com/css?family=Lobster|Graduate|Noto+Sans|Open+Sans';
 
 // Our variables
 $base-font-family: "Open Sans", Helvetica, Arial, sans-serif;
 $heading-font-family: "Lobster", sans-serif;
 $site-nav-font-family: "Noto Sans", sans-serif;
 $alt-font-family: "Noto Sans", sans-serif;
+
+$menu-primary-font-family: 'Open Sans', sans-serif;
+$menu-heading-font-family: 'Lobster', cursive;
+$menu-accent-font-family: 'Graduate', cursive;
 
 $base-font-size:   1.25em;
 $base-font-weight: 400;
