@@ -3,8 +3,9 @@ title: Food
 layout: section
 order: 1
 ---
+{% if site.data.food_specials %}
 <section id="food-specials">
-{% for food_special in site.data.food_specials %}
+	{% for food_special in site.data.food_specials %}
 	<div class="food-special">
 		<div class="food-special-details">
 			<span class="name">{{ food_special.name }}</span>
@@ -13,8 +14,9 @@ order: 1
 		</div>
 		<span class="type">{{ food_special.type }}</span>
 	</div>
-{% endfor %}
+	{% endfor %}
 </section>
+{% endif %}
 
 <section id="image-menu-item-lists">
 	<nav class="tabs">
