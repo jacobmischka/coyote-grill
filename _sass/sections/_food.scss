@@ -123,12 +123,22 @@
 		}
 
 		.content {
+			max-height: 600px;
+			width: 100%;
+			margin: 0 auto;
+			overflow: auto;
+
+			@media (min-width: $very-small-screen) {
+				width: 80%;
+			}
 
 			> * {
 				display: none;
 
 				&.active {
 					display: block;
+					border: 1px solid rgba($primary-color, $divider);
+					background-color: $menu-background-color;
 				}
 			}
 		}
@@ -151,10 +161,8 @@
 			.page {
 				flex-grow: 1;
 				flex-shrink: 0;
-				width: 557px;
+				width: 400px;
 				max-width: 100%;
-				page-break-after: always;
-				page-break-before: always;
 				page-break-inside: avoid;
 				box-sizing: border-box;
 				margin: 10px;

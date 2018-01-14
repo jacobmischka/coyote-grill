@@ -4,9 +4,9 @@
   block_desc: true
 
 - name: Fish Basket
-  desc: 3 pieces of battered cod, fries, tartar sauce, coleslaw, and a slice of rye bread
-  price: 7.50
+  desc: Battered cod, fries, tartar sauce, coleslaw, and a slice of rye bread
+  price: 8.00
 
 - name: Chicken Strip Basket
-  desc: 4 pieces of crispy chicken strips, fries, coleslaw, and a slice of rye bread
+  desc: Crispy chicken strips, fries, coleslaw, and a slice of rye bread
   price: 8.00

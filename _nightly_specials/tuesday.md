@@ -1,6 +1,6 @@
 ---
 title: Tuesday
-price: 4.00
+price: 5.00
 order: 2
 ---
 Spotted Cow pitcher

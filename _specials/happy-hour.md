@@ -1,7 +1,8 @@
 ---
 id: happy-hour
-title: Daily happy hour
+title: Weekday happy hour
 ---
-Half-price drinks!
+Half-price beer and rail drinks!
 
-**4pm to 6pm**
+Mon–Thurs: **4–6pm**    
+Friday: **3–5pm**

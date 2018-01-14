@@ -9,10 +9,16 @@ order: 1
 	<div class="food-special">
 		<div class="food-special-details">
 			<span class="name">{{ food_special.name }}</span>
+		{% if food_special.price %}
 			<span class="price">${% include price.html price=food_special.price %}</span>
+		{% endif %}
+		{% if food_special.desc %}
 			<p class="desc">{{ food_special.desc | markdownify }}</p>
+		{% endif %}
 		</div>
+		{% if food_special.type %}
 		<span class="type">{{ food_special.type }}</span>
+		{% endif %}
 	</div>
 	{% endfor %}
 </section>

@@ -1,6 +1,6 @@
 - name: French Fries
   desc: Plain or ranch seasoned
-  price: 3.50
+  price: 3.00
 
 - name: Steak Cut Fries
   price: 3.50
@@ -18,14 +18,11 @@
 - name: Steak Cut Onion Rings
   price: 4.50
 
-- name: Cheese Curds
-  price: 5.00
-
 - name: Mozzarella Sticks
   price: 4.50
 
 - name: Mini Tacos
-  desc: 10 mini tacos with salsa and sour cream
+  desc: Served with salsa and sour cream
   price: 4.50
   block_desc: true
 
@@ -40,6 +37,9 @@
 
 - name: Fried Pickles
   price: 4.50
+
+- name: Cheese Curds
+  price: 5.00
 
 - name: Broccoli Cheddar Bites
   price: 5.00
