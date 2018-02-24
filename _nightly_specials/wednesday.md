@@ -2,4 +2,6 @@
 title: Wednesday
 order: 3
 ---
-Bartender's choice
+Margarita specials available in a glass or pitcher
+
+Your choice of classic or strawberry

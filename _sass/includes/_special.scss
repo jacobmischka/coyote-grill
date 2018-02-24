@@ -52,8 +52,14 @@
 }
 
 .special {
+	display: flex;
+	flex-direction: column;
 
 	header {
-		height: 20%;
+		flex-basis: 50px;
+	}
+
+	.special-content {
+		flex-grow: 1;
 	}
 }

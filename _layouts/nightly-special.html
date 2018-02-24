@@ -8,13 +8,11 @@
 		</span>
 	</header>
 	<div class="special-content">
-		<div class="price">
 {% if page.price %}
+		<div class="price">
 			${% include price.html price=page.price %}
-{% else %}
-			???
-{% endif %}
 		</div>
+{% endif %}
 		{{ content }}
 	</div>
 </div>
