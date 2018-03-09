@@ -1,5 +1,7 @@
 import ScrollReveal from 'scrollreveal';
 
+import { BREAKPOINTS } from '../constants.js';
+
 const imageMenuItemListsSection = document.querySelector('#image-menu-item-lists');
 const tabs = imageMenuItemListsSection.querySelector('.tabs');
 const content = imageMenuItemListsSection.querySelector('.content');
@@ -36,13 +38,17 @@ showMenuButton.addEventListener('click', event => {
 		showMenuButton.textContent = 'Hide full menu';
 });
 
-ScrollReveal().reveal('.food-special-details', {
-	duration: 500,
-	opacity: 0,
-	distance: '500px',
-	easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-	viewFactor: 1.3,
-	afterReveal(special){
-		special.classList.add('revealed');
-	}
-}, 50);
+if (window.innerWidth > BREAKPOINTS.VERY_SMALL_SCREEN) {
+	ScrollReveal().reveal('.food-special-details', {
+		duration: 500,
+		opacity: 0,
+		distance: '500px',
+		easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+		viewFactor: 1.3,
+		afterReveal(special){
+			special.classList.add('revealed');
+		}
+	}, 50);
+} else {
+	document.querySelector('.food-special-details').classList.add('revealed');
+}

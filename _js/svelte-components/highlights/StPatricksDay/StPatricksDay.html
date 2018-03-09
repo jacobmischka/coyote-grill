@@ -1,0 +1,126 @@
+<section>
+	<header>
+		{{{ shamrock }}}
+		<h1>Happy St Patrick's Day</h1>
+	</header>
+
+	<p>
+		$10 gets you a Coyote Grill t-shirt, green beer, and continental
+		breakfast
+	</p>
+
+	<p>
+		Doors open at <b>6am</b>. <i>While supplies last only</i>, so join us right away!
+	</p>
+
+	<div class="shot-specials-container">
+		<h2>Shot specials</h2>
+		<ul>
+			<li>$3 Irish car bombs</li>
+			<li>$2 Sex with Patty shots</li>
+			<li>$1 Jell-O shots</li>
+		</ul>
+	</div>
+
+	<footer>
+		<small>
+			<a href="https://thenounproject.com/search/?q=shamrock&i=1599179">
+				Lucky Clover by Denis Sazhin from the Noun Project
+			</a>
+		</small>
+	</footer>
+</section>
+
+<style>
+	section {
+		border: 1px solid rgba(112, 193, 64, 0.5);
+		border-radius: 2px;
+
+		background: white;
+		padding: 2em;
+	}
+
+	header {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin-bottom: 1em;
+	}
+
+	footer {
+		margin-top: 1em;
+	}
+
+	header :global(svg) {
+		margin-right: 0.5em;
+		fill: #70c041;
+		stroke: #085f00;
+	}
+
+	h1 {
+		font-family: 'Lobster', cursive;
+		font-weight: normal;
+		font-size: 2.25em;
+		text-align: center;
+		color: #085f00;
+		margin: 0.25em;
+	}
+
+	p {
+		text-align: center;
+	}
+
+	.shot-specials-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	h2 {
+		color: #15ab08;
+		margin-bottom: 0;
+	}
+
+	ul {
+		/* margin: 0; */
+	}
+
+	small {
+		font-size: 0.45em;
+	}
+
+	small a,
+	small a:hover {
+		color: rgba(0, 0, 0, 0.35);
+	}
+
+	small a {
+		text-decoration: none;
+	}
+
+	small a:hover {
+		text-decoration: underline;
+	}
+
+	@media (min-width: 768px) {
+		header {
+			font-size: 1.5em;
+		}
+
+		h1 {
+			margin: 0 0.25em;
+		}
+	}
+</style>
+
+<script>
+	import shamrock from './shamrock.svg';
+
+	export default {
+		data() {
+			return {
+				shamrock
+			};
+		}
+	};
+</script>

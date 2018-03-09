@@ -1,18 +1,22 @@
 /* eslint-env node */
 const path = require('path');
-const webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-module.exports = {
+module.exports = (env, argv) => ({
 	entry: {
 		bundle: [
 			'./_js/polyfills.js',
 			'./_js/bundle/index.js'
 		],
-		promotions: (process.env.NODE_ENV === 'production' ? [] : ['preact/devtools']).concat([
-			'./_js/polyfills.js',
-			'./_js/promotions/index.js'
-		]),
+		promotions: (
+			argv.mode === 'production'
+				? []
+				: ['preact/devtools']
+			).concat([
+				'./_js/polyfills.js',
+				'./_js/promotions/index.js'
+			]),
 		'promotions-homepage': './_js/promotions/homepage.js'
 	},
 	output: {
@@ -38,15 +42,26 @@ module.exports = {
 				include: /svelte-components/,
 				use: [
 					'babel-loader',
-					'svelte-loader'
+					{
+						loader: 'svelte-loader',
+						options: {
+							emitCss: true,
+							cascade: false
+						}
+					}
 				]
 			},
 			{
 				test: /\.css$/,
-				use: [
-					'style-loader',
-					'css-loader'
-				]
+				use: argv.mode === 'production'
+					? ExtractTextPlugin.extract({
+						fallback: 'style-loader',
+						use: 'css-loader'
+					})
+					: [
+						'style-loader',
+						'css-loader'
+					]
 			},
 			{
 				test: /\.svg$/,
@@ -70,27 +85,21 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new webpack.optimize.CommonsChunkPlugin({
-			name: 'promotions-deps',
-			chunks: [
-				'promotions',
-				'promotions-homepage'
-			]
-		}),
-		new webpack.optimize.CommonsChunkPlugin({
-			name: 'manifest',
-			minChunks: Infinity
+		new ExtractTextPlugin({
+			filename: '[name].css',
+			allChunks: true,
+			disable: argv.mode !== 'production'
 		}),
 		new BundleAnalyzerPlugin({
 			analyzerMode: 'disabled',
 			generateStatsFile: true,
 			statsFilename: 'stats.json'
-		}),
-		new webpack.DefinePlugin({
-			'process.env': {
-				NODE_ENV: process.env.NODE_ENV
-			}
 		})
 	],
-	devtool: 'source-map'
-};
+	devtool: 'source-map',
+	devServer: {
+		contentBase: path.join(__dirname, '_site'),
+		port: 3000,
+		hot: true
+	}
+});
