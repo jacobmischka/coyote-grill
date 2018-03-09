@@ -1,5 +1,9 @@
 <div id="highlights-container">
-	<StPatricksDay />
+	{{#each Array.from(Object.entries(highlights)) as [name, component]}}
+		{{#if isActive(active, name)}}
+			<:Component {component} />
+		{{/if}}
+	{{/each}}
 </div>
 
 <style>
@@ -15,8 +19,34 @@
 	import StPatricksDay from './StPatricksDay/StPatricksDay.html';
 
 	export default {
-		components: {
-			StPatricksDay
+		data() {
+			return {
+				highlights: {
+					StPatricksDay
+				},
+				active: {
+					StPatricksDay: {
+						start: new Date(2018, 2, 1),
+						end: new Date(2018, 2, 18)
+					}
+				}
+			};
+		},
+		helpers: {
+			isActive(active, highlight) {
+
+				if (active[highlight]) {
+					const now = new Date();
+
+					const { start, end } = active[highlight];
+					if (start && start > now)
+						return false;
+					if (end && end < now)
+						return false;
+				}
+
+				return true;
+			}
 		}
 	};
 </script>
