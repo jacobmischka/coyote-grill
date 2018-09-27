@@ -13,6 +13,25 @@
 		}
 	}
 
+	h2 {
+
+	}
+
+	@supports (display: grid) {
+		dl {
+			margin: 2em 4em;
+			display: grid;
+			justify-content: center;
+			grid-template-columns: 3fr 1fr;
+			grid-row-gap: 1em;
+			grid-column-gap: 1em;
+		}
+
+		dt {
+			font-weight: bold;
+		}
+	}
+
 	address {
 		text-align: center;
 		font-style: italic;
