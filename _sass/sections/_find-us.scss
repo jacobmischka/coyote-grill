@@ -19,7 +19,7 @@
 
 	@supports (display: grid) {
 		dl {
-			margin: 2em 4em;
+			margin: 2em 10%;
 			display: grid;
 			justify-content: center;
 			grid-template-columns: 3fr 1fr;
