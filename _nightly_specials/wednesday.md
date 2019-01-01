@@ -1,7 +1,6 @@
 ---
 title: Wednesday
+price: 7.00
 order: 3
 ---
-Margarita specials available in a glass or pitcher
-
-Your choice of classic or strawberry
+Rail pitchers
