@@ -1,21 +1,21 @@
 <div class="promotion-list-container">
 	<h2>
-		Current Promotion{{ plural }}
+		Current Promotion{ plural }
 	</h2>
 	<div class="promotion-list">
-{{#each promotions as promotion}}
+{#each promotions as promotion}
 		<a href="/promotions" class="promotion"
-				style="background-image: url({{ promotion.image }});">
+				style="background-image: url({ promotion.image });">
 			<div class="promotion-backdrop">
 				<span class="title">
-					{{ promotion.title }}
+					{ promotion.title }
 				</span>
 				<p class="desc">
-					{{ promotion.desc }}
+					{ promotion.desc }
 				</p>
 			</div>
 		</a>
-{{/each}}
+{/each}
 	</div>
 
 	<small>
@@ -24,7 +24,7 @@
 	</small>
 
 	<a href="/promotions" class="button outline accent">
-		Redeem promotion{{ plural }}
+		Redeem promotion{ plural }
 	</a>
 </div>
 
@@ -37,7 +37,7 @@ export default {
 	},
 
 	computed: {
-		plural(promotions){
+		plural({ promotions }){
 			return promotions.length > 1 ? 's' : '';
 		}
 	}

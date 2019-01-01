@@ -1,45 +1,51 @@
 - name: Hamburger
   desc: For you real Americans
   prices:
-    - 5.75
-    - 8.00
+    - 6.25
+    - 9.00
 
 - name: Cheeseburger
   desc: Just like the ones served in paradise
   prices:
-    - 6.25
-    - 8.50
+    - 6.75
+    - 9.50
 
 - name: Southwest Burger
   desc: On a roll with cajun spice, salsa, and cheddar cheese
   prices:
-    - 6.75
-    - 9.50
+    - 7.25
+    - 10.50
 
 - name: Salvo Special
   small_name: Small Lil' Debbie Special
   desc: On a roll topped with smoked ham and swiss cheese
   prices:
-    - 7.00
-    - 9.50
+    - 7.50
+    - 10.50
 
 - name: Bacon Cheeseburger
   desc: On a roll with smoked bacon and swiss cheese
   prices:
-    - 7.00
-    - 9.50
+    - 7.50
+    - 10.50
 
 - name: Mushroom Swiss Burger
   desc: On a roll with fried portobello mushrooms and swiss cheese
   prices:
-    - 7.00
-    - 9.50
+    - 7.50
+    - 10.50
+
+- name: Garlic Cheese Curd Burger
+  desc: On a roll garlic cheese curds, garlic parmesan sauce
+  prices:
+    - 7.50
+    - 10.50
 
 - name: Coyote Burger
   desc: On grilled toast with BBQ sauce, an onion ring, bacon, and pepperjack cheese
   prices:
-    - 7.75
-    - 10.00
+    - 8.25
+    - 11.00
   photos:
     - /images/small/food/coyote.jpg
     - /images/small/food/coyote-half.jpg
@@ -47,8 +53,8 @@
 - name: Ultimate
   desc: On toast with 4 cheeses, special sauce, and fried onion
   prices:
-    - 7.75
-    - 10.00
+    - 8.25
+    - 11.00
   photos:
     - /images/small/food/ultimate.jpg
     - /images/small/food/ultimate-half.jpg
@@ -57,25 +63,25 @@
 - name: Blazing Britt Burger
   desc: On toast with pepperjack cheese, bacon, fried onions, jalape&ntilde;o bottle caps, chipotle BBQ, and cajun seasoning
   prices:
-    - 7.75
-    - 10.00
+    - 8.25
+    - 11.00
   block_desc: true
 
 - name: Grilled Ranchero Melt
   desc: On toast with pepperjack and swiss cheese, peppercorn ranch, ham, and fried onions
   prices:
-    - 7.75
-    - 10.00
+    - 8.25
+    - 11.00
   block_desc: true
 
 - name: Pile Driver
   desc: On a roll with cheddar and pepperjack cheese, stacked ham, and fried onions
   prices:
-    - 7.75
-    - 10.00
+    - 8.25
+    - 11.00
 
 - name: Breakfast Burger
   desc: On toast with American cheese, a fried egg, and your choice of ham or bacon
   prices:
-    - 7.75
-    - 10.00
+    - 8.25
+    - 11.00

@@ -1,9 +1,9 @@
 <div id="highlights-container">
-	{{#each Object.keys(highlights) as name}}
-		{{#if isActive(active, name)}}
-			<:Component {highlights[name]} />
-		{{/if}}
-	{{/each}}
+	{#each Object.keys(highlights) as name}
+		{#if isActive(active, name)}
+			<svelte:component this={highlights[name]} />
+		{/if}
+	{/each}
 </div>
 
 <style>
