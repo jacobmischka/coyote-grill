@@ -8,6 +8,9 @@ order: 1
 	{% for food_special in site.data.food_specials %}
 	<div class="food-special">
 		<div class="food-special-details">
+		{% if food_special.image %}
+			<img src="{{ food_special.image }}" alt="" />
+		{% endif %}
 			<span class="name">{{ food_special.name }}</span>
 		{% if food_special.price %}
 			<span class="price">${% include price.html price=food_special.price %}</span>

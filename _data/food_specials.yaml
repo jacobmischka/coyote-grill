@@ -1,4 +1,5 @@
 - type: Sandwich of the month
-  name: Easter burger
+  name: Easter Burger
   desc: Half-pound burger topped with ham, American cheese, egg salad, and bacon jam. Served on a bakery roll with fries and coleslaw.
   price: 10.00
+  image: /images/easter-burger.jpg

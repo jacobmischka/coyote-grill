@@ -15,13 +15,13 @@
 				margin: 0 0 1em;
 				padding: 1em;
 				border: 1px solid rgba(0, 0, 0, $divider);
+				box-shadow: 0 10px 20px 0 rgba(0, 0, 0, $divider);
 				background: #fff;
 				transition: box-shadow 1s 0.5s;
-				pointer-events: none;
 
-				&.revealed {
-					box-shadow: 0 10px 20px 0 rgba(0, 0, 0, $divider);
-					pointer-events: auto;
+				img {
+					max-width: 100%;
+					object-fit: cover;
 				}
 
 				.name {
