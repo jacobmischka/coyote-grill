@@ -31,7 +31,6 @@
     "preact": "^8.4.2",
     "proptypes": "^1.1.0",
     "rollbar": "^2.5.1",
-    "scrollreveal": "^4.0.5",
     "typeface-lato": "^0.0.54",
     "typeface-oswald": "^0.0.54"
   },

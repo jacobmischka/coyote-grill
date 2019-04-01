@@ -37,18 +37,6 @@
 					margin: 0.5em 0;
 					font-weight: bold;
 				}
-
-				.desc {
-
-				}
-			}
-
-			.food-special-details.revealed + .type {
-
-				&::before {
-					left: 0;
-					right: 0;
-				}
 			}
 
 			.type {
@@ -64,11 +52,11 @@
 				padding: 0.5em 0;
 
 				&::before {
+					left: 0;
+					right: 0;
 					content: "";
 					position: absolute;
 					z-index: -1;
-					left: 50%;
-					right: 50%;
 					top: 0;
 					background: rgba($logo-text-color, $active-icon);
 					height: 2px;
