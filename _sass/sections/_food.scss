@@ -195,6 +195,12 @@
 								& + .menu-item {
 									margin-top: 0.25em;
 								}
+
+								@media (max-width: $menu-mobile-breakpoint) {
+									& + .menu-item {
+										margin-top: 1em;
+									}
+								}
 							}
 						}
 					}
