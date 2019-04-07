@@ -231,6 +231,7 @@
 						overflow: hidden;
 						margin-left: 0;
 						margin-right: -5px;
+						max-width: 100%;
 
 						&:not(:last-child) {
 							margin-bottom: 1em;
@@ -254,12 +255,13 @@
 						}
 
 						h3 {
+							max-width: 100%;
 							padding-right: 0.35em;
 							margin: 0;
 							line-height: 1;
 							background: $menu-background-color;
 							display: inline-block;
-							white-space: nowrap;
+							text-align: center;
 						}
 
 						.desc-container {
@@ -282,13 +284,17 @@
 						> .prices {
 							flex-shrink: 0;
 							background: $menu-background-color;
-							padding-left: 1em;
-							padding-right: calc(0.25em + 5px);
+							padding-right: 2px;
+
+							@media(min-width: $menu-mobile-breakpoint) {
+								padding-left: 1em;
+							}
 						}
 
 						> .prices {
 							box-sizing: border-box;
 							list-style: none;
+							padding-left: 0;
 
 							.price {
 								display: inline-block;
