@@ -1,0 +1,71 @@
+---
+---
+@import 'https://fonts.googleapis.com/css?family=Graduate|Lobster|Open+Sans';
+
+$logo-background-color: #fdeaf6;
+$menu-background-color: white;
+
+$accent-color:				#eb5795;
+$accent-color-dark:			darken($accent-color, 10%);
+$accent-color-light:		lighten($accent-color, 10%);
+
+$logo-text-color:			#9c0054;
+$lil-debbie-color:			$accent-color;
+$salvo-color:				#795548;
+
+$text-color: 				#000;
+
+$primary-text: 0.87;
+$secondary-text: 0.54;
+$disabled-text: 0.38;
+
+$menu-mobile-breakpoint: 450px;
+
+$menu-primary-font-family: 'Open Sans', sans-serif;
+$menu-heading-font-family: 'Lobster', cursive;
+$menu-accent-font-family: 'Graduate', cursive;
+
+
+html,
+body,
+#menu {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+@import "pages/menu";
+
+.menu-simple {
+	font-size: 1.7em;
+
+	h2, header, aside, p, small, .menu-item-block-desc {
+		display: none !important;
+	}
+
+	.row {
+		flex-direction: column !important;
+
+		.column {
+			width: 100% !important;
+			margin: 0 !important;
+		}
+	}
+}
+
+@media print {
+	.page {
+		page-break-after: unset !important;
+		page-break-before: unset !important;
+		page-break-inside: unset !important;
+		width: unset !important;
+		height: unset !important;
+
+		.page-content {
+			width: unset !important;
+			height: unset !important;
+			border: none !important;
+			padding: 0 !important;
+		}
+	}
+}
