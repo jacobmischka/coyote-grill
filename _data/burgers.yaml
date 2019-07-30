@@ -13,7 +13,7 @@
 - name: Southwest Burger
   desc: On a roll with cajun spice, salsa, and cheddar cheese
   prices:
-    - 7.25
+    - 7.50
     - 10.50
 
 - name: Salvo Special
@@ -37,6 +37,12 @@
 
 - name: Garlic Cheese Curd Burger
   desc: On a roll garlic cheese curds, garlic parmesan sauce
+  prices:
+    - 7.50
+    - 10.50
+
+- name: Beer cheese onion burger
+  desc: On toast topped with beer cheese sauce and deep fried onion tangles
   prices:
     - 7.50
     - 10.50
