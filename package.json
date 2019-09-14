@@ -13,11 +13,11 @@
     "watch:webpack": "webpack --mode development --progress --color --watch",
     "serve": "webpack-dev-server --mode development --hot",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "menu": "bundle exec jekyll serve --detach --no-watch && google-chrome-unstable --headless --disable-gpu --print-to-pdf $npm_package_config_menu_url && mv output.pdf menu.pdf && pkill -f jekyll",
+    "menu": "google-chrome-unstable --headless --disable-gpu --print-to-pdf $npm_package_config_menu_url && mv output.pdf menu.pdf",
     "analyze:bundle": "webpack-bundle-analyzer js/stats.json"
   },
   "config": {
-    "menu_url": "http://localhost:4000/menu"
+    "menu_url": "http://localhost:3000/menu"
   },
   "browserslist": [
     "> 1%",

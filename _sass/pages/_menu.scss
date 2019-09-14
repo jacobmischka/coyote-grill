@@ -35,12 +35,13 @@
 			header {
 
 				figure {
+					margin: 1em;
 
 					#coyote-grill-logo {
 						width: 100%;
 						display: block;
 						margin: 0 auto;
-						height: 9.5em;
+						height: 8em;
 					}
 				}
 			}
@@ -74,7 +75,7 @@
 
 			h3 {
 				font-family: $menu-accent-font-family;
-				font-size: 1.2em;
+				font-size: 1.15em;
 				font-weight: 400;
 			}
 
@@ -119,6 +120,11 @@
 				margin: 0.25em 0 0.5em;
 			}
 
+			p {
+				font-size: 0.9em;
+				margin: 0.5em 0;
+			}
+
 			footer {
 				margin: 0.5em 0;
 				text-align: center;
@@ -131,10 +137,9 @@
 
 			address {
 				text-align: center;
-				font-size: 0.9em;
+				font-size: 0.8em;
 
-				wbr {
-					display: inline-block;
+				.phone, .web {
 					margin: 0 0.5em;
 				}
 			}

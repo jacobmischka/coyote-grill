@@ -16,11 +16,12 @@ module.exports = api => {
 				"debug": true,
 				"modules": false
 			}],
-			"@babel/preset-react"
+			["@babel/preset-react", {
+				"pragma": "h"
+			}]
 		],
 		"plugins": [
 			"styled-jsx/babel",
-			["@babel/plugin-transform-react-jsx", {"pragma": "h"}],
 			"@babel/plugin-syntax-dynamic-import",
 			"babel-plugin-object-values-to-object-keys"
 		]
