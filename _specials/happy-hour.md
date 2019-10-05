@@ -1,7 +1,7 @@
 ---
 id: happy-hour
 title: Weekday happy hour
-order: 1
+order: 2
 ---
 Half-price beer and rail drinks!
 
