@@ -48,6 +48,20 @@
 		justify-content: center;
 		align-items: center;
 		padding: 0.5em 1em;
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	&.image-only {
+		.special-content {
+			padding: 0;
+
+			p {
+				margin: 0;
+			}
+		}
 	}
 }
 
