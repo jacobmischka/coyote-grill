@@ -1,0 +1,21 @@
+#news {
+
+	article {
+		margin: 0 auto;
+		width: 80vw;
+		padding: 2em;
+		border: 2px solid $accent-color;
+		border-radius: 2px;
+		background: white;
+
+		& ~ article {
+			margin-top: 2em;
+		}
+
+		time {
+			display: block;
+			margin-bottom: 1em;
+			font-style: italic;
+		}
+	}
+}

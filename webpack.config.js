@@ -44,8 +44,7 @@ module.exports = (env, argv) => ({
 					{
 						loader: 'svelte-loader',
 						options: {
-							emitCss: true,
-							cascade: false
+							emitCss: true
 						}
 					}
 				]
