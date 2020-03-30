@@ -17,6 +17,10 @@
 
 	}
 
+	p {
+		text-align: center;
+	}
+
 	@supports (display: grid) {
 		dl {
 			margin: 2em 10%;
