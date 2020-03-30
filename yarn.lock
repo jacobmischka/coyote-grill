@@ -8503,10 +8503,10 @@ svelte@^1.60.3:
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-1.64.1.tgz#03c97e204e0277c1430f429a6755ca425852e5de"
   integrity sha512-RsEAcVYF90Bq5y4Lgg56LyKiuxiyDTU+5TG2GM0ppa50z446de0vQgnA3eQTrgecPdRR89ZIqNqN1cgdAdO7wQ==
 
-svelte@^3.20.1:
-  version "3.20.1"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.20.1.tgz#8417fcd883a2f534b642a0737368272e651cf3ac"
-  integrity sha512-m/dw52BZf+p6KYnyKLErIcGalu4pwJrQbUM7VZriRw6ZlJj1qMAZsLcIWzEB3I0hhdJwkKb7LrrvUIeqmbO92Q==
+svelte@^2.16.1:
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-2.16.1.tgz#559a68452029e72280311ccc8dfd2ff10d0a5f18"
+  integrity sha512-TpXdfukSkmWkMnH6PPVm7FRW8SSFcTyqBiP+6VN8rtZJ7Lp1Xbf/e3oz73eQBxF0UPZw1aAn1b91lX2XTeD3zg==
 
 sver-compat@^1.5.0:
   version "1.5.0"

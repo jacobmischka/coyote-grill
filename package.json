@@ -62,7 +62,7 @@
     "styled-jsx": "^3.2.5",
     "stylelint": "^13.2.1",
     "stylelint-config-recommended": "^3.0.0",
-    "svelte": "^3.20.1",
+    "svelte": "^2.16.1",
     "svelte-loader": "^2.12.0",
     "svelte-upgrade": "^1.0.16",
     "webpack": "^4.42.1",
