@@ -1,6 +1,9 @@
 <section class="menu-section">
 	<header>
 		<h2>{{ include.title }}</h2>
+{% if include.subtitle %}
+		<small>{{ include.subtitle }}</small>
+{% endif %}
 {% if include.labels %}
 		{{ include.labels }}
 {% endif %}

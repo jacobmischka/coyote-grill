@@ -13,11 +13,8 @@
     "watch:webpack": "webpack --mode development --progress --color --watch",
     "serve": "webpack-dev-server --mode development --hot",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "menu": "google-chrome-unstable --headless --disable-gpu --print-to-pdf $npm_package_config_menu_url && mv output.pdf menu.pdf",
+    "menu": "google-chrome-stable --headless --disable-gpu --print-to-pdf http://localhost:3000/menu && mv output.pdf menu.pdf",
     "analyze:bundle": "webpack-bundle-analyzer js/stats.json"
-  },
-  "config": {
-    "menu_url": "http://localhost:3000/menu"
   },
   "browserslist": [
     "> 1%",
@@ -48,6 +45,7 @@
     "css-toggle-switch": "^4.0.2",
     "eslint": "^6.8.0",
     "eslint-plugin-compat": "^3.5.1",
+    "eslint-plugin-html": "^6.0.3",
     "eslint-plugin-react": "^7.19.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^6.0.0",
