@@ -21,9 +21,6 @@
 - name: Steak Cut Onion Rings
   price: 5.00
 
-- name: Mozzarella Sticks
-  price: 5.00
-
 - name: Mini Tacos
   desc: Served with salsa and sour cream
   price: 5.00

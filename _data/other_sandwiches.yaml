@@ -1,6 +1,3 @@
-- name: BLT
-  price: 7.00
-
 - name: Ham Sandwich
   desc: Sliced thin and stacked high
   price: 7.75
@@ -17,10 +14,6 @@
 - name: Breaded Chicken Sandwich
   price: 8.00
 
-- name: Pork Chop Sandwich
-  desc: 5oz. butterfly chop
-  price: 8.75
-
 - name: Grilled Cheese
   desc: Served on texas toast with 4 kinds of cheese
   price: 8.75
@@ -28,7 +21,3 @@
 
 - name: Grilled Cheese with Ham
   price: 10.00
-
-- name: Steak Sandwich
-  desc: 6oz. ribeye
-  price: 10.50
