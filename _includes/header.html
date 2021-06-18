@@ -8,7 +8,9 @@
 		<ul>
 {% assign sections = site.sections | sort: "order" %}
 {% for section in sections %}
+	{% unless section.hidden %}
 			<li><a href="#{{ section.title | slugify }}">{{ section.title }}</a></li>
+	{% endunless %}
 {% endfor %}
 		</ul>
 	</nav>

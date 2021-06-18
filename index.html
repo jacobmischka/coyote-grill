@@ -5,5 +5,7 @@ layout: default
 <div id="highlights"></div>
 {% assign sections = site.sections | sort: "order" %}
 {% for section in sections %}
-	{{ section }}
+	{% unless section.hidden %}
+		{{ section }}
+	{% endunless %}
 {% endfor %}
