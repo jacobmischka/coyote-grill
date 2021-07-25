@@ -13,11 +13,8 @@
     "watch:webpack": "webpack --mode development --progress --color --watch",
     "serve": "webpack-dev-server --mode development --hot",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "menu": "google-chrome --headless --disable-gpu --print-to-pdf $npm_package_config_menu_url && mv output.pdf menu.pdf",
+    "menu": "google-chrome --headless --disable-gpu --print-to-pdf http://localhost:3000/menu && mv output.pdf menu.pdf",
     "analyze:bundle": "webpack-bundle-analyzer js/stats.json"
-  },
-  "config": {
-    "menu_url": "http://localhost:3000/menu"
   },
   "browserslist": [
     "> 1%",
