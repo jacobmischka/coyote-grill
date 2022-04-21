@@ -61,7 +61,7 @@
     - /images/small/food/ultimate-half-2.jpg
 
 - name: Blazing Britt Burger
-  desc: On toast with pepperjack cheese, bacon, fried onions, jalape&ntilde;o bottle caps, chipotle BBQ, and cajun seasoning
+  desc: On toast with pepperjack cheese, bacon, fried onions, jalape&ntilde;o slices, chipotle BBQ, and cajun seasoning
   prices:
     - 9.50
     - 12.50
@@ -76,6 +76,12 @@
 
 - name: Pile Driver
   desc: On a roll with cheddar and pepperjack cheese, stacked ham, and fried onions
+  prices:
+    - 9.50
+    - 12.50
+
+- name: Breakfast Burger
+  desc: On toast with American cheese, fried egg, and ham or bacon
   prices:
     - 9.50
     - 12.50

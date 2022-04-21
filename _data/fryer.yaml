@@ -32,9 +32,6 @@
 - name: Sweet Corn Nuggets
   price: 5.50
 
-- name: Jalape&ntilde;o Bottlecaps
-  price: 5.50
-
 - name: Fried Pickles
   price: 5.50
 
@@ -47,8 +44,5 @@
 - name: Chicken Strips
   price: 7.50
 
-- name: Chicken Drummies
-  price: 7.50
-
-- name: Hot wings
+- name: Naked wings
   price: 7.50
