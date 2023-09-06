@@ -1,12 +1,12 @@
 - name: Combo Basket
   desc: Broccoli cheddar bites, pickle chips, sweet corn nuggets, mini corndogs, cheese curds, onion rings, and fries
-  price: 8.00
+  price: 8.50
   block_desc: true
 
 - name: Fish Basket
   desc: Battered cod, fries, tartar sauce, coleslaw, and a slice of rye bread
-  price: 10.00
+  price: 10.50
 
 - name: Chicken Strip Basket
   desc: Crispy chicken strips, fries, coleslaw, and a slice of rye bread
-  price: 10.00
+  price: 10.50

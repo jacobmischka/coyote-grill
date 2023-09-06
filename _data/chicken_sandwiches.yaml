@@ -1,33 +1,33 @@
 - name: Chicken with No Fixins
   desc: For those of you with enough adventure in your life!
-  price: 9.25
+  price: 9.75
 
 - name: Chicken with Cheese
   desc: On a roll with your choice of cheese
-  price: 9.75
+  price: 10.25
 
 - name: Chicken Southwest Style
   desc: On a roll with cajun spice, salsa, and cheddar cheese
-  price: 10.50
+  price: 11.00
 
 - name: Chicken Cordon Bleu
   desc: On a roll with smoked ham and swiss cheese
-  price: 10.75
+  price: 11.25
 
 - name: Spicy Mesquite Chicken
   desc: On a roll with bacon, swiss cheese, and BBQ sauce
-  price: 10.75
+  price: 11.25
 
 - name: Spicy Chicken Bacon Ranch
   desc: On a roll with bacon, pepperjack cheese, and ranch dressing
-  price: 10.75
+  price: 11.25
 
 - name: Blazing Britt Chicken Sandwich
   desc: On grilled toast with pepperjack cheese, bacon, fried onions, jalape&ntilde;o slices, chipotle BBQ, and cajun seasoning
-  price: 11.50
+  price: 12.00
   block_desc: true
 
 - name: Grilled Chicken Ranchero Melt
   desc: On grilled toast with pepperjack and swiss cheese, peppercorn ranch, ham, and fried onions
-  price: 11.50
+  price: 12.00
   block_desc: true
