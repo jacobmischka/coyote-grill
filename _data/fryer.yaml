@@ -1,48 +1,48 @@
 - name: French Fries
   desc: Plain or ranch seasoned
-  price: 5.00
+  price: 5.50
 
 - name: Home-fried Pub Chips
-  price: 5.00
+  price: 5.50
 
 - name: Steak Cut Fries
-  price: 5.50
+  price: 6.50
 
 - name: Dank Fries
   desc: Fries sprinkled with cajun and ranch seasoning, drizzled with ranch dressing
-  price: 5.50
+  price: 6.00
   block_desc: true
   photos:
     - /images/small/food/dank-fries.jpg
 
 - name: Breaded portobello mushrooms
-  price: 6.50
+  price: 7.00
 
 - name: Steak Cut Onion Rings
-  price: 6.50
+  price: 7.00
 
 - name: Mini Tacos
   desc: Served with salsa and sour cream
-  price: 6.50
+  price: 7.00
   block_desc: true
 
 - name: Mini Corndogs
-  price: 6.50
+  price: 7.00
 
 - name: Sweet Corn Nuggets
-  price: 6.50
+  price: 7.00
 
 - name: Fried Pickles
-  price: 6.50
+  price: 7.00
 
 - name: Cheese Curds
-  price: 7.00
+  price: 7.50
 
 - name: Broccoli Cheddar Bites
-  price: 7.00
+  price: 7.50
 
 - name: Chicken Strips
-  price: 8.50
+  price: 9.00
 
 - name: Naked wings
-  price: 8.50
+  price: 9.00

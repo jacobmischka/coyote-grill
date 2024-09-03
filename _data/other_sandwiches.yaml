@@ -1,28 +1,28 @@
 - name: Ham Sandwich
   desc: Sliced thin and stacked high
-  price: 9.25
+  price: 9.75
 
 - name: Ham and Cheese Sandwich
   desc: With swiss cheese
-  price: 9.75
+  price: 10.25
   block_desc: true
 
 - name: Fish Sandwich
   desc: 2 fillets of battered cod
-  price: 9.50
+  price: 10.00
 
 - name: Breaded Chicken Sandwich
-  price: 9.50
+  price: 10.00
 
 - name: Pork Tenderloin Sandwich
   desc: Breaded and fried pork fritter
   block_desc: true
-  price: 9.50
+  price: 10.00
 
 - name: Grilled Cheese
   desc: Served on texas toast with 4 kinds of cheese
-  price: 10.25
+  price: 10.75
   block_desc: true
 
 - name: Grilled Cheese with Ham
-  price: 11.50
+  price: 12.00
