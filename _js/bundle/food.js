@@ -1,6 +1,6 @@
 const imageMenuItemListsSection = document.querySelector('#image-menu-item-lists');
-const tabs = imageMenuItemListsSection.querySelector('.tabs');
-const content = imageMenuItemListsSection.querySelector('.content');
+const tabs = imageMenuItemListsSection?.querySelector('.tabs');
+const content = imageMenuItemListsSection?.querySelector('.content');
 for(let tabLink of Array.from(tabs?.querySelectorAll('.tab-link'))){
 	tabLink.addEventListener('click', event => {
 		event.preventDefault();
