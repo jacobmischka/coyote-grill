@@ -2,7 +2,9 @@
 title: Food
 layout: section
 order: 2
+hidden: true
 ---
+
 <h2>Food</h2>
 
 {% if site.data.food_specials %}
@@ -10,16 +12,17 @@ order: 2
 	{% for food_special in site.data.food_specials %}
 	<div class="food-special">
 		<div class="food-special-details">
-		{% if food_special.image %}
+			{% if food_special.image %}
 			<img src="{{ food_special.image }}" alt="" />
-		{% endif %}
+			{% endif %}
 			<span class="name">{{ food_special.name }}</span>
-		{% if food_special.price %}
-			<span class="price">${% include price.html price=food_special.price %}</span>
-		{% endif %}
-		{% if food_special.desc %}
+			{% if food_special.price %}
+			<span class="price"
+				>${% include price.html price=food_special.price %}</span
+			>
+			{% endif %} {% if food_special.desc %}
 			<p class="desc">{{ food_special.desc | markdownify }}</p>
-		{% endif %}
+			{% endif %}
 		</div>
 		{% if food_special.type %}
 		<span class="type">{{ food_special.type }}</span>
@@ -33,16 +36,27 @@ order: 2
 	<nav class="tabs">
 		<ul>
 			<li><a class="tab-link active" href="#burgers">Burgers</a></li>
-			<li><a class="tab-link" href="#chicken-sandwiches">Chicken Sandwiches</a></li>
-			<li><a class="tab-link" href="#other-sandwiches">Other Sandwiches</a></li>
+			<li>
+				<a class="tab-link" href="#chicken-sandwiches"
+					>Chicken Sandwiches</a
+				>
+			</li>
+			<li>
+				<a class="tab-link" href="#other-sandwiches"
+					>Other Sandwiches</a
+				>
+			</li>
 			<li><a class="tab-link" href="#fryer">Fryer</a></li>
 		</ul>
 	</nav>
 	<section class="content">
-		{% include menu-item-list.html active=true name="Burgers" id="burgers" items=site.data.burgers %}
-		{% include menu-item-list.html name="Chicken Sandwiches" id="chicken-sandwiches" items=site.data.chicken_sandwiches %}
-		{% include menu-item-list.html name="Other Sandwiches" id="other-sandwiches" items=site.data.other_sandwiches %}
-		{% include menu-item-list.html name="From the Fryer" id="fryer" items=site.data.fryer %}
+		{% include menu-item-list.html active=true name="Burgers" id="burgers"
+		items=site.data.burgers %} {% include menu-item-list.html name="Chicken
+		Sandwiches" id="chicken-sandwiches" items=site.data.chicken_sandwiches
+		%} {% include menu-item-list.html name="Other Sandwiches"
+		id="other-sandwiches" items=site.data.other_sandwiches %} {% include
+		menu-item-list.html name="From the Fryer" id="fryer"
+		items=site.data.fryer %}
 	</section>
 </section>
 
@@ -56,8 +70,7 @@ order: 2
 		</button>
 
 		<a class="button outline" href="/menu.pdf">
-			PDF
-			{% include images/pdf.svg %}
+			PDF {% include images/pdf.svg %}
 		</a>
 	</div>
 </div>
